@@ -1,0 +1,44 @@
+.container {
+    background-color: #f8f6f8;
+    padding: 40px;
+  }
+
+  .container_title{
+    text-align: center;
+    font-size: 44px;
+  }
+  
+  .cards {
+    padding: 20px;
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 350px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card_icon {
+    color: var(--orange);
+    width: 64px;
+    height: 64px;
+  }
+  
+  .card h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  .card p {
+    color: #666;
+    font-size: 14px;
+  }
