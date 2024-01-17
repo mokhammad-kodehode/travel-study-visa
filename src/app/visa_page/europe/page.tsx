@@ -2,13 +2,12 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '../components/contactFormTwo/ContactFormTwo'
-import CountryVisaSelect from '../components/CountryVisaSelect/page'
-import CountryList from '../components/CountryListAll/CountryListAll'
-import { europeCountries } from '../data/CountryData'
-import CountryCards from '../components/PopularCountries/PopularCountries'
+import MyForm from '../../components/contactFormTwo/ContactFormTwo'
+import CountryList from '../../components/CountryListAll/CountryListAll'
+import { europeCountries } from '../../data/CountryData'
+import CountryVisaSelect from '@/app/components/CountryVisaSelect/page';
 
-export default function Home() {
+export default function Europe() {
 
   return (
     <main className={styles.main}>
@@ -16,9 +15,8 @@ export default function Home() {
             <div className={styles.banner_container} >
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Оформление виз</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в любую страну Мира.</h2>
-                        <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+                        <h1 className={styles.title_text}>Оформление виз в Европу</h1>
+                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в любую страну Европы. Оставьте заявку, и наш специалист ответит на все вопросы</h2>ru
                     </div>
                     <p>
                         Нужно оформить шенгенскую визу? 
@@ -34,11 +32,10 @@ export default function Home() {
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
                <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
-              <CountryVisaSelect/>
+               <CountryVisaSelect/>
               <CountryList countries={europeCountries}/>
             </div>
           </section>
-          <CountryCards/>
     </main>
   )
 }

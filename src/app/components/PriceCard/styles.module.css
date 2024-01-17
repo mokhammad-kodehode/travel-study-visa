@@ -11,13 +11,13 @@
   display: flex;
   gap: 3rem;
   margin: 0 auto;
-  gap: 5rem;
+  gap: 2rem;
   align-items: flex-start;
   justify-content: center;
   background-color: white;
   border: 5px;
   margin-top: 20px;
- padding: 15px 20px;
+ padding: 25px 40px;
  border-radius: 5px;
 }
 

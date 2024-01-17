@@ -10,6 +10,8 @@ import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import { useState } from 'react'
 import ModalForm from './components/ContactForm/ContactFor'
+import CountryVisaSelect from './components/CountryVisaSelect/page'
+
 
 import 'fontsource-inter';
 

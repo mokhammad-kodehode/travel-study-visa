@@ -67,7 +67,7 @@ letter-spacing: 1px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .section_two_h2, .section_four_h2, .section_Six_h2 {
