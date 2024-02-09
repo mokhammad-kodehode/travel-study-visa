@@ -43,19 +43,25 @@ export default function Home() {
                   <Image
                   src="/images/Pass.jpg"
                   alt="Pass"
-                  width={500} 
-                  height={350} 
+                  width={600} 
+                  height={400} 
+                  className={styles.section_image}
                 />
                 <div className={styles.section_two_title}>
-                  <h2 className={styles.section_two_h2}>Оформляем визы и загранпаспортов</h2>
+                  <h2 className={styles.section_two_h2}>Оформляем визы и загранпаспорта</h2>
                   <p className={styles.section_two_p}>Каждый день мы совершенствуем процесс получения виз в любую страну.
-                  Создаём выгодные условия сотрудничества для десятков клиентов по всей стране.Сотрудники на протяжении десяти лет трудятся обеспечивая Вам комфортные условия в подготовке документов и получении виз в страны Шенгена по самым низким ценам и с индивидуальным подходом к каждому клиенту.
+                  Создаём выгодные условия сотрудничества для десятков клиентов по всей стране.
+                  Сотрудники на протяжении десяти лет трудятся обеспечивая Вам комфортные условия в подготовке документов и 
+                  получении виз в страны Шенгена по самым низким ценам и с индивидуальным подходом к каждому клиенту.
+                  Убедитесь в этом сами, став нашим партнёром!
                   </p>
-                  <p className={styles.section_two_p}>Убедитесь в этом сами, став нашим партнёром!</p>
+                  <Link href="/services_page/romanian-citizenship">
+                    <button className={styles.section_Six_btn} >Наши услуги</button>
+                  </Link>
                 </div>
           </section>
           <Advantages/>
-          <section className={styles.section_Six}>
+          <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div className={styles.section_Six_title}>
                   <h2 className={styles.section_Six_h2}>Гражданство Румыний</h2>
                   <p className={styles.section_Six_p}>
@@ -69,12 +75,13 @@ export default function Home() {
                 <Image
                   src="/images/Six.jpg" 
                   alt="Romania"
-                  width={500} 
-                  height={350} 
+                  width={600} 
+                  height={400} 
+                  className={styles.section_image}
                 />
           </section>
           <CountryCards/>
-          <section className={styles.section_four}>
+          <section className={`${styles.section_four} ${styles.mobileReverse}`}>
                 <div className={styles.section_four_title}>
                   <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
                   <p className={styles.section_four_p}>Многофункциональный визовый центр — одна из лидирующих компаний на Российском рынке по оказанию сервисно — туристических услуг. С нами работают тысячи клиентов, среди которых частные лица, туристические агентства и компании. Работая с большим потоком визовых документов, мы находимся в курсе всех обновлений, нюансов и правил, установленных консульствами всех стран. Подходим к каждому заявителю с индивидуальным подходом, избавляя от ненужной волокиты, экономя время и деньги наших клиентов. Мы стремимся быть признанным лидером, надежным партнером и просто другом, помогая Вам открывать новые страны и континенты.
@@ -83,8 +90,9 @@ export default function Home() {
                 <Image
                   src="/images/Four.png" 
                   alt="Pass"
-                  width={500} 
-                  height={350} 
+                  width={600} 
+                  height={400}
+                  className={styles.section_image}
                 />
           </section>
           <ServicesList/>

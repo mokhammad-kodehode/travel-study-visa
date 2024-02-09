@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
           <section className={styles.banner}>
-            <div className={styles.banner_container} >
+            <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз</h1>

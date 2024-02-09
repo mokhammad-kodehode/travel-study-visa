@@ -18,8 +18,29 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
   }
+
+  .section_text_content {
+    margin: 0 auto;
+    width: 1200px;
+    padding: 40px 0;
+  }
+
+  .section_text_content_title {
+    font-size: 28px;
+  }
+
+  .section_text_content p {
+   margin-top: 15px;
+  }
+
+  .section_text_content h2 {
+    margin-top: 10px;
+   }
+
+   .section_text_content h3 {
+    margin-top: 10px;
+   }
   
   .banner_title {
    width: 50%;

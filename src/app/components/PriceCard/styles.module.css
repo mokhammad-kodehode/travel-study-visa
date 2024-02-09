@@ -3,17 +3,16 @@
   flex-direction: column;
   align-items: center;
   background-color: #F8F8F8;;
-  height: 650px;
+  height: 100%;
   padding: 40px 0;
 }
 
 .container {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   margin: 0 auto;
-  gap: 2rem;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: white;
   border: 5px;
   margin-top: 20px;
@@ -27,11 +26,11 @@
 
 .tariff {
   text-align: center;
-  font-size: 44px;
+  font-size: 36px;
 }
 
 .tariff_title{
-  font-size: 38px;
+  font-size: 33px;
 }
 
 
@@ -39,14 +38,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
- justify-content: flex-start; 
- gap: .5rem;
+  justify-content: flex-start; 
+  gap: .5rem;
+  height: 380px;
 }
 
+.service_option h2 {
+ font-size: 22px;
+ font-weight: 400;
+}
 
 .right_panel {
   display: flex;
-  flex-direction: column;
  justify-content: center; 
  gap: .5rem;
 
@@ -55,17 +58,18 @@
 .service_option{
   background-color: #F5F7FA;
   display: flex;
-  width: 300px;
-  padding: 0px 0px 5px 14px;
+  padding: 5px 20px 5px 20px;
   flex-direction: column;
   gap: 7px;
+  align-items: center;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .order_btn {
-  height: 55px;
  color: white;
  font-size: 18px;
+ padding: 10px 0;
  font-weight: 600;
   flex-shrink: 0;
   border-radius: 5px;
@@ -89,7 +93,7 @@
 }
 
 .service_item {
- width: 360px;
+ width: 300px;
  margin-top: 10px;
 }
 
@@ -101,9 +105,148 @@
 
 
 .service_option strong {
-  font-size: 22px;
+  font-size: 20px;
 }
+
+.service_option h2 {
+  font-size: 22px;
+  font-weight: 400;
+ }
 
 .option_description {
   font-size: 12px;
+}
+
+
+@media (max-width: 768px) {
+  .tariff_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8F8;;
+    height: 100%;
+    padding: 20px 0 40px 0;
+    
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin: 0 auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 5px;
+    margin-top: 0;
+    padding: 40px 5px;
+    border-radius: 5px;
+    height: 100%;
+  }
+  
+  .dot {
+    color: #BB2BBE;
+  }
+  
+  .tariff {
+    text-align: center;
+    font-size: 36px;
+  }
+  
+  .tariff_title{
+    font-size: 28px;
+    border-bottom: 2px solid #FFBD2A;
+    width: 100%;
+  }
+
+  
+  
+  .left_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: .5rem;
+    height: 100%;
+    padding: 0 10px;
+  }
+  
+  .left_panel p {
+   font-size: 15px;
+   margin-top: 10px;
+  }
+  
+  
+  .right_panel {
+    display: flex;
+   justify-content: center; 
+   gap: .5rem;
+  
+  }
+  
+  .service_option{
+    background-color: #F5F7FA;
+    display: flex;
+    width: 120px;
+    height: 100%;
+    padding: 5px;
+    flex-direction: column;
+    gap: 7px;
+    border-radius: 10px;;
+  }
+  
+  .order_btn {
+   color: white;
+   font-size: 18px;
+   padding: 10px 0;
+   font-weight: 600;
+   width: 100%;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #BB2BBE;
+    background: #BB2BBE;
+    cursor: pointer;
+  }
+  
+  .order_btn:hover {
+    background-color: #2076F5;
+  }
+  
+  .service_list {
+    align-items: self-start;
+    font-size: 16px;
+    display: grid; 
+    grid-template-columns: auto ;/* Использует flexbox для управления элементами списка */
+    flex-wrap: wrap; /* Позволяет элементам оборачиваться на новую строку */
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  .service_item {
+   width: 300px;
+   margin-top: 10px;
+  }
+  
+  
+  .active_service {
+    background-color: #FFBD2A; 
+    box-shadow:-1px 5px 10px rgb(186, 186, 186);
+  }
+  
+  
+  .service_option strong {
+    font-size: 14px;
+  }
+  
+  .service_option h2 {
+    font-size: 18px;
+    font-weight: 400;
+   }
+  
+  .option_description {
+    font-size: 12px;
+  }
+  
+
 }

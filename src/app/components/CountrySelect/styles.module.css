@@ -33,3 +33,42 @@
     color: white;
     cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+    
+.select_container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.select {
+    border-radius: 25px;
+    padding: 5px;
+    width: 290px;
+    height: 50px;
+    text-align: center;
+    color: rgb(99, 99, 99);
+    cursor: pointer;
+    outline: none;
+}
+
+.select .option {
+    text-align: start;
+    background-color: #f8f6f8;
+    border-radius: 20px;
+}
+
+
+.select_btn {
+    border-radius: 25px;
+    padding: 5px;
+    width: 150px;
+    height: 50px;
+    background: #BB2BBE;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+}

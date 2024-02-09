@@ -82,3 +82,90 @@
   background-color: #ffbd2a;
 }
   
+@media (max-width: 768px) {
+  .container {
+    background-color: #f8f6f8;
+    padding: 20px 0;
+    
+  }
+
+  .container_content {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .container_title{
+    text-align: center;
+    font-size: 28px;
+  }
+  
+  .cards {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 370px;
+    height: 300px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative; /* Для позиционирования содержимого */
+    background-size: cover; /* Покрыть всю область карточки */
+    background-position: center; /* Центрировать изображение */
+    color: white; 
+    transition: 0.3s ease, box-shadow 0.3s ease;
+    background-repeat: no-repeat;
+  }
+
+
+  .cardContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный слой для лучшей читаемости текста */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Выравнивание содержимого в нижней части карточки */
+    padding: 20px; /* Отступы внутри содержимого */
+  }
+
+
+  .cardBottom{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button{
+    background-color: #ffbd2a;
+    color: rgb(43, 43, 43);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 15px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffbd2a;
+}
+  
+}

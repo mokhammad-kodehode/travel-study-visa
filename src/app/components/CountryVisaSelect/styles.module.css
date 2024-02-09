@@ -28,3 +28,44 @@
     color: #333;
     font-size: 20px;
 }
+
+@media (max-width:768px) {
+    .countrySelect {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0 10px 0;
+        border-bottom: 2px rgb(219, 219, 219) solid;
+    }
+
+    .section_image{
+       width: 90px;
+       height: 40px;
+    }
+    
+    .countryCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 10px; /* Скругление углов */
+        transition: transform 0.2s ease-in-out; /* Анимация при наведении */
+        overflow: hidden;
+        gap: 0px;
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    .countryCard:hover {
+        transform: translateY(-5px);
+    }
+    
+    .countryCard span {
+        font-weight: bold;
+        color: #333;
+        font-size: 14px;
+    }
+    
+}

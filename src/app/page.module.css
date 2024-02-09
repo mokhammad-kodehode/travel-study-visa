@@ -20,15 +20,19 @@
 }
 
 .order_btn {
-    border-radius: 25px;
-    padding: 15px;
+    border-radius: 5px;
+    padding: 13px;
     background: #BB2BBE;
     border: none;
     color: white;
     cursor: pointer;
     margin-top: 30px;
-    width: 180px;
     font-size: 16px;
+    width: 160px;
+}
+
+.order_btn:hover {
+  background-color: #2076F5;
 }
 
 .banner_title_text {
@@ -38,7 +42,7 @@
 }
 
 .title_text {
-font-size: 62px;
+font-size: 58px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -48,7 +52,7 @@ letter-spacing: 1px;
 .title_text_desc {
   width: 702px;
   flex-shrink: 0;
-  font-size: 32px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -59,19 +63,18 @@ letter-spacing: 1px;
   margin: 0 auto;
   padding: 100px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2rem;
 }
 
 .section_two_title, .section_four_title, .section_Six_title {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  justify-content: flex-start;
+  justify-content:center;
 }
 
 .section_two_h2, .section_four_h2, .section_Six_h2 {
-  font-size: 36px;
+  font-size: 28px;
   white-space: nowrap
 }
 
@@ -86,13 +89,148 @@ letter-spacing: 1px;
 
 
 .section_Six_btn {
-  border-radius: 25px;
-  padding: 5px;
-  width: 150px;
-  height: 50px;
+  border-radius: 5px;
+  padding: 15px 20px;
   background: #BB2BBE;
   border: none;
   color: white;
   cursor: pointer;
   margin-top: 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.section_Six_btn:hover {
+  background-color: #2076F5;
+}
+
+@media (max-width: 768px) {
+
+  .banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/images/Banner.jpg');
+      width: 100%;
+      height: 560px;
+      margin: 0 auto;
+      background-size: cover; /* Растягивает фон на всю площадь .banner */
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      
+  }
+  
+  .banner_title {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .order_btn {
+      border-radius: 5px;
+      padding: 13px;
+      background: #BB2BBE;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-top: 30px;
+      font-size: 16px;
+      width: 160px;
+      align-self: center;
+  }
+  
+  .order_btn:hover {
+    background-color: #2076F5;
+  }
+  
+  .banner_title_text {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  .title_text {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  }
+  
+  .title_text_desc {
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+  }
+  
+  .section_image{
+    width: 100%; /* 100% ширины родительского контейнера */
+    height: auto;
+  }
+  
+  .section_two, .section_four, .section_Six {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0rem;
+  }
+  
+  .mobileReverse {
+    display: flex;
+    flex-direction: column-reverse; /* Переключить порядок элементов в мобильной версии */
+  }
+
+  .section_two_title, .section_four_title, .section_Six_title {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 0px 10px;
+  }
+
+
+  
+  .section_two_h2, .section_four_h2, .section_Six_h2 {
+    font-size: 28px;
+    text-align: flex-start;
+    white-space: pre-wrap;
+    margin-top: 10px;
+  }
+  
+  .section_two_p , .section_four_p, .section_Six_p {
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: light;
+    margin-top: 20px;
+  }
+  
+  
+  .section_Six_btn {
+    border-radius: 5px;
+    padding: 15px 20px;
+    background: #BB2BBE;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .section_Six_btn:hover {
+    background-color: #2076F5;
+  }
 }
