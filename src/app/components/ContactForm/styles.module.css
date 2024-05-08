@@ -106,7 +106,7 @@
   @media (max-width: 768px) {
     .modalOverlay {
       position: fixed;
-      top: -200px;
+      top: 0px;
       left: 0;
       right: 0;
       bottom: 0;
