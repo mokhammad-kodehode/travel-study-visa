@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Logo from '../logo/logo';
 import useScrollLock from '../hooks/useScrollLock';
 
+
 const Navbar: React.FC = () => {
   const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
   const [isVisaMenuOpen, setVisaMenuOpen] = useState(false);

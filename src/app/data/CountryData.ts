@@ -258,7 +258,7 @@ export type CountryData = {
         name_two: 'США',
         flagUrl: '/images/Flags/usa.svg',
         backgroundImgUrl: '/images/countries/USA.jpg',
-        pageUrl: '/countries/usa'
+        pageUrl: '/visa_page/america/usa'
       },
       { 
         nameof: "canada",
@@ -266,7 +266,7 @@ export type CountryData = {
         name_two: 'Канаду',
         flagUrl: '/images/Flags/canada.svg',
         backgroundImgUrl: '/images/countries/Canada.jpg',
-        pageUrl: '/countries/canada'
+        pageUrl: '/visa_page/america/canada'
       },
     ];
     

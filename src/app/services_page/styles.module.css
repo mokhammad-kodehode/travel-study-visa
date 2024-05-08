@@ -53,3 +53,72 @@
       font-weight: 300;
     }
   
+    @media (max-width: 768px) {
+
+      .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/images/Banner.jpg');
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          background-size: cover; /* Растягивает фон на всю площадь .banner */
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          padding: 16px 0;
+          
+      }
+
+      .banner_container {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    
+      }
+      
+      
+      .banner_title {
+        width: 100%;
+       }
+     
+       .banner_title p {
+         width: 100%;
+         margin-top: 30px;
+         font-size: 22px;
+         text-align: center;
+       }
+     
+       
+       .banner_title_text {
+         display: flex;
+         flex-direction: column;
+         gap: .5rem;
+         padding: 5px;
+       }
+       
+     
+       .title_text {
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1px;
+        margin-bottom: 0px;
+        text-align: center;
+         }
+         
+         
+         .title_text_desc {
+           font-size: 19px;
+           line-height: 30px;
+           font-weight: 300;
+           text-align: center;
+         }
+    }
+  
