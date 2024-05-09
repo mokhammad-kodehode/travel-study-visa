@@ -1,3 +1,7 @@
+.main {
+  background-color:#f8f6f8 ;
+}
+
 .banner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('/images/Banner_Visa.jpg');
       width: 100%;
@@ -11,6 +15,32 @@
       color: white;
       
   }
+
+  .breadcrumbs_wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f6f8;
+  }
+
+  .breadcrumbs {
+    font-size: 16px;
+    display: flex;
+    gap: .5rem;
+    margin-top: 10px;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--primary-btn);
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #585858;
+}
 
   .banner_container {
     margin: 0 auto;
@@ -82,7 +112,20 @@
     
       }
       
-      
+      .breadcrumbs_wrapper {
+        width: 100%;
+        margin-left: 10px;
+        background-color: #f8f6f8;
+      }
+    
+      .breadcrumbs {
+        font-size: 16px;
+        display: flex;
+        gap: .5rem;
+        margin-top: 10px;
+    }
+
+    
       .banner_title {
         width: 100%;
        }

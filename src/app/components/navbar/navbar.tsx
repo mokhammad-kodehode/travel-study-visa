@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <Link href="/" className={styles.nav_item}>Страхование</Link>
+            <Link href="/vnj_page" className={styles.nav_item}>ВНЖ</Link>
           </li>
           <li className={styles.nav_item}>
             <Link href="/" className={styles.nav_item}>Контакты</Link>

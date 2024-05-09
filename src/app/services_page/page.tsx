@@ -19,6 +19,12 @@ export default function Home() {
                 <MyForm/>
             </div>
           </section >
+          <div className={styles.breadcrumbs_wrapper}>
+            <div className={styles.breadcrumbs}>
+              <a href="/">Главная</a> &gt;
+              <span>Наши услуги</span>
+            </div>
+          </div>
         <ServicesList/>
     </main>
   )
