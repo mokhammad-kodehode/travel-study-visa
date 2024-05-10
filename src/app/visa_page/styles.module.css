@@ -105,11 +105,6 @@
   
     }
 
-    .mobileReverse {
-      display: flex;
-      flex-direction: column-reverse; /* Переключить порядок элементов в мобильной версии */
-    }
-    
     .banner_title {
      width: 100%;
      margin-top: 15px;
