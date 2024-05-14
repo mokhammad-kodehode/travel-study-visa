@@ -13,7 +13,6 @@ const CountryPage = () => {
   const bannerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('${country?.backgroundImgUrl}')`,
     width: '100%',
-    height: '630px',
     margin: '0 auto',
     backgroundSize: 'cover',
     backgroundPosition: 'center',

@@ -116,6 +116,9 @@ const Navbar: React.FC = () => {
             <Link href="/vnj_page" className={styles.nav_item}>ВНЖ</Link>
           </li>
           <li className={styles.nav_item}>
+            <Link href="/grazhdanstvo" className={styles.nav_item}>Гражданство</Link>
+          </li>
+          <li className={styles.nav_item}>
             <Link href="/" className={styles.nav_item}>Контакты</Link>
           </li>
         </ul>

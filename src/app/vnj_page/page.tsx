@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CountryCards from '../components/PopularCountries/PopularCountries'
 
-export default function Home() {
+export default function VNJ_Page() {
 
   return (
     <main className={styles.main}>
@@ -43,7 +43,7 @@ export default function Home() {
                         <span>Болгария</span>
                     </div>
                     </Link>
-                    <Link href="/" >
+                    <Link href="vnj_page/Spain" >
                         <div className={styles.countryItem}>
                             <Image className={styles.flag} src="/images/Flags/spain.svg" alt="Флаг Испании" width={104} height={65} />
                             <span>Испания</span>
