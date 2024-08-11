@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import MyForm from '../components/contactFormTwo/ContactFormTwo';
 import 'fontsource-inter';
 
-export default function Home() {
+export default function Services() {
   return (
     <main className={styles.main}>
             <section className={styles.banner}>
