@@ -31,7 +31,7 @@
     width: 350px;
   }
 
-  .serviceCard h3 {
+  .Cardtitle {
     font-size: 20px;
     text-decoration: underline;
     text-underline-offset: 0.5em;
@@ -110,7 +110,7 @@
       width: 350px;
     }
   
-    .serviceCard h3 {
+    .title{
       font-size: 20px;
       text-decoration: underline;
       text-underline-offset: 0.5em;

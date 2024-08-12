@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 const Navbar: React.FC = () => {
@@ -14,16 +14,25 @@ const Navbar: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // Состояние для отслеживания прокрутки
 
-  useScrollLock(isMobileNavOpen);
+  
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
+  
+    if (!isMobileNavOpen) {
+      // Отключаем прокрутку
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Включаем прокрутку
+      document.body.style.overflow = '';
+    }
   };
-
+  
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
+    // Включаем прокрутку
+    document.body.style.overflow = '';
   };
-
 
   const toggleServicesMenu = () => {
     setServicesMenuOpen(!isServicesMenuOpen);
@@ -55,9 +64,9 @@ const Navbar: React.FC = () => {
     <header>
       <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
         <div className={styles.mobile_menu_icon} onClick={toggleMobileNav}>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''}`}></div>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''}`}></div>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''}`}></div>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar1 : ''}`}></div>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
         </div>
         <div>LOGO</div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
@@ -82,10 +91,10 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Оформление мультивиз</Link>
+                  <Link onClick={closeMobileNav} href="/service2">Бронирование авиа и ж/д билетов</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Гражданство Румынии</Link>
+                  <Link onClick={closeMobileNav} href="/service2">Бронирование отелей</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/service2">Оформление загранпаспорта</Link>
@@ -139,8 +148,8 @@ const Navbar: React.FC = () => {
             <Link onClick={closeMobileNav} href="/" className={styles.nav_item}>Контакты</Link>
           </li>
         </ul>
-        <div>
-             <Link
+        <div className={styles.adress_tel_wrapper}>
+             <Link 
               className={styles.adress}
               target="_blank" 
               rel="noopener noreferrer"
@@ -148,11 +157,12 @@ const Navbar: React.FC = () => {
               > 
               <FontAwesomeIcon className={styles.adress_icon} icon={faMapMarkerAlt}  />
               г.Москва, Пресненская набережная, д.12</Link>
+              <button className={styles.tel}>
+                <Link href="tel:+79005554277" className={styles.tel_link}>
+                    <FontAwesomeIcon className={styles.tel_icon} icon={faPhone} style={{ marginRight: '8px' }} />
+                </Link>
+         </button>
         </div>
-        {/* <div className={styles.tel}>
-             <FontAwesomeIcon icon={faPhone} style={{ marginRight: '8px' }} />
-            ПОЗВОНИТЬ
-         </div> */}
       </nav>
     </header>
   );

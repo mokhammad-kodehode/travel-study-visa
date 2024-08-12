@@ -9,13 +9,13 @@ const services = [
     link: '/services_page/zagran_passport'
   },
   {
-    title: 'Оформление шенгенских визы',
-    description: 'Получение шенгенской визы открывает двери в 26 стран Европы, предоставляя свободу путешествовать без границ.',
+    title: 'Бронирование авиа и ж\д билетов',
+    description: 'Мы поможем вам и подберем наиболее выгодные варианты!',
     link: '/services/multivisa'
   },
   {
-    title: 'Гражданство Румынии',
-    description: 'В нашем визовом центре вы можете воспользоваться специализированной услугой по оформлению гражданства Румынии.',
+    title: 'Бронирование отелей',
+    description: 'Подберем идеальный отель для отдыха или рабочей поездки.',
     link: '/services_page/romanian-citizenship'
   },
   {
@@ -44,7 +44,9 @@ const ServicesList: React.FC = () => {
             {services.map((service, index) => (
             <div key={index} className={styles.serviceCard}>
                 <div className={styles.serviceCard_title}>
-                    <h3>{service.title}</h3>
+                <Link className={styles.Cardtitle} href={service.link} >
+                    {service.title}
+                </Link>
                     <p>{service.description}</p>
                 </div>
                 <Link href={service.link} legacyBehavior>
