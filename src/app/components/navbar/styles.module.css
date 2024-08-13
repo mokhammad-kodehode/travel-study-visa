@@ -286,10 +286,12 @@
       align-items: center;
       gap: 1rem;
       height: 45px;
+
       width: 100%;
       margin: 0 auto;
       padding: 0 10px;
       z-index: 1000;
+      transition: ease-in .3s;
     }
     
     .scrolled_items {
