@@ -31,6 +31,12 @@ export default function Home() {
                 <MyForm/>
             </div>
           </section >
+          <div className={styles.breadcrumbs_wrapper}>
+            <div className={styles.breadcrumbs}>
+              <a href="/">Главная</a> &gt;
+              <span>Оформление визы</span>
+            </div>
+          </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
                <h2 className={styles.selectCountryTitle}>Выберите направление</h2>

@@ -30,7 +30,7 @@ const ZagranPage = () => {
         <div className={styles.breadcrumbs_wrapper}>
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
-              <a className={styles.breadcrumbs} href="/services_page">Наши услуги</a> &gt;
+              <a  href="/services_page">Наши услуги</a> &gt;
               <span>Оформление загранпаспорта</span>
             </div>
         </div>

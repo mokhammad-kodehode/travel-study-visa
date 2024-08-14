@@ -7,6 +7,7 @@ import 'fontsource-inter';
 import MyForm from '@/app/components/contactFormTwo/ContactFormTwo';
 import CountryVisaSelect from '@/app/components/CountryVisaSelect/page'
 import CountryCards from '@/app/components/PopularCountries/PopularCountries'
+import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import { AmericaCountries } from '@/app/data/CountryData';
 
 
@@ -33,6 +34,13 @@ export default function America() {
                 <MyForm/>
             </div>
           </section >
+          <div className={styles.breadcrumbs_wrapper}>
+            <div className={styles.breadcrumbs}>
+              <a href="/">Главная</a> &gt;
+              <a href="/visa_page">Оформление визы</a> &gt;
+              <span>Северная Америка</span>
+            </div>
+          </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
                <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
@@ -50,6 +58,7 @@ export default function America() {
             </div>
           </section>
           <CountryCards/>
+          <AdvantagesTwo/>
     </main>
   )
 }

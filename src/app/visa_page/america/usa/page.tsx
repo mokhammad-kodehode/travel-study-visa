@@ -3,7 +3,7 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '@/app/components/contactFormTwo/ContactFormTwo';
+import ModalForm from '@/app/components/ContactForm/ContactFor';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import { AmericaCountries } from '@/app/data/CountryData';
 import { CountryData } from '@/app/data/CountryData';
@@ -11,6 +11,11 @@ import { useState, useEffect } from 'react';
 
 
 export default function USA() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
+
 
     const [country, setCountry] = useState<CountryData | null>(null);
 
@@ -60,10 +65,21 @@ export default function USA() {
                         для граждан РФ регламентируется законодательно и определяется
                         международными соглашениями.
                      </p>
+                     <button onClick={handleOpenModal} className={styles.order_btn} >Заказать</button>
+                        {isModalOpen && (
+                          <ModalForm closeModal={handleCloseModal} />
+                        )}
                 </div>
-                <MyForm/>
             </div>
           </section >
+                    <div className={styles.breadcrumbs_wrapper}>
+            <div className={styles.breadcrumbs}>
+              <a href="/">Главная</a> &gt;
+              <a href="/visa_page">Оформление визы</a> &gt;
+              <a href="/america">Северная Америка</a> &gt;
+              <span>США</span>
+            </div>
+          </div>
           <section className={styles.section_two}>
           </section>
           <CountryCards/>

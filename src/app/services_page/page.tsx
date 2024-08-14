@@ -1,7 +1,7 @@
 "use client"
 import ServicesList from '../components/OurServices/OurServices';
 import styles from './styles.module.css'
-import MyForm from '../components/contactFormTwo/ContactFormTwo';
+import MyFormServices from '../components/ContactFormServices/ContactFour';
 import 'fontsource-inter';
 
 export default function Services() {
@@ -16,7 +16,7 @@ export default function Services() {
                         <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
                     </div>
                 </div>
-                <MyForm/>
+                <MyFormServices/>
             </div>
           </section >
           <div className={styles.breadcrumbs_wrapper}>
