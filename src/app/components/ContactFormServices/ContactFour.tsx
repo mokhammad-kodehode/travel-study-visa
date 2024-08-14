@@ -43,7 +43,7 @@ const MyFormServices: React.FC<FormProps> = () => {
         />
       </div>
       <div>
-         <label htmlFor="services" className={styles.label}>В какую страну хотите ВНЖ?</label>
+         <label htmlFor="services" className={styles.label}>Наши Услуги</label>
             <select
              id="services"
              className={styles.selectField}
