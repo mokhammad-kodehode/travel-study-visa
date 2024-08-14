@@ -236,7 +236,7 @@
   .bar {
     width: 45px;
     height: 3px;
-    background-color: #000000;
+    background-color: #ffffff;
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Для плавного изменения при нажатии */
   }
@@ -244,7 +244,7 @@
   /* Стиль для первой полоски при открытом меню */
   .bar1 {
     transform: translateY(8px) rotate(45deg); /* Поворот первой полоски */
-    background-color: #BB2BBE;
+    background-color: #ffffff;
   }
   
   /* Скрытие второй полоски при открытом меню */
@@ -255,12 +255,12 @@
   /* Стиль для третьей полоски при открытом меню */
   .bar3 {
     transform: translateY(-8px) rotate(-45deg); /* Поворот третьей полоски */
-    background-color: #BB2BBE;
+    background-color: #ffffff;
   }
   
   /* Дополнительный стиль для всех полосок, когда меню открыто */
   .openedBar {
-    background-color: #BB2BBE;
+    background-color: #ffffff;
   }
 
 
@@ -268,7 +268,7 @@
   @media (max-width: 820px) {
 
     .navbar {
-      background-color: white;
+      background-color: #BB2BBE;
       display: flex;
       justify-content:space-between;
       align-items: center;
@@ -286,7 +286,6 @@
       align-items: center;
       gap: 1rem;
       height: 45px;
-
       width: 100%;
       margin: 0 auto;
       padding: 0 10px;
@@ -317,7 +316,7 @@
       justify-content: flex-start;
       flex-direction: column;
       position: fixed;
-      background-color: white;
+      background-color: #821884;
       top: 100%;
       left: 0%;
       width: 100%;
@@ -340,7 +339,7 @@
     .nav_item {
       white-space: nowrap;
       position: relative;
-      color: rgb(49, 49, 49);
+      color: rgb(255, 255, 255);
       font-size: 18px;
       font-weight: 600;
     }
@@ -381,9 +380,8 @@
       align-items: flex-start;
       list-style-type: none;
       border-radius: 0;
-      background-color: #ffffff;
       animation: fadeIn 0.3s ease;
-      width: 290px;
+      width: 100%;
       margin-top: 10px;
     }
   
