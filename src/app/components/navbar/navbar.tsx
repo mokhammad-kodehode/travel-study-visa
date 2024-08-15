@@ -20,11 +20,8 @@ const Navbar: React.FC = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   
     if (!isMobileNavOpen) {
-      // Отключаем прокрутку
-      document.body.style.overflow = 'hidden';
     } else {
-      // Включаем прокрутку
-      document.body.style.overflow = '';
+
     }
   };
   
@@ -36,13 +33,11 @@ const Navbar: React.FC = () => {
 
   const toggleServicesMenu = () => {
     setServicesMenuOpen(!isServicesMenuOpen);
-    setVisaMenuOpen(false);
     console.log("isServicesMenuOpen:", !isServicesMenuOpen); // Проверка
   };
 
   const toggleVisaMenu = () => {
     setVisaMenuOpen(!isVisaMenuOpen);
-    setServicesMenuOpen(false);
   };
 
   useEffect(() => {
@@ -73,7 +68,7 @@ const Navbar: React.FC = () => {
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/" >О компании</Link>
           </li>
-          <li className={styles.nav_item} onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu}>
+          <li className={styles.nav_item} >
             <div className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
@@ -108,8 +103,7 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-          <li onMouseEnter={toggleVisaMenu}
-              onMouseLeave={toggleVisaMenu}
+          <li 
               className={styles.nav_item} >
             <div className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/visa_page">

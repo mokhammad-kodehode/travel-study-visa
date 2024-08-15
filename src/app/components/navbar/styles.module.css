@@ -268,7 +268,7 @@
   @media (max-width: 820px) {
 
     .navbar {
-      background-color: #BB2BBE;
+      background-color: #821884;
       display: flex;
       justify-content:space-between;
       align-items: center;
@@ -290,7 +290,7 @@
       margin: 0 auto;
       padding: 0 10px;
       z-index: 1000;
-      transition: ease-in .3s;
+      transition: ease-in .1s;
     }
     
     .scrolled_items {
@@ -316,7 +316,8 @@
       justify-content: flex-start;
       flex-direction: column;
       position: fixed;
-      background-color: #821884;
+      background: linear-gradient(to bottom, #821884, #4e0f5b, #2c0b32, #000000);
+
       top: 100%;
       left: 0%;
       width: 100%;
@@ -332,9 +333,7 @@
       opacity: 1;
     }
   
-    .nav_item:hover {
-      color: #BB2BBE;
-    }
+  
   
     .nav_item {
       white-space: nowrap;
@@ -374,7 +373,7 @@
       display: none;
       margin-top: 1px;
       padding: 5px 25px 15px 10px;
-      background-color: rgb(239, 239, 239);
+      background-color: transparent;
       box-shadow:  none;
       z-index: 1000;
       align-items: flex-start;
@@ -398,12 +397,12 @@
     .dropdown_item {
       padding: 5px 20px 5px 5px;
       font-weight: 500;
-      color: black;
+      color: rgb(255, 255, 255);
       transition: color 0.3s ease, font-weight 0.3s ease; 
     }
   
     .dropdown_item :hover {
-      color: #BB2BBE;
+      color: white;
       font-weight: 600;
     }
     
@@ -429,5 +428,22 @@
     .tel_icon {
       font-size: 32px;
       margin-left: 8px;
+    }
+
+    .nav_item::after {
+      content: '';
+      position: absolute;
+      left: 50%; 
+      bottom: 0px; /* Расположить полосу немного ниже текста */
+      width: 0%;
+      height: 1px;
+      background-color: #ffbd2a;
+      transition: width 0.3s ease; /* Плавное увеличение ширины полосы */
+      transform: translateX(-50%); /* Сместить центр полосы */
+    }
+    
+    .nav_item:hover::after {
+      width: 0%; /* Полоса увеличивается до полной ширины при наведении */
+      left: 50%; 
     }
   }
