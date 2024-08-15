@@ -148,6 +148,7 @@
 
   .rotate_up {
     transform: rotate(180deg);
+    color: #FFBD2A;
   }
   
   /* Стили для элемента с подменю */

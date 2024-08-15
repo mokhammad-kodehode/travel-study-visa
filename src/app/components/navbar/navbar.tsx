@@ -33,11 +33,13 @@ const Navbar: React.FC = () => {
 
   const toggleServicesMenu = () => {
     setServicesMenuOpen(!isServicesMenuOpen);
+    setVisaMenuOpen(false)
     console.log("isServicesMenuOpen:", !isServicesMenuOpen); // Проверка
   };
 
   const toggleVisaMenu = () => {
     setVisaMenuOpen(!isVisaMenuOpen);
+    setServicesMenuOpen(false)
   };
 
   useEffect(() => {
