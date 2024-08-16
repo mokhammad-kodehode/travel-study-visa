@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
         </div>
-        <div>LOGO</div>
+        <div className={styles.logo}>LOGO</div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/" >О компании</Link>

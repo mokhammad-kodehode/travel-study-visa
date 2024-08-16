@@ -30,7 +30,7 @@ export default function Home() {
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
                 <h3 className={styles.title_text_desc}>Гражданство Румынии</h3>
                </div>
-               <button onClick={handleOpenModal} className={styles.order_btn} >Заказать</button>
+               <button onClick={handleOpenModal} className={styles.order_btn} > ЗАКАЗАТЬ</button>
                 {isModalOpen && (
                   <ModalForm closeModal={handleCloseModal} />
                 )}
@@ -63,7 +63,7 @@ export default function Home() {
           <Advantages/>
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div className={styles.section_Six_title}>
-                  <h2 className={styles.section_Six_h2}>Гражданство Румыний</h2>
+                  <h2 className={styles.section_Six_h2}>Гражданство Румынии</h2>
                   <p className={styles.section_Six_p}>
                   Мы предоставляем полный комплекс услуг, начиная с первоначальной консультации и заканчивая подачей документов на получение гражданства. Наши специалисты обеспечат профессиональную поддержку на каждом этапе процесса и помогут ускорить процедуру оформления необходимых документов.
                   </p>

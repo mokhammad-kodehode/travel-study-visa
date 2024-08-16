@@ -14,11 +14,8 @@
   z-index: 1000;
 }
 
-
-
-
   .scrolled {
-    background-color: #ffbd2a;
+    background-color: var(--dark-blue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,8 +37,15 @@
     gap: 2rem;
     list-style-type: none;
     position: relative;
-    color: rgb(0, 0, 0);
+    color: white;
   }
+
+  .logo {
+   font-size: 18px;
+   color: white;
+
+  }
+
 
   .items {
     display: flex;
@@ -59,13 +63,14 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 14px;
+    font-size: 11px;
     gap: .5rem;
     position: relative;
+    font-weight: 300;
   }
   
   .adress_icon {
-    color: white;
+    color: var(--orange);
     font-size: 18px;
 
   }
@@ -74,7 +79,7 @@
     content: '';
     position: absolute;
     left: 50%; 
-    bottom: -5px; /* Расположить полосу немного ниже текста */
+    bottom: 3px; /* Расположить полосу немного ниже текста */
     width: 0%;
     height: 1px;
     background-color: #ffbd2a;
@@ -161,21 +166,19 @@
   /* Стили для выпадающего меню */
   .dropdown {
     position: absolute;
-    top: 86%;
+    top: 100%;
     left: 0;
     display: none;
-    margin-top: 1px;
+    margin-top: 17px;
     padding: 15px 25px 15px 10px;
-    background-color: rgb(239, 239, 239);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     z-index: 1000;
     align-items: flex-start;
     list-style-type: none;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: var(--dark-blue);
     animation: fadeIn 0.3s ease;
-    width: 290px;
-    margin-top: 2px;
+    width: 320px;
   }
 
   .dropdown.show {
@@ -196,12 +199,12 @@
   .dropdown_item {
     padding: 5px 20px 5px 5px;
     font-weight: 500;
-    color: black;
+    color: rgb(245, 244, 244);
     transition: color 0.3s ease, font-weight 0.3s ease; 
   }
 
   .dropdown_item :hover {
-    color: #BB2BBE;
+    color: var(--orange);
 
   }
   
@@ -269,7 +272,7 @@
   @media (max-width: 820px) {
 
     .navbar {
-      background-color: #821884;
+      background-color: var(--dark-blue);
       display: flex;
       justify-content:space-between;
       align-items: center;
@@ -281,7 +284,7 @@
     }
   
     .scrolled {
-      background-color: #FFBD2A;
+      background-color: var(--dark-blue);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -317,8 +320,7 @@
       justify-content: flex-start;
       flex-direction: column;
       position: fixed;
-      background: linear-gradient(to bottom, #821884, #4e0f5b, #2c0b32, #000000);
-
+      background-color: var(--dark-blue);
       top: 100%;
       left: 0%;
       width: 100%;

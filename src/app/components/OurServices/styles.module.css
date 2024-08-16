@@ -5,7 +5,7 @@
 
 .container_title {
     text-align: center;
-    font-size: 44px;
+    font-size: 33px;
 }
 
 .servicesGrid {
@@ -41,13 +41,16 @@
 
   .serviceCard p {
     width: 290px;
-    height: 100px;
+    height: 1005;
     font-weight: 300;
+    align-items: center;
+    text-align: center;
   }
 
   .serviceCard_title {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.3rem;
   }
   
@@ -75,7 +78,7 @@
   }
 
 
-  @media   (max-width: 768px) {
+  @media   (max-width: 820px) {
   
     .container {
       background-color: #f8f6f8;

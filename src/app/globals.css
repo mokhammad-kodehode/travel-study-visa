@@ -1,8 +1,12 @@
 :root {
   --max-width: 1100px;
   --orange: #FFBD2A;
-  --primary-btn: #BB2BBE;
+  --primary-btn: #FFA500;
   --title-text: 4rem;
+  --dark-blue : #003366;
+  --text-color : #333333;
+  --text-title : #16396c;
+  --light-blue: #2076F5;
 }
 
 

@@ -39,7 +39,7 @@
   }
   
   .card p {
-    color: #666;
+    color: var(--text-color);
     font-size: 14px;
   }
 

@@ -99,8 +99,8 @@ const CountryCards: React.FC = () => {
                   <div className={styles.cardContent}> 
                   {/* Используйте cardContent для содержимого поверх фона */}
                   <div className={styles.cardHeader}>
-                    <Link href={countrycard.continentUrl}> <span>{countrycard.continent}</span> </Link>
-                    <Link href={countrycard.pageUrl}><h3>{countrycard.country}</h3></Link>
+                    <Link className={styles.country_link} href={countrycard.continentUrl}> <span>{countrycard.continent}</span> </Link>
+                    <Link  href={countrycard.pageUrl}><h3 className={styles.country_link_two}>{countrycard.country}</h3></Link>
                   </div>
                   <div className={styles.cardBottom}>
                     <p>Цена от <strong>{countrycard.price} руб.</strong></p>
