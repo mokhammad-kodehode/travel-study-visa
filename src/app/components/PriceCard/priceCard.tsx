@@ -98,7 +98,7 @@ const TariffSelectionPage: React.FC = () => {
                 <p>Выберите тариф для отображения информации</p>
               )}
             </div>
-            <button onClick={handleOpenModal} className={styles.order_btn} > Заказать</button>
+            <button onClick={handleOpenModal} className={styles.order_btn} > ЗАКАЗАТЬ</button>
               {isModalOpen && (
                 <ModalForm closeModal={handleCloseModal} />
               )}

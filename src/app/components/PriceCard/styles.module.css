@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+
 .tariff_section {
   display: flex;
   flex-direction: column;
@@ -73,12 +76,13 @@
   color: rgb(2, 2, 2);
   font-size: 18px;
   padding: 10px 0;
-  font-weight: 500;
+  font-weight: 600;
   flex-shrink: 0;
   border-radius: 5px;
   border: none;
   background: var(--primary-btn);
   cursor: pointer;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .order_btn:hover {
@@ -156,14 +160,15 @@
   
   .tariff {
     text-align: center;
-    font-size: 36px;
+    font-size: 33px;
     padding: 10px;
   }
   
   .tariff_title{
     font-size: 28px;
-    border-bottom: 2px solid #FFBD2A;
+    border-bottom: 2px solid var(--orange);
     width: 100%;
+    margin-top: 5px;
   }
 
 
@@ -204,11 +209,11 @@
 
    
   .order_btn {
-   color: rgb(0, 0, 0);
-   font-size: 18px;
-   padding: 10px 0;
-   font-weight: 500;
-   width: 100%;
+    color: rgb(37, 37, 37);
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 600;
+    width: 100%;
     flex-shrink: 0;
     border-radius: 5px;
     border: none;

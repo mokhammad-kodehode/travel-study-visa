@@ -24,7 +24,7 @@
     padding: 13px;
     background: var(--primary-btn);
     border: none;
-    color: rgb(8, 8, 8);
+    color: rgb(37, 37, 37);
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
@@ -51,6 +51,7 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: 1px;
+color: var(--orange);
 }
 
 .title_text_desc {
@@ -140,7 +141,7 @@ letter-spacing: 1px;
       padding: 13px;
       background: var(--primary-btn);
       border: none;
-      color: rgb(0, 0, 0);
+      color: rgb(37, 37, 37);
       cursor: pointer;
       margin-top: 30px;
       font-size: 18px;
@@ -149,9 +150,7 @@ letter-spacing: 1px;
       align-self: center;
   }
   
-  .order_btn:hover {
-    background-color: #2076F5;
-  }
+
   
   .banner_title_text {
     display: flex;
@@ -198,7 +197,6 @@ letter-spacing: 1px;
   }
 
   .section_two_title, .section_four_title, .section_Six_title {
-    
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -227,13 +225,14 @@ letter-spacing: 1px;
   .section_Six_btn {
     border-radius: 5px;
     padding: 15px 20px;
-    background: #BB2BBE;
+    background: var(--primary-btn);
     border: none;
-    color: white;
+    color: rgb(37, 37, 37);
     cursor: pointer;
     margin-top: 20px;
     font-size: 16px;
     font-weight: 600;
+    font-family: 'PT Sans Narrow', sans-serif;
   }
   
   .section_Six_btn:hover {
