@@ -191,24 +191,8 @@
         margin-top: 0px;
         text-align: center;
        }
-  
-  
-       
-     
-       .banner_title p {
-         width: 100%;
-         margin-top: 15px;
-         font-size: 18px;
-         margin-bottom: 15px;
-       }
-    
-      .banner_title p {
-        width: 100%;
-        margin-top: 30px;
-        font-size: 22px;
-      }
-      
-  
+
+
        
       .breadcrumbs_wrapper {
           width: 100%;
@@ -320,7 +304,7 @@
       
       .title_text_desc {
         font-size: 19px;
-        width: 400px;
+        width: 382px;
         align-items: center;
         line-height: 30px;
         font-weight: 300;

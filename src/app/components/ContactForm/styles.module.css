@@ -120,7 +120,7 @@
     .modal {
       position: relative;
       width: 98%;
-      height: 80%;
+      height: 640px;
       background: #fff;
       padding: 40px 20px;
       border-radius: 8px;

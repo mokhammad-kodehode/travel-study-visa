@@ -200,20 +200,6 @@
   
        
      
-       .banner_title p {
-         width: 100%;
-         margin-top: 15px;
-         font-size: 18px;
-         margin-bottom: 15px;
-       }
-    
-      .banner_title p {
-        width: 100%;
-        margin-top: 30px;
-        font-size: 22px;
-      }
-      
-  
        
       .breadcrumbs_wrapper {
           width: 100%;
@@ -303,19 +289,7 @@
        }
       
      
-       .order_btn {
-        border-radius: 5px;
-        padding: 13px;
-        background: #BB2BBE;
-        border: none;
-        color: white;
-        cursor: pointer;
-        margin-top: 30px;
-        font-size: 16px;
-        width: 160px;
-        align-self: center;
-    }
-    
+
     .order_btn:hover {
       background-color: #2076F5;
     }
