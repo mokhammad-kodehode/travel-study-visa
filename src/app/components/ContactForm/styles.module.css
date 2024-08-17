@@ -94,7 +94,7 @@
      flex-shrink: 0;
      border-radius: 5px;
      border: none;
-     background: #2076F5;
+     background: var(--light-blue);
      cursor: pointer;
      margin-top: 15px;
   }
@@ -156,6 +156,8 @@
     .form p {
       font-size: 14px;
       color: #727272;
+      margin: 0;
+      text-align: start;
     }
   
     .form label {
@@ -211,13 +213,11 @@
       font-weight: 600;
        flex-shrink: 0;
        border-radius: 5px;
-       border: 1px solid #BB2BBE;
-       background: #BB2BBE;
+       border: none;
+       background: var(--light-blue);
        cursor: pointer;
        margin-top: 15px;
     }
     
-    .submitButton:hover {
-      background-color: #2076F5;
-    }
+
   }

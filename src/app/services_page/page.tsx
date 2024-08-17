@@ -2,6 +2,7 @@
 import ServicesList from '../components/OurServices/OurServices';
 import styles from './styles.module.css'
 import MyFormServices from '../components/ContactFormServices/ContactFour';
+import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import 'fontsource-inter';
 
 export default function Services() {
@@ -26,6 +27,7 @@ export default function Services() {
             </div>
           </div>
         <ServicesList/>
+        <AdvantagesTwo/>
     </main>
   )
 }

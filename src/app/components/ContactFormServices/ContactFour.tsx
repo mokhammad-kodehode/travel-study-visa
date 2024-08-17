@@ -54,7 +54,7 @@ const MyFormServices: React.FC<FormProps> = () => {
                         <option value="Zagran">Оформление загран паспорта</option>
                         <option value="tickets">Бронирование авиа и жд билетов</option>
                         <option value="hotels">Бронирование отелей</option>
-                        <option value="Visa">Оформление визы</option>
+                        <option value="Visa">Страховка</option>
                         <option value="VNJ">Оформление  ВНЖ</option>
                         <option value="citizenship">Оформление гражданство</option>
                         <option value="study">Образование</option>

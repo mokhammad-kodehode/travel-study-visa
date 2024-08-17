@@ -11,17 +11,17 @@ const services = [
   {
     title: 'Бронирование авиа и ж\д билетов',
     description: 'Мы поможем вам и подберем наиболее выгодные варианты!',
-    link: '/services/multivisa'
+    link: '/services_page/booking_tickets'
   },
   {
     title: 'Бронирование отелей',
     description: 'Подберем идеальный отель для отдыха или рабочей поездки.',
-    link: '/services_page/romanian-citizenship'
+    link: '/services_page/booking_hotel'
   },
   {
-    title: 'Оформление загранпаспорта',
-    description: 'Для быстрого оформления загранпаспорта требуется заполнение анкеты на специальном бланке.',
-    link: '/services_page/romanian-citizenship'
+    title: 'Страхование',
+    description: 'Наличие страховки означает, что Вы будете защищены в другой стране, если возникнет непредвиденная ситуация.',
+    link: '/services_page/strahovka'
   },
   {
     title: 'Страхование',

@@ -24,10 +24,16 @@ const Navbar: React.FC = () => {
 
     }
   };
+
+  const closeDropdown = () => {
+    setVisaMenuOpen(true)
+    setServicesMenuOpen(true)
+  }
   
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
-    // Включаем прокрутку
+    setVisaMenuOpen(false)
+    setServicesMenuOpen(false)
     document.body.style.overflow = '';
   };
 
@@ -88,16 +94,16 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Бронирование авиа и ж/д билетов</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/booking_tickets">Бронирование авиа и ж/д билетов</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Бронирование отелей</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/booking_hotel">Бронирование отелей</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Оформление загранпаспорта</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/strahovka">Страхование</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Страхование</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/strahovka">Страхование</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/service2">Оформление мультивиз</Link>

@@ -56,7 +56,7 @@ export default function Home() {
                   Убедитесь в этом сами, став нашим партнёром!
                   </p>
                   <Link href="/services_page/romanian-citizenship">
-                    <button className={styles.section_Six_btn} >ОФОРМИТЬ</button>
+                    <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                 </div>
           </section>
@@ -68,7 +68,7 @@ export default function Home() {
                   Мы предоставляем полный комплекс услуг, начиная с первоначальной консультации и заканчивая подачей документов на получение гражданства. Наши специалисты обеспечат профессиональную поддержку на каждом этапе процесса и помогут ускорить процедуру оформления необходимых документов.
                   </p>
                   <Link href="/services_page/romanian-citizenship">
-                    <button className={styles.section_Six_btn} >ОФОРМИТЬ</button>
+                    <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                   
                 </div>

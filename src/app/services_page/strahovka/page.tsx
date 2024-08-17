@@ -5,7 +5,7 @@ import 'fontsource-inter';
 import { useState } from 'react';
 import ModalForm from '@/app/components/ContactForm/ContactFor';
 
-const ZagranPage = () => {
+const BookingTicketsPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => setModalOpen(true);
@@ -17,8 +17,8 @@ const ZagranPage = () => {
             <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Оформление загранпаспорта</h1>
-                        <h2 className={styles.title_text_desc}>Мы оформим загранпорт в крастчайшие сроки.</h2>
+                        <h1 className={styles.title_text}>Страхование</h1>
+                        <h2 className={styles.title_text_desc}>Мы оформим страховку на любой случай в поездке</h2>
                         <button onClick={handleOpenModal} className={styles.order_btn} >ОФОРМИТЬ</button>
                             {isModalOpen && (
                             <ModalForm closeModal={handleCloseModal} />
@@ -31,7 +31,7 @@ const ZagranPage = () => {
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
               <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Оформление загранпаспорта</span>
+              <span>Бронирование авиа и жд билетов</span>
             </div>
         </div>
       <section className={styles.section_text_content}>
@@ -76,4 +76,4 @@ const ZagranPage = () => {
   )
 }
 
-export default ZagranPage;
+export default BookingTicketsPage;
