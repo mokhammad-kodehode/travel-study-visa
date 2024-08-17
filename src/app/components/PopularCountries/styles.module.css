@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
 .container {
     background-color: #f8f6f8;
     padding: 40px;
@@ -37,7 +40,7 @@
 
   .country_link_two{
     position: relative;
-    width: 50%;
+    width: 30%;
   }
 
   .country_link_two::after {
@@ -106,8 +109,8 @@
   }
 
   .button{
-    background-color: var(--primary-btn);
-    color: rgb(24, 23, 23);
+    background-color: var(--gold);
+    color: rgb(37, 37, 37);
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -119,6 +122,7 @@
     text-align: center;
     border: none;
     cursor: pointer;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .button:hover {

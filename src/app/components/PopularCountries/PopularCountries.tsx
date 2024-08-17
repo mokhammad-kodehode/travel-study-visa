@@ -105,7 +105,7 @@ const CountryCards: React.FC = () => {
                   <div className={styles.cardBottom}>
                     <p>Цена от <strong>{countrycard.price} руб.</strong></p>
                     <p>Срок выдачи от <strong>{countrycard.processingTime}</strong></p>
-                    <button onClick={() => handleOpenModal(countrycard.id)} className={styles.button}>Оформить визу</button>
+                    <button onClick={() => handleOpenModal(countrycard.id)} className={styles.button}>ОФОРМИТЬ ВИЗУ</button>
                     {activeCardId !== null && (
                       <ModalForm closeModal={handleCloseModal} />
                     )}

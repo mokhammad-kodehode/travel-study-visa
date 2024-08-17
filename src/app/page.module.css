@@ -22,7 +22,7 @@
 .order_btn {
     border-radius: 5px;
     padding: 13px;
-    background: var(--primary-btn);
+    background: var(--gold);
     border: none;
     color: rgb(37, 37, 37);
     cursor: pointer;
@@ -51,7 +51,7 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: 1px;
-color: var(--orange);
+color: #FFD700;
 }
 
 .title_text_desc {
@@ -98,13 +98,13 @@ color: var(--orange);
 .section_Six_btn {
   border-radius: 5px;
   padding: 15px 20px;
-  background: var(--primary-btn);
+  background: var(--gold);
   border: none;
-  color: rgb(0, 0, 0);
+  color: rgb(37, 37, 37);
   cursor: pointer;
   margin-top: 40px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .section_Six_btn:hover {
@@ -139,7 +139,7 @@ color: var(--orange);
   .order_btn {
       border-radius: 5px;
       padding: 13px;
-      background: var(--primary-btn);
+      background: var(--gold);
       border: none;
       color: rgb(37, 37, 37);
       cursor: pointer;

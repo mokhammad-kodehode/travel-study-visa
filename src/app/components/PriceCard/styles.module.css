@@ -73,14 +73,14 @@
 }
 
 .order_btn {
-  color: rgb(2, 2, 2);
+  color: rgb(37, 37, 37);
   font-size: 18px;
   padding: 10px 0;
   font-weight: 600;
   flex-shrink: 0;
   border-radius: 5px;
   border: none;
-  background: var(--primary-btn);
+  background: var(--gold);
   cursor: pointer;
   font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -107,7 +107,7 @@
 
 
 .active_service {
-  background-color: #FFBD2A; /* Или другой оттенок оранжевого, который вам нравится */
+  background-color: var(--gold); /* Или другой оттенок оранжевого, который вам нравится */
   /* Другие стили для активного сервиса */
 }
 
@@ -217,7 +217,7 @@
     flex-shrink: 0;
     border-radius: 5px;
     border: none;
-    background: var(--primary-btn);
+    background: var(--gold);
     cursor: pointer;
   }
   
@@ -242,7 +242,7 @@
   
   
   .active_service {
-    background-color: #FFBD2A; 
+    background-color: var(--gold); 
     box-shadow:-1px 5px 10px rgb(186, 186, 186);
   }
   

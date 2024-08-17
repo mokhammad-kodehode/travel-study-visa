@@ -37,7 +37,7 @@
     gap: 2rem;
     list-style-type: none;
     position: relative;
-    color: white;
+    color: var(--gold);
   }
 
   .logo {
@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--gold);
     font-size: 11px;
     gap: .5rem;
     position: relative;
@@ -70,7 +70,7 @@
   }
   
   .adress_icon {
-    color: var(--orange);
+    color: var(--gold);
     font-size: 18px;
 
   }
@@ -204,7 +204,7 @@
   }
 
   .dropdown_item :hover {
-    color: var(--orange);
+    color: var(--gold);
 
   }
   
@@ -240,7 +240,7 @@
   .bar {
     width: 45px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: var(--gold);
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Для плавного изменения при нажатии */
   }
@@ -248,7 +248,7 @@
   /* Стиль для первой полоски при открытом меню */
   .bar1 {
     transform: translateY(8px) rotate(45deg); /* Поворот первой полоски */
-    background-color: #ffffff;
+    background-color: var(--gold);
   }
   
   /* Скрытие второй полоски при открытом меню */
@@ -259,12 +259,12 @@
   /* Стиль для третьей полоски при открытом меню */
   .bar3 {
     transform: translateY(-8px) rotate(-45deg); /* Поворот третьей полоски */
-    background-color: #ffffff;
+    background-color: var(--gold);
   }
   
   /* Дополнительный стиль для всех полосок, когда меню открыто */
   .openedBar {
-    background-color: #ffffff;
+    background-color: var(--gold);
   }
 
 
@@ -300,6 +300,7 @@
     .scrolled_items {
       display: none;
       justify-content: center;
+
     }
 
     .mobile_menu_icon {
@@ -341,7 +342,7 @@
     .nav_item {
       white-space: nowrap;
       position: relative;
-      color: rgb(255, 255, 255);
+      color: var(--gold);
       font-size: 18px;
       font-weight: 600;
     }
