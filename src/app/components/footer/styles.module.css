@@ -1,11 +1,19 @@
 .footer {
+    color: #ffffff;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: var(--dark-blue);
+  }
+
+  .footer_wrapper {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    color: #333;
+    color: #ffffff;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--dark-blue);
   }
   
   .footer_section {
@@ -15,7 +23,7 @@
   
   .footer_section h4 {
     margin: 0 0 10px 0;
-    color: #000;
+    color: var(--gold);
   }
   
   .footer_section p,

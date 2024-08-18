@@ -5,7 +5,8 @@ import 'fontsource-inter';
 import MyFormThree from '../components/ContactFormThree/ContactFormThree';
 import Link from 'next/link';
 import Image from 'next/image';
-import CountryCards from '../components/PopularCountries/PopularCountries'
+import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import ServicesList from '../components/OurServices/OurServices';
 
 export default function VNJ_Page() {
 
@@ -94,6 +95,8 @@ export default function VNJ_Page() {
                 </div>
             </div>
           </section>
+          <AdvantagesTwo/>
+          <ServicesList/>
     </main>
   )
 }

@@ -81,7 +81,7 @@ color: var(--gold);
 .section_two_h2, .section_four_h2, .section_Six_h2 {
   font-size: 33px;
   white-space: nowrap;
-  color: var(--text-title);
+  color: var(--gold);
 }
 
 .section_two_p , .section_four_p, .section_Six_p {

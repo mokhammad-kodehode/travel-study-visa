@@ -11,6 +11,7 @@ import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 const Navbar: React.FC = () => {
   const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
   const [isVisaMenuOpen, setVisaMenuOpen] = useState(false);
+  const [isVnjOpen, setisVnjOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // Состояние для отслеживания прокрутки
 
@@ -40,12 +41,20 @@ const Navbar: React.FC = () => {
   const toggleServicesMenu = () => {
     setServicesMenuOpen(!isServicesMenuOpen);
     setVisaMenuOpen(false)
+    setisVnjOpen(false);
     console.log("isServicesMenuOpen:", !isServicesMenuOpen); // Проверка
   };
 
   const toggleVisaMenu = () => {
     setVisaMenuOpen(!isVisaMenuOpen);
     setServicesMenuOpen(false)
+    setisVnjOpen(false);
+  };
+
+  const toggleVnjMenu = () => {
+    setisVnjOpen(!isVnjOpen);
+    setServicesMenuOpen(false)
+    setVisaMenuOpen(false)
   };
 
   useEffect(() => {
@@ -115,7 +124,7 @@ const Navbar: React.FC = () => {
               className={styles.nav_item} >
             <div className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/visa_page">
-                <div>Визы</div>
+                Визы
               </Link>
               <span 
                 onClick={toggleVisaMenu}  
@@ -141,7 +150,35 @@ const Navbar: React.FC = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/vnj_page" className={styles.nav_item}>ВНЖ</Link>
+          <li 
+              className={styles.nav_item} >
+            <div className={styles.nav_item_with_submenu}>
+              <Link onClick={closeMobileNav} href="/vnj_page">
+                ВНЖ
+              </Link>
+              <span 
+                onClick={toggleVnjMenu}  
+                className={`${styles.submenu_arrow} ${isVnjOpen ? styles.rotate_up : ''}`}>
+                &#9660;
+              </span>
+            </div>
+            {isVnjOpen && (
+              <ul className={`${styles.dropdown} ${styles.show}`}>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/vnj_page/Bulgaria">Болгария</Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/vnj_page/Spain">Испания</Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/visa_page/united_kingdom">Великобритания</Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/visa_page/japan">Япония</Link>
+                </li>
+              </ul>
+            )}
+          </li>
           </li>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/grazhdanstvo" className={styles.nav_item}>Гражданство</Link>
