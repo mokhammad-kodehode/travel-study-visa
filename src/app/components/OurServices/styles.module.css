@@ -35,7 +35,7 @@
     font-size: 20px;
     text-decoration: underline;
     text-underline-offset: 0.5em;
-    text-decoration-color: var(--primary-btn);
+    text-decoration-color: var(--gold);
     
   }
 
@@ -60,9 +60,9 @@
   
   .learnMoreButton {
     background-color: #ffffff;
-    color: var(--primary-btn);
+    color: var(--gold);
     font-weight: 600;
-    border: 2px solid var(--primary-btn);
+    border: 2px solid var(--gold);
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
@@ -73,7 +73,7 @@
   }
   
   .learnMoreButton:hover {
-    background-color: var(--primary-btn);
+    background-color: var(--gold);
     color: white;
   }
 
