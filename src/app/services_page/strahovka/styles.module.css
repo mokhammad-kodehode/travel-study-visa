@@ -66,25 +66,13 @@
   }
   
   .breadcrumbs {
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     gap: .5rem;
     margin-top: 10px;
   }
   
-  .breadcrumbs a {
-    text-decoration: none;
-    color: var(--primary-btn);
-  }
-  
-  .breadcrumbs a:hover {
-    text-decoration: underline;
-  }
-  
-  .breadcrumbs span {
-    color: #585858;
-  }
-  
+
   .banner_container {
     margin: 0 auto;
     width: 1200px;

@@ -40,8 +40,8 @@
     width: 100%;
      flex-shrink: 0;
      border-radius: 5px;
-     border: 1px solid #BB2BBE;
-     background: #BB2BBE;
+     border: none;
+     background: var(--light-blue);
      cursor: pointer;
      margin-top: 10px;
   }

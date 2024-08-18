@@ -16,7 +16,7 @@ export default function Europe() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз в Европу</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в любую страну Европы. Оставьте заявку, и наш специалист ответит на все вопросы</h2>ru
+                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в любую страну Европы. Оставьте заявку, и наш специалист ответит на все вопросы</h2>
                     </div>
                     <p>
                         Нужно оформить шенгенскую визу? 
@@ -29,6 +29,13 @@ export default function Europe() {
                 <MyForm/>
             </div>
           </section >
+            <div className={styles.breadcrumbs_wrapper}>
+              <div className={styles.breadcrumbs}>
+                <a href="/">Главная</a> &gt;
+                <a href="/visa_page">Оформление визы</a> &gt;
+                <span>Европа</span>
+              </div>
+            </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
                <h2 className={styles.selectCountryTitle}>Выберите направление</h2>

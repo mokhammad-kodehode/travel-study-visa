@@ -2,12 +2,16 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '@/app/components/contactFormTwo/ContactFormTwo';
+import ModalForm from '@/app/components/ContactForm/ContactFor';
 import { europeCountries, AmericaCountries, asiaCountries } from '@/app/data/CountryData';
 import { CountryData } from '@/app/data/CountryData';
 import { useState, useEffect } from 'react';
 
 const CountryPage = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
   const [country, setCountry] = useState<CountryData | null>(null);
 
   const bannerStyle = {
@@ -48,17 +52,21 @@ const CountryPage = () => {
               <h2 className={styles.title_text_desc}>Оформим нужный тип визы в {country.name_two}.</h2>
               <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
             </div>
-            <p>
-              Нужно оформить визу в {country.name_two}? 
-              В визовом центре Visa-travels недорого готовы помочь вам с 
-              получением визы в Москве. Процедура получения шенгенской визы
-              для граждан РФ регламентируется законодательно и определяется
-              международными соглашениями.
-            </p>
+            <button onClick={handleOpenModal} className={styles.order_btn} >Заказать</button>
+                        {isModalOpen && (
+                          <ModalForm closeModal={handleCloseModal} />
+                        )}
           </div>
-          <MyForm/>
         </div>
       </section >
+        <div className={styles.breadcrumbs_wrapper}>
+                  <div className={styles.breadcrumbs}>
+                    <a href="/">Главная</a> &gt;
+                    <a href="/visa_page">Оформление визы</a> &gt;
+                    <a href="/visa_page/europe">Европа</a> &gt;
+                    <span>{country.name}</span>
+                  </div>
+        </div>
       <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}> {country.name} - ОФОРМЛЕНИЕ ШЕНГЕНСКОЙ ВИЗЫ В МОСКВЕ</div>
         <p>Для оформления шенгенской визы в Австрию кандидату нужно посетить австрийское консульство или консульский отдел при посольстве. 
