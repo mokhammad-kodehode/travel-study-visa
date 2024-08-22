@@ -24,7 +24,7 @@
   
   
   .banner_title {
-   width: 50%;
+    width: 667px;
   }
 
   .banner_title p {
@@ -68,7 +68,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px 0;
-    width: 1200px;
+    width: 100%;
+    align-items: center;
     justify-content: space-between;
     margin: 0 auto;
   }
@@ -118,7 +119,7 @@
     color: #333;
     font-weight: 600;
     margin-top: 15px;
-    width: 218px;
+    width: 100%;
   }
   
   .countryItem:hover {

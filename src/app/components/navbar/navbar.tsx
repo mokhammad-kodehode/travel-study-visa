@@ -33,8 +33,9 @@ const Navbar: React.FC = () => {
   
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
-    setVisaMenuOpen(false)
-    setServicesMenuOpen(false)
+    setVisaMenuOpen(false);
+    setServicesMenuOpen(false);
+    setisVnjOpen(false)
     document.body.style.overflow = '';
   };
 
@@ -149,7 +150,6 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-          <li className={styles.nav_item}>
           <li 
               className={styles.nav_item} >
             <div className={styles.nav_item_with_submenu}>
@@ -179,12 +179,11 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-          </li>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/grazhdanstvo" className={styles.nav_item}>Гражданство</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/" className={styles.nav_item}>Контакты</Link>
+            <Link onClick={closeMobileNav} href="/contact_page" className={styles.nav_item}>Контакты</Link>
           </li>
         </ul>
         <div className={styles.adress_tel_wrapper}>

@@ -7,25 +7,25 @@ const CountryVisaSelect = () => {
         <div className={styles.countrySelect}>
             <Link href="/visa_page/america">
                 <div className={styles.countryCard}>
-                    <Image className={styles.section_image} src="/images/Flags/america.svg" alt="Флаг США" width={135} height={85} />
+                    <Image className={styles.section_image} src="/images/Flags/america.svg" alt="Флаг США" width={115} height={65} />
                     <span>Америка</span>
                 </div>
             </Link>
             <Link href="/visa_page/europe">
                 <div className={styles.countryCard}>
-                    <Image className={styles.section_image} src="/images/Flags/european-union.svg" alt="Флаг Евросоюза" width={135} height={85} />
+                    <Image className={styles.section_image} src="/images/Flags/european-union.svg" alt="Флаг Евросоюза" width={115} height={65} />
                     <span>Европа</span>
                 </div>
             </Link>
             <Link href="/visa_page/united_kingdom">
                 <div className={styles.countryCard}>
-                    <Image className={styles.section_image} src="/images/Flags/united-kingdom.svg" alt="Флаг Великобританий" width={135} height={85} />
+                    <Image className={styles.section_image} src="/images/Flags/united-kingdom.svg" alt="Флаг Великобританий" width={115} height={65} />
                     <span>Великобритания</span>
                 </div>
             </Link>
             <Link href="/visa_page/japan">
                 <div className={styles.countryCard}>
-                    <Image className={styles.section_image} src="/images/Flags/japan.svg" alt="Флаг Японии" width={135} height={85} />
+                    <Image className={styles.section_image} src="/images/Flags/japan.svg" alt="Флаг Японии" width={115} height={65} />
                     <span>Япония</span>
                 </div>
             </Link>

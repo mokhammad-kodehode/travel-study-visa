@@ -20,7 +20,7 @@
   .serviceCard {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,6 +39,15 @@
     
   }
 
+  .serviceIcon {
+    right: 0;
+    margin-right: 10px;
+    color: var(--gold);
+    font-size: 1.5em;
+    font-size: 52px;
+    
+  }
+
   .serviceCard p {
     width: 290px;
     height: 1005;
@@ -51,7 +60,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.3rem;
+    gap: .1rem;
+    position: relative;
   }
   
   .serviceCard:hover {
