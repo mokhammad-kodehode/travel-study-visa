@@ -35,14 +35,14 @@
     font-size: 20px;
     text-decoration: underline;
     text-underline-offset: 0.5em;
-    text-decoration-color: var(--gold);
+    text-decoration-color: var(--primary-btn);
     
   }
 
   .serviceIcon {
     right: 0;
     margin-right: 10px;
-    color: var(--gold);
+    color: var(--primary-btn);
     font-size: 1.5em;
     font-size: 52px;
     
@@ -70,9 +70,9 @@
   
   .learnMoreButton {
     background-color: #ffffff;
-    color: var(--gold);
+    color: var(--primary-btn);
     font-weight: 600;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--primary-btn);
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
@@ -84,7 +84,8 @@
   
   .learnMoreButton:hover {
     background-color: var(--gold);
-    color: white;
+    color: rgb(47, 47, 47);
+    border: 2px solid var(--gold);
   }
 
 

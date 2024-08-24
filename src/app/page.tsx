@@ -35,10 +35,10 @@ export default function Home() {
                   <ModalForm closeModal={handleCloseModal} />
                 )}
             </div> 
-            <div className={styles.wrapper_country_select}>
+            {/* <div className={styles.wrapper_country_select}>
                 <h4>Выберите направление</h4>
                 <CountryVisaSelect/>
-            </div >
+            </div > */}
           </section >
           <section className={styles.section_three}>
               <PriceCard/>

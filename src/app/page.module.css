@@ -15,11 +15,7 @@
     color: white;
 }
 
-.banner_title {
-  margin: 180px auto 40px auto;
-  display: flex;
-  flex-direction: column;
-}
+
 
 .order_btn {
     border-radius: 5px;
@@ -65,7 +61,7 @@ color: var(--gold);
   line-height: normal;
 }
 
-.wrapper_country_select {
+/* .wrapper_country_select {
   border-top: 1px solid rgb(128, 128, 128);
   padding-top: 10px;
   display: flex;
@@ -77,7 +73,7 @@ color: var(--gold);
  color: #fff;
  width: 200px;
  margin-bottom: 20px;
-}
+} */
 
 .section_two, .section_four, .section_Six {
   width: 1200px;
