@@ -35,7 +35,10 @@ export default function Home() {
                   <ModalForm closeModal={handleCloseModal} />
                 )}
             </div> 
-            <CountryVisaSelect/>
+            <div className={styles.wrapper_country_select}>
+                <h4>Выберите направление</h4>
+                <CountryVisaSelect/>
+            </div >
           </section >
           <section className={styles.section_three}>
               <PriceCard/>

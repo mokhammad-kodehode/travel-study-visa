@@ -92,9 +92,10 @@
 
   .section_two_top {
     margin: 0 auto;
-    width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 20px;
   }
   .section_two {
@@ -104,6 +105,16 @@
   .selectCountryTitle{
     font-size: 38px;
     margin-left: 40px;
+    color: var(--gold);
+  }
+
+  .CountryVisaSelect {
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
   }
 
 

@@ -5,6 +5,8 @@
     gap: 2rem;
     justify-content: space-around;
     padding: 20px 0px;
+    width: 1200px;
+    margin-top: 20px;
   }
   
   .countryItem {

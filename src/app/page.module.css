@@ -65,6 +65,20 @@ color: var(--gold);
   line-height: normal;
 }
 
+.wrapper_country_select {
+  border-top: 1px solid rgb(128, 128, 128);
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper_country_select h4{
+ font-size: 24px;
+ color: #fff;
+ width: 200px;
+ margin-bottom: 20px;
+}
+
 .section_two, .section_four, .section_Six {
   width: 1200px;
   margin: 0 auto;

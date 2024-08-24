@@ -39,8 +39,10 @@ export default function Home() {
           </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
-               <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
-              <CountryVisaSelect/>
+              <div className={styles.CountryVisaSelect}>
+                <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
+                <CountryVisaSelect/>
+              </div>
               <CountryList countries={europeCountries}/>
             </div>
           </section>
