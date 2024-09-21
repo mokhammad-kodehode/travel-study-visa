@@ -41,7 +41,7 @@
      flex-shrink: 0;
      border-radius: 5px;
      border: none;
-     background: var(--gold);
+     background: var(--violet);
      cursor: pointer;
      margin-top: 10px;
   }

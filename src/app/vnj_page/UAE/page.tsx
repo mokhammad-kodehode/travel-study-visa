@@ -11,7 +11,7 @@ const CountryPage = () => {
 
 
   const bannerStyle = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(/images/countries/Spain.jpg)`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(/images/countries/UAE.jpg)`,
     width: '100%',
     margin: '0 auto',
     backgroundSize: 'cover',
@@ -48,7 +48,22 @@ const CountryPage = () => {
         <div className={styles.section_text_content_title}> Виза Remote Work Visa (или Virtual Working Program)</div>
         <p className={styles.description}>Виза Remote Work Visa (или Virtual Working Program) в ОАЭ позволяет иностранным гражданам работать удаленно в стране, оставаясь при этом сотрудниками своих компаний за рубежом. Этот тип визы был введен в 2020 году, чтобы привлечь специалистов, работающих удаленно, и дать им возможность проживать и работать в ОАЭ.
         </p>
-        <h2>Особенности и требования:</h2>
+        <h2 className={styles.title_two}>Процесс подачи заявки на ВНЖ:</h2>
+            <ul className={styles.process_list}>
+              <li>
+                <strong>Подготовка пакета документов и подача заявки</strong>
+                <span>Дистанционно</span>
+              </li>
+              <li>
+                <strong>Прохождение медицинского теста и биометрии</strong>
+                <span>В ОАЭ</span>
+              </li>
+              <li>
+                <strong>Дождаться доставки ID</strong>
+                <span>Можете получить ID сами, или мы можем получить ее за Вас</span>
+              </li>
+            </ul>
+          <h3 className={styles.title_two}>Особенности и требования:</h3>
           <div className={styles.special_wrapper}>
                     <VisaFeatureCard
                         icon={FaPlane}
@@ -80,13 +95,13 @@ const CountryPage = () => {
                         title="Проживание и льготы"
                         description="Виза дает право на проживание в ОАЭ и доступ к ряду льгот, таких как открытие банковского счета, аренда жилья, получение водительских прав и др."
                     />
-                                          <VisaFeatureCard
+                      <VisaFeatureCard
                         icon={FaGlobe}
                         title="Цели визы"
                         description="Данная виза особенно актуальна для тех, кто хочет работать удаленно, наслаждаясь высоким уровнем жизни, безопасностью и развитой инфраструктурой ОАЭ."
                     />
            </div>
-           <h3 className={styles.title_two}>Необходимые документы для подачи на ВНЖ с RemoteVisa:</h3>
+           <h4 className={styles.title_two}>Необходимые документы для подачи на ВНЖ с RemoteVisa:</h4>
               <table className={styles.document_table}>
                 <thead>
                   <tr>
@@ -121,8 +136,43 @@ const CountryPage = () => {
                   </tr>
                 </tbody>
               </table>
-                    </section >
-      <AdvantagesTwo/>
+              <h3 className={styles.title_two}>Сроки и стоимость:</h3>
+                <table className={styles.pricing_table}>
+                  <thead>
+                    <tr>
+                      <th>Наименование</th>
+                      <th>Стоимость / Сроки</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Стоимость «под ключ»</td>
+                      <td>$2 600</td>
+                    </tr>
+                    <tr>
+                      <td>Стоимость продления</td>
+                      <td>от $300</td>
+                    </tr>
+                    <tr>
+                      <td>Срок получения</td>
+                      <td>4 недели</td>
+                    </tr>
+                    <tr>
+                      <td>Рассмотрение заявки</td>
+                      <td>5-20 дней</td>
+                    </tr>
+                    <tr>
+                      <td>Прохождение медицинского теста и биометрии</td>
+                      <td>2-7 дней</td>
+                    </tr>
+                    <tr>
+                      <td>Получение Emirates ID</td>
+                      <td>3-5 дней</td>
+                    </tr>
+                  </tbody>
+                </table>
+        </section >
+      {/* <AdvantagesTwo/> */}
     </main>
   )
 }
