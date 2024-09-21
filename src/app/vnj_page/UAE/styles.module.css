@@ -55,7 +55,7 @@
 
 .breadcrumbs a {
     text-decoration: none;
-    color: var(--primary-btn);
+    color: var(--light-blue);
 }
 
 .breadcrumbs a:hover {
@@ -91,8 +91,10 @@
     font-weight: 400;
   }
 
-  .section_text_content p {
-   margin-top: 15px;
+  .description {
+   padding: 15px 0;
+   width: 75%;
+   font-size: 18px;
   }
 
   .section_text_content h2 {
@@ -100,46 +102,94 @@
     font-size: 30px;
    }
 
-   .section_text_content h3 {
-    margin-top: 25px;
+   .title_two {
     font-size: 30px;
+    margin-top: 45px;
+    width: 74%;
    }
 
-   .section_text_content h4 {
-    margin-top: 25px;
-    font-size: 30px;
-   }
-
-   .section_text_content h5 {
-    margin-top: 21px;
-    font-size: 30px;
-   }
-
-   .section_text_content ul {
-    margin-top: 10px;
-     list-style: none;
-     line-height: 2rem;
-   }
-
-   .section_text_content ul {
-    list-style: none;
-  }
-
-   .section_text_content ul li {
-    position: relative; /* Для установки позиции псевдоэлемента */
-    padding-left: 20px; /* Отступ слева для места под маркер */
-  }
-
-   .section_text_content ul li::before {
-    content: "•"; /* Замените на другой символ маркера, если нужно */
-    color: var(--orange); /* Замените на желаемый цвет маркера */
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; /* Располагаем слева от текста */
-    top: 50%; /* Располагаем по вертикали по центру */
-    transform: translateY(-50%); /* Корректируем позицию по вертикали */
-    font-size: 32px;
+.special_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);;
+  gap: 1rem;
+  grid-auto-flow: dense; 
 }
 
+.special_wrapper > div:nth-last-child(3),
+.special_wrapper > div:nth-last-child(2),
+.special_wrapper > div:last-child {
+  grid-column: span 1; /* Каждая из последних карточек занимает одну колонку */
+}
+
+.special_wrapper > div:nth-last-child(3) {
+  grid-column-start: 2; /* Центрируем последние три карточки */
+  grid-column-end: 4;   /* Окончание для 4-колоночной структуры */
+}
+
+.document_list {
+  list-style-type: disc; /* Используем маркеры в виде точек */
+  padding-left: 20px; /* Отступ слева для маркеров */
+  font-size: 16px; /* Размер шрифта */
+  margin: 15px;
+}
+
+.document_list li {
+  margin-bottom: 10px; /* Отступ между пунктами */
+}
+
+.document_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.document_table thead {
+  background-color: var(--violet); /* Основной цвет */
+  color: white;
+}
+
+.document_table th, .document_table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.document_table th {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.document_table tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.document_table tbody tr:nth-child(even) {
+  background-color: #f1f1f1; /* Цвет для четных строк */
+}
+
+.document_table tbody tr:hover {
+  background-color: #e0e0e0; /* Цвет при наведении */
+}
+
+.document_table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.document_table td:last-child {
+  text-align: center;
+}
+
+
+
+.document_table tbody tr:last-child td {
+  border-bottom: none; /* Убираем границу в последней строке */
+}
 
   @media   (max-width: 768px) {
  
