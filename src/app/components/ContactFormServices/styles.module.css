@@ -35,7 +35,7 @@
   
   .submitButton {
     height: 55px;
-    color: white;
+    color: var(--dark-blue);
     font-size: 18px;
     font-weight: 600;
     width: 100%;
@@ -49,6 +49,7 @@
   
   .submitButton:hover {
     background-color: #3b8aff;
+    color: #fff;
   }
   
   .label {

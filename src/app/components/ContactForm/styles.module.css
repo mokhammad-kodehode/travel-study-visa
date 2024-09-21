@@ -93,7 +93,7 @@
 
   .submitButton {
     height: 55px;
-    color: white;
+    color: var(--dark-blue);
     font-size: 18px;
     font-weight: 600;
      flex-shrink: 0;

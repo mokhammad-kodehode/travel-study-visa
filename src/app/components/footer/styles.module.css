@@ -3,17 +3,17 @@
     max-width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: var(--dark-blue);
+    background-color: var(--violet);
   }
 
   .footer_wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 25px;
     color: #ffffff;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--dark-blue);
+    background-color: var(--violet);
   }
   
   .footer_section {
@@ -42,3 +42,52 @@
     margin-top: 20px;
   }
   
+
+  .footer_bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого по горизонтали */
+    justify-content: center; /* Центрирование по вертикали (если нужно) */
+    max-width: 1200px;
+    margin: 0px auto; /* Центрирование блока в контейнере */
+    padding: 20px 0; /* Добавляем отступы для вертикального выравнивания */
+    font-size: 12px;
+  }
+
+  @media (max-width: 820px) {
+
+    .logo {
+      display: none;
+    }
+
+    .footer_section p {
+      display: none;
+    }
+
+    .footer_wrapper {
+      flex-direction: column; /* Меняем направление на вертикальное */
+      align-items: center; /* Центрируем элементы */
+      padding: 15px; /* Уменьшаем паддинг */
+      max-width: 100%; /* Занимаем всю ширину экрана */
+    }
+  
+    .footer_section {
+      margin-bottom: 20px; /* Добавляем отступы между секциями */
+      width: 100%; /* Ширина секций будет 100% */
+      align-items: center; /* Центрируем содержимое */
+    }
+  
+    .footer_section ul li {
+      text-align: center; /* Центрируем текст в списке */
+      margin-bottom: 10px; /* Увеличиваем отступы между элементами списка */
+    }
+  
+    .footer_bottom {
+      font-size: 10px; /* Уменьшаем размер шрифта для мобильных */
+      padding: 10px 0; /* Уменьшаем отступы */
+    }
+  
+    .footer-copy {
+      font-size: 10px; /* Уменьшаем размер текста копирайта */
+    }
+  }

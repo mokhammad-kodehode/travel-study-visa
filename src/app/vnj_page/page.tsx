@@ -52,44 +52,8 @@ export default function VNJ_Page() {
                     </Link>
                     <Link href="/" >
                         <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/france.svg" alt="Флаг Франция" width={104} height={65} />
-                            <span>Франция</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/serbia.svg" alt="Флаг Сербии" width={104} height={65} />
-                            <span>Сербия</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
                             <Image className={styles.flag} src="/images/Flags/UAE.svg" alt="Флаг ОАЭ" width={104} height={65} />
                             <span>ОАЭ</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/italy.svg" alt="Флаг Италии" width={104} height={65} />
-                            <span>Италия</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/hungary.svg" alt="Флаг Венгрии" width={104} height={65} />
-                            <span>Венгрия</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/slovenia.svg" alt="Флаг Словаении" width={104} height={65} />
-                            <span>Словения</span>
-                        </div>
-                    </Link>
-                    <Link href="/" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/armenia.svg" alt="Флаг Армении" width={104} height={65} />
-                            <span>Армения</span>
                         </div>
                     </Link>
                 </div>

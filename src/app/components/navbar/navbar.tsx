@@ -176,6 +176,9 @@ const Navbar: React.FC = () => {
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/japan">Япония</Link>
                 </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/visa_page/japan">Саудовская Аравия</Link>
+                </li>
               </ul>
             )}
           </li>

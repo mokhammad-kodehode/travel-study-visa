@@ -126,7 +126,7 @@
 }
 
 .button:hover {
-  background-color: var(--orange);
+  background-color: var(--light-gold);
 }
   
 @media (max-width: 768px) {
@@ -211,8 +211,5 @@
     cursor: pointer;
 }
 
-.button:hover {
-  background-color: #ffbd2a;
-}
-  
+
 }

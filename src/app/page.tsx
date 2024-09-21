@@ -10,7 +10,7 @@ import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import { useState } from 'react'
 import ModalForm from './components/ContactForm/ContactFor'
-import CountryVisaSelect from './components/CountryVisaSelect/page'
+import Contact from './components/contact/Contact'
 
 
 import 'fontsource-inter';
@@ -90,6 +90,9 @@ export default function Home() {
                   <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
                   <p className={styles.section_four_p}>Многофункциональный визовый центр — одна из лидирующих компаний на Российском рынке по оказанию сервисно — туристических услуг. С нами работают тысячи клиентов, среди которых частные лица, туристические агентства и компании. Работая с большим потоком визовых документов, мы находимся в курсе всех обновлений, нюансов и правил, установленных консульствами всех стран. Подходим к каждому заявителю с индивидуальным подходом, избавляя от ненужной волокиты, экономя время и деньги наших клиентов. Мы стремимся быть признанным лидером, надежным партнером и просто другом, помогая Вам открывать новые страны и континенты.
                   </p>
+                  <Link href="/services_page/romanian-citizenship">
+                    <button className={styles.section_Six_btn} >О КОМПАНИИ</button>
+                  </Link>
                 </div>
                 <Image
                   src="/images/Four.png" 
@@ -100,6 +103,7 @@ export default function Home() {
                 />
           </section>
           <ServicesList/>
+          <Contact/>
     </main>
   )
 }

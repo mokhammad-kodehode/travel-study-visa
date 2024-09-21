@@ -20,20 +20,20 @@
 .order_btn {
     border-radius: 5px;
     padding: 13px;
-    background: var(--gold);
+    background: var(--violet);
     border: none;
-    color: var(--dark-blue);
+    color: #fff;
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 600;
     width: 120px;
     font-family: 'PT Sans Narrow', sans-serif;
-    transition: .2s ;
+    transition: .2s;
 }
 
 .order_btn:hover {
-  background-color: var(--orange);
+  background-color: var(--gold);
   color: rgb(15, 15, 15);
 }
 
@@ -93,7 +93,7 @@ color: var(--gold);
 .section_two_h2, .section_four_h2, .section_Six_h2 {
   font-size: 33px;
   white-space: nowrap;
-  color: var(--dark-blue);
+  color: var(--violet);
 }
 
 .section_two_p , .section_four_p, .section_Six_p {
@@ -110,17 +110,19 @@ color: var(--gold);
 .section_Six_btn {
   border-radius: 5px;
   padding: 15px 20px;
-  background: var(--gold);
+  background: var(--violet);
   border: none;
-  color: rgb(37, 37, 37);
+  color: #fff;
   cursor: pointer;
   margin-top: 40px;
   font-size: 16px;
   font-weight: 600;
+  transition: .2s;
 }
 
 .section_Six_btn:hover {
-  background-color: var(--orange);
+  background-color: var(--gold);
+  color: rgb(15, 15, 15);
 }
 
 @media (max-width: 820px) {
@@ -151,9 +153,9 @@ color: var(--gold);
   .order_btn {
       border-radius: 5px;
       padding: 13px;
-      background: var(--gold);
+      background: var(--violet);
       border: none;
-      color: rgb(37, 37, 37);
+      color: #fff;
       cursor: pointer;
       margin-top: 30px;
       font-size: 18px;
@@ -177,6 +179,7 @@ color: var(--gold);
   line-height: normal;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  color: var(--gold);
   }
   
   .title_text_desc {

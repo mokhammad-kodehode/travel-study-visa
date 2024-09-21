@@ -6,6 +6,7 @@
 .container_title {
     text-align: center;
     font-size: 33px;
+    
 }
 
 .servicesGrid {
@@ -26,26 +27,36 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: start;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     height: 280px;
     width: 350px;
   }
 
+  .serviceCard:hover {
+    transform: translateY(-5px); /* Легкое движение вверх при наведении */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Более сильная тень */
+}
+
   .Cardtitle {
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: underline;
     text-underline-offset: 0.5em;
-    text-decoration-color: var(--primary-btn);
-    
+    text-decoration-color: var(--gold);
+    font-weight: bold;
+    color: var(--text-color);
   }
 
   .serviceIcon {
     right: 0;
     margin-right: 10px;
-    color: var(--primary-btn);
+    color: var(--gold);
     font-size: 1.5em;
-    font-size: 52px;
-    
+    font-size: 48px;
+    transition: transform 0.3s ease;
+}
+
+  .serviceCard:hover .serviceIcon {
+      transform: scale(1.1); /* Легкое увеличение иконки при наведении */
   }
 
   .serviceCard p {
@@ -64,15 +75,13 @@
     position: relative;
   }
   
-  .serviceCard:hover {
-  
-  }
+
   
   .learnMoreButton {
     background-color: #ffffff;
-    color: var(--primary-btn);
+    color: var(--text-color);
     font-weight: 600;
-    border: 2px solid var(--primary-btn);
+    border: 2px solid var(--gold);
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
@@ -144,9 +153,7 @@
       gap: 1.3rem;
     }
     
-    .serviceCard:hover {
-    
-    }
+  
     
     .learnMoreButton {
       background-color: #ffffff;

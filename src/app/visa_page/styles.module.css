@@ -105,16 +105,16 @@
   .selectCountryTitle{
     font-size: 38px;
     margin-left: 40px;
-    color: var(--gold);
+    color: #fff;
   }
 
   .CountryVisaSelect {
-    background-color: var(--dark-blue);
+    background-color: var(--violet);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 1200px;
   }
 
 
