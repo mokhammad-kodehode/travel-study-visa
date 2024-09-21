@@ -60,7 +60,7 @@ export default function Home() {
                   Убедитесь в этом сами, став нашим партнёром!
                   </p>
                   <Link href="/services_page/romanian-citizenship">
-                    <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
+                    <button className={styles.section_Six_btn}>УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                 </div>
           </section>

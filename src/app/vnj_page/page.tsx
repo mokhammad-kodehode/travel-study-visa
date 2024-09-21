@@ -50,7 +50,7 @@ export default function VNJ_Page() {
                             <span>Испания</span>
                         </div>
                     </Link>
-                    <Link href="/" >
+                    <Link href="/vnj_page/UAE" >
                         <div className={styles.countryItem}>
                             <Image className={styles.flag} src="/images/Flags/UAE.svg" alt="Флаг ОАЭ" width={104} height={65} />
                             <span>ОАЭ</span>

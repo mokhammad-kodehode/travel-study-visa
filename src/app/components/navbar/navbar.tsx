@@ -171,13 +171,7 @@ const Navbar: React.FC = () => {
                   <Link onClick={closeMobileNav} href="/vnj_page/Spain">Испания</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/united_kingdom">Великобритания</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/japan">Япония</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/japan">Саудовская Аравия</Link>
+                  <Link onClick={closeMobileNav} href="/visa_page/UAE">ОАЭ</Link>
                 </li>
               </ul>
             )}
