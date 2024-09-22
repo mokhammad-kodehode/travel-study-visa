@@ -68,7 +68,7 @@
   }
   
   .breadcrumbs {
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     gap: .5rem;
     margin-top: 10px;
@@ -76,7 +76,8 @@
   
   .breadcrumbs a {
     text-decoration: none;
-    color: var(--primary-btn);
+    color: var(--violet);
+    font-weight: 600;
   }
   
   .breadcrumbs a:hover {
@@ -98,12 +99,12 @@
   .section_text_content {
     margin: 0 auto;
     width: 1200px;
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .section_text_content_title {
     width: 100%;
-    font-size: 32px;
+    font-size: 33px;
     font-weight: 600;
 }
 
@@ -116,6 +117,8 @@
    padding: 15px 0;
    width: 75%;
    font-size: 18px;
+   color: var(--text-color);
+   
   }
 
   .section_text_content h2 {
@@ -130,11 +133,12 @@
     width: 74%;
    }
 
-.special_wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 1rem;
-}
+  .special_wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem;
+    padding: 15px 0;
+  }
 
 
   @media   (max-width: 820px) {
@@ -214,7 +218,8 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     font-size: 16px;
-    padding:0 5px ;
+    padding: 0 0px ;
+    width: 400px;
   }
   
   .breadcrumbs {
@@ -225,7 +230,7 @@
   
   .breadcrumbs a {
     text-decoration: none;
-    color: var(--primary-btn); /* Основной цвет для ссылок */
+    color: var(--violet); /* Основной цвет для ссылок */
     white-space: nowrap; /* Запрещаем перенос текста */
   }
   
@@ -242,6 +247,12 @@
       width: 100%;
       padding: 10px 5px;
     }
+
+    .section_text_content_title {
+      width: 100%;
+      font-size: 26px;
+      font-weight: 600;
+  }
   
     .description {
       width: 100%;

@@ -69,8 +69,8 @@ const BookingTicketsPage = () => {
               </div>
         </section >
         <ServicesList/>
-        <Advantages/>
         <Contact/>
+        <Advantages/>
     </main>
   )
 }
