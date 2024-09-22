@@ -17,6 +17,22 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  .serviceCard_header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .serviceImage {
+    border-radius: 8px 8px 0 0; /* Закругляем углы изображения */
+    object-fit: cover; /* Покрывает блок изображением */
+    border-radius: 5px;
+  }
   
   .serviceCard {
     display: flex;
@@ -25,10 +41,10 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 0px;
     text-align: start;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    height: 280px;
+    height: 300px;
     width: 350px;
   }
 
@@ -41,30 +57,24 @@
     font-size: 18px;
     text-decoration: underline;
     text-underline-offset: 0.5em;
-    text-decoration-color: var(--gold);
+    text-decoration-color: var(--orange);
     font-weight: bold;
     color: var(--text-color);
+    margin-top: 7px;
+    text-align: center;
   }
 
-  .serviceIcon {
-    right: 0;
-    margin-right: 10px;
-    color: var(--gold);
-    font-size: 1.5em;
-    font-size: 48px;
-    transition: transform 0.3s ease;
-}
 
   .serviceCard:hover .serviceIcon {
       transform: scale(1.1); /* Легкое увеличение иконки при наведении */
   }
 
   .serviceCard p {
-    width: 290px;
+    width: 100%;
     height: 1005;
     font-weight: 300;
-    align-items: center;
     text-align: center;
+    padding: 5px;
   }
 
   .serviceCard_title {
@@ -89,6 +99,9 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     text-align: center;
+    width: 90%;
+    align-self: center;
+    margin-bottom: 10px;
   }
   
   .learnMoreButton:hover {
@@ -109,6 +122,7 @@
       text-align: center;
       font-size: 28px;
   }
+
   
   .servicesGrid {
       display: flex;
@@ -126,16 +140,24 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 10px;
+      padding: 0px;
       text-align: center;
       transition: transform 0.3s ease;
       height: 280px;
       width: 350px;
     }
+
+
+    .Cardtitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--text-color);
+    }
   
     .title{
       font-size: 20px;
       text-decoration: underline;
+      text-decoration-color: var(--orange);
       text-underline-offset: 0.5em;
       text-decoration-color: var(--primary-btn);
       
@@ -145,6 +167,7 @@
       width: 100%;
       height: 100px;
       font-weight: 300;
+      margin-top: 20px;
     }
   
     .serviceCard_title {
@@ -157,7 +180,7 @@
     
     .learnMoreButton {
       background-color: #ffffff;
-      color: var(--primary-btn);
+      color: var(--text-color);
       font-weight: 600;
       border: 2px solid var(--primary-btn);
       text-decoration: none;
@@ -169,9 +192,5 @@
       text-align: center;
     }
     
-    .learnMoreButton:hover {
-      background-color: var(--primary-btn);
-      color: white;
-    }
-  
+ 
   }

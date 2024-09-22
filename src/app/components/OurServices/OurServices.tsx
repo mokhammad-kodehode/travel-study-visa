@@ -1,47 +1,45 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './styles.module.css'; // Убедитесь, что у вас есть этот файл стилей
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPassport, faPlane, faHotel, faShieldAlt, faPlaneDeparture,} from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 const services = [
   {
     title: 'Оформление загранпаспорта',
     description: 'Для быстрого оформления загранпаспорта требуется заполнение анкеты на специальном бланке.',
     link: '/services_page/zagran_passport',
-    icon: faPassport
+    image: '/images/Pass.jpg' // Добавьте путь к вашему изображению
   },
   {
-    title: 'Бронирование авиа и ж\д билетов',
+    title: 'Бронирование авиа и отелей',
     description: 'Мы поможем вам и подберем наиболее выгодные варианты!',
     link: '/services_page/booking_tickets',
-    icon: faPlane
+    image: '/images/Booking.jpg' // Добавьте путь к вашему изображению
   },
   {
     title: 'Бронирование отелей',
     description: 'Подберем идеальный отель для отдыха или рабочей поездки.',
     link: '/services_page/booking_hotel',
-    icon: faHotel
+    image: '/images/services/hotel.jpg' // Добавьте путь к вашему изображению
   },
   {
     title: 'Страхование',
     description: 'Наличие страховки означает, что Вы будете защищены в другой стране, если возникнет непредвиденная ситуация.',
     link: '/services_page/strahovka',
-    icon: faShieldAlt
+    image: '/images/services/insurance.jpg' // Добавьте путь к вашему изображению
   },
   {
     title: 'Оформление виз',
-    description: 'Наличие страховки означает, что Вы будете защищены в другой стране, если возникнет непредвиденная ситуация.',
-    link: '/services/multivisa',
-    icon: faHotel
+    description: 'Оформление визы для посещения иностранных стран.',
+    link: '/services_page/visa',
+    image: '/images/services/visa.jpg' // Добавьте путь к вашему изображению
   },
   {
     title: 'Оформление мультивиз',
     description: 'Мультивиза представляет собой аналог шенгенской визы. Она позволяет многократно посещение стран.',
-    link: '/services/multivisa',
-    icon: faHotel
+    link: '/services_page/multivisa',
+    image: '/images/services/multivisa.jpg' // Добавьте путь к вашему изображению
   },
-  // Добавьте описание остальных услуг
 ];
 
 const ServicesList: React.FC = () => {
@@ -51,16 +49,22 @@ const ServicesList: React.FC = () => {
       <div className={styles.servicesGrid}>
         {services.map((service, index) => (
           <div key={index} className={styles.serviceCard}>
-            <div className={styles.serviceCard_title}>
-              <FontAwesomeIcon icon={service.icon} className={styles.serviceIcon} /> {/* Иконка для каждой услуги */}
+            <div className={styles.serviceCard_header}>
+              <Image 
+                src={service.image} 
+                alt={service.title} 
+                width={400} // Задаем ширину изображения
+                height={80} // Задаем высоту изображения
+                className={styles.serviceImage} 
+              />
+            </div>
               <Link className={styles.Cardtitle} href={service.link}>
                 {service.title}
               </Link>
-            </div>
-            <p>{service.description}</p>
-            <Link href={service.link} legacyBehavior>
-              <a className={styles.learnMoreButton}>Подробнее</a>
-            </Link>
+              <p>{service.description}</p>
+              <Link className={styles.learnMoreButton} href={service.link} >
+                Подробнее
+              </Link>
           </div>
         ))}
       </div>
