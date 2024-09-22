@@ -8,7 +8,7 @@ import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
 import Advantages from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
-import { FaTags, FaUserTie, FaLaptopHouse, FaHeadset } from 'react-icons/fa'
+import { FaPassport, FaFileAlt, FaCalendarCheck, FaEnvelopeOpenText } from 'react-icons/fa'
 
 
 const ZagranPage = () => {
@@ -47,30 +47,30 @@ const ZagranPage = () => {
                   <h3 className={styles.title_two}>Почему стоит выбрать нас?</h3>
                   <div className={styles.special_wrapper}>
                     <VisaFeatureCard
-                      icon={FaTags}
+                      icon={FaPassport}
                       title="Выбор типа паспорта"
-                      description="Мы поможем вам выбрать между биометрическим паспортом на 10 лет и старым образцом на 5 лет, в зависимости от ваших потребностей, а также срок оформления, исходя из Ваших ближайших плановых путешествий. "
+                      description="Мы поможем вам выбрать между биометрическим паспортом на 10 лет и старым образцом на 5 лет, а также срок оформления, исходя из Ваших ближайших плановых путешествий. "
                     />
                     <VisaFeatureCard
-                      icon={FaUserTie}
+                      icon={FaFileAlt}
                       title="Заполнение анкеты"
-                      description="Вы можете заполнить анкету самостоятельно или с нашей помощью. Мы гарантируем быстрое,  за выбранный срок, и качественное оформление, чтобы у вас был полный комплект документов"
+                      description="Вы можете заполнить анкету самостоятельно или с нашей помощью. Мы гарантируем быстрое, и качественное оформление, чтобы у вас был полный комплект документов"
                     />
                     <VisaFeatureCard
-                      icon={FaLaptopHouse}
+                      icon={FaCalendarCheck}
                       title="Запись на подачуя"
                       description="Мы организуем запись на подачу документов в удобное для вас время, избегая очередей и ненужного ожидания."
                     />
                     <VisaFeatureCard
-                      icon={FaHeadset}
+                      icon={FaEnvelopeOpenText}
                       title="Получение паспорта"
                       description="Мы будем информировать вас о готовности паспорта и поможем забрать его в назначенный срок"
                     />
               </div>
         </section >
-        <ServicesList/>
-        <Contact/>
         <Advantages/>
+        <Contact/>
+        <ServicesList/>
     </main>
   )
 }
