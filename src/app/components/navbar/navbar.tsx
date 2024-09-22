@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/services_page/booking_tickets">Бронирование авиа и ж/д билетов</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/booking_tickets">Бронирование авиа и отелей</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/services_page/booking_hotel">Бронирование отелей</Link>

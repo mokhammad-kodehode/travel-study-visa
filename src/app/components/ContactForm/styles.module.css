@@ -16,14 +16,14 @@
   }
   
   .modal {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/big.jpg');
+    background-image: linear-gradient(rgba(44, 3, 58, 0.5), rgba(0, 0, 0)), url('/images/big.jpg');
     background-size: cover;
     background-position: top;
     position: relative;
     width: 700px;
     padding: 40px;
     border-radius: 8px;
-    border: 1px solid var(--gold);
+
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1001;
   }
@@ -40,6 +40,7 @@
     background: none;
     font-size: 2.5em;
     cursor: pointer;
+    color: #fff;
   }
   
   .form {
@@ -93,13 +94,13 @@
 
   .submitButton {
     height: 55px;
-    color: var(--dark-blue);
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
      flex-shrink: 0;
      border-radius: 5px;
      border: none;
-     background: var(--gold);
+     background: var(--violet);
      cursor: pointer;
      margin-top: 15px;
   }
@@ -126,8 +127,8 @@
     .modal {
       position: relative;
       width: 98%;
-      height: 70%;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/big.jpg');
+      height: 650px;
+      background-image: linear-gradient(rgba(116, 47, 139), rgba(0, 0, 0));
       background-size: cover;
       background-position: top right;
       padding: 40px 20px;
@@ -223,9 +224,10 @@
        flex-shrink: 0;
        border-radius: 5px;
        border: none;
-       background: var(--gold);
+       background: var(--violet);
        cursor: pointer;
        margin-top: 15px;
+       font-family: 'PT Sans Narrow', sans-serif;
     }
     
 

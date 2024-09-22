@@ -35,14 +35,14 @@
   
   .submitButton {
     height: 55px;
-    color: var(--dark-blue);
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
     width: 100%;
      flex-shrink: 0;
      border-radius: 5px;
      border: none;
-     background: var(--gold);
+     background: var(--violet);
      cursor: pointer;
      margin-top: 10px;
   }

@@ -23,7 +23,7 @@ const ZagranPage = () => {
             <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Оформоение загранпаспорта</h1>
+                        <h1 className={styles.title_text}>Оформление загранпаспорта</h1>
                         <h2 className={styles.title_text_desc}>С нами оформление заграничного паспорта становится простым и быстрым! Обратитесь к нам и сделайте первый шаг к своим путешествиям!</h2>
                         <button onClick={handleOpenModal} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
                             {isModalOpen && (
@@ -37,11 +37,11 @@ const ZagranPage = () => {
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
               <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Оформаление загранпаспорта</span>
+              <span>Оформление загранпаспорта</span>
             </div>
         </div>
         <section className={styles.section_text_content}>
-            <div className={styles.section_text_content_title}>Оформоение загранпаспорта</div>
+            <div className={styles.section_text_content_title}>Оформление загранпаспорта</div>
                 <p className={styles.description}>Мы предлагаем услугу ускоренного оформления заграничного паспорта, которая избавит вас от всех забот. Наша команда профессионалов поможет на каждом этапе, чтобы вы могли сосредоточиться на своих планах.
                 </p>
                   <h3 className={styles.title_two}>Почему стоит выбрать нас?</h3>
@@ -58,7 +58,7 @@ const ZagranPage = () => {
                     />
                     <VisaFeatureCard
                       icon={FaCalendarCheck}
-                      title="Запись на подачуя"
+                      title="Запись на подачу"
                       description="Мы организуем запись на подачу документов в удобное для вас время, избегая очередей и ненужного ожидания."
                     />
                     <VisaFeatureCard

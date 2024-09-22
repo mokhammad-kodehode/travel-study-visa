@@ -1,7 +1,6 @@
     .banner {
-      background: var(--dark-blue);
+      background: var(--violet);
       width: 100%;
-      height: 100vh;
       margin: 0 auto;
       background-size: cover; /* Растягивает фон на всю площадь .banner */
       background-position: center;

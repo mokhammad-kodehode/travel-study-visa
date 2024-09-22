@@ -44,7 +44,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ closeModal }) => {
                     <textarea id="comment" placeholder="Комментарий"></textarea>
                 </div>
                 <p>Поля отмеченные <span> * </span> обязательны для заполнения</p>
-                <button type="submit" className={styles.submitButton}>Отправить</button>
+                <button type="submit" className={styles.submitButton}>ОТПРАВИТЬ</button>
             </form>
           </div>
         </div>
