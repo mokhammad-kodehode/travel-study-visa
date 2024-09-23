@@ -147,7 +147,7 @@ const CountryPage = () => {
                   <tbody>
                     <tr>
                       <td>Стоимость «под ключ»</td>
-                      <td>$2 600</td>
+                      <td>$2 900</td>
                     </tr>
                     <tr>
                       <td>Стоимость продления</td>

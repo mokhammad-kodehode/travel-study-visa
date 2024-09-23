@@ -131,15 +131,6 @@ export default function KSA() {
                     <td className={styles.desc}>Срок действия паспорта должен быть не менее шести месяцев с момента въезда в Саудовскую Аравию.</td>
                   </tr>
                   <tr>
-                    <td>Онлайн-заявка</td>
-                    <td className={styles.desc}>
-                      Заполняется на официальном сайте{' '}
-                      <Link className={styles.link} href="https://visa.visitsaudi.com" target="_blank" rel="noopener noreferrer">
-                        Saudi eVisa
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
                     <td>Оплата визового сбора</td>
                     <td className={styles.desc}>Обычно это около $160</td>
                   </tr>

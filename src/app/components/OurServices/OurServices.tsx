@@ -5,6 +5,18 @@ import Image from 'next/image';
 
 const services = [
   {
+    title: 'Визовые услуги',
+    description: 'Оформление туристических, деловых, студенческих и рабочих виз для любых стран.',
+    link: '/services_page/booking_tickets',
+    image: '/images/countries/euro.jpg' // Добавьте путь к вашему изображению
+  },
+  {
+    title: 'Образовательные программы',
+    description: 'Организация учебных программ в престижных учебных заведениях по всему миру.',
+    link: '/services_page/booking_tickets',
+    image: '/images/countries/euro.jpg' // Добавьте путь к вашему изображению
+  },
+  {
     title: 'Умра и туры в Саудовскую Аравию',
     description: 'Мы предлагаем услуги по оформлению визы Умра и организацию незабываемых туров в Саудовскую Аравию!',
     link: '/services_page/umra',

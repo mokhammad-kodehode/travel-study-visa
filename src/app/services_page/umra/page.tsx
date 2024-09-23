@@ -8,7 +8,7 @@ import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
 import Advantages from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
-import { FaBed , FaShuttleVan, FaMapMarkedAlt} from 'react-icons/fa'
+import { FaBed , FaShuttleVan, FaMapMarkedAlt, FaMoneyBillWave} from 'react-icons/fa'
 
 const UmraPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -58,6 +58,11 @@ const UmraPage = () => {
                     <VisaFeatureCard
                       icon={FaMapMarkedAlt}
                       title="Экскурсии"
+                      description="Профессиональные гиды расскажут о значении святых мест и помогут вам в организации всех необходимых обрядов."
+                    />
+                    <VisaFeatureCard
+                      icon={FaMoneyBillWave}
+                      title="Ценовой диапазон"
                       description="Профессиональные гиды расскажут о значении святых мест и помогут вам в организации всех необходимых обрядов."
                     />
               </div>
