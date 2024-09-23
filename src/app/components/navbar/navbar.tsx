@@ -26,10 +26,7 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const closeDropdown = () => {
-    setVisaMenuOpen(true)
-    setServicesMenuOpen(true)
-  }
+
   
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
@@ -99,24 +96,16 @@ const Navbar: React.FC = () => {
             </div>
             {isServicesMenuOpen && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
+                 <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/services_page/umra">Умра и туры в Саудовскую Аравию
+                  </Link>
+                </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/services_page/zagran_passport">Оформление загранпаспортов
                   </Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/services_page/booking_tickets">Бронирование авиа и отелей</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/services_page/booking_hotel">Бронирование отелей</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/services_page/strahovka">Страхование</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/services_page/strahovka">Страхование</Link>
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/service2">Оформление мультивиз</Link>
                 </li>
               </ul>
             )}
@@ -147,6 +136,9 @@ const Navbar: React.FC = () => {
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/japan">Япония</Link>
                 </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/visa_page/saudi_arabia">Саундовская Аравия</Link>
+                </li>
               </ul>
             )}
           </li>
@@ -171,7 +163,7 @@ const Navbar: React.FC = () => {
                   <Link onClick={closeMobileNav} href="/vnj_page/Spain">Испания</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/UAE">ОАЭ</Link>
+                  <Link onClick={closeMobileNav} href="/vnj_page/UAE">ОАЭ</Link>
                 </li>
               </ul>
             )}

@@ -5,6 +5,12 @@ import Image from 'next/image';
 
 const services = [
   {
+    title: 'Умра и туры в Саудовскую Аравию',
+    description: 'Мы предлагаем услуги по оформлению визы Умра и организацию незабываемых туров в Саудовскую Аравию!',
+    link: '/services_page/umra',
+    image: '/images/Umra.jpg' // Добавьте путь к вашему изображению
+  },
+  {
     title: 'Оформление загранпаспорта',
     description: 'Для быстрого оформления загранпаспорта требуется заполнение анкеты на специальном бланке.',
     link: '/services_page/zagran_passport',
@@ -15,12 +21,6 @@ const services = [
     description: 'Мы поможем вам и подберем наиболее выгодные варианты!',
     link: '/services_page/booking_tickets',
     image: '/images/Booking.jpg' // Добавьте путь к вашему изображению
-  },
-  {
-    title: 'Бронирование отелей',
-    description: 'Подберем идеальный отель для отдыха или рабочей поездки.',
-    link: '/services_page/booking_hotel',
-    image: '/images/services/hotel.jpg' // Добавьте путь к вашему изображению
   },
   {
     title: 'Страхование',

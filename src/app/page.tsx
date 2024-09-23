@@ -28,7 +28,7 @@ export default function Home() {
                <div className={styles.banner_title_text}>
                 <h1 className={styles.title_text}>Путешействуйте без границ</h1>
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
-                <h3 className={styles.title_text_desc}>Гражданство Румынии</h3>
+                <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ</h3>
                </div>
                <button onClick={handleOpenModal} className={styles.order_btn} > ЗАКАЗАТЬ</button>
                 {isModalOpen && (
@@ -45,21 +45,21 @@ export default function Home() {
           </section>
           <section className={styles.section_two}>
                   <Image
-                  src="/images/Pass.jpg"
+                  src="/images/global.jpg"
                   alt="Pass"
                   width={600} 
                   height={400} 
                   className={styles.section_image}
                 />
                 <div className={styles.section_two_title}>
-                  <h2 className={styles.section_two_h2}>Оформляем визы и загранпаспорта</h2>
+                  <h2 className={styles.section_two_h2}>Оформляем визы</h2>
                   <p className={styles.section_two_p}>Каждый день мы совершенствуем процесс получения виз в любую страну.
                   Создаём выгодные условия сотрудничества для десятков клиентов по всей стране.
                   Сотрудники на протяжении десяти лет трудятся обеспечивая Вам комфортные условия в подготовке документов и 
                   получении виз в страны Шенгена по самым низким ценам и с индивидуальным подходом к каждому клиенту.
                   Убедитесь в этом сами, став нашим партнёром!
                   </p>
-                  <Link href="/services_page/romanian-citizenship">
+                  <Link href="/visa_page">
                     <button className={styles.section_Six_btn}>УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                 </div>
@@ -67,17 +67,17 @@ export default function Home() {
           <Advantages/>
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div className={styles.section_Six_title}>
-                  <h2 className={styles.section_Six_h2}>Гражданство Румынии</h2>
+                  <h2 className={styles.section_Six_h2}>Умра и туры в Саудовскую Аравию</h2>
                   <p className={styles.section_Six_p}>
-                  Мы предоставляем полный комплекс услуг, начиная с первоначальной консультации и заканчивая подачей документов на получение гражданства. Наши специалисты обеспечат профессиональную поддержку на каждом этапе процесса и помогут ускорить процедуру оформления необходимых документов.
+                  Мы обеспечим быстрое и простое оформление визы Умра, которая позволит вам совершить паломничество в любое время года. Наша команда поможет собрать все необходимые документы и проконсультирует по процессу получения визы, чтобы вы могли сосредоточиться на духовном аспекте поездки.
                   </p>
-                  <Link href="/services_page/romanian-citizenship">
+                  <Link href="/services_page/umra">
                     <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                   
                 </div>
                 <Image
-                  src="/images/Six.jpg" 
+                  src="/images/Umra.jpg" 
                   alt="Romania"
                   width={600} 
                   height={400} 
@@ -85,6 +85,24 @@ export default function Home() {
                 />
           </section>
           <CountryCards/>
+          <section className={`${styles.section_four} ${styles.mobileReverse}`}>
+               <Image
+                  src="/images/global_two.jpg" 
+                  alt="Pass"
+                  width={600} 
+                  height={400}
+                  className={styles.section_image}
+                />
+                <div className={styles.section_four_title}>
+                  <h2 className={styles.section_four_h2}>Оформление ВНЖ</h2>
+                  <p className={styles.section_four_p}>Мы ежедневно упрощаем процесс получения вида на жительство, предлагая удобные и выгодные условия для наших клиентов. Наша команда с более чем десятилетним опытом помогает вам на всех этапах подготовки документов, гарантируя персональный подход и конкурентные цены. Станьте нашим партнёром и получите ВНЖ легко и быстро!
+                  </p>
+                  <Link href="/services_page/vnj_page">
+                    <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
+                  </Link>
+                </div>
+          </section>
+          <ServicesList/>
           <section className={`${styles.section_four} ${styles.mobileReverse}`}>
                 <div className={styles.section_four_title}>
                   <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
@@ -102,7 +120,6 @@ export default function Home() {
                   className={styles.section_image}
                 />
           </section>
-          <ServicesList/>
           <Contact/>
     </main>
   )
