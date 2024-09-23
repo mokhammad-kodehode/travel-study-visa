@@ -148,7 +148,6 @@
       background-color: #f9f9f9;
       border: 1px solid #e0e0e0;
       border-radius: 8px;
-      padding: 15px;
       margin-bottom: 10px;
       display: flex;
       flex-direction: column; /* Элементы располагаются вертикально */
@@ -176,6 +175,7 @@
       opacity: 0;
       transition: opacity 0.5s ease;
       padding-top: 0;
+      padding: 15px;
     }
     
     /* Когда текст раскрыт */
@@ -184,15 +184,45 @@
       opacity: 1; /* Делаем его видимым */
       padding-top: 10px;
     }
+
+    .process_list_two {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
     
-    .listItemHeader {
+    .process_list_two li {
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column; /* Элементы располагаются вертикально */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      padding: 15px;
+    }
+    
+
+    .process_list_two strong {
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    
+    .toggleButton {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
     }
     
-    .toggleButton {
+    .toggleArrow {
       background: none;
       border: none;
       cursor: pointer;
@@ -201,11 +231,11 @@
       transition: transform 0.3s ease;
     }
     
-    .toggleButton:hover {
+    .toggleArrow:hover {
       color: var(--violet);
     }
     
-    .toggleButton.open {
+    .toggleArrow.open {
       transform: rotate(180deg); /* Разворот стрелки при открытии */
     }
   

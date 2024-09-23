@@ -7,7 +7,7 @@ import ModalForm from '@/app/components/ContactForm/ContactFor';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
-import Advantages from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
+import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
 import { FaTags, FaUserTie, FaLaptopHouse, FaHeadset } from 'react-icons/fa'
 
 
@@ -70,7 +70,7 @@ const BookingTicketsPage = () => {
         </section >
         <ServicesList/>
         <Contact/>
-        <Advantages/>
+        <AdvantagesTwo/>
     </main>
   )
 }

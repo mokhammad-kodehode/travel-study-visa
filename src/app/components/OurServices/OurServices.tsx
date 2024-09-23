@@ -22,24 +22,6 @@ const services = [
     link: '/services_page/booking_tickets',
     image: '/images/Booking.jpg' // Добавьте путь к вашему изображению
   },
-  {
-    title: 'Страхование',
-    description: 'Наличие страховки означает, что Вы будете защищены в другой стране, если возникнет непредвиденная ситуация.',
-    link: '/services_page/strahovka',
-    image: '/images/services/insurance.jpg' // Добавьте путь к вашему изображению
-  },
-  {
-    title: 'Оформление виз',
-    description: 'Оформление визы для посещения иностранных стран.',
-    link: '/services_page/visa',
-    image: '/images/services/visa.jpg' // Добавьте путь к вашему изображению
-  },
-  {
-    title: 'Оформление мультивиз',
-    description: 'Мультивиза представляет собой аналог шенгенской визы. Она позволяет многократно посещение стран.',
-    link: '/services_page/multivisa',
-    image: '/images/services/multivisa.jpg' // Добавьте путь к вашему изображению
-  },
 ];
 
 const ServicesList: React.FC = () => {

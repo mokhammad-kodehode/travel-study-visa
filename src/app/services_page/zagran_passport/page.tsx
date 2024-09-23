@@ -7,7 +7,7 @@ import ModalForm from '@/app/components/ContactForm/ContactFor';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
-import Advantages from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
+import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
 import { FaPassport, FaFileAlt, FaCalendarCheck, FaEnvelopeOpenText } from 'react-icons/fa'
 
 
@@ -25,7 +25,7 @@ const ZagranPage = () => {
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление загранпаспорта</h1>
                         <h2 className={styles.title_text_desc}>С нами оформление заграничного паспорта становится простым и быстрым! Обратитесь к нам и сделайте первый шаг к своим путешествиям!</h2>
-                        <button onClick={handleOpenModal} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
+                        <button onClick={handleOpenModal} className={styles.order_btn} >ОФОРМИТЬ</button>
                             {isModalOpen && (
                             <ModalForm closeModal={handleCloseModal} />
                             )}
@@ -68,7 +68,7 @@ const ZagranPage = () => {
                     />
               </div>
         </section >
-        <Advantages/>
+        <AdvantagesTwo/>
         <Contact/>
         <ServicesList/>
     </main>

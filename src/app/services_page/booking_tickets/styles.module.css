@@ -100,13 +100,15 @@
   .section_text_content {
     margin: 0 auto;
     width: 1200px;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 
   .section_text_content_title {
     width: 100%;
     font-size: 33px;
     font-weight: 600;
+    color: var(--text-color);
+    padding: 10px 0;
 }
 
   .section_text_content_title span {
@@ -115,7 +117,7 @@
   }
 
   .description {
-   padding: 15px 0;
+   padding: 10px 0;
    width: 75%;
    font-size: 18px;
    color: var(--text-color);
@@ -129,9 +131,9 @@
 
 
    .title_two {
-    font-size: 30px;
+    font-size: 28px;
     margin-top: 15px;
-    width: 74%;
+    color: var(--text-color);
    }
 
   .special_wrapper {
@@ -203,7 +205,7 @@
   .title_text_desc {
     width: 100%;
     flex-shrink: 0;
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -219,7 +221,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     font-size: 16px;
-    padding: 0 5px ;
+    padding: 0 15px ;
   }
   
   .breadcrumbs {
@@ -250,13 +252,15 @@
 
     .section_text_content_title {
       width: 100%;
-      font-size: 26px;
+      font-size: 27px;
       font-weight: 600;
+      padding: 10px;
   }
   
     .description {
       width: 100%;
       font-size: 16px;
+      padding: 10px;
     }
   
     .special_wrapper {
@@ -267,6 +271,7 @@
     .title_two {
       font-size: 24px;
       width: 100%;
+      padding: 10px;
     }
 
   

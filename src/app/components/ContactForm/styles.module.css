@@ -106,8 +106,7 @@
   }
   
   .submitButton:hover {
-    background-color: var(--orange);
-    color: black;
+    background-color: var(--light-blue);
   }
 
   @media (max-width: 820px) {

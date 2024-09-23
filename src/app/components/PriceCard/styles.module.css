@@ -86,7 +86,8 @@
 }
 
 .order_btn:hover {
-  background-color: var(--light-gold);
+  background-color: var(--violet);
+  color: #fff;
 }
 
 .service_list {

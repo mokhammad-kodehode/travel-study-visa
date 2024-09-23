@@ -85,7 +85,7 @@ export default function Home() {
                 />
           </section>
           <CountryCards/>
-          <section className={`${styles.section_four} ${styles.mobileReverse}`}>
+          <section className={styles.section_four}>
                <Image
                   src="/images/global_two.jpg" 
                   alt="Pass"

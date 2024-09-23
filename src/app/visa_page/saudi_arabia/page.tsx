@@ -77,16 +77,15 @@ export default function KSA() {
         <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
         <ul className={styles.process_list}>
             {visaDetails.map((visa, index) => (
-              <li key={index} className={styles.process_list_item}>
-                <div className={styles.listItemHeader}>
+              <li key={index} className={styles.process_list_item}> 
+                <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>  
                   <strong>{visa.title}</strong>
-                  <button
-                    className={`${styles.toggleButton} ${openIndex === index ? 'open' : ''}`}
-                    onClick={() => toggleDescription(index)}
+                  <span
+                    className={`${styles.toggleArrow} ${openIndex === index ? 'open' : ''}`}
                   >
                     {openIndex === index ? '▲' : '▼'}
-                  </button>
-                </div>
+                  </span>
+                </button>
                 {/* Текст должен быть ниже кнопки и открываться по состоянию */}
                 <div className={`${styles.description} ${openIndex === index ? styles.open : ''}`}>
                   {visa.description}
@@ -155,7 +154,7 @@ export default function KSA() {
                 </tbody>
               </table>
               <h2 className={styles.title_two}>Процесс получения визы:</h2>
-            <ul className={styles.process_list}>
+            <ul className={styles.process_list_two}>
                 <li>
                   <strong>Заполнение онлайн-заявки</strong>
                   <span>Через официальный портал Саудовской Аравии</span>

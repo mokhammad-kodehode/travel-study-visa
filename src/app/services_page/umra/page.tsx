@@ -8,7 +8,7 @@ import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
 import Advantages from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
-import { FaPassport, FaFileAlt, FaCalendarCheck, FaEnvelopeOpenText } from 'react-icons/fa'
+import { FaBed , FaShuttleVan, FaMapMarkedAlt} from 'react-icons/fa'
 
 const UmraPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -36,28 +36,27 @@ const UmraPage = () => {
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
               <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Оформление визы Умра и туров в Саудовскую Аравию</span>
+              <span>Умра и туры в Саудовскую Аравию</span>
             </div>
         </div>
         <section className={styles.section_text_content}>
             <div className={styles.section_text_content_title}>Виза Умра</div>
                 <p className={styles.description}>Мы обеспечим быстрое и простое оформление визы Умра, которая позволит вам совершить паломничество в любое время года. Наша команда поможет собрать все необходимые документы и проконсультирует по процессу получения визы, чтобы вы могли сосредоточиться на духовном аспекте поездки.
                 </p>
-                <div className={styles.section_text_content_title}>Тур Умра</div>
                   <h3 className={styles.title_two}>Мы предлагаем готовые туры Умра, которые включают:</h3>
                   <div className={styles.special_wrapper}>
                     <VisaFeatureCard
-                      icon={FaPassport}
+                      icon={FaBed }
                       title="Проживание"
                       description="Комфортабельные отели в Мекке и Медине с удобным доступом к святым местам. "
                     />
                     <VisaFeatureCard
-                      icon={FaFileAlt}
+                      icon={FaShuttleVan}
                       title="Трансферы"
                       description="Профессиональные гиды расскажут о значении святых мест и помогут вам в организации всех необходимых обрядов."
                     />
                     <VisaFeatureCard
-                      icon={FaCalendarCheck}
+                      icon={FaMapMarkedAlt}
                       title="Экскурсии"
                       description="Профессиональные гиды расскажут о значении святых мест и помогут вам в организации всех необходимых обрядов."
                     />
