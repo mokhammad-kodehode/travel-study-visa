@@ -116,9 +116,14 @@ width: 702px;
 
 .image_wrapper {
   align-self: start;
-  width: 600px; /* Изображение занимает всю ширину родительского блока */
+  width: 860px; /* Изображение занимает всю ширину родительского блока */
   max-width: 100%;
   height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
+  border-radius: 5px;
+}
+
+.section_image {
+  border-radius: 5px;
 }
 
 .section_text_content {
@@ -173,6 +178,7 @@ width: 702px;
   font-weight: 600;
   font-size: 18px;
   color: #333;
+  text-align: start;
 }
 
 /* Скрытый текст */
@@ -483,7 +489,7 @@ border-bottom: none; /* Убираем границу в последней ст
        margin-bottom: 15px;
      }
   
-    .banner_title p {
+     .banner_title p {
       width: 100%;
       margin-top: 30px;
       font-size: 22px;
@@ -515,10 +521,11 @@ border-bottom: none; /* Убираем границу в последней ст
     }
     
     .title_text_desc {
-      font-size: 19px;
+      font-size: 22px;
       line-height: 30px;
       font-weight: 300;
-      position: relative
+      position: relative;
+      width: 100%;
     }
   
     .section_two_top {

@@ -8,7 +8,7 @@ import ModalForm from '@/app/components/ContactForm/ContactFor';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
-import { FaPlane, FaCalendarAlt, FaBriefcase, FaFileAlt } from 'react-icons/fa';
+import { FaPlane, FaCalendarAlt, FaBriefcase, FaSuitcaseRolling} from 'react-icons/fa';
 import { useState} from 'react';
 
 
@@ -27,7 +27,7 @@ const visaDetails = [
   {
     title: 'Рабочая виза H-1B',
     description:
-      'Для предпринимателей и профессионалов, которые планируют долгосрочные деловые отношения с партнерами в Саудовской Аравии, мы предлагаем бизнес-визу на 5 лет. Она позволяет многократные въезды и обеспечит вам возможность проводить бизнес-встречи и конференции без лишних формальностей.',
+      'Выдаётся сотрудникам компаний, которых переводят в американское подразделение компании. По L-1 можно работать в США до 3 лет, с возможностью продления еще на 2 года.',
   },
   {
     title: 'Рабочая виза L-1',
@@ -96,7 +96,7 @@ export default function USA() {
                   <div className={styles.image_wrapper}>
                     <Image
                     src="/images/countries/Usa_two.jpg"
-                    alt="Pass"
+                    alt="USA"
                     width={600} 
                     height={400} 
                     layout="responsive"
@@ -142,9 +142,9 @@ export default function USA() {
                                 description="Визы США дают возможность участвовать в деловых встречах, конференциях и других профессиональных мероприятиях."
                             />
                             <VisaFeatureCard
-                                icon={FaFileAlt}
-                                title="Упрощенное оформление"
-                                description="Процесс подачи заявки на визу в США можно начать онлайн, что упрощает подготовку документов."
+                                icon={FaSuitcaseRolling}
+                                title="Гибкие условия путешествий"
+                                description="С визой в США вы можете путешествовать по всей стране, посещая различные штаты и города без дополнительных ограничений."
                             />
                   </div>
                   <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
@@ -222,6 +222,7 @@ export default function USA() {
                         </table>
             </section >
           <CountryCards/>
+          <AdvantagesTwo/>
     </main>
   )
 }
