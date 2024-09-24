@@ -80,8 +80,9 @@ color: var(--gold);
   margin: 0 auto;
   padding: 100px 0;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: .7rem;
+  gap: 2rem;
 }
 
 .section_two_title, .section_four_title, .section_Six_title {

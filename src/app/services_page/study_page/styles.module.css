@@ -1,5 +1,5 @@
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/Booking.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/study.jpg');
       width: 100%;
       height: 100vh;
       margin: 0 auto;
@@ -42,6 +42,7 @@
     flex-direction: column;
     gap: .5rem;
     font-size: 22px;
+    margin-left: 150px;
   }
   
   .title_text {
@@ -50,13 +51,14 @@
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1px;
+  width: 90%;
   color: var(--gold);
   }
   
   .title_text_desc {
     width: 702px;
     flex-shrink: 0;
-    font-size: 28px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -183,13 +185,12 @@
       align-self: center;
   }
   
-
-  
   .banner_title_text {
     display: flex;
     flex-direction: column;
     gap: .5rem;
     padding: 10px;
+    margin: 0;
   }
   
   .title_text {
@@ -200,6 +201,7 @@
   letter-spacing: 1px;
   margin-bottom: 20px;
   color: var(--gold);
+  width: 100%;
   }
   
   .title_text_desc {

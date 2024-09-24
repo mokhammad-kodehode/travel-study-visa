@@ -13,7 +13,7 @@ const services = [
   {
     title: 'Образовательные программы',
     description: 'Организация учебных программ в престижных учебных заведениях по всему миру.',
-    link: '/services_page/booking_tickets',
+    link: '/services_page/study_page',
     image: '/images/countries/euro.jpg' // Добавьте путь к вашему изображению
   },
   {

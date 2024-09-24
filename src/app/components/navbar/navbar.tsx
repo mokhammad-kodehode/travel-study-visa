@@ -96,6 +96,14 @@ const Navbar: React.FC = () => {
             </div>
             {isServicesMenuOpen && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/visa_page">Визовые услуги
+                  </Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/services_page/study_page">Образовательные программы
+                  </Link>
+                </li>
                  <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/services_page/umra">Умра и туры в Саудовскую Аравию
                   </Link>

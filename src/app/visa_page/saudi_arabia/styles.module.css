@@ -72,7 +72,7 @@
     }
 
     .title_text_desc {
-    font-size: 19px;
+    font-size: 22px;
     line-height: 30px;
     font-weight: 300;
     position: relative
@@ -116,27 +116,26 @@
     .section_text_content {
       margin: 0 auto;
       width: 1200px;
-      padding: 40px 0;
+      padding: 10px 0;
     }
   
     .section_text_content_title {
       width: 100%;
       font-size: 32px;
       font-weight: 600;
-  }
-  
+      padding: 10px 0;
+    }
+    
     .section_text_content_title span {
       font-size: 18px;
       font-weight: 400;
     }
-  
+    
     .description {
-     padding: 15px 0;
+     padding: 10px 0;
      width: 75%;
      font-size: 18px;
     }
-  
-
   
      .process_list {
       list-style-type: none;
