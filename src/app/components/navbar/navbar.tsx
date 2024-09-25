@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css'; 
 import Link from 'next/link';
+import Image from 'next/image';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -78,7 +79,16 @@ const Navbar: React.FC = () => {
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
         </div>
-        <div className={styles.logo}>LOGO</div>
+        <div className={styles.logo}>
+            <Link href="/">
+                    <Image 
+                        src="/images/logo.svg" 
+                        alt="Company Logo" 
+                        width={100} 
+                        height={100} 
+                    />
+            </Link>
+        </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/" >О компании</Link>

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 120px;
   width: 100%; /* Растягиваем на всю ширину */
   max-width: 1200px; /* Ограничиваем ширину */
   margin: 0 auto; /* Центрируем по горизонтали */
