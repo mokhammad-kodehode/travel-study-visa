@@ -149,11 +149,11 @@ const Navbar: React.FC = () => {
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/united_kingdom">Великобритания</Link>
                 </li>
-                <li className={styles.dropdown_item}>
+                {/* <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/japan">Япония</Link>
-                </li>
+                </li> */}
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/saudi_arabia">Саундовская Аравия</Link>
+                  <Link onClick={closeMobileNav} href="/visa_page/saudi_arabia">Саудовская Аравия</Link>
                 </li>
               </ul>
             )}
@@ -185,10 +185,10 @@ const Navbar: React.FC = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/grazhdanstvo" className={styles.nav_item}>Гражданство</Link>
+            <Link onClick={closeMobileNav} href="/grajdanstvo_ruminaya" >Гражданство Руминии</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/contact_page" className={styles.nav_item}>Контакты</Link>
+            <Link onClick={closeMobileNav} href="/contact_page" >Контакты</Link>
           </li>
         </ul>
         <Link href="/">

@@ -23,12 +23,12 @@ const CountryVisaSelect = () => {
                     <span>Великобритания</span>
                 </div>
             </Link>
-            <Link href="/visa_page/japan">
+            {/* <Link href="/visa_page/japan">
                 <div className={styles.countryCard}>
                     <Image className={styles.section_image} src="/images/Flags/japan.svg" alt="Флаг Японии" width={115} height={55} />
                     <span>Япония</span>
                 </div>
-            </Link>
+            </Link> */}
             <Link href="/visa_page/saudi_arabia">
                 <div className={styles.countryCard}>
                     <Image className={styles.section_image} src="/images/Flags/saudi.svg" alt="Флаг Саудовской Аравии" width={105} height={55} />
