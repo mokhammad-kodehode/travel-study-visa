@@ -43,8 +43,7 @@ export default function America() {
           </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
-               <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
-              <CountryVisaSelect/>
+               <h2 className={styles.selectCountryTitle}>СЕВЕРНАЯ АМЕРИКА</h2>
                 <div className={styles.countryList}>
                     {AmericaCountries.map(country => (
                         <Link href={country.pageUrl} key={country.name}>

@@ -38,10 +38,9 @@ export default function Europe() {
             </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
-               <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
-               <CountryVisaSelect/>
-              <CountryList countries={europeCountries}/>
+               <h2 className={styles.selectCountryTitle}>ЕВРОПА</h2>
             </div>
+            <CountryList countries={europeCountries}/>
           </section>
     </main>
   )
