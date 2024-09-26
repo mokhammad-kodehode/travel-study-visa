@@ -92,15 +92,15 @@
 }
 
   .section_two_top {
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 0;
   }
+  
   .section_two {
     background-color:#ffffff ;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
   }
 
   .selectCountryTitle{
@@ -208,20 +208,32 @@
     }
   
     .section_two_top {
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-
+      width: 400px;
       padding: 20px 0;
+
     }
     .section_two {
       background-color:#ffffff ;
+      width: 1200px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  
+    .section_two {
+      background-color:#ffffff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    
     }
   
     .selectCountryTitle{
       font-size: 28px;
-      margin: 0;
+      margin-left: 8px;
     }
 
     .CountryVisaSelect {
@@ -229,8 +241,9 @@
       border-radius: 15px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 98%;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px 0;
     }
 
     .counties_wrapper{
@@ -244,7 +257,7 @@
     .counties_wrapper h2{
       text-align: center;
       color: var(--text-color);
-       padding: 5px 28px;
+       padding: 5px 0px;
     }
   
   }

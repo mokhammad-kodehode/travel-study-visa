@@ -580,10 +580,14 @@ border-bottom: none; /* Убираем границу в последней ст
     .process_list_two {
       flex-direction: column;
       grid-template-columns: auto auto;
+      padding: 30px 0;
+      width: 100%;
+      gap: 10px;
   }
 
   .process_list_two li {
       margin-bottom: 20px;
+      padding: 20px 9px;
   }
 
   .process_list_two li::after {

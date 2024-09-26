@@ -32,11 +32,11 @@
 @media (max-width:820px) {
     .countrySelect {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
         justify-content: space-around;
         align-items: center;
         padding: 10px 0 10px 0;
-        gap: .5rem;
+        gap: .1rem;
     }
 
 

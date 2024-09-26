@@ -226,41 +226,5 @@
       
     }
 
-    .process_list_two {
-      flex-direction: column;
-      grid-template-columns: auto auto;
-  }
-
-  .process_list_two li {
-      margin-bottom: 20px;
-  }
-
-  .process_list_two li::after {
-      display: none;
-  }
-
-  .process_list_two li::before {
-      top: 50%;
-      left: -40px;
-      transform: translateY(-50%);
-  }
-
-  .process_list_two li::before {
-    content: counter(step-counter);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--violet);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    top: -20px; /* Расположить сверху элемента */
-    left: 50%;
-    transform: translateX(-50%);
-  }
   
   }

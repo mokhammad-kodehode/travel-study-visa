@@ -53,8 +53,7 @@ export default function KSA() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз в Саудовскую Аравию</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в Саудовскую Аравию.</h2>
-                        <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+                        <h2 className={styles.title_text_desc}>Наши специалисты помогут выбрать оптимальный страховой полис, исходя из ваших потребностей и продолжительности поездки.</h2>
                     </div>
                      <button onClick={handleOpenModal} className={styles.order_btn} >ЗАКАЗАТЬ</button>
                         {isModalOpen && (
@@ -159,41 +158,6 @@ export default function KSA() {
                   <span>После обработки заявки виза приходит в электронном виде на указанный вами email.</span>
                 </li>
               </ul>
-              <h3 className={styles.title_two}>Сроки и стоимость:</h3>
-                <table className={styles.document_table}>
-                  <thead>
-                    <tr>
-                      <th>Наименование</th>
-                      <th>Стоимость / Сроки</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Стоимость «под ключ»</td>
-                      <td>$2 600</td>
-                    </tr>
-                    <tr>
-                      <td>Стоимость продления</td>
-                      <td>от $300</td>
-                    </tr>
-                    <tr>
-                      <td>Срок получения</td>
-                      <td>4 недели</td>
-                    </tr>
-                    <tr>
-                      <td>Рассмотрение заявки</td>
-                      <td>5-20 дней</td>
-                    </tr>
-                    <tr>
-                      <td>Прохождение медицинского теста и биометрии</td>
-                      <td>2-7 дней</td>
-                    </tr>
-                    <tr>
-                      <td>Получение Emirates ID</td>
-                      <td>3-5 дней</td>
-                    </tr>
-                  </tbody>
-                </table>
            </section >
            <AdvantagesTwo/>
            <Contact/>
