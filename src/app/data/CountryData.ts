@@ -275,8 +275,8 @@ export type CountryData = {
         nameof: "japan",
         name: 'Япония',
         name_two: 'Японию',
-        flagUrl: '/flags/japan.png',
-        backgroundImgUrl: '/images/countries/Japan.jpg',
+        flagUrl: '/images/Flags/japan.png',
+        backgroundImgUrl: '/images/countries/japan.svg',
         pageUrl: '/countries/japan'
       },
     ];

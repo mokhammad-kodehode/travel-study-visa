@@ -36,14 +36,10 @@
         justify-content: space-around;
         align-items: center;
         padding: 10px 0 10px 0;
-        border-bottom: 2px rgb(219, 219, 219) solid;
+        gap: .5rem;
     }
 
-    .section_image{
-       width: 90px;
-       height: 40px;
-    }
-    
+
     .countryCard {
         display: flex;
         flex-direction: column;
@@ -64,7 +60,7 @@
     
     .countryCard span {
         font-weight: bold;
-        color: #333;
+        color: #fff;
         font-size: 14px;
     }
     

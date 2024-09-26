@@ -6,6 +6,8 @@ import MyForm from '../components/contactFormTwo/ContactFormTwo'
 import CountryVisaSelect from '../components/CountryVisaSelect/page'
 import CountryList from '../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../data/CountryData'
+import { AmericaCountries } from '../data/CountryData';
+import { asiaCountries } from '../data/CountryData';
 import CountryCards from '../components/PopularCountries/PopularCountries'
 
 export default function Home() {
@@ -39,8 +41,15 @@ export default function Home() {
                 <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
                 <CountryVisaSelect/>
               </div>
-              <CountryList countries={europeCountries}/>
             </div>
+            <div className={styles.counties_wrapper}>
+                <h2>Северная Америка</h2>
+                <CountryList countries={AmericaCountries}/>
+              </div>
+              <div className={styles.counties_wrapper}>
+                <h2>Шенгенские визы</h2>
+                <CountryList countries={europeCountries}/>
+              </div>
           </section>
           <CountryCards/>
     </main>

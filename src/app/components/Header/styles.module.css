@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ширина заголовка — на всю страницу */
+  background: linear-gradient(90deg, #742f8b, #000);
+}
+
+.header_content {
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  align-items: center;
+  z-index: 1; 
+  color: white;
+  gap: 2rem;
+  width: 1200px;
+}
+  
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  margin-right: 20px;
+}
+
+.slogan {
+  font-size: 16px;
+}
+
+.slogan span {
+  color: #fbc02d; /* Цвет "Быстро и недорого" */
+  font-weight: bold;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.contact a img {
+  margin-right: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fbc02d; /* Цвет ссылок */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 820px) { 
+  .header {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static; /* Фиксируем заголовок */
+    left: 0%; 
+    top: 80px;
+    width: 100%; /* Ширина заголовка — на всю страницу */
+    background-color: var(--violet);
+  }
+  
+  .header_content {
+    display: flex;
+    display: none;
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+    background-color: rgba(8, 8, 8, 0.2); 
+    z-index: 1; 
+    color: white;
+    gap: 2rem;
+    width: 100%;
+  }
+}

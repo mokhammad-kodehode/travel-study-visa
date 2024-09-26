@@ -74,20 +74,18 @@ const Navbar: React.FC = () => {
   return (
     <header>
       <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+          <Link  className={styles.logo} href="/">
+              <Image 
+                src="/images/logo.svg" // Замените на путь к вашему логотипу
+                alt="Visa Travels Logo" 
+                width={65} 
+                height={65} 
+              />
+          </Link> 
         <div className={styles.mobile_menu_icon} onClick={toggleMobileNav}>
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar1 : ''}`}></div>
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
-        </div>
-        <div className={styles.logo}>
-            <Link href="/">
-                    <Image 
-                        src="/images/logo.svg" 
-                        alt="Company Logo" 
-                        width={100} 
-                        height={100} 
-                    />
-            </Link>
         </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
           <li className={styles.nav_item}>
@@ -193,6 +191,15 @@ const Navbar: React.FC = () => {
             <Link onClick={closeMobileNav} href="/contact_page" className={styles.nav_item}>Контакты</Link>
           </li>
         </ul>
+        <Link href="/">
+              <Image 
+                src="/images/logo.svg" // Замените на путь к вашему логотипу
+                alt="Visa Travels Logo" 
+                width={100} 
+                height={100} 
+                className={styles.logo_mobile}
+              />
+          </Link>
         <div className={styles.adress_tel_wrapper}>
              <Link 
               className={styles.adress}
