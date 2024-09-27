@@ -185,7 +185,7 @@ const Navbar: React.FC = () => {
             )}
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/grajdanstvo_ruminaya" >Гражданство Руминии</Link>
+            <Link onClick={closeMobileNav} href="/grajdanstvo_ruminaya" >Гражданство Румынии</Link>
           </li>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/contact_page" >Контакты</Link>
