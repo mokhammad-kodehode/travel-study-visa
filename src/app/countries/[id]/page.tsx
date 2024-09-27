@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaSuitcaseRolling } from 'react-icons/fa';
 
+
 const visaDetails = [
   {
     title: 'Тип A (Транзитная виза)',

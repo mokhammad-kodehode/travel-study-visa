@@ -41,7 +41,6 @@ export default function Home() {
             </div > */}
           </section >
           <section className={styles.section_three}>
-              <PriceCard/>
           </section>
           <section className={styles.section_two}>
                   <Image
