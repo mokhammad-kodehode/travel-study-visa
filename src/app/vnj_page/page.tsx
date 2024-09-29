@@ -2,7 +2,6 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyFormThree from '../components/ContactFormThree/ContactFormThree';
 import Link from 'next/link';
 import Image from 'next/image';
 import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
@@ -25,7 +24,6 @@ export default function VNJ_Page() {
                         Надежное сопровождение, профессиональные консультации и быстрое оформление – все, что вам нужно для комфортного старта в новой стране. Доверьте нам ваше будущее, и начните новую жизнь прямо сейчас!
                      </p>
                 </div>
-                <MyFormThree/>
             </div>
           </section >
           <div className={styles.breadcrumbs_wrapper}>

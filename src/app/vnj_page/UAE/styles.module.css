@@ -42,30 +42,32 @@
    
  
 
-  .breadcrumbs_wrapper {
+   .breadcrumbs_wrapper {
     width: 1200px;
-    margin: 0 auto;
+    margin: auto auto;
   }
-
+  
   .breadcrumbs {
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     gap: .5rem;
     margin-top: 10px;
-}
-
-.breadcrumbs a {
+  }
+  
+  .breadcrumbs a {
     text-decoration: none;
-    color: var(--light-blue);
-}
-
-.breadcrumbs a:hover {
+    color: var(--violet);
+    font-weight: 600;
+  }
+  
+  .breadcrumbs a:hover {
     text-decoration: underline;
-}
-
-.breadcrumbs span {
+  }
+  
+  .breadcrumbs span {
     color: #585858;
-}
+  }
+  
 
   .banner_container {
     margin: 0 auto;
@@ -142,6 +144,79 @@
     width: 74%;
    }
 
+   
+   .process_list_two {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+    counter-reset: step-counter;
+    gap: 30px;
+    padding: 30px 0px;
+  }
+  
+  .process_list_two li {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-left: 4px solid var(--violet);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    counter-increment: step-counter;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .process_list_two li::before {
+    content: counter(step-counter);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--violet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px; /* Расположить сверху элемента */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  
+  .process_list_two li::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 20px;
+    height: 4px;
+    background-color: #742f8b;
+    transform: translateY(-50%);
+  }
+  
+  .process_list_two li:last-child::after {
+    display: none;
+  }
+  
+  .process_list_two strong {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .process_list_two span {
+    font-size: 14px;
+    color: #666;
+  }
+
 .special_wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);;
@@ -191,6 +266,12 @@
   padding: 15px;
   text-align: left;
 }
+
+.document_table tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
 
 .document_table th {
   text-transform: uppercase;

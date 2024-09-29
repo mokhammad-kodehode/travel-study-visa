@@ -2,7 +2,6 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '../components/contactFormTwo/ContactFormTwo'
 import CountryVisaSelect from '../components/CountryVisaSelect/page'
 import CountryList from '../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../data/CountryData'
@@ -26,7 +25,6 @@ export default function Home() {
                       Наш визовый центр поможет вам быстро и без проблем оформить шенгенскую визу, открывающую доступ к 27 странам Европы. Независимо от цели поездки — туризм, деловая встреча или учеба — мы обеспечим полное сопровождение на всех этапах процесса, избавив вас от бумажной волокиты и рисков отказа.
                     </p>
                 </div>
-                <MyForm/>
             </div>
           </section >
           <div className={styles.breadcrumbs_wrapper}>

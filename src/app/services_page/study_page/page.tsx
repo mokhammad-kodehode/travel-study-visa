@@ -11,7 +11,7 @@ import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCar
 import { FaGlobe, FaChalkboardTeacher, FaHandshake , FaLanguage  } from 'react-icons/fa'
 
 
-const BookingTicketsPage = () => {
+const StudyPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => setModalOpen(true);
@@ -81,4 +81,4 @@ const BookingTicketsPage = () => {
   )
 }
 
-export default BookingTicketsPage;
+export default StudyPage ;

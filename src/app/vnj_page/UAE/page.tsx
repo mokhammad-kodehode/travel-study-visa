@@ -2,12 +2,11 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyFormThree from '@/app/components/ContactFormThree/ContactFormThree';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaPassport, FaGlobe } from 'react-icons/fa';
 
-const CountryPage = () => {
+const Vnj_Spain_UAE = () => {
 
 
   const bannerStyle = {
@@ -34,7 +33,6 @@ const CountryPage = () => {
             Remote Visa — аналог визы цифрового кочевника и позволяет удаленным работникам проживать в ОАЭ и работать на своих иностранных работодателей.
             </p>
           </div>
-          <MyFormThree/>
         </div>
       </section >
       <div className={styles.breadcrumbs_wrapper}>
@@ -48,22 +46,7 @@ const CountryPage = () => {
         <div className={styles.section_text_content_title}> Виза Remote Work Visa (или Virtual Working Program)</div>
         <p className={styles.description}>Виза Remote Work Visa (или Virtual Working Program) в ОАЭ позволяет иностранным гражданам работать удаленно в стране, оставаясь при этом сотрудниками своих компаний за рубежом. Этот тип визы был введен в 2020 году, чтобы привлечь специалистов, работающих удаленно, и дать им возможность проживать и работать в ОАЭ.
         </p>
-        <h2 className={styles.title_two}>Процесс подачи заявки на ВНЖ:</h2>
-            <ul className={styles.process_list}>
-              <li>
-                <strong>Подготовка пакета документов и подача заявки</strong>
-                <span>Дистанционно</span>
-              </li>
-              <li>
-                <strong>Прохождение медицинского теста и биометрии</strong>
-                <span>В ОАЭ</span>
-              </li>
-              <li>
-                <strong>Дождаться доставки ID</strong>
-                <span>Можете получить ID сами, или мы можем получить ее за Вас</span>
-              </li>
-            </ul>
-          <h3 className={styles.title_two}>Особенности и требования:</h3>
+          <h2 className={styles.title_two}>Особенности и требования:</h2>
           <div className={styles.special_wrapper}>
                     <VisaFeatureCard
                         icon={FaPlane}
@@ -106,7 +89,7 @@ const CountryPage = () => {
                 <thead>
                   <tr>
                     <th>Документ</th>
-                    <th></th>
+                    <th>Описание</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -136,45 +119,55 @@ const CountryPage = () => {
                   </tr>
                 </tbody>
               </table>
-              <h3 className={styles.title_two}>Сроки и стоимость:</h3>
-                <table className={styles.pricing_table}>
-                  <thead>
-                    <tr>
-                      <th>Наименование</th>
-                      <th>Стоимость / Сроки</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Стоимость «под ключ»</td>
-                      <td>$2 900</td>
-                    </tr>
-                    <tr>
-                      <td>Стоимость продления</td>
-                      <td>от $300</td>
-                    </tr>
-                    <tr>
-                      <td>Срок получения</td>
-                      <td>4 недели</td>
-                    </tr>
-                    <tr>
-                      <td>Рассмотрение заявки</td>
-                      <td>5-20 дней</td>
-                    </tr>
-                    <tr>
-                      <td>Прохождение медицинского теста и биометрии</td>
-                      <td>2-7 дней</td>
-                    </tr>
-                    <tr>
-                      <td>Получение Emirates ID</td>
-                      <td>3-5 дней</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <h2 className={styles.title_two}>Этапы получения:</h2>
+                <ul className={styles.process_list_two}>
+                  <li>
+                    <strong>Проверка соответствия требованиям</strong>
+                    <span>
+                      Убедитесь, что вы соответствуете критериям для получения удаленной рабочей визы в ОАЭ.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Сбор необходимых документов</strong>
+                    <span>
+                      Подготовьте все требуемые документы, включая действующий загранпаспорт, фотографии, подтверждение занятости и дохода.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Подача онлайн-заявки</strong>
+                    <span>
+                      Заполните и подайте онлайн-заявку на официальном сайте властей ОАЭ или через уполномоченные сервисы.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Оплата сборов</strong>
+                    <span>
+                      Оплатите необходимые визовые сборы и медицинскую страховку, если требуется.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Ожидание рассмотрения заявки</strong>
+                    <span>
+                      Дождитесь обработки вашей заявки; обычно это занимает от 5 до 15 рабочих дней.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Получение одобрения и въезд в ОАЭ</strong>
+                    <span>
+                      После одобрения получите въездное разрешение и прибывайте в ОАЭ.
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Прохождение медицинского обследования и получение Emirates ID</strong>
+                    <span>
+                      По прибытии пройдите медицинское обследование и подайте заявку на получение Emirates ID.
+                    </span>
+                  </li>
+                </ul>
         </section >
       {/* <AdvantagesTwo/> */}
     </main>
   )
 }
 
-export default CountryPage;
+export default Vnj_Spain_UAE;
