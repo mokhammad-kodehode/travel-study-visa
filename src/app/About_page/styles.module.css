@@ -25,10 +25,7 @@
    width: 80%;
   }
 
-  .banner_title p {
-    width: 90%;
-    font-size: 22px;
-  }
+
   
   .order_btn {
       border-radius: 25px;
@@ -58,9 +55,10 @@
   }
   
   .title_text_desc {
-    font-size: 19px;
+    font-size: 22px;
     line-height: 30px;
     font-weight: 300;
+    width: 90%;
   }
 
   .breadcrumbs_wrapper {
@@ -90,47 +88,7 @@
     color: #585858;
 }
 
-  .section_two_top {
-    padding: 20px 0;
-  }
-  
-  .section_two {
-    background-color:#ffffff ;
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .selectCountryTitle{
-    font-size: 38px;
-    margin-left: 40px;
-    color: #fff;
-  }
-
-  .CountryVisaSelect {
-    background-color: var(--violet);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1200px;
-  }
-
-  .counties_wrapper{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .counties_wrapper h2{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    color: var(--text-color);
-  }
+ 
 
 
   @media   (max-width: 820px) {
@@ -211,52 +169,6 @@
       padding: 20px 0;
 
     }
-    .section_two {
-      background-color:#ffffff ;
-      width: 1200px;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-    }
-  
-    .section_two {
-      background-color:#ffffff;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-    
-    }
-  
-    .selectCountryTitle{
-      font-size: 28px;
-      margin-left: 8px;
-    }
-
-    .CountryVisaSelect {
-      background-color: var(--violet);
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      padding: 20px 0;
-    }
-
-    .counties_wrapper{
-      display: flex;
-      flex-direction: column;
-      margin-top: 0px;
-      align-items: flex-start;
-      justify-content: center;
-    }
-  
-    .counties_wrapper h2{
-      text-align: center;
-      color: var(--text-color);
-       padding: 5px 0px;
-    }
+ 
   
   }

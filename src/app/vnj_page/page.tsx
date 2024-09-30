@@ -16,13 +16,12 @@ export default function VNJ_Page() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление ВНЖ</h1>
-                        <h2 className={styles.title_text_desc}>Оформим ВНЖ в страны ЕС.</h2>
-                    </div>
-                    <p>
+                        <p>
                         Хотите получить ВНЖ легко и без лишних хлопот? 
                         Откройте двери к новым возможностям с нашими визовыми услугами для ВНЖ. 
                         Надежное сопровождение, профессиональные консультации и быстрое оформление – все, что вам нужно для комфортного старта в новой стране. Доверьте нам ваше будущее, и начните новую жизнь прямо сейчас!
                      </p>
+                    </div>
                 </div>
             </div>
           </section >

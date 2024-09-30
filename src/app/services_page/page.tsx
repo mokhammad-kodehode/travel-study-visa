@@ -1,7 +1,6 @@
 "use client"
 import ServicesList from '../components/OurServices/OurServices';
 import styles from './styles.module.css'
-import MyFormServices from '../components/ContactFormServices/ContactFour';
 import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import Contact from '../components/contact/Contact';
 import 'fontsource-inter';
@@ -14,11 +13,10 @@ export default function Services() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Услуги нашего сервиса</h1>
-                        <h2 className={styles.title_text_desc}>Наш визовый центр Study and Travel предлагает спектр услуг.</h2>
-                        <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+                        <p className={styles.title_text_desc}>Мы — ведущий эксперт в сфере визовых услуг, получения ВНЖ, гражданства и образовательных программ за рубежом. Наша цель — помочь вам открыть новые возможности для жизни, работы и учебы в других странах, предоставив комплексную поддержку на всех этапах. Мы берем на себя решение всех вопросов, связанных с визовыми и миграционными процедурами, позволяя вам сосредоточиться на достижении ваших целей.
+                        </p>
                     </div>
                 </div>
-                <MyFormServices/>
             </div>
           </section >
           <div className={styles.breadcrumbs_wrapper}>

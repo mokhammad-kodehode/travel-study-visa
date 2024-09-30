@@ -89,18 +89,20 @@ const Navbar: React.FC = () => {
         </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/" >О компании</Link>
+            <Link onClick={closeMobileNav} href="/About_page" >О компании</Link>
           </li>
-          <li className={styles.nav_item} >
+          <li  className={styles.nav_item} >
             <div className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
+              <div onClick={toggleServicesMenu} className={styles.button_click} >
               <span 
                 onClick={toggleServicesMenu} 
                 className={`${styles.submenu_arrow} ${isServicesMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
               </span>
+              </div>
             </div>
             {isServicesMenuOpen && (
               <ul className={`${styles.dropdown} ${styles.show}`}>

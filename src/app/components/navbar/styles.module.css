@@ -144,6 +144,12 @@
   display: none;
  }
 
+ .button_click{
+  width: 20px;
+  display: flex;
+  justify-content: flex-end;
+ }
+
   .submenu_arrow {
     margin-left: 5px;
     margin-top: 2px;
@@ -327,6 +333,12 @@
       display: none;
      }
 
+     .button_click{
+      width: 250px;
+      display: flex;
+      justify-content: flex-end;
+     }
+
     .mobile_menu_icon {
       display: block; /* Показываем бургер-меню на мобильных устройствах */
     }
@@ -397,6 +409,8 @@
       width: 100%;
       padding-right: 20px; /* Добавляем отступ справа для стрелки */
   }
+
+  
   
   /* Стили для выпадающего подменю */
   .dropdown {

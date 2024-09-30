@@ -15,12 +15,11 @@
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 40px;
+    padding: 50px 0;
 }
 
 .contact_info {
     width: 100%;
-    border: .5px solid rgb(187, 110, 191);
     padding: 30px;
 }
 
@@ -60,7 +59,7 @@
 
 .mapIframe {
     width: 100%;
-    height: 398px;
+    height: 100%;
     z-index: 1; /* Карта будет под контентом */
     border: none; /* Убирает границу вокруг карты */
   }

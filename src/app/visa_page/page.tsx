@@ -6,10 +6,9 @@ import CountryVisaSelect from '../components/CountryVisaSelect/page'
 import CountryList from '../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../data/CountryData'
 import { AmericaCountries } from '../data/CountryData';
-import { asiaCountries } from '../data/CountryData';
 import CountryCards from '../components/PopularCountries/PopularCountries'
 
-export default function Home() {
+export default function Visa_page() {
 
   return (
     <main className={styles.main}>
@@ -18,12 +17,10 @@ export default function Home() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в любую страну Мира.</h2>
-                        <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+                        <p>
+                       Наш визовый центр поможет вам быстро и без проблем оформить шенгенскую визу, открывающую доступ к 27 странам Европы. Независимо от цели поездки — туризм, деловая встреча или учеба — мы обеспечим полное сопровождение на всех этапах процесса, избавив вас от бумажной волокиты и рисков отказа.
+                        </p>
                     </div>
-                    <p>
-                      Наш визовый центр поможет вам быстро и без проблем оформить шенгенскую визу, открывающую доступ к 27 странам Европы. Независимо от цели поездки — туризм, деловая встреча или учеба — мы обеспечим полное сопровождение на всех этапах процесса, избавив вас от бумажной волокиты и рисков отказа.
-                    </p>
                 </div>
             </div>
           </section >

@@ -3,24 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import CountrySelect from './components/CountrySelect/countrySelect'
-import PriceCard from './components/PriceCard/priceCard'
 import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
-import { useState } from 'react'
-import ModalForm from './components/ContactForm/ContactFor'
 import Contact from './components/contact/Contact'
+import { useState } from 'react'
 
 
 import 'fontsource-inter';
 
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
 
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
-
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); // Закрываем чат, если он открыт
+            setIsChatOpen(false); // Обновляем состояние
+        } else {
+            window.jivo_api.open(); // Открываем чат, если он закрыт
+            setIsChatOpen(true); // Обновляем состояние
+        }
+    }
+};
   return (
     <main className={styles.main}>
           <section className={styles.banner}>
@@ -30,10 +35,7 @@ export default function Home() {
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
                 <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ</h3>
                </div>
-               <button onClick={handleOpenModal} className={styles.order_btn} > ЗАКАЗАТЬ</button>
-                {isModalOpen && (
-                  <ModalForm closeModal={handleCloseModal} />
-                )}
+                  <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button>
             </div> 
             {/* <div className={styles.wrapper_country_select}>
                 <h4>Выберите направление</h4>

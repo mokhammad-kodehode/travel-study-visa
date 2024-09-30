@@ -24,13 +24,14 @@
   
   
   .banner_title {
-    width: 667px;
+    width: 80%;
   }
 
   .banner_title p {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 22px;
+    width: 90%;
   }
   
 
@@ -61,7 +62,7 @@
     width: 1200px;
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 40px 0;
   }
 
   .countryList {

@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '@/app/components/contactFormTwo/ContactFormTwo';
-import CountryVisaSelect from '@/app/components/CountryVisaSelect/page'
 import CountryCards from '@/app/components/PopularCountries/PopularCountries'
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import { AmericaCountries } from '@/app/data/CountryData';
@@ -23,10 +21,7 @@ export default function America() {
                         <h2 className={styles.title_text_desc}>Оформим нужный тип визы в Америку и Канаду.</h2>
                         <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
                     </div>
-                    <p>
-                     </p>
                 </div>
-                <MyForm/>
             </div>
           </section >
           <div className={styles.breadcrumbs_wrapper}>
