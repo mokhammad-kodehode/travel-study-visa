@@ -1,7 +1,7 @@
 
 .contacts_section {
     display: flex;
-    background: var(--violet);
+    background: linear-gradient(90deg, #742f8b, #000);
     width: 100%;
     color: white;
     border-bottom: 1px solid white;

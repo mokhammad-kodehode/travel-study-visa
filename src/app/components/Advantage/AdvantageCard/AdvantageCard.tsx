@@ -43,24 +43,24 @@ const advantages: Advantage[] = [
     description: 'Оформить необходимые документы можно онлайн, без приезда в офис.',
     color: 'orange',
   },
-  {
-    icon: faFileImport,
-    title: 'Доставка',
-    description: 'Полученые документы, мы можем отправить Вам с курьером.',
-    color: 'orange',
-  },
-  {
-    icon: faStar,
-    title: 'Отличный сервис',
-    description: 'Мы мотивируем наших сотрудников на эффективное решение задач, ориентируясь на потребности клиента.',
-    color: 'orange',
-  },
+  // {
+  //   icon: faFileImport,
+  //   title: 'Доставка',
+  //   description: 'Полученые документы, мы можем отправить Вам с курьером.',
+  //   color: 'orange',
+  // },
+  // {
+  //   icon: faStar,
+  //   title: 'Отличный сервис',
+  //   description: 'Мы мотивируем наших сотрудников на эффективное решение задач, ориентируясь на потребности клиента.',
+  //   color: 'orange',
+  // },
 ];
 
 const Advantages: React.FC = () => {
   return (
     <section className={styles.container}>
-      <h2 className={styles.container_title}>Наши преимущества</h2>
+      <h2 className={styles.container_title}>Наши ценности</h2>
       <div className={styles.cards}>
         {advantages.map((advantage, index) => (
           <div key={index} className={styles.card}>

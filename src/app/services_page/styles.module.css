@@ -62,16 +62,17 @@ color: var(--gold);
 }
 
 .breadcrumbs_wrapper {
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   background-color: #f8f6f8;
 }
 
 .breadcrumbs {
+  width: 1200px;
   font-size: 12px;
   display: flex;
   gap: .5rem;
-  margin-top: 10px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .breadcrumbs a {

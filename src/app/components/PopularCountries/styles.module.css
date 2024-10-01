@@ -69,7 +69,7 @@
 
   .card {
     width: 370px;
-    height: 300px;
+    height: 450px;
     padding: 20px;
     margin: 20px;
     background-color: #fff;
@@ -81,10 +81,37 @@
     position: relative; /* Для позиционирования содержимого */
     background-size: cover; /* Покрыть всю область карточки */
     background-position: center; /* Центрировать изображение */
-    color: white; 
+    color: white;
     transition: 0.3s ease, box-shadow 0.3s ease;
     background-repeat: no-repeat;
-  }
+    overflow: hidden; /* Скрыть переполнение для эффекта приближения */
+}
+
+/* Эффект наведения */
+.card:hover {
+    transform: scale(1); /* Увеличиваем размер карточки */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличиваем тень */
+}
+
+/* Вложенный элемент для изображения */
+.card::before {
+    content: '';
+    position: absolute; /* Позиционируем изображение поверх карточки */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Наследуем фоновое изображение карточки */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Помещаем изображение за содержимым карточки */
+    transition: transform 0.3s ease; /* Плавный переход для трансформации */
+}
+
+/* Эффект наведения для изображения */
+.card:hover::before {
+    transform: scale(1.1); /* Увеличиваем фоновое изображение */
+}
 
 
   .cardContent {
@@ -98,7 +125,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Выравнивание содержимого в нижней части карточки */
-    padding: 20px; /* Отступы внутри содержимого */
+    padding: 15px; /* Отступы внутри содержимого */
   }
 
 
@@ -109,8 +136,9 @@
   }
 
   .button{
-    background-color: var(--gold);
-    color: rgb(37, 37, 37);
+    border: 2px solid var(--gold);
+    background-color: transparent;
+    color: #fff;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -118,15 +146,15 @@
     display: inline-block;
     margin-top: 15px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     text-align: center;
-    border: none;
     cursor: pointer;
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .button:hover {
   background-color: var(--light-gold);
+  color: #000000;
 }
   
 @media (max-width: 768px) {
@@ -149,14 +177,15 @@
   .cards {
     padding: 0px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Можно использовать flex-start, чтобы начать с начала */
+    overflow-x: auto; /* Включаем горизонтальную прокрутку */
+    white-space: nowrap; /* Предотвращаем перенос элементов на новую строку */
   }
 
   .card {
-    width: 370px;
-    height: 300px;
+    width: 330px;
+    height: 450px;
     padding: 20px;
     margin: 20px;
     background-color: #fff;
@@ -171,6 +200,7 @@
     color: white; 
     transition: 0.3s ease, box-shadow 0.3s ease;
     background-repeat: no-repeat;
+    flex: 0 0 auto; 
   }
 
 
@@ -185,7 +215,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Выравнивание содержимого в нижней части карточки */
-    padding: 20px; /* Отступы внутри содержимого */
+    padding: 15px; /* Отступы внутри содержимого */
   }
 
 

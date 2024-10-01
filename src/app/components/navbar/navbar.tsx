@@ -78,8 +78,8 @@ const Navbar: React.FC = () => {
               <Image 
                 src="/images/logo.svg" // Замените на путь к вашему логотипу
                 alt="Visa Travels Logo" 
-                width={65} 
-                height={65} 
+                width={isScrolled ? 40 : 65} // Меняем размер логотипа в зависимости от прокрутки
+                height={isScrolled ? 40 : 65}
               />
           </Link> 
         <div className={styles.mobile_menu_icon} onClick={toggleMobileNav}>
@@ -193,16 +193,6 @@ const Navbar: React.FC = () => {
             <Link onClick={closeMobileNav} href="/contact_page" >Контакты</Link>
           </li>
         </ul>
-        <Link href="/">
-              <Image 
-                src="/images/logo.svg" // Замените на путь к вашему логотипу
-                alt="Visa Travels Logo" 
-                width={100} 
-                height={100} 
-                className={styles.logo_mobile}
-              />
-          </Link>
-        <div className={styles.adress_tel_wrapper}>
              <Link 
               className={styles.adress}
               target="_blank" 
@@ -211,12 +201,6 @@ const Navbar: React.FC = () => {
               > 
               <FontAwesomeIcon className={styles.adress_icon} icon={faMapMarkerAlt}  />
               г.Москва, Пресненская набережная, д.12</Link>
-              <button className={styles.tel}>
-                <Link href="tel:+79005554277" className={styles.tel_link}>
-                    <FontAwesomeIcon className={styles.tel_icon} icon={faPhone} style={{ marginRight: '8px' }} />
-                </Link>
-         </button>
-        </div>
       </nav>
     </header>
   );

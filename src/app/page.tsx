@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
                 <Image
                   src="/images/Umra.jpg" 
-                  alt="Romania"
+                  alt="Umra"
                   width={600} 
                   height={400} 
                   className={styles.section_image}

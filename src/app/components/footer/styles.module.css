@@ -3,7 +3,7 @@
     max-width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: var(--violet);
+    background: linear-gradient(90deg, #742f8b, #000);
   }
 
   .footer_wrapper {
@@ -13,7 +13,6 @@
     color: #ffffff;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--violet);
   }
   
   .footer_section {

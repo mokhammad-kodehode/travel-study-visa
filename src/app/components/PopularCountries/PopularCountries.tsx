@@ -80,10 +80,6 @@ const countrycards: CountryCard[] = [
 ];
 
 const CountryCards: React.FC = () => {
-  const [activeCardId, setActiveCardId] = useState<number | null>(null);
-
-  const handleOpenModal = (id: number) => setActiveCardId(id);
-  const handleCloseModal = () => setActiveCardId(null);
 
     return (
       <section className={styles.container}>
@@ -103,12 +99,9 @@ const CountryCards: React.FC = () => {
                     <Link  href={countrycard.pageUrl}><h3 className={styles.country_link_two}>{countrycard.country}</h3></Link>
                   </div>
                   <div className={styles.cardBottom}>
-                    <p>Цена от <strong>{countrycard.price} руб.</strong></p>
                     <p>Срок выдачи от <strong>{countrycard.processingTime}</strong></p>
-                    <button onClick={() => handleOpenModal(countrycard.id)} className={styles.button}>ОФОРМИТЬ ВИЗУ</button>
-                    {activeCardId !== null && (
-                      <ModalForm closeModal={handleCloseModal} />
-                    )}
+                    <p>Цена от <strong>{countrycard.price} руб.</strong></p>
+                    <button className={styles.button}>ПОДРОБНЕЕ</button>
                   </div>
                   </div>
                 </div>

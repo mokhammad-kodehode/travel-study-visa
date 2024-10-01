@@ -1,6 +1,6 @@
     .banner {
      padding-top: 200px;
-    background-color: var(--violet);
+     background: linear-gradient(90deg, #742f8b, #000);
     }
 
 

@@ -7,7 +7,7 @@ const services = [
   {
     title: 'Визовые услуги',
     description: 'Оформление туристических, деловых, студенческих и рабочих виз для любых стран.',
-    link: '/services_page/booking_tickets',
+    link: '/visa_page',
     image: '/images/countries/euro.jpg' // Добавьте путь к вашему изображению
   },
   {
