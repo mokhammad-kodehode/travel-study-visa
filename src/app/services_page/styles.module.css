@@ -119,7 +119,7 @@ font-weight: 600;
 
   .banner_title {
    width: 100%;
-   margin-top: 50px;
+   margin-top: 0px;
    text-align: center;
    padding: 20px 5px;
   }
@@ -128,8 +128,9 @@ font-weight: 600;
 
   .banner_title p {
     width: 100%;
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 10px;
+    font-size: 19px;
+    
   }
 
   .breadcrumbs_wrapper {
@@ -141,17 +142,18 @@ font-weight: 600;
     font-size: 12px;
     display: flex;
     gap: .5rem;
-    margin: 10px;
+    margin: 0px;
 }
   
   .banner_title_text {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+  
   }
   
   .title_text {
-    margin-top: 40px;
+    margin-top: 10px;
   font-size: 38px;
   font-style: normal;
   font-weight: 600;
@@ -160,7 +162,7 @@ font-weight: 600;
   }
   
   .title_text_desc {
-    font-size: 19px;
+    font-size: 22px;
     line-height: 30px;
     font-weight: 300;
   }

@@ -33,7 +33,7 @@
 
   .scrolled_items {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     list-style-type: none;

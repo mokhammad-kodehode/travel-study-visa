@@ -3,19 +3,28 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import { useState } from 'react';
-import ModalForm from '@/app/components/ContactForm/ContactFor';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
+import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import { FaGlobe, FaChalkboardTeacher, FaHandshake , FaLanguage  } from 'react-icons/fa'
 
 
 const StudyPage = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
 
-    const handleOpenModal = () => setModalOpen(true);
-    const handleCloseModal = () => setModalOpen(false);
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); // Закрываем чат, если он открыт
+            setIsChatOpen(false); // Обновляем состояние
+        } else {
+            window.jivo_api.open(); // Открываем чат, если он закрыт
+            setIsChatOpen(true); // Обновляем состояние
+        }
+    }
+};
+
 
   return (
     <main className={styles.main}>
@@ -26,10 +35,7 @@ const StudyPage = () => {
                         <h1 className={styles.title_text}>Образовательные программы за рубежом</h1>
                         <h2 className={styles.title_text_desc}>Путешествуйте, учитесь, вдохновляйтесь вместе с нами!.
                         </h2>
-                        <button onClick={handleOpenModal} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
-                            {isModalOpen && (
-                            <ModalForm closeModal={handleCloseModal} />
-                            )}
+                        <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
                     </div>
                 </div>
             </div>
@@ -38,7 +44,7 @@ const StudyPage = () => {
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
               <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Образовательные программы за рубежом</span>
+              <span>Образовательные программы</span>
             </div>
         </div>
         <section className={styles.section_text_content}>
@@ -74,9 +80,9 @@ const StudyPage = () => {
                     />
               </div>
         </section >
-        <ServicesList/>
-        <Contact/>
         <AdvantagesTwo/>
+        <Contact/>
+        <ServicesList/>
     </main>
   )
 }

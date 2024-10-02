@@ -62,7 +62,7 @@ const countrycards: CountryCard[] = [
         continent: "Америка",
         continentUrl: "/visa_page/america",
         country: "США",
-        pageUrl: '/countries/usa',
+        pageUrl: '/visa_page/america/usa',
         price: 1400,
         processingTime: "5 дней",
         imageUrl: "/images/countries/New.jpg"
@@ -71,7 +71,7 @@ const countrycards: CountryCard[] = [
         id: 6,
         continent: "Европа",
         continentUrl: "/visa_page/europe",
-        pageUrl: '/countries/united-kingdom',
+        pageUrl: '/visa_page/united_kingdom',
         country: "Великобритания",
         price: 1400,
         processingTime: "5 дней",
@@ -101,7 +101,9 @@ const CountryCards: React.FC = () => {
                   <div className={styles.cardBottom}>
                     <p>Срок выдачи от <strong>{countrycard.processingTime}</strong></p>
                     <p>Цена от <strong>{countrycard.price} руб.</strong></p>
-                    <button className={styles.button}>ПОДРОБНЕЕ</button>
+                    <Link  href={countrycard.pageUrl}>
+                      <button className={styles.button}>ПОДРОБНЕЕ</button>
+                    </Link>
                   </div>
                   </div>
                 </div>
