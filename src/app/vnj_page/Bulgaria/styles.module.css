@@ -27,7 +27,6 @@ width: 80%;
 
 .banner_title p {
 width: 100%;
-margin-top: 30px;
 font-size: 22px;
 }
 
@@ -307,16 +306,10 @@ width: 702px;
 
  .title_two {
   font-size: 30px;
-  margin-top: 15px;
+  margin-top: 30px;
   width: 74%;
  }
 
-.special_wrapper {
-display: grid;
-grid-template-columns: auto auto auto auto;;
-gap: 1rem;
-margin-top: 20px;
-}
 
 .document_list {
 list-style-type: disc; /* Используем маркеры в виде точек */
@@ -529,10 +522,25 @@ border-bottom: none; /* Убираем границу в последней ст
     }
   
     .special_wrapper {
-      grid-template-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: auto auto;
       gap: 1rem;
+      grid-auto-flow: dense; 
     }
-  
+
+    .special_wrapper > div:nth-last-child(3),
+.special_wrapper > div:nth-last-child(2),
+.special_wrapper > div:last-child {
+  grid-column: span 1; /* Каждая из последних карточек занимает одну колонку */
+}
+
+.special_wrapper > div:nth-last-child(3) {
+  grid-column-start: 2; /* Центрируем последние три карточки */
+  grid-column-end: 1;   /* Окончание для 4-колоночной структуры */
+}
+
+ 
+    
     .title_two {
       font-size: 24px;
       width: 100%;
@@ -549,17 +557,9 @@ border-bottom: none; /* Убираем границу в последней ст
    
      .banner_title p {
        width: 100%;
-       margin-top: 15px;
-       font-size: 18px;
-       margin-bottom: 15px;
+       font-size: 22px;
      }
   
-    .banner_title p {
-      width: 100%;
-      margin-top: 30px;
-      font-size: 22px;
-    }
-    
 
     
     .banner_title_text {

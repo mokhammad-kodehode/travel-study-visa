@@ -14,12 +14,12 @@
   }
 
   .banner_title {
-    width: 667px;
+    width: 80%;
    }
  
    .banner_title p {
      width: 100%;
-     margin-top: 30px;
+     margin-top: 0px;
      font-size: 22px;
    }
    
@@ -80,7 +80,7 @@
   .section_text_content {
     margin: 0 auto;
     width: 1200px;
-    padding: 40px 0;
+    padding: 10px 0;
   }
 
   .section_text_content_title {
@@ -140,7 +140,7 @@
 
    .title_two {
     font-size: 30px;
-    margin-top: 45px;
+    margin-top: 25px;
     width: 74%;
    }
 
@@ -221,7 +221,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);;
   gap: 1rem;
-  grid-auto-flow: dense; 
+  grid-auto-flow: dense;
+  margin-top: 20px;
 }
 
 .special_wrapper > div:nth-last-child(3),
@@ -471,7 +472,24 @@
        }
 
   
-       
+       .special_wrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+        grid-auto-flow: dense; 
+      }
+  
+      .special_wrapper > div:nth-last-child(3),
+      .special_wrapper > div:nth-last-child(2),
+      .special_wrapper > div:last-child {
+        grid-column: span 1; /* Каждая из последних карточек занимает одну колонку */
+      }
+      
+      .special_wrapper > div:nth-last-child(3) {
+        grid-column-start: 2; /* Центрируем последние три карточки */
+        grid-column-end: 1;   /* Окончание для 4-колоночной структуры */
+      }
+      
      
        .banner_title p {
          width: 100%;

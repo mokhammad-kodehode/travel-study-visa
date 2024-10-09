@@ -168,6 +168,7 @@ const Vnj_Bulgaria = () => {
         </ul>
       </section>
       <AdvantagesTwo/>
+      <Contact/>
     </main>
   )
 }

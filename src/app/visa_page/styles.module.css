@@ -160,7 +160,7 @@
 
     .banner_title {
      width: 100%;
-     margin-top: 50px;
+     margin-top: 0px;
      text-align: center;
      padding: 20px 5px;
     }
@@ -169,13 +169,13 @@
   
     .banner_title p {
       width: 100%;
-      margin-top: 30px;
+      margin-top: 10px;
       font-size: 18px;
     }
 
     .breadcrumbs_wrapper {
       width: 100%;
-      background-color: #f8f6f8;
+      background-color: #ffffff;
     }
   
     .breadcrumbs {
@@ -192,7 +192,6 @@
     }
     
     .title_text {
-      margin-top: 40px;
     font-size: 38px;
     font-style: normal;
     font-weight: 600;
@@ -207,18 +206,14 @@
     }
   
     .section_two_top {
-      width: 400px;
-      padding: 20px 0;
+      width: 100%;
+      padding: 10px 0 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
     }
-    .section_two {
-      background-color:#ffffff ;
-      width: 1200px;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-    }
-  
+
     .section_two {
       background-color:#ffffff;
         width: 100%;
@@ -232,7 +227,7 @@
   
     .selectCountryTitle{
       font-size: 28px;
-      margin-left: 8px;
+      margin-left: 22px;
     }
 
     .CountryVisaSelect {
@@ -241,7 +236,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 100%;
+      width: 98%;
       padding: 20px 0;
     }
 

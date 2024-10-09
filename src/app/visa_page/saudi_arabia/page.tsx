@@ -34,16 +34,27 @@ const visaDetails = [
 
 
 export default function KSA() {
-  const [isModalOpen, setModalOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
+
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); // Закрываем чат, если он открыт
+            setIsChatOpen(false); // Обновляем состояние
+        } else {
+            window.jivo_api.open(); // Открываем чат, если он закрыт
+            setIsChatOpen(true); // Обновляем состояние
+        }
+    }
+};
+
 
   const toggleDescription = (index: number) => {
     // Переключаем состояние: если открыт этот элемент, закрываем, иначе открываем
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
 
 
   return (
@@ -55,10 +66,7 @@ export default function KSA() {
                         <h1 className={styles.title_text}>Оформление виз в Саудовскую Аравию</h1>
                         <h2 className={styles.title_text_desc}>Наши специалисты помогут выбрать оптимальный страховой полис, исходя из ваших потребностей и продолжительности поездки.</h2>
                     </div>
-                     <button onClick={handleOpenModal} className={styles.order_btn} >ЗАКАЗАТЬ</button>
-                        {isModalOpen && (
-                          <ModalForm closeModal={handleCloseModal} />
-                        )}
+                     <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАКАЗАТЬ</button>
                 </div>
             </div>
           </section >

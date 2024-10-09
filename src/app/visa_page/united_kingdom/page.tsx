@@ -49,9 +49,7 @@ export default function UnitedKingdom() {
           <section className={styles.banner}>
             <div className={styles.banner_container} >
                 <div className={styles.banner_title}>
-                    <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз в Великобританию</h1>
-                    </div>
                     <p>
                     Планируете поездку в Великобританию? Наш визовый центр поможет вам оформить визу легко и без стресса. Мы берем на себя все этапы подготовки документов, а также консультируем по всем вопросам.
                      </p>

@@ -8,7 +8,7 @@ import ModalForm from '@/app/components/ContactForm/ContactFor';
 import { useState } from 'react';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import Contact from '@/app/components/contact/Contact';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaGlobe} from 'react-icons/fa';
 
 const visaDetails = [
@@ -31,16 +31,27 @@ const visaDetails = [
 
 
 export default function CANADA() {
-  const [isModalOpen, setModalOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
+
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); // Закрываем чат, если он открыт
+            setIsChatOpen(false); // Обновляем состояние
+        } else {
+            window.jivo_api.open(); // Открываем чат, если он закрыт
+            setIsChatOpen(true); // Обновляем состояние
+        }
+    }
+};
+
 
   const toggleDescription = (index: number) => {
     // Переключаем состояние: если открыт этот элемент, закрываем, иначе открываем
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
 
   return (
     <main className={styles.main}>
@@ -51,10 +62,7 @@ export default function CANADA() {
                               <h1 className={styles.title_text}>Оформление виз в Канаду</h1>
                               <h2 className={styles.title_text_desc}>Мы поможем вам быстро и без проблем оформить визу в Канаду! Путешествуйте с нами – надежно, удобно и безопасно.</h2>
                           </div>
-                          <button onClick={handleOpenModal} className={styles.order_btn} >ЗАКАЗАТЬ</button>
-                              {isModalOpen && (
-                                <ModalForm closeModal={handleCloseModal} />
-                              )}
+                          <button onClick={ openOrCloseChat} className={styles.order_btn} >ЗАКАЗАТЬ</button>
                     </div>
               </div>
           </section >
@@ -205,6 +213,7 @@ export default function CANADA() {
                       </ul>
             </section >
           <CountryCards/>
+          <Contact/>
     </main>
   )
 }

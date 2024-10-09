@@ -2,10 +2,10 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import MyForm from '../../components/contactFormTwo/ContactFormTwo'
 import CountryList from '../../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../../data/CountryData'
-import CountryVisaSelect from '@/app/components/CountryVisaSelect/page';
+import Contact from '@/app/components/contact/Contact';
+
 
 export default function Europe() {
 
@@ -21,7 +21,6 @@ export default function Europe() {
                     <p>
                      </p>
                 </div>
-                <MyForm/>
             </div>
           </section >
             <div className={styles.breadcrumbs_wrapper}>
@@ -37,6 +36,7 @@ export default function Europe() {
             </div>
             <CountryList countries={europeCountries}/>
           </section>
+          <Contact/>
     </main>
   )
 }

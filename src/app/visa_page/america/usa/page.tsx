@@ -3,7 +3,6 @@
 import styles from './styles.module.css';
 import 'fontsource-inter';
 import Image from 'next/image';
-import ModalForm from '@/app/components/ContactForm/ContactFor';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
@@ -50,16 +49,24 @@ const visaDetails = [
 ];
 
 export default function USA() {
-  const [isModalOpen, setModalOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
+
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); // Закрываем чат, если он открыт
+            setIsChatOpen(false); // Обновляем состояние
+        } else {
+            window.jivo_api.open(); // Открываем чат, если он закрыт
+            setIsChatOpen(true); // Обновляем состояние
+        }
+    }
+};
 
   const toggleDescription = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
-
   return (
     <main className={styles.main}>
       <section className={styles.banner}>
@@ -71,10 +78,9 @@ export default function USA() {
                 Оформление визы в США с нами — это ваш путь к успешной поездке без лишних хлопот и стресса. Доверьте процесс профессионалам и будьте уверены в результате!
               </h2>
             </div>
-            <button onClick={handleOpenModal} className={styles.order_btn}>
+            <button onClick={openOrCloseChat} className={styles.order_btn}>
               ЗАКАЗАТЬ
             </button>
-            {isModalOpen && <ModalForm closeModal={handleCloseModal} />}
           </div>
         </div>
       </section>
@@ -265,10 +271,9 @@ export default function USA() {
           </li>
         </ul>
       </section>
-
       <AdvantagesTwo />
-      <Contact />
       <CountryCards />
+      <Contact />
     </main>
   );
 }

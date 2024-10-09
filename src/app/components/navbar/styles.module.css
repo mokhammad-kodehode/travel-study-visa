@@ -45,6 +45,7 @@
 
   .logo {
   margin-top: 5px;
+  transition: .2s ease-in-out;
   }
 
 

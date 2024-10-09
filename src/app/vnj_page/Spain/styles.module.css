@@ -308,7 +308,7 @@
     
      .title_two {
       font-size: 30px;
-      margin-top: 15px;
+      margin-top: 30px;
       width: 74%;
      }
     
@@ -530,9 +530,23 @@
         }
       
         .special_wrapper {
-          grid-template-columns: 1fr 1fr;
+          display: grid;
+          grid-template-columns: auto auto;
           gap: 1rem;
+          grid-auto-flow: dense; 
         }
+    
+        .special_wrapper > div:nth-last-child(3),
+    .special_wrapper > div:nth-last-child(2),
+    .special_wrapper > div:last-child {
+      grid-column: span 1; /* Каждая из последних карточек занимает одну колонку */
+    }
+    
+    .special_wrapper > div:nth-last-child(3) {
+      grid-column-start: 2; /* Центрируем последние три карточки */
+      grid-column-end: 1;   /* Окончание для 4-колоночной структуры */
+    }
+    
       
         .title_two {
           font-size: 24px;

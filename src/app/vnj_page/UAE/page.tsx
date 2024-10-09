@@ -2,7 +2,6 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaPassport, FaGlobe } from 'react-icons/fa';
 
