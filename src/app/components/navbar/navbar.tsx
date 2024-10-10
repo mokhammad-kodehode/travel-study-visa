@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
         </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
-          <li onMouseEnter={closeMobileNav} className={styles.nav_item}>
+          <li  className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/About_page" >О компании</Link>
           </li>
           <li className={styles.nav_item} >
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
               <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
-              <div onClick={toggleServicesMenu}className={styles.button_click} >
+              <div onClick={closeMobileNav} className={styles.button_click} >
               <span 
                 className={`${styles.submenu_arrow} ${isServicesMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
@@ -130,10 +130,10 @@ const Navbar: React.FC = () => {
           <li 
               className={styles.nav_item} >
             <div onMouseEnter={toggleVisaMenu}    className={styles.nav_item_with_submenu}>
-              <Link onClick={closeMobileNav} href="/visa_page">
+              <Link  href="/visa_page">
                 Визы
               </Link>
-              <div onClick={toggleVisaMenu}  className={styles.button_click}>
+              <div onClick={closeMobileNav}  className={styles.button_click}>
               <span 
                 className={`${styles.submenu_arrow} ${isVisaMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
@@ -162,10 +162,10 @@ const Navbar: React.FC = () => {
           </li>
           <li  className={styles.nav_item} >
             <div onMouseEnter={toggleVnjMenu} className={styles.nav_item_with_submenu}>
-              <Link onClick={closeMobileNav} href="/vnj_page">
+              <Link  href="/vnj_page">
                 ВНЖ
               </Link>
-              <div onClick={toggleVnjMenu} className={styles.button_click}>
+              <div onClick={closeMobileNav} className={styles.button_click}>
                 <span 
                   className={`${styles.submenu_arrow} ${isVnjOpen ? styles.rotate_up : ''}`}>
                   &#9660;
