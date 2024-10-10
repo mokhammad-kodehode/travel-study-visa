@@ -88,15 +88,15 @@ const Navbar: React.FC = () => {
               <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
         </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
-          <li className={styles.nav_item}>
+          <li onMouseEnter={closeMobileNav} className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/About_page" >О компании</Link>
           </li>
-          <li  className={styles.nav_item} >
-            <div className={styles.nav_item_with_submenu}>
+          <li className={styles.nav_item} >
+            <div onMouseEnter={toggleServicesMenu}  className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
-              <div onClick={toggleServicesMenu} className={styles.button_click} >
+              <div  className={styles.button_click} >
               <span 
                 onClick={toggleServicesMenu} 
                 className={`${styles.submenu_arrow} ${isServicesMenuOpen ? styles.rotate_up : ''}`}>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             {isServicesMenuOpen && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
+              <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page">Визовые услуги
                   </Link>
@@ -130,11 +130,11 @@ const Navbar: React.FC = () => {
           </li>
           <li 
               className={styles.nav_item} >
-            <div className={styles.nav_item_with_submenu}>
+            <div onMouseEnter={toggleVisaMenu}    className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/visa_page">
                 Визы
               </Link>
-              <div onClick={toggleVisaMenu} className={styles.button_click}>
+              <div  className={styles.button_click}>
               <span 
                 className={`${styles.submenu_arrow} ${isVisaMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             {isVisaMenuOpen && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
+              <ul onMouseLeave={closeMobileNav} className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
                 </li>
@@ -163,11 +163,11 @@ const Navbar: React.FC = () => {
           </li>
           <li 
               className={styles.nav_item} >
-            <div className={styles.nav_item_with_submenu}>
+            <div onMouseEnter={toggleVnjMenu} className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/vnj_page">
                 ВНЖ
               </Link>
-              <div onClick={toggleVnjMenu}  className={styles.button_click}>
+              <div className={styles.button_click}>
                 <span 
                   className={`${styles.submenu_arrow} ${isVnjOpen ? styles.rotate_up : ''}`}>
                   &#9660;
@@ -175,7 +175,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             {isVnjOpen && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
+              <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/vnj_page/Bulgaria">Болгария</Link>
                 </li>
@@ -188,10 +188,10 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-          <li className={styles.nav_item}>
+          <li onMouseEnter={closeMobileNav} className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/grajdanstvo_ruminaya" >Гражданство Румынии</Link>
           </li>
-          <li className={styles.nav_item}>
+          <li onMouseEnter={closeMobileNav} className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/contact_page" >Контакты</Link>
           </li>
         </ul>
