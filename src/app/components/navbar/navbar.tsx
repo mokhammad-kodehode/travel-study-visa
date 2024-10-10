@@ -96,9 +96,8 @@ const Navbar: React.FC = () => {
               <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
-              <div  className={styles.button_click} >
+              <div onClick={toggleServicesMenu}className={styles.button_click} >
               <span 
-                onClick={toggleServicesMenu} 
                 className={`${styles.submenu_arrow} ${isServicesMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
               </span>
@@ -134,7 +133,7 @@ const Navbar: React.FC = () => {
               <Link onClick={closeMobileNav} href="/visa_page">
                 Визы
               </Link>
-              <div  className={styles.button_click}>
+              <div onClick={toggleVisaMenu}  className={styles.button_click}>
               <span 
                 className={`${styles.submenu_arrow} ${isVisaMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
@@ -161,13 +160,12 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-          <li 
-              className={styles.nav_item} >
+          <li  className={styles.nav_item} >
             <div onMouseEnter={toggleVnjMenu} className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/vnj_page">
                 ВНЖ
               </Link>
-              <div className={styles.button_click}>
+              <div onClick={toggleVnjMenu} className={styles.button_click}>
                 <span 
                   className={`${styles.submenu_arrow} ${isVnjOpen ? styles.rotate_up : ''}`}>
                   &#9660;
