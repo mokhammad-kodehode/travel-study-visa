@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 60px;
   width: 100%; /* Растягиваем на всю ширину */
   max-width: 1200px; /* Ограничиваем ширину */
   margin: 0 auto; /* Центрируем по горизонтали */
@@ -31,6 +31,14 @@
     top: 0;
   }
 
+  .contact_button_container {
+    display: none;
+  }
+
+  .contact_container {
+    display: none;
+  }
+
   .scrolled_items {
     display: flex;
     justify-content: center;
@@ -44,6 +52,7 @@
   }
 
   .logo {
+    display: none;
   margin-top: 5px;
   transition: .2s ease-in-out;
   }
@@ -82,7 +91,7 @@
     content: '';
     position: absolute;
     left: 50%; 
-    bottom: 3px; /* Расположить полосу немного ниже текста */
+    bottom: -5px;
     width: 0%;
     height: 1px;
     background-color: #ffbd2a;
@@ -110,15 +119,7 @@
     width: 40px;
   }
 
-  .tel_icon {
-    font-size: 22px;
-    margin-left: 8px;
-  }
 
-  .adress_tel_wrapper {
-    display: flex;
-    gap: 1rem;
-  }
 
 
   .nav_item {
@@ -239,24 +240,11 @@
     display: block;
   }
 
-  .mobile_menu_icon {
-    display: none; /* По умолчанию скрываем бургер-меню */
-    cursor: pointer;
-    color: #BB2BBE;
-  }
 
-  
   
   /* Стили для бургер-полосок */
   .mobile_menu_icon {
-    width: 45px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
+
   }
 
   .mobile_menu_icon {
@@ -265,9 +253,9 @@
   
   .bar {
     width: 45px;
-    height: 3px;
+    height: 4px;
     background-color: #fff;
-    margin: 5px 0;
+    margin: 7px 0;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Для плавного изменения при нажатии */
   }
   
@@ -304,7 +292,7 @@
       align-items: center;
       gap: 1rem;
       width: 100%;
-      height: 80px;
+      height: 70px;
       margin: 0 auto;
       padding: 0 10px;
     }
@@ -315,7 +303,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      height: 50px;
+      height: 80px;
       width: 100%;
       margin: 0 auto;
       padding: 0 10px;
@@ -441,25 +429,7 @@
   }
   
 
-    
-    .tel {
-      display: flex;
-      border: none;
-      justify-content: center;
-      align-items: center;
-      color: rgb(255, 255, 255);
-      background-color: rgb(6, 126, 212);
-      border-radius: 15px;
-      padding: 12px;
-      width: 60px;
-      height: 100%;
-      transition: .3s;
-    }
-
-    .tel_icon {
-      font-size: 32px;
-      margin-left: 8px;
-    }
+   
 
     .nav_item::after {
       content: '';
@@ -476,5 +446,69 @@
     .nav_item:hover::after {
       width: 0%; /* Полоса увеличивается до полной ширины при наведении */
       left: 50%; 
+    }
+
+    .contact_button_container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact_button {
+      background-color: transparent;
+      color: white;
+      padding: 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+ 
+    
+    .contact_container {
+      position: absolute;
+      top: -100%; /* Начальное положение сверху */
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: white;
+      opacity: 0;
+      transition: top 0.5s ease, opacity 0.5s ease;
+      z-index: 999;
+    }
+    
+    .show {
+      top: 70px; /* Положение при показе */
+      opacity: 1;
+    }
+
+    .phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+ 
+    .social_icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .icon {
+      font-size: 25px;
+      color: white;
+    }
+    
+
+    .contact_burger {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
   }

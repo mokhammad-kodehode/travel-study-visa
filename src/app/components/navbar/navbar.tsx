@@ -6,6 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faTelegram, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+
 
 const Navbar: React.FC = () => {
   const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
@@ -14,6 +17,11 @@ const Navbar: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showContacts, setShowContacts] = useState(false);
+
+  const toggleContacts = () => {
+    setShowContacts(!showContacts);
+  };
 
   // Проверяем размер экрана и обновляем состояние мобильной версии
   useEffect(() => {
@@ -86,16 +94,42 @@ const Navbar: React.FC = () => {
           <Image
             src="/images/logo.svg" // Путь к логотипу
             alt="Visa Travels Logo"
-            width={isScrolled ? 40 : 65} // Размер логотипа в зависимости от прокрутки
-            height={isScrolled ? 40 : 65}
+            width={ 65} // Размер логотипа в зависимости от прокрутки
+            height={ 65}
           />
         </Link>
-        <div className={styles.mobile_menu_icon} onClick={toggleMobileNav}>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar1 : ''}`}></div>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
-          <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
+        <div className={`${styles.contact_container} ${showContacts ? styles.show : ''}`}>
+          <a href="tel:+7(900)555-42-77" className={styles.phone}>
+            +7(900)555-42-77
+          </a>
+          <div className={styles.social_icons}>
+            <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+            </a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
+            </a>
+          </div>
+        </div>
+        <div className={styles.contact_burger}>
+            <div className={styles.contact_button_container}>
+              <button onClick={toggleContacts} className={styles.contact_button}>
+              <FontAwesomeIcon icon={faPhone} className={styles.icon} />
+              </button>
+            </div>
+            <div className={styles.mobile_menu_icon} onClick={toggleMobileNav}>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar1 : ''}`}></div>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar2 : ''}`}></div>
+              <div className={`${styles.bar} ${isMobileNavOpen ? styles.openedBar : ''} ${isMobileNavOpen ? styles.bar3 : ''}`}></div>
+            </div>
         </div>
         <ul className={`${isScrolled ? styles.scrolled_items : styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ''}`}>
+        <li className={styles.nav_item}>
+            <Link onClick={closeMobileNav} href="/">Главная</Link>
+          </li>
           <li className={styles.nav_item}>
             <Link onClick={closeMobileNav} href="/About_page">О компании</Link>
           </li>
@@ -199,6 +233,7 @@ const Navbar: React.FC = () => {
           href="https://www.google.com/maps/place/Presnenskaya+Naberezhnaya,+12,+Moskva,+Russland,+123317/@55.749882,37.5352886,17z/data=!3m1!4b1!4m6!3m5!1s0x46b54bdcbfd1b72d:0x433d48214f76b256!8m2!3d55.749882!4d37.5378635!16s%2Fg%2F11gbx8qy19?entry=ttu"
         >
           <FontAwesomeIcon className={styles.adress_icon} icon={faMapMarkerAlt} />
+          г.Москва, Пресненская набережная, 12
         </Link>
       </nav>
     </header>

@@ -47,7 +47,7 @@
 .title_text {
 font-size: 58px;
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 line-height: normal;
 letter-spacing: 1px;
 color: var(--gold);
@@ -56,25 +56,46 @@ color: var(--gold);
 .title_text_desc {
   width: 702px;
   flex-shrink: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
 }
 
-/* .wrapper_country_select {
-  border-top: 1px solid rgb(128, 128, 128);
-  padding-top: 10px;
+.additional_info {
+  margin-top: 50px;
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+  gap: 80px;
+  color: #fff;
+  font-size: 16px;
 }
 
-.wrapper_country_select h4{
- font-size: 24px;
- color: #fff;
- width: 200px;
- margin-bottom: 20px;
-} */
+.info_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.info_text {
+  font-size: 16px;
+  color: #f0f0f0;
+  margin-top: 10px;
+}
+
+.info_text_bold {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-top: 10px;
+}
+
+.icon{
+  font-size: 48px;
+  opacity: 0.7;
+}
 
 .section_two, .section_four, .section_Six {
   width: 1200px;
@@ -139,7 +160,7 @@ color: var(--gold);
       align-items: center;
       justify-content: center;
       color: white;
-      
+      padding: 0 5px;
   }
   
   .banner_title {
@@ -251,5 +272,40 @@ color: var(--gold);
     font-family: 'PT Sans Narrow', sans-serif;
   }
   
-
+  .additional_info {
+    margin-top: 50px;
+    margin-left: 7px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .info_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 100;
+    font-size: 12px;
+  }
+  
+  .info_text {
+    font-size: 16px;
+    color: #f0f0f0;
+    margin-top: 10px;
+  }
+  
+  .info_text_bold {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-top: 10px;
+  }
+  
+  .icon{
+    font-size: 36px;
+    opacity: 0.7;
+  }
 }

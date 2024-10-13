@@ -1,99 +1,114 @@
 .header {
   display: flex;
-  display: none;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Ширина заголовка — на всю страницу */
-  background: linear-gradient(90deg, #742f8b, #000);
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  background: linear-gradient(90deg,rgba(116, 47, 139, 0.0),rgba(116, 47, 139, 0.3),rgba(116, 47, 139, 0.5), rgba(116, 47, 139, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
 }
 
 .header_content {
-  display: none;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
   align-items: center;
-  z-index: 1; 
+  width: 1200px;
   color: white;
   gap: 2rem;
-  width: 1200px;
 }
-  
+
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.logo a {
-  margin-right: 20px;
 }
 
 .slogan {
   font-size: 16px;
+  margin-left: 20px;
 }
 
 .slogan span {
-  color: #fbc02d; /* Цвет "Быстро и недорого" */
+  color: #fbc02d;
   font-weight: bold;
 }
 
 .contact {
   display: flex;
   align-items: center;
-  font-size: 14px;
-}
-
-.contact a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.contact a img {
-  margin-right: 10px;
-}
-
-.nav {
-  display: flex;
   gap: 20px;
 }
 
-.nav a {
-  color: #fbc02d; /* Цвет ссылок */
+.phone {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  color: white;
   text-decoration: none;
   font-size: 14px;
 }
 
-.nav a:hover {
-  text-decoration: underline;
+.phone:hover {
+  color: #fbc02d;
 }
 
+.social_icons {
+  display: flex;
+  gap: 10px;
+}
 
+.icon {
+  color: white;
+  font-size: 20px;
+}
+
+.icon:hover {
+  color: #fbc02d;
+}
+
+/* Мобильная версия */
 @media (max-width: 820px) { 
+
+
   .header {
-    display: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: static; /* Фиксируем заголовок */
-    left: 0%; 
-    top: 80px;
-    width: 100%; /* Ширина заголовка — на всю страницу */
-    background-color: var(--violet);
-  }
-  
-  .header_content {
-    display: flex;
-    display: none;
     justify-content: space-between;
-    border-radius: 5px;
-    align-items: center;
-    background-color: rgba(8, 8, 8, 0.2); 
-    z-index: 1; 
-    color: white;
-    gap: 2rem;
+    position: static;
+    background: linear-gradient(90deg, #742f8b, #000);
+    display: none;
+  }
+
+  .header_content {
+    justify-content: space-between;
     width: 100%;
+    padding: 10px 20px;
+  }
+
+  /* Кнопка для мобильной версии */
+  .mobile_button {
+    display: block;
+  }
+
+  /* По умолчанию скрываем контакты на мобильной версии */
+  .contact {
+    display: none;
+  }
+
+  /* Показываем контакты при нажатии на кнопку */
+  .show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Скрываем кнопку для десктопной версии */
+@media (min-width: 821px) {
+  .mobile_button {
+    display: none;
+  }
+
+  /* Показываем контакты по умолчанию на больших экранах */
+  .contact {
+    display: flex;
   }
 }

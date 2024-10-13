@@ -7,6 +7,9 @@ import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
+import Header from './components/Header/Header'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 
@@ -32,11 +35,22 @@ export default function Home() {
           <section className={styles.banner}>
             <div className={styles.banner_title}>
                <div className={styles.banner_title_text}>
-                <h1 className={styles.title_text}>Путешествуйте без границ</h1>
+                <h1 className={styles.title_text}>Откройте мир с нами</h1>
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
-                <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ</h3>
+                <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ — быстро и надежно.</h3>
                </div>
                   <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button>
+                  <div className={styles.additional_info}>
+                      <div className={styles.info_item}>
+                        <FontAwesomeIcon className={styles.icon} icon={faBriefcase} /> Более 10 лет опыта
+                      </div>
+                      <div className={styles.info_item}>
+                        <FontAwesomeIcon className={styles.icon} icon={faCheckCircle} /> Гарантия результата
+                      </div>
+                      <div className={styles.info_item}>
+                        <FontAwesomeIcon className={styles.icon} icon={faUsers} /> 1000 довольных клиентов
+                      </div>
+                  </div>
             </div> 
             {/* <div className={styles.wrapper_country_select}>
                 <h4>Выберите направление</h4>

@@ -1,6 +1,10 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './styles.module.css'; // Создадим отдельный файл для стилей
+import styles from './styles.module.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons'; // Иконка телефона
+import { faTelegram, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Иконки соцсетей
 
 const Header = () => {
   return (
@@ -20,22 +24,24 @@ const Header = () => {
           </div>
         </div>
         <div className={styles.contact}>
-          <a href="tel:84951183527">
-            <Image 
-              src="/path/to/phone-icon.png" // Замените на иконку телефона
-              alt="Phone Icon" 
-              width={20} 
-              height={20} 
-            /> 
-            8 (495) 118-35-27
+          {/* Телефон */}
+          <a href="tel:+7(900)555-42-77" className={styles.phone}>
+            <FontAwesomeIcon icon={faPhone} className={styles.icon} /> 
+            +7(900)555-42-77
           </a>
+          {/* Социальные сети */}
+          <div className={styles.social_icons}>
+            <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+            </a>
+            <a href="https://wa.me/40756504079" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
+            </a>
+          </div>
         </div>
-          {/* <nav className={styles.nav}>
-          <Link href="/visas">Визы</Link>
-          <Link href="/multivisas">Мультивизы</Link>
-          <Link href="/passport">Загранпаспорт</Link>
-          <Link href="/insurance">Страхование туристов</Link>
-        </nav> */}
       </div>
     </header>
   );
