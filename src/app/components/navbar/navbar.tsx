@@ -92,13 +92,12 @@ const Navbar: React.FC = () => {
             <Link onClick={closeMobileNav} href="/About_page" >О компании</Link>
           </li>
           <li  className={styles.nav_item} >
-            <div className={styles.nav_item_with_submenu}>
-              <Link onClick={closeMobileNav} href="/services_page">
+            <div onMouseEnter={toggleServicesMenu} className={styles.nav_item_with_submenu}>
+              <Link href="/services_page">
                 <div>Наши услуги</div>
               </Link>
-              <div onClick={toggleServicesMenu} className={styles.button_click} >
+              <div onClick={toggleServicesMenu}  className={styles.button_click} >
               <span 
-                onClick={toggleServicesMenu} 
                 className={`${styles.submenu_arrow} ${isServicesMenuOpen ? styles.rotate_up : ''}`}>
                 &#9660;
               </span>
@@ -163,7 +162,7 @@ const Navbar: React.FC = () => {
           </li>
           <li 
               className={styles.nav_item} >
-            <div className={styles.nav_item_with_submenu}>
+            <div onMouseEnter={toggleVnjMenu} className={styles.nav_item_with_submenu}>
               <Link onClick={closeMobileNav} href="/vnj_page">
                 ВНЖ
               </Link>
@@ -175,7 +174,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             {isVnjOpen && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
+              <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/vnj_page/Bulgaria">Болгария</Link>
                 </li>
@@ -202,7 +201,7 @@ const Navbar: React.FC = () => {
               href="https://www.google.com/maps/place/Presnenskaya+Naberezhnaya,+12,+Moskva,+Russland,+123317/@55.749882,37.5352886,17z/data=!3m1!4b1!4m6!3m5!1s0x46b54bdcbfd1b72d:0x433d48214f76b256!8m2!3d55.749882!4d37.5378635!16s%2Fg%2F11gbx8qy19?entry=ttu" 
               > 
               <FontAwesomeIcon className={styles.adress_icon} icon={faMapMarkerAlt}  />
-              г.Москва, Пресненская набережная, д.12</Link>
+              {/* г.Москва, Пресненская набережная, д.12*/}</Link> 
       </nav>
     </header>
   );
