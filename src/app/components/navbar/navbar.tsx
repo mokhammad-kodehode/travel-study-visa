@@ -21,9 +21,10 @@ const Navbar: React.FC = () => {
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   
-    if (!isMobileNavOpen) {
-    } else {
-
+    if (isMobileNavOpen) {
+      setVisaMenuOpen(false);
+      setServicesMenuOpen(false);
+      setisVnjOpen(false);
     }
   };
 
