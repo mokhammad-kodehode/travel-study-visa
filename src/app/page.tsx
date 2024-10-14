@@ -7,7 +7,7 @@ import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
-import Header from './components/Header/Header'
+import SloganSection from './components/slogan/Slogan'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
@@ -35,7 +35,7 @@ export default function Home() {
           <section className={styles.banner}>
             <div className={styles.banner_title}>
                <div className={styles.banner_title_text}>
-                <h1 className={styles.title_text}>Откройте мир с нами</h1>
+                <h1 className={styles.title_text}>Иследуйте мир с нами</h1>
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
                 <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ — быстро и надежно.</h3>
                </div>
@@ -57,6 +57,7 @@ export default function Home() {
                 <CountryVisaSelect/>
             </div > */}
           </section >
+          <SloganSection/>
           <section className={styles.section_three}>
           </section>
           <section className={styles.section_two}>
