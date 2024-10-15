@@ -193,7 +193,7 @@
     border-radius: 8px; /* Увеличиваем радиус закругления */
     background-color: var(--violet);
     animation: fadeIn 0.3s ease;
-    width: 320px;
+    width: 360px;
 }
 
 .dropdown.show {
@@ -223,12 +223,13 @@
 
 /* Добавляем разделительную линию между элементами */
 .dropdown_item:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная линия */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
 }
 
 /* Эффекты при наведении */
 .dropdown_item:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Легкий фон при наведении */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--gold); /* Легкий фон при наведении */
 }
 
 .nav_item:hover .dropdown {
@@ -238,6 +239,7 @@
   /* Показывать выпадающее меню при наведении на родительский элемент */
   .nav_item:hover .dropdown {
     display: block;
+
   }
 
 
@@ -300,7 +302,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      height: 80px;
+      height: 70px;
       width: 100%;
       margin: 0 auto;
       padding: 0 10px;
@@ -348,15 +350,16 @@
       flex-direction: column;
       position: fixed;
       background: linear-gradient(90deg, #742f8b, #000);
-      top: 100%;
-      left: 0%;
+      top: 69px;
+      left: 0;
       width: 100%;
-      height: 100vh;
+      height: 870px;  /* Полная высота экрана */
       padding: 15px;
       border-top: 1px solid rgb(209, 208, 208);
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      overflow-y: auto; /* Добавляем прокрутку, если меню слишком большое */
-  }
+      transition: opacity 0.3s ease; /* Плавное изменение прозрачности */
+      overflow-y: auto; /* Прокрутка содержимого меню */
+      z-index: 10; /* Убедитесь, что меню сверху */
+    }
   
   .showMobileMenu.open {
       max-height: 800px;
@@ -407,11 +410,11 @@
       display: none;
       flex-direction: column;
       position: static;
-      margin-top: 10px;
-      padding-left: 15px; /* Отступ для подменю */
-      width: 100%;
-      background-color: #fff;
+      background-color: transparent;
       transition: max-height 0.3s ease, opacity 0.3s ease;
+      box-shadow: none;
+      animation: fadeIn 0.3s ease;
+      width: 360px;
   }
   
   .dropdown.show {
@@ -419,9 +422,9 @@
   }
   
   .dropdown_item {
-      padding: 10px 0;
+      padding: 10px 5px;
       font-weight: 500;
-      color: var(--text-color);
+      color: #fff;
       transition: color 0.3s ease, font-weight 0.3s ease;
   }
   

@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
               onClick={isMobile ? toggleServicesMenu : undefined}
               className={styles.nav_item_with_submenu}
             >
-              <Link href="/services_page">
+              <Link onClick={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
               <div onClick={toggleServicesMenu} className={styles.button_click}>

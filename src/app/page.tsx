@@ -35,7 +35,7 @@ export default function Home() {
           <section className={styles.banner}>
             <div className={styles.banner_title}>
                <div className={styles.banner_title_text}>
-                <h1 className={styles.title_text}>Иследуйте мир с нами</h1>
+                <h1 className={styles.title_text}>Исследуйте мир с нами</h1>
                 <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
                 <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ — быстро и надежно.</h3>
                </div>
