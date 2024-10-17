@@ -23,24 +23,29 @@ const Header = () => {
             ДОБРО ПОЖАЛОВАТЬ В <span>TRAVEL AND STUDY</span>
           </div>
         </div>
-        <div className={styles.contact}>
-          {/* Телефон */}
-          <a href="tel:+7(900)555-42-77" className={styles.phone}>
-            <FontAwesomeIcon icon={faPhone} className={styles.icon} /> 
-            +7(900)555-42-77
-          </a>
-          {/* Социальные сети */}
-          <div className={styles.social_icons}>
-            <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
-            </a>
-            <a href="https://wa.me/40756504079" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
-            </a>
-          </div>
+        <div className={styles.Header_items}>
+            <Link className={styles.Header_item} href="/Gallery">
+                ГАЛЛЕРЕЯ
+              </Link>
+            <div className={styles.contact}>
+              {/* Телефон */}
+              <a href="tel:+7(900)555-42-77" className={styles.phone}>
+                <FontAwesomeIcon icon={faPhone} className={styles.icon} /> 
+                +7(900)555-42-77
+              </a>
+              {/* Социальные сети */}
+              <div className={styles.social_icons}>
+                <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+                </a>
+                <a href="https://wa.me/40756504079" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
+                </a>
+              </div>
+            </div>
         </div>
       </div>
     </header>

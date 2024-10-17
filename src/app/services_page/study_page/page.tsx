@@ -35,7 +35,7 @@ const StudyPage = () => {
                         <h1 className={styles.title_text}>Образовательные программы за рубежом</h1>
                         <h2 className={styles.title_text_desc}>Путешествуйте, учитесь, вдохновляйтесь вместе с нами!.
                         </h2>
-                        <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
+                        <button onClick={openOrCloseChat} className={styles.order_btn} >НАЧАТЬ</button>
                     </div>
                 </div>
             </div>

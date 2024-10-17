@@ -207,7 +207,6 @@
     font-weight: 600;
     line-height: normal;
     letter-spacing: 1px;
-    margin-bottom: 20px;
     color: var(--gold);
     width: 100%;
     }
@@ -219,6 +218,7 @@
       font-style: normal;
       font-weight: 100;
       line-height: normal;
+      margin-top: 10px;
     }
     
     .section_image{

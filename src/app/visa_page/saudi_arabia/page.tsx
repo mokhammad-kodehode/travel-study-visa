@@ -3,14 +3,13 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import ModalForm from '@/app/components/ContactForm/ContactFor';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import Contact from '@/app/components/contact/Contact';
 import { useState } from 'react';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaFileAlt } from 'react-icons/fa';
-import Link from 'next/link';
+
 
 
 

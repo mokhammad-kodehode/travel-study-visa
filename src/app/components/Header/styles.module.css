@@ -32,6 +32,16 @@
   font-weight: bold;
 }
 
+.Header_items {
+  display: flex;
+  gap: 4rem;
+}
+
+.Header_item {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .contact {
   display: flex;
   align-items: center;

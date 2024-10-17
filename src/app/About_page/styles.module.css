@@ -119,7 +119,6 @@
 
     .banner_title {
      width: 100%;
-     margin-top: 50px;
      text-align: center;
      padding: 20px 5px;
     }
@@ -128,7 +127,7 @@
   
     .banner_title p {
       width: 100%;
-      margin-top: 30px;
+      margin-top: 10px;
       font-size: 18px;
     }
 
