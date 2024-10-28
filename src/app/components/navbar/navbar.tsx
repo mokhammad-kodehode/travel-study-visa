@@ -9,6 +9,7 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 import { europeCountries } from '@/app/data/CountryData';
+import { AmericaCountries } from '@/app/data/CountryData';
 
 
 const Navbar: React.FC = () => {
@@ -20,11 +21,17 @@ const Navbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [showContacts, setShowContacts] = useState(false);
   const [isEuropeSubmenuOpen, setIsEuropeSubmenuOpen] = useState(false);
+  const [isAmericaSubmenuOpen, setIsAmericaSubmenuOpen] = useState(false);
 
-  const toggleEuropeSubmenu = () => {
-    setIsEuropeSubmenuOpen(!isEuropeSubmenuOpen);
+  const toggleSubmenu = (menu: "europe" | "america") => {
+    if (menu === "europe") {
+      setIsEuropeSubmenuOpen(!isEuropeSubmenuOpen);
+      setIsAmericaSubmenuOpen(false); // Закрываем другое подменю
+    } else if (menu === "america") {
+      setIsAmericaSubmenuOpen(!isAmericaSubmenuOpen);
+      setIsEuropeSubmenuOpen(false); // Закрываем другое подменю
+    }
   };
-
 
   const toggleContacts = () => {
     setShowContacts(!showContacts);
@@ -138,7 +145,7 @@ const Navbar: React.FC = () => {
             <Link onClick={closeMobileNav} href="/">Главная</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link onClick={closeMobileNav} href="/About_page">О компании</Link>
+            <Link  onMouseEnter={closeMobileNav} href="/About_page">О компании</Link>
           </li>
           <li className={styles.nav_item}>
             <div
@@ -146,7 +153,7 @@ const Navbar: React.FC = () => {
               onClick={isMobile ? toggleServicesMenu : undefined}
               className={styles.nav_item_with_submenu}
             >
-              <Link onClick={closeMobileNav} href="/services_page">
+              <Link onMouseEnter={closeMobileNav} href="/services_page">
                 <div>Наши услуги</div>
               </Link>
               <div onClick={toggleServicesMenu} className={styles.button_click}>
@@ -186,21 +193,33 @@ const Navbar: React.FC = () => {
             </div>
             {isVisaMenuOpen && (
               <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
-                <li  onMouseEnter={!isMobile ? toggleEuropeSubmenu : undefined}
-                    onClick={isMobile ? toggleEuropeSubmenu : undefined} className={styles.dropdown_item}>
-                  <div
-                    className={styles.nav_item_with_submenu}
-                  >
+               <li onMouseEnter={!isMobile ? () => toggleSubmenu("europe") : undefined} onClick={isMobile ? () => toggleSubmenu("europe") : undefined} className={styles.dropdown_item}>
+                  <div className={styles.nav_item_with_submenu}>
                     <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
-                    <span className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span> {/* Стрелка */}
+                    <span className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
                   </div>
-
                   {isEuropeSubmenuOpen && (
-                    <ul
-                      onMouseLeave={() => setIsEuropeSubmenuOpen(false)}
-                      className={`${styles.nested_dropdown} ${styles.show}`}
-                    >
+                    <ul onMouseLeave={() => setIsEuropeSubmenuOpen(false)} className={`${styles.nested_dropdown} ${styles.show}`}>
                       {europeCountries.map((country) => (
+                        <li key={country.nameof} className={styles.nested_dropdown_item}>
+                          <Link onClick={closeMobileNav} href={country.pageUrl}>
+                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
+                            {country.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+
+                <li onMouseEnter={!isMobile ? () => toggleSubmenu("america") : undefined} onClick={isMobile ? () => toggleSubmenu("america") : undefined} className={styles.dropdown_item}>
+                  <div className={styles.nav_item_with_submenu}>
+                    <Link onClick={closeMobileNav} href="/visa_page/america">Северная Америка</Link>
+                    <span className={`${styles.submenu_arrow} ${isAmericaSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
+                  </div>
+                  {isAmericaSubmenuOpen && (
+                    <ul onMouseLeave={() => setIsAmericaSubmenuOpen(false)} className={`${styles.nested_dropdown} ${styles.show}`}>
+                      {AmericaCountries.map((country) => (
                         <li key={country.nameof} className={styles.nested_dropdown_item}>
                           <Link onClick={closeMobileNav} href={country.pageUrl}>
                             <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
