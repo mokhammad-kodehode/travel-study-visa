@@ -171,6 +171,11 @@
     transform: rotate(180deg);
     color: #FFBD2A;
   }
+
+  .rotate_right{
+    transform: rotate(-90deg);
+    color: #FFBD2A;
+  }
   
   /* Стили для элемента с подменю */
   .nav_item_with_submenu {
@@ -196,6 +201,8 @@
     width: 360px;
 }
 
+
+
 .dropdown.show {
     display: block;
 }
@@ -216,9 +223,47 @@
     color: rgb(245, 244, 244);
     transition: color 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+}
+
+.nested_dropdown {
+  position: absolute;
+  top: -32%; /* Позиционируем под основным меню */
+  left: 90%; /* Выравниваем по левому краю пункта "Европа" */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  gap: 10px;
+  min-width: 300px; /* Задаем минимальную ширину для подменю */
+  z-index: 10;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); */
+  background-color: var(--violet);
+  animation: fadeIn 0.3s ease;
+  border-radius: 8px; 
+}
+
+/* Стиль для каждого пункта страны с флагом */
+.nested_dropdown_item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.nested_dropdown_item img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.nested_dropdown_item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--gold); /* Легкий фон при наведении */
+  border-radius: 8px;
 }
 
 /* Добавляем разделительную линию между элементами */
@@ -429,6 +474,42 @@
   }
   
 
+  .nested_dropdown {
+   position:static;
+    top: -32%; /* Позиционируем под основным меню */
+    left: 90%; /* Выравниваем по левому краю пункта "Европа" */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Три колонки */
+    gap: 10px;
+    min-width: 300px; /* Задаем минимальную ширину для подменю */
+    z-index: 10;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); */
+    background-color: var(--violet);
+    animation: fadeIn 0.3s ease;
+    border-radius: 8px; 
+  }
+  
+  /* Стиль для каждого пункта страны с флагом */
+  .nested_dropdown_item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    color: #fff;
+  }
+  
+  .nested_dropdown_item img {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .nested_dropdown_item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--gold); /* Легкий фон при наведении */
+    border-radius: 8px;
+  }
    
 
     .nav_item::after {

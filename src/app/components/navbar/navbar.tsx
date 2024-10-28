@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+import { europeCountries } from '@/app/data/CountryData';
 
 
 const Navbar: React.FC = () => {
@@ -18,6 +19,12 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showContacts, setShowContacts] = useState(false);
+  const [isEuropeSubmenuOpen, setIsEuropeSubmenuOpen] = useState(false);
+
+  const toggleEuropeSubmenu = () => {
+    setIsEuropeSubmenuOpen(!isEuropeSubmenuOpen);
+  };
+
 
   const toggleContacts = () => {
     setShowContacts(!showContacts);
@@ -179,8 +186,30 @@ const Navbar: React.FC = () => {
             </div>
             {isVisaMenuOpen && (
               <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
+                <li  onMouseEnter={!isMobile ? toggleEuropeSubmenu : undefined}
+                    onClick={isMobile ? toggleEuropeSubmenu : undefined} className={styles.dropdown_item}>
+                  <div
+                    className={styles.nav_item_with_submenu}
+                  >
+                    <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
+                    <span className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span> {/* Стрелка */}
+                  </div>
+
+                  {isEuropeSubmenuOpen && (
+                    <ul
+                      onMouseLeave={() => setIsEuropeSubmenuOpen(false)}
+                      className={`${styles.nested_dropdown} ${styles.show}`}
+                    >
+                      {europeCountries.map((country) => (
+                        <li key={country.nameof} className={styles.nested_dropdown_item}>
+                          <Link onClick={closeMobileNav} href={country.pageUrl}>
+                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
+                            {country.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/visa_page/america">Северная Америка</Link>
@@ -193,6 +222,7 @@ const Navbar: React.FC = () => {
                 </li>
               </ul>
             )}
+            
           </li>
           <li className={styles.nav_item}>
             <div
