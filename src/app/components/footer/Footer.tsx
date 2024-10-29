@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                     />
             </Link>
                 <p>Визовый центр</p>
-                <p>+7 (495) 995-95-95</p>
+                <p>+7(900)555-42-77</p>
             </div>
             <div className={styles.footer_section}>
                 <h4>УСЛУГИ</h4>

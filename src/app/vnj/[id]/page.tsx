@@ -104,7 +104,7 @@ const CountryPage = () => {
         </p>
         <h4 className={styles.title_two}>Основания для получения:</h4>
         <p className={styles.description}>
-          Возможные варианты получения ВНЖ в Испании.
+          Возможные варианты получения ВНЖ в {country.name_three}.
         </p>
         <ul className={styles.process_list_two}>
           <li>
