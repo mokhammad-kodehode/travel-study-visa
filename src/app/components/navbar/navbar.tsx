@@ -266,10 +266,13 @@ const Navbar: React.FC = () => {
             {isVnjOpen && (
               <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/vnj_page/Bulgaria">Болгария</Link>
+                  <Link onClick={closeMobileNav} href="/vnj/Bulgaria">Болгария</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/vnj_page/Spain">Испания</Link>
+                  <Link onClick={closeMobileNav} href="/vnj/Spain">Испания</Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link onClick={closeMobileNav} href="/vnj/France">Франция</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/vnj_page/UAE">ОАЭ</Link>
