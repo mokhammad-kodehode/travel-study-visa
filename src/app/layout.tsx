@@ -6,6 +6,7 @@ import './globals.css'
 import Navbar from './components/navbar/navbar'
 import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
+import Spinner from './components/spinner/spinned';
 
 export const metadata: Metadata = {
   title: 'Travel and Study',
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body >
+        <Spinner/>
         <Header/>
         <Navbar/>
         {children}

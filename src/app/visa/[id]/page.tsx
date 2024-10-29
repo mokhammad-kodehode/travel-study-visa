@@ -82,7 +82,7 @@ const CountryPage = () => {
   }, []);
 
   if (!country) {
-    return <div>Loading...</div>;
+    return <div className={styles.banner}>Loading...</div>;
   }
 
   return (

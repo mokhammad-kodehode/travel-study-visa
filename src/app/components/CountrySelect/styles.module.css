@@ -1,74 +1,64 @@
-
-.select_container {
+.countryList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 20px 0px;
+    width: 100%;
+    margin-top: 0px;
+  }
+  
+  .countryItem {
     display: flex;
     align-items: center;
-    gap: 2rem;
-}
-
-.select {
-    border-radius: 25px;
-    padding: 5px;
-    width: 290px;
-    height: 50px;
-    text-align: center;
-    color: rgb(99, 99, 99);
-    cursor: pointer;
-    outline: none;
-}
-
-.select .option {
-    text-align: start;
-    background-color: #f8f6f8;
-    border-radius: 20px;
-}
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: 100%;
+  }
+  
+  .countryItem:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    background-color: white;
+  }
 
 
-.select_btn {
-    border-radius: 25px;
-    padding: 5px;
-    width: 150px;
-    height: 50px;
-    background: #BB2BBE;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
 
+  @media (max-width:768px) {
+    .countryList {
+      display: grid;
+      grid-template-columns:  auto auto;
+      flex-wrap: wrap;
+      gap: 0rem;
+      justify-content: center;
+      padding: 10px 0px;
+      gap: 2rem;
+      width: 100%;
 
-@media (max-width: 768px) {
+    }
     
-.select_container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.select {
-    border-radius: 25px;
-    padding: 5px;
-    width: 290px;
-    height: 50px;
-    text-align: center;
-    color: rgb(99, 99, 99);
-    cursor: pointer;
-    outline: none;
-}
-
-.select .option {
-    text-align: start;
-    background-color: #f8f6f8;
-    border-radius: 20px;
-}
-
-
-.select_btn {
-    border-radius: 25px;
-    padding: 5px;
-    width: 150px;
-    height: 50px;
-    background: #BB2BBE;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-}
+    .countryItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      margin-top: 0px;
+      width: 170px;
+    }
+    
+    .countryItem:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transform: scale(1.05);
+      background-color: white;
+    }
+  
+  }

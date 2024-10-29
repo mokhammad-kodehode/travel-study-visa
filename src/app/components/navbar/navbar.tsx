@@ -193,10 +193,10 @@ const Navbar: React.FC = () => {
             </div>
             {isVisaMenuOpen && (
               <ul onMouseLeave={closeMobileNav}  className={`${styles.dropdown} ${styles.show}`}>
-               <li onMouseEnter={!isMobile ? () => toggleSubmenu("europe") : undefined} onClick={isMobile ? () => toggleSubmenu("europe") : undefined} className={styles.dropdown_item}>
+               <li onMouseEnter={!isMobile ? () => toggleSubmenu("europe") : undefined}  className={styles.dropdown_item}>
                   <div className={styles.nav_item_with_submenu}>
                     <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
-                    <span className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
+                    <span onClick={isMobile ? () => toggleSubmenu("europe") : undefined} className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
                   </div>
                   {isEuropeSubmenuOpen && (
                     <ul onMouseLeave={() => setIsEuropeSubmenuOpen(false)} className={`${styles.nested_dropdown} ${styles.show}`}>
@@ -230,13 +230,22 @@ const Navbar: React.FC = () => {
                     </ul>
                   )}
                 </li>
-                <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/visa_page/america">Северная Америка</Link>
-                </li>
-                <li className={styles.dropdown_item}>
+                <li
+                  className={styles.dropdown_item}
+                  onMouseEnter={() => {
+                    setIsEuropeSubmenuOpen(false);
+                    setIsAmericaSubmenuOpen(false);
+                  }}
+                >
                   <Link onClick={closeMobileNav} href="/visa_page/united_kingdom">Великобритания</Link>
                 </li>
-                <li className={styles.dropdown_item}>
+                <li
+                  className={styles.dropdown_item}
+                  onMouseEnter={() => {
+                    setIsEuropeSubmenuOpen(false);
+                    setIsAmericaSubmenuOpen(false);
+                  }}
+                >
                   <Link onClick={closeMobileNav} href="/visa_page/saudi_arabia">Саудовская Аравия</Link>
                 </li>
               </ul>

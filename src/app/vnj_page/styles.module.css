@@ -66,8 +66,8 @@
   }
 
   .countryList {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: column;
     padding: 10px 0;
     width: 100%;
     align-items: center;

@@ -7,6 +7,8 @@ import Image from 'next/image';
 import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import ServicesList from '../components/OurServices/OurServices';
 import Contact from '../components/contact/Contact';
+import CountryVNJ from '../components/CountrySelect/countrySelect';
+import { europeCountries } from '../data/CountryDataVnj';
 
 export default function VNJ_Page() {
 
@@ -36,21 +38,10 @@ export default function VNJ_Page() {
             <div className={styles.section_two_top}>
                <h2 className={styles.selectCountryTitle}>Выберите страну для ВНЖ</h2>
                <div className={styles.countryList}>
-                  <Link href="vnj_page/Bulgaria" >
-                    <div className={styles.countryItem}>
-                        <Image className={styles.flag} src="/images/Flags/bulgaria.svg" alt="Флаг Болгарии" width={104} height={65} />
-                        <span>Болгария</span>
-                    </div>
-                    </Link>
-                    <Link href="vnj_page/Spain" >
-                        <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/spain.svg" alt="Флаг Испании" width={104} height={65} />
-                            <span>Испания</span>
-                        </div>
-                    </Link>
+                    <CountryVNJ countries={europeCountries}/>
                     <Link href="/vnj_page/UAE" >
                         <div className={styles.countryItem}>
-                            <Image className={styles.flag} src="/images/Flags/UAE.svg" alt="Флаг ОАЭ" width={104} height={65} />
+                            <Image className={styles.flag} src="/images/Flags/UAE.svg" alt="Флаг ОАЭ" width={54} height={35} />
                             <span>ОАЭ</span>
                         </div>
                     </Link>
