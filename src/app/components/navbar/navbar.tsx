@@ -190,7 +190,7 @@ const Navbar: React.FC = () => {
                <li onMouseEnter={!isMobile ? () => toggleSubmenu("europe") : undefined}  className={styles.dropdown_item}>
                   <div className={styles.nav_item_with_submenu}>
                     <Link onClick={closeMobileNav} href="/visa_page/europe">Европа</Link>
-                    <span onClick={isMobile ? () => toggleSubmenu("europe") : undefined} className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
+                    <span  className={`${styles.submenu_arrow} ${isEuropeSubmenuOpen ? styles.rotate_right : ''}`}>&#9660;</span>
                   </div>
                   {isEuropeSubmenuOpen && (
                     <ul onMouseLeave={() => setIsEuropeSubmenuOpen(false)} className={`${styles.nested_dropdown} ${styles.show}`}>
