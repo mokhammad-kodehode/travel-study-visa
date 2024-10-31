@@ -415,8 +415,8 @@
       white-space: nowrap;
       position: relative;
       color:#fff;
-      font-size: 16px; /* Увеличиваем размер текста для мобильной версии */
-      font-weight: 600;
+      font-size: 14px; /* Увеличиваем размер текста для мобильной версии */
+      font-weight: 400;
       padding: 15px 0; /* Добавляем больше отступов для лучшей кликабельности */
       cursor: pointer;
       width: 100%; /* Элементы занимают всю ширину экрана */

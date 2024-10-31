@@ -9,6 +9,7 @@ import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
 import { FaPassport, FaFileAlt, FaCalendarCheck, FaEnvelopeOpenText } from 'react-icons/fa'
+import Image from 'next/image';
 
 
 const ZagranPage = () => {
@@ -48,6 +49,13 @@ const ZagranPage = () => {
         </div>
         <section className={styles.section_text_content}>
             <div className={styles.section_text_content_title}>Оформление загранпаспорта</div>
+                 <Image
+                  src="/images/Frame.png" 
+                  alt="Pass"
+                  width={200} 
+                  height={200}
+                  className={styles.section_image}
+                />
                 <p className={styles.description}>Мы предлагаем услугу ускоренного оформления заграничного паспорта, которая избавит вас от всех забот. Наша команда профессионалов поможет на каждом этапе, чтобы вы могли сосредоточиться на своих планах.
                 </p>
                   <h3 className={styles.title_two}>Почему стоит выбрать нас?</h3>

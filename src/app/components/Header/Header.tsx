@@ -38,9 +38,6 @@ const Header = () => {
                 <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
-                </a>
                 <a href="https://wa.me/40756504079" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
                 </a>

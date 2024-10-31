@@ -3,13 +3,17 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 80px;
+  top: 60px;
   width: 100%;
-  background: linear-gradient(90deg,rgba(116, 47, 139, 0.0),rgba(116, 47, 139, 0.3),rgba(116, 47, 139, 0.5), rgba(116, 47, 139, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
+  /* background: linear-gradient(90deg,rgba(116, 47, 139, 0.0),rgba(116, 47, 139, 0.3),rgba(116, 47, 139, 0.5), rgba(116, 47, 139, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0)); */
 }
 
 .header_content {
   display: flex;
+  border: .5px solid rgba(251, 192, 45, 0.1);
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
   justify-content: space-between;
   align-items: center;
   width: 1200px;
@@ -28,7 +32,7 @@
 }
 
 .slogan span {
-  color: #fbc02d;
+  color: rgb(251, 192, 45);
   font-weight: bold;
 }
 

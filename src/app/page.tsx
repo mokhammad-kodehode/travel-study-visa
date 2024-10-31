@@ -65,8 +65,8 @@ export default function Home() {
                   <Image
                   src="/images/global.jpg"
                   alt="Pass"
-                  width={600} 
-                  height={400} 
+                  width={520} 
+                  height={350} 
                   className={styles.section_image}
                 />
                 <div className={styles.section_two_title}>
@@ -97,8 +97,8 @@ export default function Home() {
                 <Image
                   src="/images/Umra.jpg" 
                   alt="Umra"
-                  width={600} 
-                  height={400} 
+                  width={520} 
+                  height={350} 
                   className={styles.section_image}
                 />
           </section>
@@ -107,8 +107,8 @@ export default function Home() {
                <Image
                   src="/images/global_two.jpg" 
                   alt="Pass"
-                  width={600} 
-                  height={400}
+                  width={520} 
+                  height={350}
                   className={styles.section_image}
                 />
                 <div className={styles.section_four_title}>
@@ -133,8 +133,8 @@ export default function Home() {
                 <Image
                   src="/images/Four.png" 
                   alt="Pass"
-                  width={600} 
-                  height={400}
+                  width={520} 
+                  height={350}
                   className={styles.section_image}
                 />
           </section>

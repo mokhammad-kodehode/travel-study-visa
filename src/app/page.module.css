@@ -149,6 +149,11 @@ color: var(--gold);
   color: rgb(15, 15, 15);
 }
 
+.section_image{
+  height: auto;
+  border-radius: 8px;
+}
+
 @media (max-width: 820px) {
 
   .banner {
