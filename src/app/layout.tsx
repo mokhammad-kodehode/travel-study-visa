@@ -38,28 +38,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-          <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Travel and Study",
-              "url": "https://www.travelandstudy.ru",
-              "logo": "https://www.travelandstudy.ru/images/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+7-900-555-42-77",
-                "contactType": "Customer Support",
-                "areaServed": "RU",
-                "availableLanguage": ["Russian", "English"]
-              },
-
-            }),
-          }}
-        />
-      </Head>
       <body >
         <Header/>
         <Navbar/>
