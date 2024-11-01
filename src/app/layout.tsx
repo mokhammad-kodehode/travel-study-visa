@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next'
+import Head from 'next/head';
 import 'fontsource-poppins';
 import 'fontsource-inter';
 import './globals.css'
@@ -10,8 +11,25 @@ import Footer from './components/footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Travel and Study',
-  description: 'Оформдение виз, внж и гражданство.',
-}
+  description: 'Оформление виз, ВНЖ и гражданство.',
+  keywords: ['визовые услуги', 'ВНЖ', 'гражданство', 'путешествия', 'учеба за границей', 'Travel and Study'],
+  openGraph: {
+    title: 'Travel and Study',
+    description: 'Оформление виз, ВНЖ и гражданство.',
+    url: 'https://www.travelandstudy.ru/',
+    type: 'website',
+    locale: 'ru_RU', // Обозначение для российского сегмента
+    images: [
+      {
+        url: 'https://www.travelandstudy.ru/images/logo.svg', // Абсолютный путь к логотипу
+        width: 600, // Ширина изображения (необязательно, но желательно)
+        height: 600, // Высота изображения
+        alt: 'Логотип Travel and Study',
+      },
+    ],
+  },
+};
+
 
 export default function RootLayout({
   children,
@@ -20,6 +38,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+          <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Travel and Study",
+              "url": "https://www.travelandstudy.ru",
+              "logo": "https://www.travelandstudy.ru/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+7-900-555-42-77",
+                "contactType": "Customer Support",
+                "areaServed": "RU",
+                "availableLanguage": ["Russian", "English"]
+              },
+
+            }),
+          }}
+        />
+      </Head>
       <body >
         <Header/>
         <Navbar/>

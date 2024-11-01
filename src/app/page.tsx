@@ -8,7 +8,6 @@ import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
 import SloganSection from './components/slogan/Slogan'
-import Gallery from './components/Gallery/galery'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
@@ -138,7 +137,6 @@ export default function Home() {
                   className={styles.section_image}
                 />
           </section>
-          <Gallery/>
           <Contact/>
     </main>
   )
