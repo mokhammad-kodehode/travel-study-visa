@@ -1,0 +1,69 @@
+.pricingTable {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .plan {
+    background: #4a154b; /* Основной цвет фона */
+    color: #fff; /* Цвет текста */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    flex: 1; /* Занимает равное пространство */
+  }
+  
+  .plan:hover {
+    transform: translateY(-5px); /* Подъем при наведении */
+  }
+  
+  .planTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .price {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .featuresList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .feature {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkIcon {
+    color: #76e3a1; /* Цвет иконки */
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: #76e3a1; /* Цвет кнопки */
+    color: #4a154b; /* Цвет текста кнопки */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto; /* Центрирование кнопки */
+  }
+  
+  .button:hover {
+    background-color: #5ebd83; /* Цвет при наведении */
+  }

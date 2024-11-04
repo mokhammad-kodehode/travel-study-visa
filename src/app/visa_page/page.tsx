@@ -6,7 +6,8 @@ import CountryVisaSelect from '../components/CountryVisaSelect/page'
 import CountryList from '../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../data/CountryData'
 import { AmericaCountries } from '../data/CountryData';
-import CountryCards from '../components/PopularCountries/PopularCountries'
+import CountryCards from '../components/PopularCountries/PopularCountries';
+import TariffSelectionPage from '../components/PriceCard/priceCard';
 
 export default function Visa_page() {
 
@@ -46,6 +47,7 @@ export default function Visa_page() {
                 <CountryList countries={europeCountries}/>
               </div>
           </section>
+          <TariffSelectionPage/>
           <CountryCards/>
     </main>
   )
