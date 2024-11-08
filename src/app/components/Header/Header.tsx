@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <div className={styles.Header_items}>
             <Link className={styles.Header_item} href="/Gallery">
-                ГАЛЛЕРЕЯ
+                Фотогалерея
               </Link>
             <div className={styles.contact}>
               {/* Телефон */}

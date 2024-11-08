@@ -67,19 +67,22 @@ const Navbar: React.FC = () => {
     document.body.style.overflow = '';
   };
 
-  const toggleServicesMenu = () => {
+  const toggleServicesMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault(); // Предотвращаем переход по ссылке
     setServicesMenuOpen(!isServicesMenuOpen);
     setVisaMenuOpen(false);
     setisVnjOpen(false);
   };
-
-  const toggleVisaMenu = () => {
+  
+  const toggleVisaMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault(); // Предотвращаем переход по ссылке
     setVisaMenuOpen(!isVisaMenuOpen);
     setServicesMenuOpen(false);
     setisVnjOpen(false);
   };
-
-  const toggleVnjMenu = () => {
+  
+  const toggleVnjMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault(); // Предотвращаем переход по ссылке
     setisVnjOpen(!isVnjOpen);
     setServicesMenuOpen(false);
     setVisaMenuOpen(false);
