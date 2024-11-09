@@ -20,7 +20,7 @@ const Header = () => {
               />
           </Link>
           <div className={styles.slogan}>
-            ДОБРО ПОЖАЛОВАТЬ В <span>TRAVEL AND STUDY</span>
+            ДОБРО ПОЖАЛОВАТЬ В <span>TRAVEL & STUDY</span>
           </div>
         </div>
         <div className={styles.Header_items}>

@@ -36,12 +36,9 @@ export default function Home() {
     <main className={styles.main}>
           <section className={styles.banner}>
             <div className={styles.banner_title}>
-               <div className={styles.banner_title_text}>
-                <h1 className={styles.title_text}>Исследуйте мир с нами</h1>
-                <h2 className={styles.title_text_desc}>Оформление виз и загранпаспортов в Москве и области.</h2>
-                <h3 className={styles.title_text_desc}>Оформление гражданства и ВНЖ — быстро и надежно.</h3>
-               </div>
-                  <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button>
+                <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
+                <h2 className={styles.title_text_desc}>Оформи ВНЖ, гражданство, визы любой страны мира, находясь в любой точке планеты!</h2>
+                  {/* <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button> */}
                   <div className={styles.additional_info}>
                       <div className={styles.info_item}>
                         <FontAwesomeIcon className={styles.icon} icon={faBriefcase} /> Более 10 лет опыта
