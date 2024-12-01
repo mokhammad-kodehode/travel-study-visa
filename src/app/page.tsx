@@ -41,13 +41,17 @@ export default function Home() {
                   {/* <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button> */}
                   <div className={styles.additional_info}>
                       <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faBriefcase} /> Более 10 лет опыта
+                        <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
+                        <p>Более 10 лет опыта
+                        </p> 
                       </div>
                       <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faCheckCircle} /> Гарантия результата
+                        <FontAwesomeIcon className={styles.icon} icon={faCheckCircle} />
+                        <p>Гарантия результата</p> 
                       </div>
                       <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faUsers} /> 1000 довольных клиентов
+                        <FontAwesomeIcon className={styles.icon} icon={faUsers} />
+                        <p>1000 довольных клиентов</p>
                       </div>
                   </div>
             </div> 
@@ -81,8 +85,6 @@ export default function Home() {
                 </div>
           </section>
           <TariffSelectionPage/>
-          <PricingTable/>
-          <Advantages/>
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div className={styles.section_Six_title}>
                   <h2 className={styles.section_Six_h2}>Умра и туры в Саудовскую Аравию</h2>
@@ -138,6 +140,7 @@ export default function Home() {
                   className={styles.section_image}
                 />
           </section>
+          <Advantages/>
           <Contact/>
     </main>
   )

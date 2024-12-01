@@ -132,6 +132,29 @@ width: 702px;
   padding: 10px 0;
 }
 
+.advantages_list {
+  list-style: none;
+  padding: 0;
+  width: 900px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Расстояние между пунктами */
+}
+
+.advantages_item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.advantages_item::before {
+  content: "✔"; /* Или используйте иконку */
+  color: #4b0082; /* Фиолетовый */
+  margin-right: 10px;
+  font-size: 26px;
+}
 .section_text_content_title {
   width: 100%;
   font-size: 32px;
@@ -446,6 +469,15 @@ border-bottom: none; /* Убираем границу в последней ст
     color: white;
       }
 
+      .advantages_list {
+        list-style: none;
+        padding: 0;
+        width: 390px;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Расстояние между пунктами */
+      }
 
     .banner_container {
       margin: 0 auto;

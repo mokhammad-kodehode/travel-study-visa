@@ -4,9 +4,11 @@ import Head from 'next/head';
 import 'fontsource-poppins';
 import 'fontsource-inter';
 import './globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css'; // Подключение Bootstrap
 import Navbar from './components/navbar/navbar'
 import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
+import MyNavbar from './components/navbar/navbartwo';
 
 
 export const metadata: Metadata = {
@@ -40,7 +42,7 @@ export default function RootLayout({
     <html lang="ru">
       <body >
         <Header/>
-        <Navbar/>
+        <Navbar />
         {children}
         <Footer/>
         <script src="//code.jivosite.com/widget/V03s3szzXR" async></script>

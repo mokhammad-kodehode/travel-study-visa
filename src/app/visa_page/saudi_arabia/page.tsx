@@ -63,7 +63,7 @@ export default function KSA() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз в Саудовскую Аравию</h1>
-                        <h2 className={styles.title_text_desc}>Наши специалисты помогут выбрать оптимальный страховой полис, исходя из ваших потребностей и продолжительности поездки.</h2>
+                        <h2 className={styles.title_text_desc}>Наши специалисты помогут подобрать оптимальную визу исходя из ваших потребностей и продолжительности поездки.</h2>
                     </div>
                      <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАКАЗАТЬ</button>
                 </div>
