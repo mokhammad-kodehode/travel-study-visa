@@ -23,17 +23,18 @@ const Footer: React.FC = () => {
                 <h4>УСЛУГИ</h4>
                 <ul>
                     <Link  href="/visa_page">
-                        <li>Оформление виз</li> 
+                        <li>Визовые услуги</li> 
                     </Link>
                     <Link  href="/vnj_page">
                         <li>Оформление внж</li> 
                     </Link>
+                    <Link  href="/services_page/study_page">
+                        <li>Образовательные программы</li> 
+                    </Link>
                     <Link  href="/services_page/zagran_passport">
                         <li>Оформление загранпаспорта</li> 
                     </Link>
-                    <Link  href="/services_page/booking_tickets">
-                        <li>Бронирование авиа и жд билетов</li> 
-                    </Link>
+
                     <Link  href="/services_page/booking_hotel">
                         <li>Бронирование отелей</li> 
                     </Link>
@@ -51,15 +52,12 @@ const Footer: React.FC = () => {
                     <Link  href="/visa_page/america">
                         <li>Америка</li> 
                     </Link>
-                    <Link  href="/visa_page/japan">
-                        <li>Япония</li> 
+                    <Link  href="/visa_page/saudi_arabia">
+                        <li>Саудовская Аравия</li> 
                     </Link>
-                    <Link  href="/visa_page/japan">
-                        <li>Япония</li> 
+                    <Link  href="/visa_page/united_kingdom">
+                        <li>Великобритания</li> 
                     </Link>
-                    <li>Европа</li>
-                    <li>США</li>
-                    <li>Великобритания</li>
                 </ul>
             </div>
             <div className={styles.footer_section}>
