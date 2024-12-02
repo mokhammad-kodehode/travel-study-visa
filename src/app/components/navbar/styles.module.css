@@ -14,17 +14,6 @@
   z-index: 1000;
 }
 
-.navbar-transparent {
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляет тень */
-}
-
-
   .scrolled {
     background: linear-gradient(90deg, #742f8b, #000);
     display: flex;

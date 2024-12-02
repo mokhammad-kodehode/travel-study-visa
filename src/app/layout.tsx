@@ -4,7 +4,6 @@ import Head from 'next/head';
 import 'fontsource-poppins';
 import 'fontsource-inter';
 import './globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css'; // Подключение Bootstrap
 import Navbar from './components/navbar/navbar'
 import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
