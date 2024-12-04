@@ -10,12 +10,15 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@fontsource/inter": "^5.1.0",
     "@fontsource/poppins": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/material": "^6.1.10",
     "bootstrap": "^5.3.3",
     "fontsource-inter": "^4.0.0",
     "fontsource-poppins": "^4.0.0",

@@ -80,7 +80,7 @@ export default function Home() {
                   Убедитесь в этом сами, став нашим партнёром!
                   </p>
                   <Link href="/visa_page">
-                    <button className={styles.section_Six_btn}>УЗНАТЬ БОЛЬШЕ1</button>
+                    <button className={styles.section_Six_btn}>УЗНАТЬ БОЛЬШЕ</button>
                   </Link>
                 </div>
           </section>
