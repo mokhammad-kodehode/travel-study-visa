@@ -265,6 +265,7 @@ line-height: 1;
     display: flex;
     flex-direction: column;
     justify-content:center;
+    align-items: center;
     padding: 0px 10px;
   }
 
@@ -272,7 +273,7 @@ line-height: 1;
   
   .section_two_h2, .section_four_h2, .section_Six_h2 {
     font-size: 28px;
-    text-align: flex-start;
+    text-align: center;
     white-space: pre-wrap;
     margin-top: 10px;
   }
@@ -283,6 +284,7 @@ line-height: 1;
     font-style: normal;
     font-weight: 300;
     line-height: light;
+    text-align: center;
     margin-top: 10px;
   }
   
