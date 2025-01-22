@@ -1,123 +1,214 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/link';
+"use client";
 
-const MyNavbar = () => {
+import React, { useState, useEffect } from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import Link from "next/link";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { europeCountries, AmericaCountries } from "@/app/data/CountryData";
+
+const NavbarMUI: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesMenuAnchor, setServicesMenuAnchor] = useState<null | HTMLElement>(null);
+  const [visaMenuAnchor, setVisaMenuAnchor] = useState<null | HTMLElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Меняем состояние при прокрутке
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMenuOpen = (
+    event: React.MouseEvent<HTMLElement>,
+    setAnchor: React.Dispatch<React.SetStateAction<HTMLElement | null>>
+  ) => {
+    setAnchor(event.currentTarget);
+  };
+
+  const handleMenuClose = (setAnchor: React.Dispatch<React.SetStateAction<HTMLElement | null>>) => {
+    setAnchor(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <Navbar
-      expand="lg"
-      sticky="top"
-      className={`navbar-transparent ${isScrolled ? 'navbar-scrolled' : ''}`}
+    <AppBar
+      position="fixed"
+      sx={{
+        background: isScrolled
+          ? "linear-gradient(90deg, #742f8b, #000)"
+          : "transparent",
+        transition: "background-color 0.3s ease-in-out",
+        boxShadow: "none",
+        zIndex: 1000,
+      }}
     >
-      <Container>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          maxWidth: "1200px",
+          width: "100%",
+          margin: "0 auto",
+          padding: "0 20px",
+        }}
+      >
         {/* Логотип */}
-        <Navbar.Brand href="/">
-          {' '}Visa Travels
-        </Navbar.Brand>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Image src="/images/logo.svg" alt="Visa Travels Logo" width={65} height={65} />
+        </Link>
 
-        {/* Кнопка для мобильного меню */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {/* Главные пункты меню */}
-            <Nav.Link href="/">Главная</Nav.Link>
-            <Nav.Link href="/about_page">О компании</Nav.Link>
-
-            {/* Наши услуги */}
-            <NavDropdown title="Наши услуги" id="services-dropdown">
-              <NavDropdown.Item href="/visa_page">Визовые услуги</NavDropdown.Item>
-              <NavDropdown.Item href="/services_page/study_page">Образовательные программы</NavDropdown.Item>
-              <NavDropdown.Item href="/services_page/umra">Умра и туры в Саудовскую Аравию</NavDropdown.Item>
-              <NavDropdown.Item href="/services_page/zagran_passport">Оформление загранпаспортов</NavDropdown.Item>
-              <NavDropdown.Item href="/services_page/booking_tickets">Бронирование авиа и отелей</NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Визы */}
-            <NavDropdown title="Визы" id="visa-dropdown">
-              {/* Европа */}
-              <NavDropdown title="Европа" id="europe-dropdown" drop="end">
-                {[{ name: 'Франция', url: '/visa_page/europe/france' },
-                  { name: 'Германия', url: '/visa_page/europe/germany' },
-                  { name: 'Испания', url: '/visa_page/europe/spain' }
-                ].map((country) => (
-                  <NavDropdown.Item key={country.name} href={country.url}>
-                    {country.name}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-
-              {/* Америка */}
-              <NavDropdown title="Америка" id="america-dropdown" drop="end">
-                {[{ name: 'США', url: '/visa_page/america/usa' },
-                  { name: 'Канада', url: '/visa_page/america/canada' }
-                ].map((country) => (
-                  <NavDropdown.Item key={country.name} href={country.url}>
-                    {country.name}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-
-              <NavDropdown.Item href="/visa_page/united_kingdom">Великобритания</NavDropdown.Item>
-              <NavDropdown.Item href="/visa_page/saudi_arabia">Саудовская Аравия</NavDropdown.Item>
-            </NavDropdown>
-
-            {/* ВНЖ */}
-            <NavDropdown title="ВНЖ" id="vnj-dropdown">
-              <NavDropdown.Item href="/vnj/Bulgaria">Болгария</NavDropdown.Item>
-              <NavDropdown.Item href="/vnj/Spain">Испания</NavDropdown.Item>
-              <NavDropdown.Item href="/vnj/France">Франция</NavDropdown.Item>
-              <NavDropdown.Item href="/vnj/UAE">ОАЭ</NavDropdown.Item>
-            </NavDropdown>
-
-            <Nav.Link href="/grajdanstvo_ruminaya">Гражданство Румынии</Nav.Link>
-            <Nav.Link href="/contact_page">Контакты</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
-        {/* Контакты */}
-        <div className="d-flex align-items-center">
-          <a href="tel:+7(900)555-42-77" className="me-3">
-            <FontAwesomeIcon icon={faPhone} /> +7(900)555-42-77
-          </a>
-          <a
-            href="https://t.me/travelandstudyru"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="me-3"
+        {/* Десктопное меню */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "2rem",
+          }}
+        >
+          <Button
+            color="inherit"
+            component={Link}
+            href="/"
+            sx={{
+              color: "white",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "14px",
+              "&:hover": {
+                color: "#ffbd2a",
+              },
+            }}
           >
-            <FontAwesomeIcon icon={faTelegram} />
-          </a>
-          <a
-            href="https://www.google.com/maps/place/Presnenskaya+Naberezhnaya,+12,+Moskva"
-            target="_blank"
-            rel="noopener noreferrer"
+            Главная
+          </Button>
+          <Button
+            color="inherit"
+            component={Link}
+            href="/about_page"
+            sx={{
+              color: "white",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "14px",
+              "&:hover": {
+                color: "#ffbd2a",
+              },
+            }}
           >
-            <FontAwesomeIcon icon={faMapMarkerAlt} /> г. Москва, Пресненская набережная, 12
-          </a>
+            О компании
+          </Button>
+
+          <Button
+            color="inherit"
+            onClick={(e) => handleMenuOpen(e, setServicesMenuAnchor)}
+            sx={{
+              color: "white",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "14px",
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+              "&:hover": {
+                color: "#ffbd2a",
+              },
+            }}
+          >
+            Наши услуги <span style={{ fontSize: "16px" }}>▼</span>
+          </Button>
+          <Menu
+            anchorEl={servicesMenuAnchor}
+            open={Boolean(servicesMenuAnchor)}
+            onClose={() => handleMenuClose(setServicesMenuAnchor)}
+            MenuListProps={{
+              sx: {
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                color: "white",
+              },
+            }}
+          >
+            <MenuItem onClick={() => handleMenuClose(setServicesMenuAnchor)}>
+              <Link href="/visa_page" style={{ color: "inherit", textDecoration: "none" }}>
+                Визовые услуги
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={() => handleMenuClose(setServicesMenuAnchor)}>
+              <Link
+                href="/services_page/study_page"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                Образовательные программы
+              </Link>
+            </MenuItem>
+          </Menu>
         </div>
-      </Container>
-    </Navbar>
+
+        {/* Мобильное меню */}
+        <IconButton
+          color="inherit"
+          onClick={toggleMobileMenu}
+          sx={{
+            display: { xs: "block", md: "none" },
+          }}
+        >
+          {mobileMenuOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
+        </IconButton>
+
+        {mobileMenuOpen && (
+          <div
+            style={{
+              position: "fixed",
+              top: "60px",
+              left: 0,
+              width: "100%",
+              background: "linear-gradient(90deg, #742f8b, #000)",
+              display: "flex",
+              flexDirection: "column",
+              padding: "15px",
+              zIndex: 1000,
+            }}
+          >
+            <Button
+              color="inherit"
+              component={Link}
+              href="/"
+              sx={{ color: "white", marginBottom: "10px" }}
+              onClick={toggleMobileMenu}
+            >
+              Главная
+            </Button>
+            <Button
+              color="inherit"
+              component={Link}
+              href="/about_page"
+              sx={{ color: "white", marginBottom: "10px" }}
+              onClick={toggleMobileMenu}
+            >
+              О компании
+            </Button>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 
-export default MyNavbar;
+export default NavbarMUI;

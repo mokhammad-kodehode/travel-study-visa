@@ -15,6 +15,7 @@ import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg
 import { useState } from 'react'
 
 
+
 import 'fontsource-inter';
 
 export default function Home() {
@@ -64,13 +65,15 @@ export default function Home() {
           <section className={styles.section_three}>
           </section>
           <section className={styles.section_two}>
-                  <Image
+            <div className={styles.images_wrapper}>
+            <Image
                   src="/images/global.jpg"
                   alt="Pass"
                   width={520} 
                   height={350} 
                   className={styles.section_image}
                 />
+            </div>
                 <div className={styles.section_two_title}>
                   <h2 className={styles.section_two_h2}>Оформляем визы</h2>
                   <p className={styles.section_two_p}>Каждый день мы совершенствуем процесс получения виз в любую страну.
@@ -84,7 +87,7 @@ export default function Home() {
                   </Link>
                 </div>
           </section>
-          <TariffSelectionPage/>
+        
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div className={styles.section_Six_title}>
                   <h2 className={styles.section_Six_h2}>Умра и туры в Саудовскую Аравию</h2>

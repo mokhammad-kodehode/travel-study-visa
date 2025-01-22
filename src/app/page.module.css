@@ -170,7 +170,9 @@ line-height: 1;
 
 .section_image{
   height: auto;
-  border-radius: 8px;
+  border-radius: 20px;
+}
+.images_wrapper {
 }
 
 @media (max-width: 820px) {
@@ -244,6 +246,11 @@ line-height: 1;
   .section_image{
     width: 99%; /* 100% ширины родительского контейнера */
     height: auto;
+    margin-bottom: 16px;
+  }
+  .images_wrapper {
+    border-radius: 20px;
+    padding: 0 10px;
   }
   
   .section_two, .section_four, .section_Six {
@@ -265,17 +272,18 @@ line-height: 1;
     display: flex;
     flex-direction: column;
     justify-content:center;
-    align-items: center;
-    padding: 0px 10px;
+    align-items: flex-start;
+    padding: 10px 10px;
+    gap: .5rem;
   }
 
 
   
   .section_two_h2, .section_four_h2, .section_Six_h2 {
     font-size: 28px;
-    text-align: center;
+    text-align: start;
     white-space: pre-wrap;
-    margin-top: 10px;
+    margin-bottom: 16px;
   }
   
   .section_two_p , .section_four_p, .section_Six_p {
@@ -284,8 +292,8 @@ line-height: 1;
     font-style: normal;
     font-weight: 300;
     line-height: light;
-    text-align: center;
-    margin-top: 10px;
+    text-align: start;
+    margin-top: 0;
   }
   
   

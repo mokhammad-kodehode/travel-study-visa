@@ -7,7 +7,7 @@ import './globals.css'
 import Navbar from './components/navbar/navbar'
 import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
-import MyNavbar from './components/navbar/navbartwo';
+import NavbarMUI from './components/navbar/navbartwo'
 
 
 export const metadata: Metadata = {
