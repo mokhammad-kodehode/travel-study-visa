@@ -65,6 +65,24 @@ letter-spacing: 1px;
 color: var(--gold);
 font-family: "Great Vibes", cursive;
 line-height: 1;
+transition: all 0.3s ease-in-out; /* Плавный эффект */
+}
+
+.cursor {
+  border-left: 2px solid #f0c040; /* Цвет курсора */
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite; /* Мигающий эффект */
+  margin-left: 3px;
+}
+
+/* Анимация мигания курсора */
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .title_text_desc {
@@ -169,11 +187,9 @@ line-height: 1;
 }
 
 .section_image{
-  height: auto;
   border-radius: 20px;
 }
-.images_wrapper {
-}
+
 
 @media (max-width: 820px) {
 

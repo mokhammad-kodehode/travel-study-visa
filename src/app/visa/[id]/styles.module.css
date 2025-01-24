@@ -545,7 +545,7 @@ border-bottom: none; /* Убираем границу в последней ст
     }
   
     .special_wrapper {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr ;
       gap: 1rem;
     }
   
@@ -592,7 +592,7 @@ border-bottom: none; /* Убираем границу в последней ст
     }
     
     .title_text_desc {
-      font-size: 22px;
+      font-size: 19px;
       line-height: 30px;
       font-weight: 300;
       position: relative;

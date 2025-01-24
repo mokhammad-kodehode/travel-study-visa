@@ -60,28 +60,27 @@ export default function UnitedKingdom() {
         <div className={styles.breadcrumbs}>
           <a href="/">Главная</a> &gt;
           <a href="/visa_page">Оформление визы</a> &gt;
-          <a href="/visa_page/america">Великобритания</a> &gt;
-          <span>США</span>
+          <span>Великобритания</span>
         </div>
       </div>
       <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}>Виза в Великобританию</div>
-        <div className={styles.image_wrapper}>
-          <Image
-            src="/images/LondonMain.jpg"
-            alt="USA"
-            width={600}
-            height={400}
-            layout="responsive"
-            className={styles.section_image}
-          />
+        <div data-aos="fade-top" className={styles.image_wrapper}>
+        <Image
+          src="/images/LondonMain.jpg"
+          alt="London"
+          width={600}
+          height={400}
+          style={{ width: '100%', height: 'auto' }} // Для адаптивности
+          className={styles.section_image}
+        />
         </div>
         <p className={styles.description}>
         Виза в Великобританию — один из самых сложных и многоступенчатых документов для получения. Мы понимаем все тонкости процесса и готовы сделать его для вас максимально простым и эффективным. Обратившись к нам, вы получаете профессиональное сопровождение и гарантированное качество на каждом этапе.
 
         </p>
         <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
-        <ul className={styles.process_list}>
+        <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={styles.process_list_item}>
               <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>
@@ -98,7 +97,7 @@ export default function UnitedKingdom() {
         </ul>
         
         <h3 className={styles.title_two}>Особенности визы:</h3>
-        <div className={styles.special_wrapper}>
+        <div data-aos="fade-top" className={styles.special_wrapper}>
         <VisaFeatureCard
             icon={FaPlane}
             title="Многократный въезд"
@@ -125,7 +124,7 @@ export default function UnitedKingdom() {
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
-        <table className={styles.document_table}>
+        <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>
               <th>Документ</th>
@@ -191,7 +190,7 @@ export default function UnitedKingdom() {
         </table>
 
         <h2 className={styles.title_two}>Процесс получения визы:</h2>
-        <ul className={styles.process_list_two}>
+        <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Определите тип визы</strong>
             <span>

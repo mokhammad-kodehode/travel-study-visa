@@ -81,7 +81,7 @@ export default function KSA() {
         <p className={styles.description}>Мы предлагаем оформление туристических виз в Саудовскую Аравию, чтобы вы могли насладиться удивительными пейзажами и культурой этой страны.
         </p>
         <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
-        <ul className={styles.process_list}>
+        <ul data-aos="fade-top" className={styles.process_list}>
             {visaDetails.map((visa, index) => (
               <li key={index} className={styles.process_list_item}> 
                 <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>  
@@ -101,7 +101,7 @@ export default function KSA() {
           </ul>
           <p className={styles.description}>Мы поможем вам собрать все необходимые документы и быстро оформить визу. Свяжитесь с нами для получения консультации и начните планировать своё путешествие или деловую поездку в Саудовскую Аравию!</p>
           <h3 className={styles.title_two}>Особенности виз:</h3>
-          <div className={styles.special_wrapper}>
+          <div data-aos="fade-top" className={styles.special_wrapper}>
                     <VisaFeatureCard
                         icon={FaPlane}
                         title="Многократный въезд"
@@ -124,7 +124,7 @@ export default function KSA() {
                     />
            </div>
            <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
-              <table className={styles.document_table}>
+              <table data-aos="fade-top" className={styles.document_table}>
                 <thead>
                   <tr>
                     <th>Документ</th>

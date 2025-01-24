@@ -1,22 +1,61 @@
 .container {
-    background-color: #f8f6f8;
-    padding: 40px;
-  }
+  position: relative;
+  background-color: #f8f6f8;
+  padding: 40px;
+  overflow: hidden;
+}
 
-  .container_title{
-    text-align: center;
-    font-size: 36px;
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #f0c040 0%, #ff8c00 100%);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 0; /* Позади основного содержимого */
+}
+
+.container::before {
+  top: -50px;
+  left: -50px;
+  animation: float 10s infinite alternate;
+}
+
+.container::after {
+  bottom: -50px;
+  right: -50px;
+  animation: float 12s infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
   }
-  
-  .cards {
-    padding: 20px;
-    width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    flex-wrap: wrap;
-    gap: 1rem;
+  to {
+    transform: translateY(20px);
   }
+}
+
+.container_title {
+  text-align: center;
+  font-size: 36px;
+  position: relative;
+  z-index: 1; /* Над фоном */
+}
+
+.cards {
+  position: relative;
+  z-index: 1; /* Над фоном */
+  padding: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
   
   .card {
     width: 300px;

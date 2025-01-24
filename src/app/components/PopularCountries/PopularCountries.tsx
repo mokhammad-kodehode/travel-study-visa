@@ -83,7 +83,7 @@ const CountryCards: React.FC = () => {
 
     return (
       <section className={styles.container}>
-        <div className={styles.container_content}>
+        <div data-aos="fade-top" className={styles.container_content}>
         <h2 className={styles.container_title}>Популярные страны</h2>
             <div className={styles.cards}>
               {countrycards.map((countrycard) => (

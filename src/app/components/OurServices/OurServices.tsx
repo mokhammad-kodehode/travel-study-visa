@@ -13,7 +13,7 @@ const services = [
   {
     title: 'Оформление ВНЖ',
     description: 'Оформление вида на жительство во Франции, Болгарии, Испании или ОАЭ.',
-    link: '/visa_page',
+    link: '/vnj_page',
     image: '/images/global.jpg' // Добавьте путь к вашему изображению
   },
   {
@@ -46,7 +46,7 @@ const ServicesList: React.FC = () => {
   return (
     <section className={styles.container}>
       <h1 className={styles.container_title}>НАШИ УСЛУГИ</h1>
-      <div className={styles.servicesGrid}>
+      <div data-aos="fade-bottom" className={styles.servicesGrid}>
         {services.map((service, index) => (
           <div key={index} className={styles.serviceCard}>
             <div className={styles.serviceCard_header}>

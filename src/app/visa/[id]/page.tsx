@@ -95,7 +95,7 @@ const CountryPage = () => {
               <h2 className={styles.title_text_desc}>Оформим нужный тип визы в {country.name_two}.</h2>
               <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
             </div>
-            <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАКАЗАТЬ</button>
+            <button  className={styles.order_btn} >ЗАКАЗАТЬ</button>
           </div>
         </div>
       </section >
@@ -109,31 +109,21 @@ const CountryPage = () => {
         </div>
         <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}>Виза в {country.name_two}</div>
-        <div className={styles.image_wrapper}>
+        <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
             src={country.backgroundImgUrl}
             alt="USA"
             width={600}
             height={400}
-            layout="responsive"
+            style={{ width: '100%', height: 'auto' }} 
             className={styles.section_image}
           />
         </div>
-        <p className={styles.description}>
+        <p data-aos="fade-top" className={styles.description}>
         <strong>{country.name}</strong> — страна с богатой культурой, потрясающей природой и идеальными условиями для отдыха. Чтобы сделать вашу поездку комфортной и избежать сложностей с получением визы, доверьте этот процесс профессионалам. Мы поможем вам быстро и без лишних хлопот оформить визу в {country.name_two}, гарантируя успешный результат.
         </p>
-        <h2 className={styles.title_two}>Преимущества визы:</h2>
-          <ul className={styles.advantages_list}>
-            {Object.keys(country)
-              .filter(key => key.startsWith('feature_') && country[key])
-              .map((key, index) => (
-                <li key={index} className={styles.advantages_item}>
-                  {country[key]}
-                </li>
-              ))}
-          </ul>
         <h3 className={styles.title_two}>У нас доступны следующие варианты виз:</h3>
-        <ul className={styles.process_list}>
+        <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={styles.process_list_item}>
               <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>
@@ -152,33 +142,33 @@ const CountryPage = () => {
         Каждый тип визы имеет свои требования и процесс подачи заявления, поэтому важно заранее изучить информацию, чтобы правильно подготовить документы.
         </p>
         <h3 className={styles.title_two}>Особенности визы:</h3>
-        <div className={styles.special_wrapper}>
+        <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
             title="Многократный въезд"
-            description="Виза позволяет вам посещать страну неоднократно в течение срока её действия. Это особенно полезно для путешественников, совершающих регулярные поездки."
+            description={country.feature_one}
           />
           <VisaFeatureCard
             icon={FaCalendarAlt}
             title="Продолжительное пребывание"
-            description="В зависимости от типа визы, пребывание в стране может быть как краткосрочным, так и долгосрочным для работы или учебы."
+            description={country.feature_two}
           />
           <VisaFeatureCard
             icon={FaBriefcase}
             title="Доступ к мероприятиям"
-            description="Получив визу, вы сможете участвовать в деловых встречах, культурных событиях и конференциях, расширяя свои профессиональные и личные горизонты."
+            description={country.feature_three}
           />
           <VisaFeatureCard
             icon={FaSuitcaseRolling}
             title="Гибкие условия путешествий"
-            description="С визой в выбранную страну вы получаете возможность свободно путешествовать, наслаждаясь разнообразием культур и достопримечательностей."
+            description={country.feature_four}
           />
         </div>   
         <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
-        <table className={styles.document_table}>
+        <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>
               <th>Документ</th>
@@ -255,7 +245,7 @@ const CountryPage = () => {
         </table>
         <p className={styles.description}>Этот список может немного отличаться в зависимости от страны подачи или типа визы, но в целом, это стандартные требования для шенгенских виз в Испанию, Францию, Италию и Грецию.</p>
         <h2 className={styles.title_two}>Процесс получения визы:</h2>
-        <ul className={styles.process_list_two}>
+        <ul data-aos="fade-top" className={styles.process_list_two}>
           <li className={styles.process_list_two_item}>
             <strong>Определите тип визы</strong>
             <ul>

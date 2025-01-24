@@ -50,23 +50,24 @@ const visaDetails = [
 
 export default function USA() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [isChatOpen, setIsChatOpen] = useState(false); 
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const openOrCloseChat = () => {
     if (typeof window !== 'undefined' && window.jivo_api) {
-        if (isChatOpen) {
-            window.jivo_api.close(); // Закрываем чат, если он открыт
-            setIsChatOpen(false); // Обновляем состояние
-        } else {
-            window.jivo_api.open(); // Открываем чат, если он закрыт
-            setIsChatOpen(true); // Обновляем состояние
-        }
+      if (isChatOpen) {
+        window.jivo_api.close(); // Закрываем чат, если он открыт
+        setIsChatOpen(false); // Обновляем состояние
+      } else {
+        window.jivo_api.open(); // Открываем чат, если он закрыт
+        setIsChatOpen(true); // Обновляем состояние
+      }
     }
-};
+  };
 
   const toggleDescription = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
     <main className={styles.main}>
       <section className={styles.banner}>
@@ -84,7 +85,7 @@ export default function USA() {
           </div>
         </div>
       </section>
-      
+
       <div className={styles.breadcrumbs_wrapper}>
         <div className={styles.breadcrumbs}>
           <a href="/">Главная</a> &gt;
@@ -96,21 +97,21 @@ export default function USA() {
 
       <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}>Виза в США</div>
-        <div className={styles.image_wrapper}>
+        <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
             src="/images/countries/Usa_two.jpg"
             alt="USA"
             width={600}
             height={400}
-            layout="responsive"
+            style={{ width: '100%', height: 'auto' }} // Для адаптивности
             className={styles.section_image}
           />
         </div>
-        <p className={styles.description}>
+        <p data-aos="fade-top" className={styles.description}>
           Получение визы в США — это сложный и многоступенчатый процесс, требующий внимания к деталям и знания всех нюансов. Мы предлагаем профессиональное сопровождение, чтобы сделать этот процесс простым и эффективным для вас. Доверьте оформление визы США нашим специалистам и забудьте о стрессе!
         </p>
         <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
-        <ul className={styles.process_list}>
+        <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={styles.process_list_item}>
               <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>
@@ -125,9 +126,9 @@ export default function USA() {
             </li>
           ))}
         </ul>
-        
+
         <h3 className={styles.title_two}>Особенности визы:</h3>
-        <div className={styles.special_wrapper}>
+        <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
             title="Многократный въезд"
@@ -149,12 +150,12 @@ export default function USA() {
             description="С визой в США вы можете путешествовать по всей стране, посещая различные штаты и города без дополнительных ограничений."
           />
         </div>
-        
+
         <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
-        <table className={styles.document_table}>
+        <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>
               <th>Документ</th>
@@ -232,7 +233,7 @@ export default function USA() {
         </table>
 
         <h2 className={styles.title_two}>Процесс получения визы:</h2>
-        <ul className={styles.process_list_two}>
+        <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Заполнение формы DS-160</strong>
             <span>

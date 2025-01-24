@@ -522,7 +522,7 @@
         }
       
         .special_wrapper {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: 1rem;
         }
       
@@ -550,7 +550,7 @@
         .banner_title p {
           width: 100%;
           margin-top: 30px;
-          font-size: 22px;
+          font-size: 19px;
         }
         
         .order_btn {
@@ -579,7 +579,7 @@
         }
         
         .title_text_desc {
-          font-size: 22px;
+          font-size: 19px;
           line-height: 30px;
           font-weight: 300;
           position: relative
@@ -588,10 +588,10 @@
         
     .process_list_two {
       flex-direction: column;
-      grid-template-columns: auto auto;
+      grid-template-columns: auto ;
       padding: 30px 0;
       width: 100%;
-      gap: 10px;
+      gap: 25px;
   }
 
   .process_list_two li {

@@ -67,19 +67,22 @@ const Navbar: React.FC = () => {
     document.body.style.overflow = '';
   };
 
-  const toggleServicesMenu = () => {
+  const toggleServicesMenu = (event: React.MouseEvent) => {
+    event.preventDefault(); // Предотвращаем переход
     setServicesMenuOpen(!isServicesMenuOpen);
     setVisaMenuOpen(false);
     setisVnjOpen(false);
   };
-
-  const toggleVisaMenu = () => {
+  
+  const toggleVisaMenu = (event: React.MouseEvent) => {
+    event.preventDefault(); // Предотвращаем переход
     setVisaMenuOpen(!isVisaMenuOpen);
     setServicesMenuOpen(false);
     setisVnjOpen(false);
   };
-
-  const toggleVnjMenu = () => {
+  
+  const toggleVnjMenu = (event: React.MouseEvent) => {
+    event.preventDefault(); // Предотвращаем переход
     setisVnjOpen(!isVnjOpen);
     setServicesMenuOpen(false);
     setVisaMenuOpen(false);
@@ -143,7 +146,6 @@ const Navbar: React.FC = () => {
           </li>
           <li className={styles.nav_item}>
             <div
-              onMouseEnter={!isMobile ? toggleServicesMenu : undefined}
               onClick={isMobile ? toggleServicesMenu : undefined}
               className={styles.nav_item_with_submenu}
             >

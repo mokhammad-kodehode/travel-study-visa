@@ -39,16 +39,15 @@ export default function VNJ_Page() {
                <h2 className={styles.selectCountryTitle}>Выберите страну для ВНЖ</h2>
                <div className={styles.countryList}>
                     <CountryVNJ countries={europeCountries}/>
-                    <Link href="/vnj_page/UAE" >
+                </div>
+                <Link href="/vnj_page/UAE" >
                         <div className={styles.countryItem}>
                             <Image className={styles.flag} src="/images/Flags/UAE.svg" alt="Флаг ОАЭ" width={54} height={35} />
                             <span>ОАЭ</span>
                         </div>
                     </Link>
-                </div>
             </div>
           </section>
-          <AdvantagesTwo/>
           <ServicesList/>
           <Contact/>
     </main>

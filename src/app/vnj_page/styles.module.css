@@ -185,6 +185,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        width: 350px;
         padding: 5px 10px;
         border-radius: 5px;
         transition: all 0.3s ease;
@@ -207,7 +208,7 @@
   
     .banner_title p {
       width: 100%;
-      font-size: 22px;
+      font-size: 19px;
     }
     
     .order_btn {

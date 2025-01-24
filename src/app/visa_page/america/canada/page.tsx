@@ -76,20 +76,20 @@ export default function CANADA() {
             </div>
             <section className={styles.section_text_content}>
                   <div className={styles.section_text_content_title}>Виза в Канаду</div>
-                  <div className={styles.image_wrapper}>
+                  <div data-aos="fade-top" className={styles.image_wrapper}>
                     <Image
                     src="/images/countries/canada_two.jpg"
                     alt="Canada"
                     width={600} 
                     height={400} 
-                    layout="responsive"
+                    style={{ width: '100%', height: 'auto' }} // Для адаптивности
                     className={styles.section_image}
                     />
                   </div>
-                  <p className={styles.description}>Планируете поездку в Канаду? Мы предлагаем профессиональную помощь в оформлении визы для любых целей – туризм, бизнес, учеба или посещение родственников. Наш визовый центр поможет вам избежать ошибок в подготовке документов и обеспечит оперативное получение визы в кратчайшие сроки.
+                  <p data-aos="fade-top" className={styles.description}>Планируете поездку в Канаду? Мы предлагаем профессиональную помощь в оформлении визы для любых целей – туризм, бизнес, учеба или посещение родственников. Наш визовый центр поможет вам избежать ошибок в подготовке документов и обеспечит оперативное получение визы в кратчайшие сроки.
                   </p>
                   <h2 className={styles.title_two}>Типы виз и стоимость консульского сбора:</h2>
-                  <ul className={styles.process_list}>
+                  <ul data-aos="fade-top" className={styles.process_list}>
                       {visaDetails.map((visa, index) => (
                         <li key={index} className={styles.process_list_item}> 
                           <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>  
@@ -109,7 +109,7 @@ export default function CANADA() {
                   </ul>
                   <p className={styles.description}>Время рассмотрения заявления: от 10 до 30 рабочих дней, в зависимости от типа визы и индивидуальных обстоятельств.</p>
                   <h3 className={styles.title_two}>Особенности визы:</h3>
-                  <div className={styles.special_wrapper}>
+                  <div data-aos="fade-top" className={styles.special_wrapper}>
                             <VisaFeatureCard
                                 icon={FaPlane}
                                 title="Многократный въезд"
@@ -132,7 +132,7 @@ export default function CANADA() {
                             />
                   </div>
                   <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
-                      <table className={styles.document_table}>
+                      <table data-aos="fade-top" className={styles.document_table}>
                         <thead>
                           <tr>
                             <th>Документ</th>
@@ -179,7 +179,7 @@ export default function CANADA() {
                         </tbody>
                       </table>
                       <h2 className={styles.title_two}>Процесс получения визы:</h2>
-                    <ul className={styles.process_list_two}>
+                    <ul data-aos="fade-top" className={styles.process_list_two}>
                     <li>
                         <strong>Заполнение формы онлайн</strong>
                         <span>

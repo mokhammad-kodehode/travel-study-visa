@@ -208,14 +208,14 @@ width: 702px;
   align-items: center;
   counter-reset: step-counter;
   gap: 30px;
-  padding: 30px;
+  padding: 60px 20px;
 }
 
 .process_list_two li {
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   border-left: 4px solid var(--violet);
   border-radius: 8px;
   position: relative;
@@ -506,13 +506,14 @@ border-bottom: none; /* Убираем границу в последней ст
     }
   
     .special_wrapper {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr ;
       gap: 1rem;
     }
   
     .title_two {
       font-size: 24px;
       width: 100%;
+      margin: 10px 5px;
     }
 
      .banner_title {
@@ -522,21 +523,6 @@ border-bottom: none; /* Убираем границу в последней ст
      }
 
 
-     
-   
-     .banner_title p {
-       width: 100%;
-       margin-top: 15px;
-       font-size: 18px;
-       margin-bottom: 15px;
-     }
-  
-    .banner_title p {
-      width: 100%;
-      margin-top: 30px;
-      font-size: 22px;
-    }
-    
 
     
     .banner_title_text {
@@ -553,7 +539,7 @@ border-bottom: none; /* Убираем границу в последней ст
     }
     
     .title_text_desc {
-      font-size: 22px;
+      font-size: 19px;
       line-height: 30px;
       font-weight: 300;
       position: relative;
@@ -580,14 +566,14 @@ border-bottom: none; /* Убираем границу в последней ст
 
     .process_list_two {
       flex-direction: column;
-      grid-template-columns: auto auto;
+      grid-template-columns: auto;
       padding: 30px 0;
       width: 100%;
       gap: 10px;
   }
 
   .process_list_two li {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       padding: 20px 9px;
   }
 

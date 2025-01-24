@@ -4,10 +4,10 @@ import Head from 'next/head';
 import 'fontsource-poppins';
 import 'fontsource-inter';
 import './globals.css'
-import Navbar from './components/navbar/navbar'
 import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
-import NavbarMUI from './components/navbar/navbartwo'
+import Navbar from './components/navbar/newNav';
+import AOSInitializer from './components/AOSInitializer';
 
 
 export const metadata: Metadata = {
@@ -41,7 +41,8 @@ export default function RootLayout({
     <html lang="ru">
       <body >
         <Header/>
-        <Navbar />
+        <Navbar/>
+        <AOSInitializer />
         {children}
         <Footer/>
         <script src="//code.jivosite.com/widget/V03s3szzXR" async></script>

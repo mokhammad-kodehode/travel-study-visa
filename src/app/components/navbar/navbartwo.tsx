@@ -1,46 +1,36 @@
 "use client";
 
-"use client";
-
 import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { europeCountries, AmericaCountries } from "@/app/data/CountryData";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const NavbarMUI: React.FC = () => {
+const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [servicesMenuAnchor, setServicesMenuAnchor] = useState<null | HTMLElement>(null);
-  const [visaMenuAnchor, setVisaMenuAnchor] = useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 50);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMenuOpen = (
-    event: React.MouseEvent<HTMLElement>,
-    setAnchor: React.Dispatch<React.SetStateAction<HTMLElement | null>>
-  ) => {
-    setAnchor(event.currentTarget);
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = (setAnchor: React.Dispatch<React.SetStateAction<HTMLElement | null>>) => {
-    setAnchor(null);
+  const handleMenuClose = () => {
+    setAnchorEl(null);
   };
 
   const toggleMobileMenu = () => {
@@ -51,12 +41,9 @@ const NavbarMUI: React.FC = () => {
     <AppBar
       position="fixed"
       sx={{
-        background: isScrolled
-          ? "linear-gradient(90deg, #742f8b, #000)"
-          : "transparent",
-        transition: "background-color 0.3s ease-in-out",
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.9)" : "transparent",
+        transition: "background-color 0.3s",
         boxShadow: "none",
-        zIndex: 1000,
       }}
     >
       <Toolbar
@@ -65,96 +52,58 @@ const NavbarMUI: React.FC = () => {
           justifyContent: "space-between",
           alignItems: "center",
           maxWidth: "1200px",
-          width: "100%",
           margin: "0 auto",
-          padding: "0 20px",
+          width: "100%",
         }}
       >
-        {/* Логотип */}
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <Image src="/images/logo.svg" alt="Visa Travels Logo" width={65} height={65} />
-        </Link>
+        <Typography variant="h6">
+          <Link href="/" style={{ textDecoration: "none", color: "white" }}>
+            Travel & Study
+          </Link>
+        </Typography>
 
         {/* Десктопное меню */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "2rem",
+            gap: "20px",
           }}
         >
-          <Button
-            color="inherit"
-            component={Link}
-            href="/"
-            sx={{
-              color: "white",
-              textTransform: "none",
-              fontWeight: 500,
-              fontSize: "14px",
-              "&:hover": {
-                color: "#ffbd2a",
-              },
-            }}
-          >
+          <Button color="inherit" component={Link} href="/" sx={{ color: "white" }}>
             Главная
           </Button>
-          <Button
-            color="inherit"
-            component={Link}
-            href="/about_page"
-            sx={{
-              color: "white",
-              textTransform: "none",
-              fontWeight: 500,
-              fontSize: "14px",
-              "&:hover": {
-                color: "#ffbd2a",
-              },
-            }}
-          >
+          <Button color="inherit" component={Link} href="/about" sx={{ color: "white" }}>
             О компании
           </Button>
-
           <Button
             color="inherit"
-            onClick={(e) => handleMenuOpen(e, setServicesMenuAnchor)}
-            sx={{
-              color: "white",
-              textTransform: "none",
-              fontWeight: 500,
-              fontSize: "14px",
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              "&:hover": {
-                color: "#ffbd2a",
-              },
-            }}
+            onClick={handleMenuOpen}
+            sx={{ color: "white" }}
+            endIcon={<span>▼</span>}
           >
-            Наши услуги <span style={{ fontSize: "16px" }}>▼</span>
+            Наши услуги
           </Button>
           <Menu
-            anchorEl={servicesMenuAnchor}
-            open={Boolean(servicesMenuAnchor)}
-            onClose={() => handleMenuClose(setServicesMenuAnchor)}
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
             MenuListProps={{
               sx: {
-                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                backgroundColor: "rgba(0, 0, 0, 0.9)",
                 color: "white",
+                borderRadius: "5px",
+                minWidth: "200px",
               },
             }}
           >
-            <MenuItem onClick={() => handleMenuClose(setServicesMenuAnchor)}>
-              <Link href="/visa_page" style={{ color: "inherit", textDecoration: "none" }}>
+            <MenuItem onClick={handleMenuClose}>
+              <Link href="/visa_services" style={{ textDecoration: "none", color: "white" }}>
                 Визовые услуги
               </Link>
             </MenuItem>
-            <MenuItem onClick={() => handleMenuClose(setServicesMenuAnchor)}>
-              <Link
-                href="/services_page/study_page"
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
+            <MenuItem onClick={handleMenuClose}>
+              <Link href="/educational_programs" style={{ textDecoration: "none", color: "white" }}>
                 Образовательные программы
               </Link>
             </MenuItem>
@@ -169,21 +118,22 @@ const NavbarMUI: React.FC = () => {
             display: { xs: "block", md: "none" },
           }}
         >
-          {mobileMenuOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
+          <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} />
         </IconButton>
 
         {mobileMenuOpen && (
           <div
             style={{
               position: "fixed",
-              top: "60px",
+              top: "64px",
               left: 0,
               width: "100%",
-              background: "linear-gradient(90deg, #742f8b, #000)",
+              height: "100vh",
+              background: "rgba(0, 0, 0, 0.9)",
               display: "flex",
               flexDirection: "column",
-              padding: "15px",
-              zIndex: 1000,
+              alignItems: "center",
+              padding: "20px",
             }}
           >
             <Button
@@ -198,7 +148,7 @@ const NavbarMUI: React.FC = () => {
             <Button
               color="inherit"
               component={Link}
-              href="/about_page"
+              href="/about"
               sx={{ color: "white", marginBottom: "10px" }}
               onClick={toggleMobileMenu}
             >
@@ -211,4 +161,4 @@ const NavbarMUI: React.FC = () => {
   );
 };
 
-export default NavbarMUI;
+export default Navbar;

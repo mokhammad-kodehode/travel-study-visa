@@ -72,7 +72,7 @@ const CountryPage = () => {
     <main className={styles.main}>
       <section className={styles.banner} style={bannerStyle} >
         <div className={styles.banner_container} >
-          <div className={styles.banner_title}>
+          <div data-aos="fade-top" className={styles.banner_title}>
               <h1 className={styles.title_text}>Оформление ВНЖ в {country.name_two}</h1>
             <p>
              Ваш путь к европейскому ВНЖ начинается здесь — профессиональная помощь в оформлении документов
@@ -89,24 +89,24 @@ const CountryPage = () => {
           </div>
           <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}>ВНЖ {country.name_three} <br /> <p>На основании открытия торгового представительств. Выдается карта ВНЖ сроком на один год с последующим продлением.</p> </div>
-        <div className={styles.image_wrapper}>
+        <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
             src={country?.backgroundImgUrl}
             alt="USA"
             width={600}
             height={400}
-            layout="responsive"
+            style={{ width: '100%', height: 'auto' }}
             className={styles.section_image}
           />
         </div>
-        <p className={styles.description}>
+        <p data-aos="fade-top" className={styles.description}>
            Хотите обрести стабильность и новые перспективы в уютной атмосфере {country.name_three}? Наша компания предлагает профессиональное сопровождение по оформлению ВНЖ в {country.name_three} – вашему ключу к беззаботной жизни в этой прекрасной стране. С учетом наших богатых знаний и опыта в области визовых процедур, мы обеспечим вас всей необходимой информацией и поддержкой на каждом этапе процесса. Получите преимущества резидентства в {country.name_three}: доступ к бизнесу, образованию и здравоохранению. Предлагаемые нами услуги по оформлению ВНЖ в {country.name_three} позволят вам без лишних затрат времени и усилий освоиться в новой стране, оставаясь спокойным и уверенным в своем будущем. Доверьте нам вашу мечту о жизни в {country.name_three} – начните новую главу своей жизни прямо сейчас!
         </p>
         <h4 className={styles.title_two}>Основания для получения:</h4>
         <p className={styles.description}>
           Возможные варианты получения ВНЖ в {country.name_three}.
         </p>
-        <ul className={styles.process_list_two}>
+        <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Открытие торгового представительства</strong>
             <span>
@@ -122,7 +122,7 @@ const CountryPage = () => {
         </ul>
         
         <h3 className={styles.title_two}>Что дает ВНЖ {country.name_three}?</h3>
-        <div className={styles.special_wrapper}>
+        <div data-aos="fade-top" className={styles.special_wrapper}>
         <VisaFeatureCard
             icon={FaHome}
             title="Право на проживание и работу"
@@ -164,7 +164,7 @@ const CountryPage = () => {
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
-        <table className={styles.document_table}>
+        <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>
               <th>Документ</th>
@@ -205,8 +205,8 @@ const CountryPage = () => {
           </tbody>
         </table>
 
-        <h2 className={styles.title_two}>Процесс получения визы:</h2>
-        <ul className={styles.process_list_two}>
+        <h2 className={styles.title_two}>Процесс получения ВНЖ:</h2>
+        <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Подготовка оснований для получения ВНЖ</strong>
             <span>

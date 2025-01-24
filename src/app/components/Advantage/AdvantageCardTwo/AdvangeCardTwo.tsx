@@ -49,7 +49,7 @@ const AdvantagesTwo: React.FC = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.container_title}>Наши преимущества</h2>
-      <div className={styles.cards}>
+      <div data-aos="fade-top"  className={styles.cards}>
         {advantages.map((advantage, index) => (
           <div key={index} className={styles.card}>
             <FontAwesomeIcon className={styles.card_icon} size="2x" icon={advantage.icon}  />

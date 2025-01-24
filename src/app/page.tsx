@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
 import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
+import AdvantagesTwo from './components/Advantage/AdvantageCardTwo/AdvangeCardTwo'
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
@@ -65,7 +66,7 @@ export default function Home() {
           <section className={styles.section_three}>
           </section>
           <section className={styles.section_two}>
-            <div className={styles.images_wrapper}>
+            <div data-aos="fade-right" className={styles.images_wrapper}>
             <Image
                   src="/images/global.jpg"
                   alt="Pass"
@@ -74,7 +75,7 @@ export default function Home() {
                   className={styles.section_image}
                 />
             </div>
-                <div className={styles.section_two_title}>
+                <div data-aos="fade-left" className={styles.section_two_title}>
                   <h2 className={styles.section_two_h2}>Оформляем визы</h2>
                   <p className={styles.section_two_p}>Каждый день мы совершенствуем процесс получения виз в любую страну.
                   Создаём выгодные условия сотрудничества для десятков клиентов по всей стране.
@@ -87,9 +88,9 @@ export default function Home() {
                   </Link>
                 </div>
           </section>
-        
+          <AdvantagesTwo/>
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
-                <div className={styles.section_Six_title}>
+                <div data-aos="fade-right" className={styles.section_Six_title}>
                   <h2 className={styles.section_Six_h2}>Умра и туры в Саудовскую Аравию</h2>
                   <p className={styles.section_Six_p}>
                   Мы обеспечим быстрое и простое оформление визы Умра, которая позволит вам совершить паломничество в любое время года. Наша команда поможет собрать все необходимые документы и проконсультирует по процессу получения визы, чтобы вы могли сосредоточиться на духовном аспекте поездки.
@@ -99,24 +100,28 @@ export default function Home() {
                   </Link>
                   
                 </div>
-                <Image
-                  src="/images/Umra.jpg" 
-                  alt="Umra"
-                  width={520} 
-                  height={350} 
-                  className={styles.section_image}
-                />
+                <div data-aos="fade-left" className={styles.images_wrapper}>
+                  <Image
+                    src="/images/Umra.jpg" 
+                    alt="Umra"
+                    width={520} 
+                    height={350} 
+                    className={styles.section_image}
+                  />
+                  </div>
           </section>
           <CountryCards/>
           <section className={styles.section_four}>
-               <Image
+          <div data-aos="fade-right" className={styles.images_wrapper}>
+                <Image
                   src="/images/global_two.jpg" 
                   alt="Pass"
                   width={520} 
                   height={350}
                   className={styles.section_image}
                 />
-                <div className={styles.section_four_title}>
+                </div>
+                <div data-aos="fade-left" className={styles.section_four_title}>
                   <h2 className={styles.section_four_h2}>Оформление ВНЖ</h2>
                   <p className={styles.section_four_p}>Мы ежедневно упрощаем процесс получения вида на жительство, предлагая удобные и выгодные условия для наших клиентов. Наша команда с более чем десятилетним опытом помогает вам на всех этапах подготовки документов, гарантируя персональный подход и конкурентные цены. Станьте нашим партнёром и получите ВНЖ легко и быстро!
                   </p>
@@ -127,7 +132,7 @@ export default function Home() {
           </section>
           <ServicesList/>
           <section className={`${styles.section_four} ${styles.mobileReverse}`}>
-                <div className={styles.section_four_title}>
+                <div data-aos="fade-right" className={styles.section_four_title}>
                   <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
                   <p className={styles.section_four_p}>Многофункциональный визовый центр — одна из лидирующих компаний на Российском рынке по оказанию сервисно — туристических услуг. С нами работают тысячи клиентов, среди которых частные лица, туристические агентства и компании. Работая с большим потоком визовых документов, мы находимся в курсе всех обновлений, нюансов и правил, установленных консульствами всех стран. Подходим к каждому заявителю с индивидуальным подходом, избавляя от ненужной волокиты, экономя время и деньги наших клиентов. Мы стремимся быть признанным лидером, надежным партнером и просто другом, помогая Вам открывать новые страны и континенты.
                   </p>
@@ -136,6 +141,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <Image
+                 data-aos="fade-left"
                   src="/images/Four.png" 
                   alt="Pass"
                   width={520} 
