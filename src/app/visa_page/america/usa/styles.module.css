@@ -214,7 +214,7 @@ width: 702px;
   color: #4a0072; /* Изменение цвета */
 }
 
-.description {
+.process_list  .description {
   padding: 0 20px 15px 20px;
   color: #666;
   font-size: 14px;
