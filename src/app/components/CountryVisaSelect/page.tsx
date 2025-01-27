@@ -29,10 +29,10 @@ const CountryVisaSelect = () => {
                     <span>Япония</span>
                 </div>
             </Link> */}
-            <Link href="/visa_page/saudi_arabia">
+            <Link href="/visa_page/asia">
                 <div className={styles.countryCard}>
-                    <Image className={styles.section_image} src="/images/Flags/saudi.svg" alt="Флаг Саудовской Аравии" width={105} height={55} />
-                    <span>Саудовская Аравия</span>
+                    <Image className={styles.section_image} src="/images/Flags/asia.svg" alt="Флаг Азии" width={105} height={55} />
+                    <span>Азия</span>
                 </div>
             </Link>
         </div>

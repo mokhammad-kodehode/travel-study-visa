@@ -13,7 +13,6 @@
     align-items: center;
     cursor: pointer;
     width: 100%;
-    border-radius: 10px; /* Скругление углов */
     transition: transform 0.2s ease-in-out; /* Анимация при наведении */
     overflow: hidden;
     gap: 5px;

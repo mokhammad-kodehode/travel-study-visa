@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { europeCountries } from "@/app/data/CountryData";
 import { AmericaCountries } from "@/app/data/CountryData";
+import { asiaCountries } from "@/app/data/CountryData";
 
 const Navbar: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -15,6 +16,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isEuropeSubmenuOpen, setIsEuropeSubmenuOpen] = useState(false);
   const [isAmericaSubmenuOpen, setIsAmericaSubmenuOpen] = useState(false);
+  const [isAsiaSubmenuOpen, setIsAsiaSubmenuOpen] = useState(false);
 
   // Обработчик скроллинга для изменения цвета навбара
   useEffect(() => {
@@ -27,13 +29,19 @@ const Navbar: React.FC = () => {
   }, []);
 
   // Управление подменю для Европы и Америки
-  const toggleSubmenu = (menu: "europe" | "america") => {
+  const toggleSubmenu = (menu: "europe" | "america" | "asia") => {
     if (menu === "europe") {
       setIsEuropeSubmenuOpen(!isEuropeSubmenuOpen);
-      setIsAmericaSubmenuOpen(false); // Закрываем другое подменю
+      setIsAmericaSubmenuOpen(false);
+      setIsAsiaSubmenuOpen(false);
     } else if (menu === "america") {
       setIsAmericaSubmenuOpen(!isAmericaSubmenuOpen);
-      setIsEuropeSubmenuOpen(false); // Закрываем другое подменю
+      setIsEuropeSubmenuOpen(false);
+      setIsAsiaSubmenuOpen(false);
+    } else if (menu === "asia") {
+      setIsAsiaSubmenuOpen(!isAsiaSubmenuOpen);
+      setIsEuropeSubmenuOpen(false);
+      setIsAmericaSubmenuOpen(false);
     }
   };
 
@@ -43,6 +51,7 @@ const Navbar: React.FC = () => {
     setIsMobileNavOpen(false); // Закрываем мобильное меню
     setIsEuropeSubmenuOpen(false); // Закрываем подменю
     setIsAmericaSubmenuOpen(false); // Закрываем подменю
+    setIsAsiaSubmenuOpen(false); // Закрываем подменю
   };
 
   // Управление мобильным меню
@@ -180,6 +189,37 @@ const Navbar: React.FC = () => {
                           </Link>
                         </li>
                       ))}
+                    </ul>
+                  )}
+                </li>
+                <li className={styles.dropdown_item}>
+                  <div className={styles.nav_item_with_submenu}>
+                    <Link href="/visa_page/asia" onClick={closeAllMenus}>Азия</Link>
+                    <span
+                      onClick={() => toggleSubmenu("asia")}
+                      className={`${styles.submenu_arrow} ${
+                        isAsiaSubmenuOpen ? styles.rotate_right : ""
+                      }`}
+                    >
+                      &#9660;
+                    </span>
+                  </div>
+                  {isAsiaSubmenuOpen && (
+                    <ul className={`${styles.nested_dropdown} ${styles.show}`}>
+                      {asiaCountries.map((country) => (
+                        <li key={country.nameof} className={styles.nested_dropdown_item}>
+                          <Link onClick={closeAllMenus} href={country.pageUrl}>
+                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
+                            {country.name}
+                          </Link>
+                        </li>
+                      ))}
+                      <li className={styles.nested_dropdown_item}>
+                        <Link onClick={closeAllMenus} href="visa_page/saudi_arabia">
+                              <Image src="/images/Flags/saudi.svg" alt="Флаг саудовской аравии"width={20} height={15} />
+                              Саудовская Аравия
+                        </Link>
+                      </li>
                     </ul>
                   )}
                 </li>

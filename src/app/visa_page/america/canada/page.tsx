@@ -90,23 +90,20 @@ export default function CANADA() {
                   </p>
                   <h2 className={styles.title_two}>Типы виз и стоимость консульского сбора:</h2>
                   <ul data-aos="fade-top" className={styles.process_list}>
-                      {visaDetails.map((visa, index) => (
-                        <li key={index} className={styles.process_list_item}> 
-                          <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>  
-                            <strong>{visa.title}</strong>
-                            <span
-                              className={`${styles.toggleArrow} ${openIndex === index ? 'open' : ''}`}
-                            >
-                              {openIndex === index ? '▲' : '▼'}
-                            </span>
-                          </button>
-                          {/* Текст должен быть ниже кнопки и открываться по состоянию */}
-                          <div className={`${styles.description} ${openIndex === index ? styles.open : ''}`}>
-                            {visa.description}
-                          </div>
-                        </li>
-                      ))}
-                  </ul>
+                        {visaDetails.map((visa, index) => (
+                          <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
+                            <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>
+                              <strong>{visa.title}</strong>
+                              <span className={`${styles.toggleIcon} ${openIndex === index ? styles.open : ''}`}>
+                                {openIndex === index ? '-' : '+'}
+                              </span>
+                            </button>
+                            <div className={`${styles.description} ${openIndex === index ? styles.open : ''}`}>
+                              {visa.description}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                   <p className={styles.description}>Время рассмотрения заявления: от 10 до 30 рабочих дней, в зависимости от типа визы и индивидуальных обстоятельств.</p>
                   <h3 className={styles.title_two}>Особенности визы:</h3>
                   <div data-aos="fade-top" className={styles.special_wrapper}>

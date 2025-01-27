@@ -6,6 +6,7 @@ import CountryVisaSelect from '../components/CountryVisaSelect/page'
 import CountryList from '../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../data/CountryData'
 import { AmericaCountries } from '../data/CountryData';
+import { asiaCountries} from '../data/CountryData';
 import CountryCards from '../components/PopularCountries/PopularCountries';
 import TariffSelectionPage from '../components/PriceCard/priceCard';
 
@@ -45,6 +46,10 @@ export default function Visa_page() {
               <div className={styles.counties_wrapper}>
                 <h2>Шенгенские визы</h2>
                 <CountryList countries={europeCountries}/>
+              </div>
+              <div className={styles.counties_wrapper}>
+                <h2>Азия</h2>
+                <CountryList countries={asiaCountries}/>
               </div>
           </section>
           <TariffSelectionPage/>

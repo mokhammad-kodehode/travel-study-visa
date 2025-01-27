@@ -1,0 +1,225 @@
+
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('/images/countries/euro.jpg');
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-size: cover; /* Растягивает фон на всю площадь .banner */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    
+}
+
+.countryItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: 100%;
+  margin: 25px 7px;
+}
+
+.banner_container {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.banner_title {
+ width: 80%;
+}
+
+.banner_title p {
+  width: 70%;
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.order_btn {
+    border-radius: 25px;
+    padding: 15px;
+    background: var(--gold);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 180px;
+    font-size: 16px;
+}
+
+.banner_title_text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.title_text {
+font-size: 58px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1px;
+color: var(--gold);
+
+}
+
+.title_text_desc {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 300;
+  position: relative
+}
+
+.breadcrumbs_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  display: flex;
+  gap: .5rem;
+  margin-top: 10px;
+}
+
+.breadcrumbs a {
+text-decoration: none;
+color: var(--violet);
+font-weight: 600;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  color: #585858;
+}
+
+
+.section_two_top {
+  padding: 20px 0;
+}
+
+.section_two {
+  background-color:#ffffff ;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+
+  .selectCountryTitle{
+    font-size: 38px;
+    text-align: center;
+  }
+
+  @media   (max-width: 820px) {
+    .banner {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('/images/countries/euro.jpg');
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background-size: cover; /* Растягивает фон на всю площадь .banner */
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 27px 5px;
+    }
+  
+    .banner_container {
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  
+    }
+
+    .banner_title {
+     width: 100%;
+     text-align: center;
+     padding: 0px;
+    }
+
+    
+  
+    .banner_title p {
+      width: 100%;
+      margin-top: 0px;
+      font-size: 18px;
+    }
+
+    .breadcrumbs_wrapper {
+      width: 100%;
+      margin-left: 10px;
+      background-color: #ffffff;
+    }
+  
+    .breadcrumbs {
+      font-size: 12px;
+      display: flex;
+      gap: .5rem;
+      margin-top: 10px;
+  }
+
+    
+    .banner_title_text {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    
+    .title_text {
+      margin-top: 0px;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0px;
+    }
+    
+    .title_text_desc {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 300;
+    }
+  
+  
+    .section_two_top {
+      width: 400px;
+      padding: 20px 0;
+
+    }
+  
+    .section_two {
+      background-color:#ffffff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: start;
+    
+    }
+  
+    .selectCountryTitle{
+      font-size: 28px;
+    }
+  
+  }

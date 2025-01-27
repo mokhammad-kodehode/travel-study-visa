@@ -1,18 +1,18 @@
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/countries/canada.jpg');
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  background-size: cover; /* Растягивает фон на всю площадь .banner */
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-size: cover; /* Растягивает фон на всю площадь .banner */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    
+  }
   
-}
-
-.banner_container {
+  .banner_container {
   margin: 0 auto;
   width: 1200px;
   display: flex;
@@ -132,6 +132,29 @@
     padding: 10px 0;
   }
   
+  .advantages_list {
+    list-style: none;
+    padding: 0;
+    width: 900px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между пунктами */
+  }
+  
+  .advantages_item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .advantages_item::before {
+    content: "✔"; /* Или используйте иконку */
+    color: #4b0082; /* Фиолетовый */
+    margin-right: 10px;
+    font-size: 26px;
+  }
   .section_text_content_title {
     width: 100%;
     font-size: 32px;
@@ -157,108 +180,83 @@
     margin: 20px 0;
   }
   
-  .process_list_item {
-    background-color: #ffffff;
+  .process_list li {
+    background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Элементы располагаются вертикально */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
   }
   
-  .process_list_item::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #742f8b; /* Фиолетовая линия сверху */
-    transition: background-color 0.3s ease;
+  .process_list li:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  .process_list_item.open_item::before {
-    background: #4a0072; /* Более насыщенный цвет для активного состояния */
-  }
-  
-  .toggleButton {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: none;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+  .process_list strong {
+    font-weight: 600;
+    font-size: 18px;
     color: #333;
-    transition: color 0.3s ease;
   }
   
-  .toggleButton:hover {
-    color: #742f8b;
-  }
-  
-  .toggleIcon {
-    font-size: 20px;
-    font-weight: bold;
-    color: #742f8b;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .toggleIcon.open {
-    transform: rotate(180deg); /* Поворот для изменения значка */
-    color: #4a0072; /* Изменение цвета */
-  }
-  
-  .description {
-    padding: 0 20px 15px 20px;
+  /* Скрытый текст */
+  .process_list .description {
+    font-size: 16px;
     color: #666;
-    font-size: 14px;
-    line-height: 1.6;
-    display: none;
+    display: none; /* Элемент скрыт */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding-top: 0;
+    padding: 15px;
   }
   
-  .description.open {
-    display: block;
+  /* Когда текст раскрыт */
+  .process_list .description.open {
+    display: block; /* Показываем элемент */
+    opacity: 1; /* Делаем его видимым */
+    padding-top: 10px;
   }
+  
   .process_list_two {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
     counter-reset: step-counter;
     gap: 30px;
-    padding: 60px 20px;
+    padding: 30px;
   }
   
-  .process_list_two li {
-    background-color: #f9f9f9;
+  .process_list_two_item {
+    background-image: linear-gradient(130deg, #742f8b, #000);
     display: flex;
+    width: 600px;
     flex-direction: column;
-    padding: 30px;
-    border-left: 4px solid var(--violet);
+    padding: 20px;
+    border-left: 4px solid var(--gold);
     border-radius: 8px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     counter-increment: step-counter;
     flex: 1;
-    text-align: center;
+    text-align: start;
   }
   
-  .process_list_two li::before {
+  .process_list_two_item::before {
     content: counter(step-counter);
     font-size: 20px;
     font-weight: bold;
-    color: white;
-    background-color: var(--violet);
+    color: var(--violet);
+    background-color: var(--gold);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,12 +265,12 @@
     border-radius: 50%;
     position: absolute;
     top: -20px; /* Расположить сверху элемента */
-    left: 50%;
+    left: 10%;
     transform: translateX(-50%);
   }
   
   
-  .process_list_two li::after {
+  .process_list_two_item::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -283,20 +281,27 @@
     transform: translateY(-50%);
   }
   
-  .process_list_two li:last-child::after {
+  .process_list_two_item:last-child::after {
     display: none;
   }
   
-  .process_list_two strong {
+  .process_list_two_item strong {
     font-size: 18px;
-    color: #333;
+    color: var(--gold);
   }
   
-  .process_list_two span {
+  .process_list_two li {
     font-size: 14px;
-    color: #666;
+    color: #ffffff;
   }
   
+  .process_list_two_item li{
+    font-size: 14px;
+    color: #ffffff;
+    text-align: start;
+    margin: 10px;
+    
+  }
   
   
   
@@ -473,6 +478,15 @@
       color: white;
         }
   
+        .advantages_list {
+          list-style: none;
+          padding: 0;
+          width: 390px;
+          margin: 20px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 15px; /* Расстояние между пунктами */
+        }
   
       .banner_container {
         margin: 0 auto;
@@ -540,7 +554,6 @@
       .title_two {
         font-size: 24px;
         width: 100%;
-        margin: 10px 5px;
       }
   
        .banner_title {
@@ -550,6 +563,21 @@
        }
   
   
+       
+     
+       .banner_title p {
+         width: 100%;
+         margin-top: 15px;
+         font-size: 18px;
+         margin-bottom: 15px;
+       }
+    
+      .banner_title p {
+        width: 100%;
+        margin-top: 30px;
+        font-size: 22px;
+      }
+      
   
       
       .banner_title_text {
@@ -591,35 +619,59 @@
         margin-left: 40px;
       }
   
+      .process_list_two_item strong {
+        color: var(--gold);
+      }
+  
+      .process_list_two_item li {
+        color: white;
+        margin-top: 10px;
+      }
+  
       .process_list_two {
         flex-direction: column;
         grid-template-columns: auto;
         padding: 30px 0;
         width: 100%;
         gap: 10px;
+        
     }
   
-    .process_list_two li {
-        margin-bottom: 30px;
+    .process_list_two_item {
+        margin-bottom: 20px;
         padding: 20px 9px;
+        background-color: var(--violet);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-left: 4px solid var(--gold);
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        counter-increment: step-counter;
+        flex: 1;
+        text-align: start;
+        width: 380px;
     }
   
-    .process_list_two li::after {
+  
+    .process_list_two_item::after {
         display: none;
     }
   
-    .process_list_two li::before {
+    .process_list_two_item::before {
         top: 50%;
         left: -40px;
         transform: translateY(-50%);
     }
   
-    .process_list_two li::before {
+    .process_list_two_item:before {
       content: counter(step-counter);
       font-size: 20px;
       font-weight: bold;
-      color: white;
-      background-color: var(--violet);
+      color: var(--violet);
+      background-color: var(--gold);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -628,7 +680,7 @@
       border-radius: 50%;
       position: absolute;
       top: -20px; /* Расположить сверху элемента */
-      left: 50%;
+      left: 10%;
       transform: translateX(-50%);
     }
   

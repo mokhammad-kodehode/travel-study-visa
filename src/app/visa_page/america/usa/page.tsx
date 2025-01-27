@@ -113,11 +113,11 @@ export default function USA() {
         <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
         <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
-            <li key={index} className={styles.process_list_item}>
+            <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
               <button className={styles.toggleButton} onClick={() => toggleDescription(index)}>
                 <strong>{visa.title}</strong>
-                <span className={`${styles.toggleArrow} ${openIndex === index ? 'open' : ''}`}>
-                  {openIndex === index ? '▲' : '▼'}
+                <span className={`${styles.toggleIcon} ${openIndex === index ? styles.open : ''}`}>
+                  {openIndex === index ? '-' : '+'}
                 </span>
               </button>
               <div className={`${styles.description} ${openIndex === index ? styles.open : ''}`}>
@@ -126,7 +126,6 @@ export default function USA() {
             </li>
           ))}
         </ul>
-
         <h3 className={styles.title_two}>Особенности визы:</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
