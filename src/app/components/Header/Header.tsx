@@ -35,10 +35,10 @@ const Header = () => {
               </a>
               {/* Социальные сети */}
               <div className={styles.social_icons}>
-                <a href="https://t.me/travelandstudyru" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/travelandstudyru" aria-label="Перейти на Telegram" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
                 </a>
-                <a href="https://wa.me/40756504079" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/40756504079" aria-label="Перейти в Whatsapp" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
                 </a>
               </div>
