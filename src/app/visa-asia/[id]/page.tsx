@@ -98,7 +98,7 @@ const CountryPageAsia = () => {
           />
         </div>
         <p data-aos="fade-top" className={styles.description}>
-        <strong>{country.name}</strong> — страна с богатой культурой, потрясающей природой и идеальными условиями для отдыха. Чтобы сделать вашу поездку комфортной и избежать сложностей с получением визы, доверьте этот процесс профессионалам. Мы поможем вам быстро и без лишних хлопот оформить визу в {country.name_two}, гарантируя успешный результат.
+        <strong>{country.name}</strong> — {country.feature_one}
         </p>
         <h3 className={styles.title_two}>Особенности визы:</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
@@ -185,12 +185,6 @@ const CountryPageAsia = () => {
               <td className={styles.desc}>
               Первая страница с фото и данные о прописке. <br />
               Копии всех заполненных страниц.
-              </td>
-            </tr>
-            <tr>
-              <td>Маршрут поездки (для некоторых консульств)</td>
-              <td className={styles.desc}>
-              Подробное описание маршрута, если планируются перемещения между странами Шенгена.
               </td>
             </tr>
             <tr>

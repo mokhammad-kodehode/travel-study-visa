@@ -9,8 +9,6 @@ import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
 import SloganSection from './components/slogan/Slogan'
-import PricingTable from './components/price/price'
-import TariffSelectionPage from './components/PriceCard/priceCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'

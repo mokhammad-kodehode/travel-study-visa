@@ -109,7 +109,10 @@ const Navbar: React.FC = () => {
             {activeDropdown === "services" && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
-                  <Link href="/visa_page" onClick={closeAllMenus}>Визовые услуги</Link>
+                  <Link href="/vnj_page" onClick={closeAllMenus}>Визовые услуги</Link>
+                </li>
+                <li className={styles.dropdown_item}>
+                  <Link href="/visa_page" onClick={closeAllMenus}>Оформление ВНЖ</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link href="/services_page/study_page" onClick={closeAllMenus}>Образовательные программы</Link>
