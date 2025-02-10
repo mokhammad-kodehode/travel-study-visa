@@ -29,9 +29,9 @@ const Header = () => {
               </Link>
             <div className={styles.contact}>
               {/* Телефон */}
-              <a href="tel:+7(900)555-42-77" className={styles.phone}>
+              <a href="tel:+7(985)779-15-55" className={styles.phone}>
                 <FontAwesomeIcon icon={faPhone} className={styles.icon} /> 
-                +7(900)555-42-77
+                +7(985)779-15-55
               </a>
               {/* Социальные сети */}
               <div className={styles.social_icons}>

@@ -22,7 +22,7 @@ const countrycards: CountryCard[] = [
         continent: "Европа",
         continentUrl: "/visa_page/europe",
         country: "Франция",
-        pageUrl: '/countries/france',
+        pageUrl: '/visa/france',
         price: 1400,
         processingTime: "5 дней",
         imageUrl: "/images/countries/France.jpg"
@@ -32,7 +32,7 @@ const countrycards: CountryCard[] = [
         continent: "Европа",
         continentUrl: "/visa_page/europe",
         country: "Германия",
-        pageUrl: '/countries/germany',
+        pageUrl: '/visa/germany',
         price: 1400,
         processingTime: "5 дней",
         imageUrl: "/images/countries/Germany.jpg"
@@ -42,16 +42,16 @@ const countrycards: CountryCard[] = [
         continent: "Европа",
         continentUrl: "/visa_page/europe",
         country: "Испания",
-        pageUrl: '/countries/spain',
+        pageUrl: '/visa/spain',
         price: 1400,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/Spain.jpg"
+        imageUrl: "/images/countries/Spain.webp"
       },
       {
         id: 4,
         continent: "Европа",
         continentUrl: "/visa_page/europe",
-        pageUrl: '/countries/italy',
+        pageUrl: '/visa/italy',
         country: "Италия",
         price: 1400,
         processingTime: "5 дней",
@@ -65,7 +65,7 @@ const countrycards: CountryCard[] = [
         pageUrl: '/visa_page/america/usa',
         price: 1400,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/New.jpg"
+        imageUrl: "/images/countries/New.webp"
       },
       {
         id: 6,

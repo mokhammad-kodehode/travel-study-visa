@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
                         <li>Образовательные программы</li> 
                     </Link>
                     <Link  href="/services_page/zagran_passport">
-                        <li>Оформление загранпаспорта</li> 
+                        <li>Умра и туры в Саудовскую Аравию</li>
                     </Link>
 
                     <Link  href="/services_page/booking_hotel">
                         <li>Бронирование отелей</li> 
                     </Link>
                     <Link  href="/services_page/strahovka">
-                        <li>Страхование</li> 
+                        <li>Оформление загранпаспорта</li> 
                     </Link>
                 </ul>
             </div>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                     <Link  href="/visa_page/america">
                         <li>Америка</li> 
                     </Link>
-                    <Link  href="/visa_page/america">
+                    <Link  href="/visa_page/asia">
                         <li>Азия</li> 
                     </Link>
                     <Link  href="/visa_page/saudi_arabia">
@@ -66,8 +66,12 @@ const Footer: React.FC = () => {
             <div className={styles.footer_section}>
                 <h4>О КОМПАНИИ</h4>
                 <ul>
-                    <li>О нас</li>
-                    <li>Контакты</li>
+                     <Link  href="/About_page">
+                        <li>О нас</li> 
+                    </Link>
+                     <Link  href="/contact_page">
+                        <li>Великобритания</li> 
+                    </Link>
                 </ul>
             </div>  
         </div>

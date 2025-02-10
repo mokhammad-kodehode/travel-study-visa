@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Quicksand:wght@300&display=swap');
 
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/Main.jpg');
+  position: relative;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
@@ -16,6 +16,34 @@
     color: white;
 }
 
+
+.videoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Оставляем видео на заднем плане */
+}
+
+.videoBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Затемнение только видео */
+.videoWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* 0.5 — регулирует степень затемнения */
+  pointer-events: none; /* Чтобы слой не мешал кликам */
+}
 
 
 .order_btn {
@@ -43,6 +71,7 @@
   flex-direction: column;
   gap: .5rem;
   margin-top: 3rem;
+  z-index: 1;
 
 }
 

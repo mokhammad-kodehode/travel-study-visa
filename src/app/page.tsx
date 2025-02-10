@@ -35,6 +35,12 @@ export default function Home() {
   return (
     <main className={styles.main}>
           <section className={styles.banner}>
+          <div className={styles.videoWrapper}>
+            <video autoPlay loop muted playsInline className={styles.videoBackground}>
+              <source src="/video/Main.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+          </div>
             <div className={styles.banner_title}>
                 <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
                 <h2 className={styles.title_text_desc}>Оформи ВНЖ, гражданство, визы любой страны мира, находясь в любой точке планеты!</h2>
