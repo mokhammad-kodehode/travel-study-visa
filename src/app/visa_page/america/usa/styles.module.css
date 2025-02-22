@@ -101,6 +101,11 @@ width: 702px;
   text-decoration: underline;
 }
 
+.description_new {
+  font-size: 12px;
+
+}
+
 .breadcrumbs span {
   color: #585858;
 }
@@ -120,6 +125,7 @@ width: 702px;
   max-width: 100%;
   height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
   border-radius: 5px;
+  padding: 10px 0;
 }
 
 .section_image {
@@ -329,8 +335,8 @@ width: 702px;
 }
 
  .title_two {
-  font-size: 30px;
-  margin-top: 15px;
+  font-size: 22px;
+  padding: 10px 0;
   width: 74%;
  }
 
@@ -338,7 +344,7 @@ width: 702px;
 display: grid;
 grid-template-columns: auto auto auto auto;;
 gap: 1rem;
-margin-top: 20px;
+padding: 20px 0;
 }
 
 .document_list {
@@ -539,9 +545,8 @@ border-bottom: none; /* Убираем границу в последней ст
     }
   
     .title_two {
-      font-size: 24px;
+      font-size: 20px;
       width: 100%;
-      margin: 10px 5px;
     }
 
      .banner_title {
@@ -631,6 +636,11 @@ border-bottom: none; /* Убираем границу в последней ст
     top: -20px; /* Расположить сверху элемента */
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  
+.document_table {
+  font-size: 15px;
   }
 
   .desc {

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { useState, useEffect } from "react";
 import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
 import AdvantagesTwo from './components/Advantage/AdvantageCardTwo/AdvangeCardTwo'
 import CountryCards from './components/PopularCountries/PopularCountries'
@@ -11,11 +12,52 @@ import Contact from './components/contact/Contact'
 import SloganSection from './components/slogan/Slogan'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
-
-
-
 import 'fontsource-inter';
+
+const phrases = [
+  "ВНЖ",
+  "гражданство",
+  "визы любой страны мира",
+  "находясь в любой точке планеты",
+];
+
+const TypingEffect = () => {
+  const [text, setText] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting && charIndex < currentPhrase.length) {
+      setTimeout(() => {
+        setText((prev) => prev + currentPhrase[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 100);
+    } else if (isDeleting && charIndex > 0) {
+      setTimeout(() => {
+        setText((prev) => prev.slice(0, -1));
+        setCharIndex((prev) => prev - 1);
+      }, 50);
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false);
+      setPhraseIndex((prev) => (prev + 1) % phrases.length);
+    } else if (!isDeleting && charIndex === currentPhrase.length) {
+      setTimeout(() => {
+        setIsDeleting(true);
+      }, 1000);
+    }
+  }, [charIndex, isDeleting, phraseIndex]); // ✅ Добавили phraseIndex в зависимости
+
+  return (
+    <h2 className={styles.title_text_desc}>
+      Оформи <span className={styles.animated_text}>{text}</span>
+      <span className={styles.cursor}>|</span> {/* Курсор */}
+    </h2>
+  );
+};
+
 
 export default function Home() {
   const [isChatOpen, setIsChatOpen] = useState(false); 
@@ -34,32 +76,26 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-          <section className={styles.banner}>
-            <div className={styles.banner_title}>
-                <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
-                <h2 className={styles.title_text_desc}>Оформи ВНЖ, гражданство, визы любой страны мира, находясь в любой точке планеты!</h2>
-                  {/* <button onClick={openOrCloseChat} className={styles.order_btn}>ЗАКАЗАТЬ</button> */}
-                  <div className={styles.additional_info}>
-                      <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
-                        <p>Более 10 лет опыта
-                        </p> 
-                      </div>
-                      <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faCheckCircle} />
-                        <p>Гарантия результата</p> 
-                      </div>
-                      <div className={styles.info_item}>
-                        <FontAwesomeIcon className={styles.icon} icon={faUsers} />
-                        <p>1000 довольных клиентов</p>
-                      </div>
-                  </div>
-            </div> 
-            {/* <div className={styles.wrapper_country_select}>
-                <h4>Выберите направление</h4>
-                <CountryVisaSelect/>
-            </div > */}
-          </section >
+       <section className={styles.banner}>
+          <div className={styles.banner_title}>
+            <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
+            <TypingEffect />
+            <div className={styles.additional_info}>
+              <div className={styles.info_item}>
+                <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
+                <p>Более 10 лет опыта</p>
+              </div>
+              <div className={styles.info_item}>
+                <FontAwesomeIcon className={styles.icon} icon={faCheckCircle} />
+                <p>Гарантия результата</p>
+              </div>
+              <div className={styles.info_item}>
+                <FontAwesomeIcon className={styles.icon} icon={faUsers} />
+                <p>1000 довольных клиентов</p>
+              </div>
+            </div>
+          </div>
+       </section>
           <SloganSection/>
           <section className={styles.section_three}>
           </section>

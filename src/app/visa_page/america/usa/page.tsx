@@ -99,7 +99,7 @@ export default function USA() {
         <div className={styles.section_text_content_title}>Виза в США</div>
         <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
-            src="/images/countries/Usa_two.jpg"
+            src="/images/countries/Usa.jpg"
             alt="USA"
             width={600}
             height={400}
@@ -151,7 +151,7 @@ export default function USA() {
         </div>
 
         <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
-        <p className={styles.description}>
+        <p className={styles.description_new}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
         <table data-aos="fade-top" className={styles.document_table}>

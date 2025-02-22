@@ -121,6 +121,7 @@
     max-width: 100%;
     height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
     border-radius: 5px;
+    padding: 10px 0;
   }
   
   .section_image {
@@ -152,127 +153,153 @@
   }
   
   
-  .process_list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-  }
   
-  .process_list li {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column; /* Элементы располагаются вертикально */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 100%;
-  }
-  
-  .process_list li:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .process_list strong {
-    font-weight: 600;
-    font-size: 18px;
-    color: #333;
-    text-align: start;
-  }
-  
-  /* Скрытый текст */
-  .process_list .description {
-    font-size: 16px;
-    color: #666;
-    display: none; /* Элемент скрыт */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    padding-top: 0;
-    padding: 15px;
-  }
-  
-  /* Когда текст раскрыт */
-  .process_list .description.open {
-    display: block; /* Показываем элемент */
-    opacity: 1; /* Делаем его видимым */
-    padding-top: 10px;
-  }
-  
-  .process_list_two {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    align-items: center;
-    counter-reset: step-counter;
-    gap: 30px;
-    padding: 60px 20px;
-  }
-  
-  .process_list_two li {
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-left: 4px solid var(--violet);
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    counter-increment: step-counter;
-    flex: 1;
-    text-align: center;
-  }
-  
-  .process_list_two li::before {
-    content: counter(step-counter);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--violet);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    top: -20px; /* Расположить сверху элемента */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  
-  .process_list_two li::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    width: 20px;
-    height: 4px;
-    background-color: #742f8b;
-    transform: translateY(-50%);
-  }
-  
-  .process_list_two li:last-child::after {
-    display: none;
-  }
-  
-  .process_list_two strong {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .process_list_two span {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  
+.process_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.process_list_item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.process_list_item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #742f8b; /* Фиолетовая линия сверху */
+  transition: background-color 0.3s ease;
+}
+
+.process_list_item.open_item::before {
+  background: #4a0072; /* Более насыщенный цвет для активного состояния */
+}
+
+.toggleButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.toggleButton:hover {
+  color: #742f8b;
+}
+
+.toggleIcon {
+  font-size: 20px;
+  font-weight: bold;
+  color: #742f8b;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggleIcon.open {
+  transform: rotate(180deg); /* Поворот для изменения значка */
+  color: #4a0072; /* Изменение цвета */
+}
+
+.process_list  .description {
+  padding: 0 20px 15px 20px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  display: none;
+}
+
+.description.open {
+  display: block;
+}
+
+.process_list_two {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+  counter-reset: step-counter;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.process_list_two li {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-left: 4px solid var(--violet);
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  counter-increment: step-counter;
+  flex: 1;
+  text-align: center;
+}
+
+.process_list_two li::before {
+  content: counter(step-counter);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px; /* Расположить сверху элемента */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.process_list_two li::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 20px;
+  height: 4px;
+  background-color: #742f8b;
+  transform: translateY(-50%);
+}
+
+.process_list_two li:last-child::after {
+  display: none;
+}
+
+.process_list_two strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.process_list_two span {
+  font-size: 14px;
+  color: #666;
+}
   
   
   .toggleButton {
@@ -303,7 +330,7 @@
   }
   
    .title_two {
-    font-size: 30px;
+    font-size: 24px;
     margin-top: 15px;
     width: 74%;
    }
@@ -513,7 +540,7 @@
       }
     
       .title_two {
-        font-size: 24px;
+        font-size: 20px;
         width: 100%;
       }
   

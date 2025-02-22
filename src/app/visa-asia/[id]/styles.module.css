@@ -120,6 +120,7 @@
     max-width: 100%;
     height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
     border-radius: 5px;
+    padding: 10px 0;
   }
   
   .section_image {
@@ -333,8 +334,8 @@
   }
   
    .title_two {
-    font-size: 30px;
-    margin-top: 15px;
+    font-size: 22px;
+    padding: 10px 0;
     width: 74%;
    }
   
@@ -342,7 +343,7 @@
   display: grid;
   grid-template-columns: auto auto auto auto;;
   gap: 1rem;
-  margin-top: 20px;
+  padding: 10px;
   }
   
   .document_list {
@@ -552,7 +553,7 @@
       }
     
       .title_two {
-        font-size: 24px;
+        font-size: 20px;
         width: 100%;
       }
   
@@ -655,6 +656,9 @@
         width: 380px;
     }
   
+    .document_table {
+      font-size: 15px;
+      }
   
     .process_list_two_item::after {
         display: none;
