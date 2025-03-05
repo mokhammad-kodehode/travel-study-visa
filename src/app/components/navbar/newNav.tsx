@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
       >
         {/* Логотип */}
         <Link href="/" className={styles.logo}>
-          <Image src="/images/logo.svg" alt="Logo" width={65} height={65} />
+          <Image src="/images/logo.svg" alt="Logo" width={89} height={89} />
         </Link>
 
         {/* Бургер-меню для мобильной версии */}

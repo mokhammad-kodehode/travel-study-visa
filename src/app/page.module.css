@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Quicksand:wght@300&display=swap');
 
 .banner {
@@ -92,18 +93,20 @@
 
 
 .title_text {
-font-size: 64px;
+font-size: 68px;
 font-style: normal;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 width: 100%;
-font-weight: 300;
+color: white;
+font-weight: 500;
 line-height: normal;
-letter-spacing: 5px;
-color: #f6df61;
-font-family: "Great Vibes", cursive;
-line-height: 1;
+/*font-family: "Great Vibes", cursive;*/
+font-family: "Great Vibes", sans-serif;
 transition: all 0.3s ease-in-out; /* Плавный эффект */
+margin-top: 20px;
 }
+
+
 
 .cursor {
   border-left: 2px solid #f0c040; /* Цвет курсора */
@@ -125,12 +128,13 @@ transition: all 0.3s ease-in-out; /* Плавный эффект */
 .title_text_desc {
   width: 742px;
   flex-shrink: 0;
-  font-size: 34px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
   text-align: center;
   min-height: 40px;
+  font-family:"Cuprum" serif ;
 }
 
 .cursor {
@@ -215,6 +219,24 @@ transition: all 0.3s ease-in-out; /* Плавный эффект */
 }
 
 
+.main_btn {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background: var(--violet);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.main_btn:hover {
+  background-color: var(--gold);
+  color: rgb(15, 15, 15);
+}
+
 .section_Six_btn {
   border-radius: 5px;
   padding: 15px 20px;
@@ -236,6 +258,7 @@ transition: all 0.3s ease-in-out; /* Плавный эффект */
 .section_image{
   border-radius: 20px;
 }
+
 
 
 @media (max-width: 820px) {

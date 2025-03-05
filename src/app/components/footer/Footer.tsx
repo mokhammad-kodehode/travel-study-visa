@@ -31,14 +31,14 @@ const Footer: React.FC = () => {
                     <Link  href="/services_page/study_page">
                         <li>Образовательные программы</li> 
                     </Link>
-                    <Link  href="/services_page/zagran_passport">
+                    <Link  href="/services_page//umra">
                         <li>Умра и туры в Саудовскую Аравию</li>
                     </Link>
 
-                    <Link  href="/services_page/booking_hotel">
+                    <Link  href="/services_page/booking_tickets">
                         <li>Бронирование отелей</li> 
                     </Link>
-                    <Link  href="/services_page/strahovka">
+                    <Link  href="/services_page/zagran_passport">
                         <li>Оформление загранпаспорта</li> 
                     </Link>
                 </ul>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                         <li>О нас</li> 
                     </Link>
                      <Link  href="/contact_page">
-                        <li>Великобритания</li> 
+                        <li>Контакты</li> 
                     </Link>
                 </ul>
             </div>  

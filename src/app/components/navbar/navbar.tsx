@@ -111,8 +111,8 @@ const Navbar: React.FC = () => {
           <Image
             src="/images/logo.svg" // Путь к логотипу
             alt="Visa Travels Logo"
-            width={ 65} // Размер логотипа в зависимости от прокрутки
-            height={ 65}
+            width={ 89} // Размер логотипа в зависимости от прокрутки
+            height={ 89}
           />
         </Link>
         <div className={`${styles.contact_container} ${showContacts ? styles.show : ''}`}>
