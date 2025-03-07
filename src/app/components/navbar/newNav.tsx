@@ -109,10 +109,10 @@ const Navbar: React.FC = () => {
             {activeDropdown === "services" && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
-                  <Link href="/vnj_page" onClick={closeAllMenus}>Визовые услуги</Link>
+                  <Link href="/visa_page" onClick={closeAllMenus}>Визовые услуги</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link href="/visa_page" onClick={closeAllMenus}>Оформление ВНЖ</Link>
+                  <Link href="/vnj_page" onClick={closeAllMenus}>Оформление ВНЖ</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link href="/services_page/study_page" onClick={closeAllMenus}>Образовательные программы</Link>
@@ -217,12 +217,6 @@ const Navbar: React.FC = () => {
                           </Link>
                         </li>
                       ))}
-                      <li className={styles.nested_dropdown_item}>
-                        <Link onClick={closeAllMenus} href="visa_page/saudi_arabia">
-                              <Image src="/images/Flags/saudi.svg" alt="Флаг саудовской аравии"width={20} height={15} />
-                              Саудовская Аравия
-                        </Link>
-                      </li>
                     </ul>
                   )}
                 </li>

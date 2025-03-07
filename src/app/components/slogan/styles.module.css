@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     padding: 90px 20px;
-    background-color: #f9f9f9; /* Светлый фон */
+    background-color: #f8f6f8; /* Светлый фон */
+    
   }
   
   .sloganContainer {
@@ -23,24 +24,24 @@
   
   .slogan {
     opacity: 0;
-    transform: translateX(50px); /* Начальное положение справа */
+    transform: translateY(50px); /* Начальное положение справа */
     transition: opacity 1s ease, transform 1s ease;
   }
   
   /* Активный класс для запуска анимации */
   .companyName.visible {
     opacity: 1;
-    transform: translateX(0); /* Элемент возвращается на своё место */
+    transform: translateY(0); /* Элемент возвращается на своё место */
   }
   
   .slogan.visible {
     opacity: 1;
-    transform: translateX(0); /* Элемент возвращается на своё место */
+    transform: translateY(0); /* Элемент возвращается на своё место */
   }
 
   .seperator.visible {
     opacity: 1;
-    transform: translateX(0); /* Элемент возвращается на своё место */
+    transform: translateY(0); /* Элемент возвращается на своё место */
   }
 
   

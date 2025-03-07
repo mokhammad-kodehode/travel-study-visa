@@ -518,7 +518,7 @@
   
       .section_text_content {
         width: 100%;
-        padding: 10px 5px;
+        padding: 10px;
   
       }
   
@@ -572,19 +572,6 @@
         font-weight: 300;
         position: relative;
         width: 100%;
-      }
-    
-      .section_two_top {
-        margin: 0 auto;
-        width: 1200px;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-      }
-      
-      .section_two {
-        background-color:#ffffff ;
-        font-size: 24px;
       }
     
       .selectCountryTitle{

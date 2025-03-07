@@ -132,9 +132,11 @@
     }
     
     .description {
+      color: var(--text-color);
      padding: 10px 0;
      width: 75%;
      font-size: 18px;
+     
     }
   
      .process_list {
@@ -506,7 +508,7 @@
    
         .section_text_content {
           width: 100%;
-          padding: 10px 5px;
+          padding: 10px;
     
         }
     

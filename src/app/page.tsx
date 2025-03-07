@@ -80,7 +80,7 @@ export default function Home() {
           <div className={styles.banner_title}>
             <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
             <TypingEffect />
-            <button className={styles.main_btn}>Оставить заявку</button>
+            <button onClick={openOrCloseChat} className={styles.main_btn}>Оставить заявку</button>
             <div className={styles.additional_info}>
               <div className={styles.info_item}>
                 <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
