@@ -135,7 +135,6 @@ margin-top: 20px;
   line-height: normal;
   text-align: center;
   min-height: 40px;
-  font-family:"Cuprum" serif ;
 }
 
 .cursor {
@@ -318,7 +317,7 @@ margin-top: 20px;
   font-size: 50px;
   font-style: normal;
   width: 90%;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 1px;
   color: #fbfbfb;

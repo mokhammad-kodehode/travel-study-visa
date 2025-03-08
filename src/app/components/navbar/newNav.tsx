@@ -5,10 +5,12 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { europeCountries } from "@/app/data/CountryData";
 import { AmericaCountries } from "@/app/data/CountryData";
 import { asiaCountries } from "@/app/data/CountryData";
+import { faMapMarkerAlt, faComments, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp, faTelegram } from "@fortawesome/free-brands-svg-icons"
+
 
 const Navbar: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -17,6 +19,10 @@ const Navbar: React.FC = () => {
   const [isEuropeSubmenuOpen, setIsEuropeSubmenuOpen] = useState(false);
   const [isAmericaSubmenuOpen, setIsAmericaSubmenuOpen] = useState(false);
   const [isAsiaSubmenuOpen, setIsAsiaSubmenuOpen] = useState(false);
+  const [isChatPanelOpen, setIsChatPanelOpen] = useState(false);
+  
+  
+  const toggleChatPanel = () => setIsChatPanelOpen(!isChatPanelOpen);
 
   // Обработчик скроллинга для изменения цвета навбара
   useEffect(() => {
@@ -72,6 +78,11 @@ const Navbar: React.FC = () => {
           background: isScrolled ? "linear-gradient(90deg, #742f8b, #000)" : "transparent",
         }}
       >
+
+      <div className={styles.chatIcon} onClick={toggleChatPanel}>
+        <FontAwesomeIcon icon={faComments} />
+      </div>
+
         {/* Логотип */}
         <Link href="/" className={styles.logo}>
           <Image src="/images/logo.svg" alt="Logo" width={89} height={89} />
@@ -83,6 +94,31 @@ const Navbar: React.FC = () => {
           <div className={`${styles.bar} ${isMobileNavOpen ? styles.bar2 : ""}`}></div>
           <div className={`${styles.bar} ${isMobileNavOpen ? styles.bar3 : ""}`}></div>
         </div>
+
+        {isChatPanelOpen && (
+            <div className={styles.chatPanel}>
+              <ul>
+                <li>
+                  <a href="tel:+7(985)779-15-55">
+                    <FontAwesomeIcon className={styles.con_icon} icon={faPhone} />
+                    +7(985)779-15-55
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/40756504079" aria-label="Перейти в Whatsapp" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className={styles.con_icon} icon={faWhatsapp} />
+                     Написать в WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <a href="https://t.me/travelandstudyru" aria-label="Перейти на Telegram" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className={styles.con_icon} icon={faTelegram} />
+                    Написать в Telegram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
 
         {/* Основное меню */}
         <ul className={`${styles.items} ${isMobileNavOpen ? styles.showMobileMenu : ""}`}>
