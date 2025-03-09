@@ -54,20 +54,7 @@
 }
 
 
-.order_btn {
-    border-radius: 5px;
-    padding: 13px;
-    background: var(--violet);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    width: 120px;
-    font-family: 'PT Sans Narrow', sans-serif;
-    transition: .2s;
-}
+
 
 .order_btn:hover {
   background-color: var(--gold);
@@ -100,13 +87,28 @@ width: 100%;
 color: white;
 font-weight: 500;
 line-height: normal;
-/*font-family: "Great Vibes", cursive;*/
-font-family: "Great Vibes", sans-serif;
+font-family: "Great Vibes", cursive;
+/*font-family: "Great Vibes", sans-serif;*/
 transition: all 0.3s ease-in-out; /* Плавный эффект */
-margin-top: 20px;
+margin-top: 50px;
+position: relative;
 }
 
-
+.accent {
+  position: relative;
+  z-index: 1;
+  font-family: "Great Vibes", cursive;
+}
+.accent::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* отступ ниже текста */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;  /* подберите под ширину текста */
+  height: 30px;  /* подберите под вашу картинку */
+  background: url("/images/swirl.png") no-repeat center/contain;
+}
 
 .cursor {
   border-left: 2px solid #f0c040; /* Цвет курсора */
@@ -226,7 +228,6 @@ margin-top: 20px;
   border: none;
   color: #fff;
   cursor: pointer;
-  margin-top: 30px;
   font-size: 16px;
   font-weight: 600;
   transition: .2s;

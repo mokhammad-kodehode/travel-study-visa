@@ -95,7 +95,7 @@ const CountryPage = () => {
               <h2 className={styles.title_text_desc}>Оформим нужный тип визы в {country.name_two}.</h2>
               <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
             </div>
-            <button  className={styles.order_btn} >ЗАКАЗАТЬ</button>
+            <button onClick={openOrCloseChat}  className={styles.order_btn} >ЗАКАЗАТЬ</button>
           </div>
         </div>
       </section >
@@ -120,7 +120,7 @@ const CountryPage = () => {
           />
         </div>
         <p data-aos="fade-top" className={styles.description}>
-        <strong>{country.name}</strong> — страна с богатой культурой, потрясающей природой и идеальными условиями для отдыха. Чтобы сделать вашу поездку комфортной и избежать сложностей с получением визы, доверьте этот процесс профессионалам. Мы поможем вам быстро и без лишних хлопот оформить визу в {country.name_two}, гарантируя успешный результат.
+        {country.feature_seven}
         </p>
         <h4 className={styles.title_two}>У нас доступны следующие варианты виз:</h4>
         <ul data-aos="fade-top" className={styles.process_list}>

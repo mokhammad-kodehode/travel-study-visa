@@ -151,6 +151,7 @@
    padding: 10px 0;
    width: 75%;
    font-size: 18px;
+   color: var(--text-color);
   }
   
   
@@ -307,6 +308,7 @@
     font-size: 30px;
     margin-top: 30px;
     width: 74%;
+    color: #333;
    }
   
   
@@ -505,7 +507,7 @@
   
       .section_text_content {
         width: 100%;
-        padding: 10px 5px;
+        padding: 10px;
   
       }
   
@@ -518,6 +520,7 @@
       .description {
         width: 100%;
         font-size: 16px;
+
       }
     
       .special_wrapper {
@@ -582,19 +585,7 @@
         width: 100%;
       }
     
-      .section_two_top {
-        margin: 0 auto;
-        width: 1200px;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-      }
-      
-      .section_two {
-        background-color:#ffffff ;
-        font-size: 24px;
-      }
-    
+
       .selectCountryTitle{
         font-size: 38px;
         margin-left: 40px;

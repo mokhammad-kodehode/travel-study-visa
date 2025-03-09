@@ -274,9 +274,11 @@
         padding: 10px;
       }
     
+    
       .special_wrapper {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto;
         gap: 1rem;
+        padding: 0 10px;
       }
     
       .title_two {

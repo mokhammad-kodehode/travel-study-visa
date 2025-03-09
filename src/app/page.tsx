@@ -78,7 +78,7 @@ export default function Home() {
     <main className={styles.main}>
        <section className={styles.banner}>
           <div className={styles.banner_title}>
-            <h1 className={styles.title_text}>Стань гражданином мира с нами!</h1>
+            <h1 className={styles.title_text}>Стань гражданином мира <span className={styles.accent}>с нами!</span></h1>
             <TypingEffect />
             <button onClick={openOrCloseChat} className={styles.main_btn}>Оставить заявку</button>
             <div className={styles.additional_info}>
