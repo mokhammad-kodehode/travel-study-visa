@@ -122,7 +122,7 @@ const CountryPage = () => {
         <p data-aos="fade-top" className={styles.description}>
         {country.feature_seven}
         </p>
-        <h4 className={styles.title_two}>У нас доступны следующие варианты виз:</h4>
+        <h4 className={styles.title_two}>У нас доступны следующие варианты виз</h4>
         <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
@@ -138,10 +138,10 @@ const CountryPage = () => {
             </li>
           ))}
         </ul>
-        <p className={styles.description}>
+        <p className={styles.description_spec}>
         Каждый тип визы имеет свои требования и процесс подачи заявления, поэтому важно заранее изучить информацию, чтобы правильно подготовить документы.
         </p>
-        <h5 className={styles.title_two}>Особенности визы:</h5>
+        <h5 className={styles.title_two}>Особенности визы </h5>
         <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
@@ -164,10 +164,7 @@ const CountryPage = () => {
             description={country.feature_four}
           />
         </div>   
-        <h6 className={styles.title_two}>Необходимые документы для подачи на визу:</h6>
-        <p className={styles.description}>
-          Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
-        </p>
+        <h6 className={styles.title_two}>Необходимые документы для подачи на визу</h6>
         <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>
@@ -244,7 +241,7 @@ const CountryPage = () => {
           </tbody>
         </table>
         <p className={styles.description}>Этот список может немного отличаться в зависимости от страны подачи или типа визы, но в целом, это стандартные требования для шенгенских виз в Испанию, Францию, Италию и Грецию.</p>
-        <h6 className={styles.title_two}>Процесс получения визы:</h6>
+        <h6 className={styles.title_two}>Процесс получения визы</h6>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li className={styles.process_list_two_item}>
             <strong>Определите тип визы</strong>
