@@ -32,7 +32,7 @@ const BookingTicketsPage = () => {
             <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Бронирование авиа и отелей</h1>
+                        <h1 className={styles.title_text}>Бронирование авиабилетов и отелей</h1>
                         <h2 className={styles.title_text_desc}>Планируете путешествие? Мы поможем вам с бронированием отелей и авиабилетов, обеспечивая комфорт и экономию!</h2>
                         <button onClick={openOrCloseChat} className={styles.order_btn} >ЗАБРОНИРОВАТЬ</button>
                     </div>
@@ -43,11 +43,11 @@ const BookingTicketsPage = () => {
             <div className={styles.breadcrumbs}>
               <a href="/">Главная</a> &gt;
               <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Бронирование авиа и отелей</span>
+              <span>Бронирование авиабилетов и отелей</span>
             </div>
         </div>
         <section className={styles.section_text_content}>
-            <div className={styles.section_text_content_title}>Бронирование авиа и отелей</div>
+            <div className={styles.section_text_content_title}>Бронирование авиабилетов и отелей</div>
                 <p className={styles.description}>Не упустите шанс сделать ваше путешествие не только комфортным, но и выгодным! Свяжитесь с нами сегодня и получите лучшие предложения на бронирование отелей и авиабилетов!
                 </p>
                   <h3 className={styles.title_two}>Почему стоит выбрать нас?</h3>

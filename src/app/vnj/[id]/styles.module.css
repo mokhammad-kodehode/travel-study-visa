@@ -546,6 +546,7 @@
       .title_two {
         font-size: 24px;
         width: 100%;
+        text-align: center;
       }
   
        .banner_title {
@@ -633,7 +634,7 @@
     }
   
     .desc {
-      font-size: 12px;
+      font-size: 14px;
       text-align: right;
       }
   

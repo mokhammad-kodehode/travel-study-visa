@@ -99,7 +99,7 @@ export default function USA() {
         <div className={styles.section_text_content_title}>Виза в США</div>
         <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
-            src="/images/countries/Usa.jpg"
+            src="/images/countries/Usa_two.webp"
             alt="USA"
             width={600}
             height={400}
@@ -110,7 +110,7 @@ export default function USA() {
         <p data-aos="fade-top" className={styles.description}>
           <strong> Получение визы в США  </strong>— это сложный и многоступенчатый процесс, требующий внимания к деталям и знания всех нюансов. Мы предлагаем профессиональное сопровождение, чтобы сделать этот процесс простым и эффективным для вас. Доверьте оформление визы США нашим специалистам и забудьте о стрессе!
         </p>
-        <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
+        <h2 className={styles.title_two}>У нас доступны следующие варианты виз</h2>
         <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
@@ -126,7 +126,7 @@ export default function USA() {
             </li>
           ))}
         </ul>
-        <h3 className={styles.title_two}>Особенности визы:</h3>
+        <h3 className={styles.title_two}>Особенности визы</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
@@ -150,7 +150,7 @@ export default function USA() {
           />
         </div>
 
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
         <p className={styles.description_new}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
@@ -231,7 +231,7 @@ export default function USA() {
           </tbody>
         </table>
 
-        <h2 className={styles.title_two}>Процесс получения визы:</h2>
+        <h2 className={styles.title_two}>Процесс получения визы</h2>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Заполнение формы DS-160</strong>

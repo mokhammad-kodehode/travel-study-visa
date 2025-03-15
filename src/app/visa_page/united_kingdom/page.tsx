@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 const visaDetails = [
   {
-    title: 'Туристическая виза (Standard Visitor Visa)',
+    title: 'Туристическая виза (Visitor Visa)',
     description:
       'Подходит для туризма, посещения друзей и родственников, краткосрочного обучения или деловых встреч. Срок рассмотрения: 3-4 недели. Консульский сбор: от 125 GBP',
   },
@@ -79,7 +79,7 @@ export default function UnitedKingdom() {
         Виза в Великобританию — один из самых сложных и многоступенчатых документов для получения. Мы понимаем все тонкости процесса и готовы сделать его для вас максимально простым и эффективным. Обратившись к нам, вы получаете профессиональное сопровождение и гарантированное качество на каждом этапе.
 
         </p>
-        <h2 className={styles.title_two}>У нас доступны следующие варианты виз:</h2>
+        <h2 className={styles.title_two}>У нас доступны следующие варианты виз</h2>
         <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
             <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
@@ -96,7 +96,7 @@ export default function UnitedKingdom() {
           ))}
         </ul>
         
-        <h3 className={styles.title_two}>Особенности визы:</h3>
+        <h3 className={styles.title_two}>Особенности визы</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
         <VisaFeatureCard
             icon={FaPlane}
@@ -120,7 +120,7 @@ export default function UnitedKingdom() {
           />
         </div>
         
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
@@ -189,7 +189,7 @@ export default function UnitedKingdom() {
           </tbody>
         </table>
 
-        <h2 className={styles.title_two}>Процесс получения визы:</h2>
+        <h2 className={styles.title_two}>Процесс получения визы</h2>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Определите тип визы</strong>

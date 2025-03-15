@@ -47,7 +47,7 @@ export default function Visa_page() {
           <div className={styles.CountryVisaSelect}>
                 <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
                 <CountryVisaSelect/>
-              </div>
+          </div>
         </div>
         <SearchBar onSearch={(query) => setSearchQuery(query)} />
         <div className={styles.counties_wrapper}>

@@ -88,7 +88,7 @@ export default function CANADA() {
                   </div>
                   <p data-aos="fade-top" className={styles.description}> <strong>Планируете поездку в Канаду? </strong>Мы предлагаем профессиональную помощь в оформлении визы для любых целей – туризм, бизнес, учеба или посещение родственников. Наш визовый центр поможет вам избежать ошибок в подготовке документов и обеспечит оперативное получение визы в кратчайшие сроки.
                   </p>
-                  <h2 className={styles.title_two}>Типы виз и стоимость консульского сбора:</h2>
+                  <h2 className={styles.title_two}>Типы виз и стоимость консульского сбора</h2>
                   <ul data-aos="fade-top" className={styles.process_list}>
                         {visaDetails.map((visa, index) => (
                           <li key={index} className={`${styles.process_list_item} ${openIndex === index ? styles.open_item : ''}`}>
@@ -105,7 +105,7 @@ export default function CANADA() {
                         ))}
                       </ul>
                   <p className={styles.description}>Время рассмотрения заявления: от 10 до 30 рабочих дней, в зависимости от типа визы и индивидуальных обстоятельств.</p>
-                  <h3 className={styles.title_two}>Особенности визы:</h3>
+                  <h3 className={styles.title_two}>Особенности визы</h3>
                   <div data-aos="fade-top" className={styles.special_wrapper}>
                             <VisaFeatureCard
                                 icon={FaPlane}
@@ -128,7 +128,7 @@ export default function CANADA() {
                                 description="Канадская виза может упростить посещение других стран, благодаря высоким стандартам безопасности и доверия к канадским визам.."
                             />
                   </div>
-                  <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+                  <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
                       <table data-aos="fade-top" className={styles.document_table}>
                         <thead>
                           <tr>
@@ -175,7 +175,7 @@ export default function CANADA() {
                           </tr>
                         </tbody>
                       </table>
-                      <h2 className={styles.title_two}>Процесс получения визы:</h2>
+                      <h2 className={styles.title_two}>Процесс получения визы</h2>
                     <ul data-aos="fade-top" className={styles.process_list_two}>
                     <li>
                         <strong>Заполнение формы онлайн</strong>

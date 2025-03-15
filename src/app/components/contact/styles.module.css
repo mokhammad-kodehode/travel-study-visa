@@ -1,21 +1,23 @@
 
 .contacts_section {
     display: flex;
-    background: linear-gradient(90deg, #742f8b, #000);
-    width: 100%;
+    width: 90%;
     color: white;
     border-bottom: 1px solid white;
-    
+    margin: 0 auto;
+    padding: 25px;
 }
 
 .contacts_wrapper {
     display: flex;
     width: 1200px;
     height: 100%;
+    background: linear-gradient(90deg, #742f8b, #000);
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
+    padding: 50px;
+    border-radius: 10px;
 }
 
 .contact_info {

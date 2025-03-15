@@ -2,6 +2,7 @@
     margin: 20px 0;
     text-align: center;
     width: 100%;
+    padding: 0 10px;
   }
   
   .inputContainer {
@@ -9,24 +10,24 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
   }
   
   .searchIcon {
     position: absolute;
-    left: 10px;
-    font-size: 18px;
+    left: 12px;
+    font-size: 24px;
     color: #742f8b;
   }
   
   .searchInput {
     width: 100%;
-    padding: 10px 15px 10px 35px; /* Увеличиваем отступ слева для иконки */
-    font-size: 16px;
-    border: 1px solid #ccc;
+    padding: 25px 15px 25px 45px; /* Увеличиваем отступ слева для иконки */
+    font-size: 18px;
+    border: 2px solid #b8b8b8;
     color: black;
-    border-radius: 8px;
+    border-radius: 12px;
     outline: none;
     transition: border-color 0.3s ease;
   }

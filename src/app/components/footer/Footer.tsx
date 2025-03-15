@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                         <li>Визовые услуги</li> 
                     </Link>
                     <Link  href="/vnj_page">
-                        <li>Оформление внж</li> 
+                        <li>Оформление ВНЖ</li> 
                     </Link>
                     <Link  href="/services_page/study_page">
                         <li>Образовательные программы</li> 
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                     </Link>
 
                     <Link  href="/services_page/booking_tickets">
-                        <li>Бронирование отелей</li> 
+                        <li>Бронирование авиабилетов отелей</li> 
                     </Link>
                     <Link  href="/services_page/zagran_passport">
                         <li>Оформление загранпаспорта</li> 

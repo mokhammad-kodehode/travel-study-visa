@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
                   <Link href="/services_page/zagran_passport" onClick={closeAllMenus}>Оформление загранпаспортов</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link href="/services_page/booking_tickets" onClick={closeAllMenus}>Бронирование авиа и отелей</Link>
+                  <Link href="/services_page/booking_tickets" onClick={closeAllMenus}>Бронирование авиабилетов и отелей</Link>
                 </li>
               </ul>
             )}

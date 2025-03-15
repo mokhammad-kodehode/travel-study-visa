@@ -1,6 +1,6 @@
     .banner {
      padding-top: 200px;
-     background: linear-gradient(90deg, #742f8b, #000);
+     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/contact.jpg');
     }
 
 

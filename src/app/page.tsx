@@ -10,6 +10,9 @@ import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
 import SloganSection from './components/slogan/Slogan'
+import SearchBar from './components/search/SearchBar';
+import CountryList from './components/CountryListAll/CountryListAll';
+import { europeCountries, AmericaCountries, asiaCountries } from "./data/CountryData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheckCircle, faUsers } from '@fortawesome/free-solid-svg-icons'
 import 'fontsource-inter';
@@ -61,6 +64,14 @@ const TypingEffect = () => {
 
 export default function Home() {
   const [isChatOpen, setIsChatOpen] = useState(false); 
+    const [searchQuery, setSearchQuery] = useState("");
+  
+    // Фильтруем страны по запросу
+    const filterCountries = (countries: any[]) =>
+      countries.filter((country) =>
+        country.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+  
 
   const openOrCloseChat = () => {
     if (typeof window !== 'undefined' && window.jivo_api) {
@@ -123,6 +134,13 @@ export default function Home() {
                   </Link>
                 </div>
           </section>
+          <section className={styles.section_search}>
+                <SearchBar onSearch={(query) => setSearchQuery(query)} />
+                <CountryList countries={filterCountries(europeCountries)} />
+                <CountryList countries={filterCountries(asiaCountries)} />
+                <CountryList countries={filterCountries(AmericaCountries)} />
+          </section>
+          
           <AdvantagesTwo/>
           <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                 <div data-aos="fade-right" className={styles.section_Six_title}>

@@ -188,7 +188,44 @@ position: relative;
   font-size: 16px;
   width: 100px;
 }
-.section_two, .section_four, .section_Six {
+
+.section_search {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.5) 100%);
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-height: 400px;
+  position: relative;
+  overflow: hidden; /* Чтобы `::after` не выходил за пределы */
+}
+
+/* Добавляем белый градиент внизу */
+.section_search::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%; /* Половина контейнера */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none; /* Чтобы не блокировал клики */
+}
+
+.section_two {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0 0 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+ .section_four, .section_Six {
   width: 1200px;
   margin: 0 auto;
   padding: 100px 0;
@@ -342,8 +379,18 @@ position: relative;
     border-radius: 20px;
     padding: 0 10px;
   }
+
+  .section_two {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0 0 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0rem;
+  }
   
-  .section_two, .section_four, .section_Six {
+   .section_four, .section_Six {
     width: 100%;
     margin: 0 auto;
     padding: 30px 0;
@@ -384,6 +431,17 @@ position: relative;
     line-height: light;
     text-align: start;
     margin-top: 0;
+  }
+
+  .section_search {
+    background-color:#ffffff;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      justify-content: flex-start;
+      align-items: center;
+  
   }
   
   

@@ -102,10 +102,7 @@ const CountryPage = () => {
         <p data-aos="fade-top" className={styles.description}>
            Хотите обрести стабильность и новые перспективы в уютной атмосфере {country.name_three}? Наша компания предлагает профессиональное сопровождение по оформлению ВНЖ в {country.name_three} – вашему ключу к беззаботной жизни в этой прекрасной стране. С учетом наших богатых знаний и опыта в области визовых процедур, мы обеспечим вас всей необходимой информацией и поддержкой на каждом этапе процесса. Получите преимущества резидентства в {country.name_three}: доступ к бизнесу, образованию и здравоохранению. Предлагаемые нами услуги по оформлению ВНЖ в {country.name_three} позволят вам без лишних затрат времени и усилий освоиться в новой стране, оставаясь спокойным и уверенным в своем будущем. Доверьте нам вашу мечту о жизни в {country.name_three} – начните новую главу своей жизни прямо сейчас!
         </p>
-        <h4 className={styles.title_two}>Основания для получения:</h4>
-        <p className={styles.description}>
-          Возможные варианты получения ВНЖ в {country.name_three}.
-        </p>
+        <h4 className={styles.title_two}>Возможные варианты получения ВНЖ в {country.name_three}.</h4>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Открытие торгового представительства</strong>
@@ -160,7 +157,7 @@ const CountryPage = () => {
           />
         </div>
         
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
@@ -205,7 +202,7 @@ const CountryPage = () => {
           </tbody>
         </table>
 
-        <h2 className={styles.title_two}>Процесс получения ВНЖ:</h2>
+        <h2 className={styles.title_two}>Процесс получения ВНЖ</h2>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li>
             <strong>Подготовка оснований для получения ВНЖ</strong>

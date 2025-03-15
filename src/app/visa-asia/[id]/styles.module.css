@@ -161,6 +161,7 @@
     font-size: 32px;
     font-weight: 600;
     padding: 10px 0;
+    color: var(--text-color);
   }
   
   .section_text_content_title span {
@@ -555,6 +556,8 @@
       .title_two {
         font-size: 20px;
         width: 100%;
+        color: var(--text-color);
+        text-align: center;
       }
   
        .banner_title {

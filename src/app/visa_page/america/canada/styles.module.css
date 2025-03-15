@@ -332,6 +332,7 @@
     font-size: 22px;
     padding: 10px 0;
     width: 74%;
+    color: var(--text-color);
    }
   
   .special_wrapper {
@@ -542,6 +543,7 @@
         font-size: 20px;
         width: 100%;
         padding: 10px 0;
+        text-align: center;
       }
   
        .banner_title {

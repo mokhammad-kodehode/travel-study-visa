@@ -49,7 +49,7 @@ const UmraPage = () => {
             <div className={styles.section_text_content_title}>Виза Умра</div>
                 <p className={styles.description}>Мы обеспечим быстрое и простое оформление визы Умра, которая позволит вам совершить паломничество в любое время года. Наша команда поможет собрать все необходимые документы и проконсультирует по процессу получения визы, чтобы вы могли сосредоточиться на духовном аспекте поездки.
                 </p>
-                  <h3 className={styles.title_two}>Мы предлагаем готовые туры Умра, которые включают:</h3>
+                  <h3 className={styles.title_two}>Мы предлагаем готовые туры Умра, которые включают</h3>
                   <div className={styles.special_wrapper}>
                     <VisaFeatureCard
                       icon={FaBed }

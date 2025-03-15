@@ -139,6 +139,7 @@
     font-size: 32px;
     font-weight: 600;
     padding: 10px 0;
+    color: var(--text-color);
   }
   
   .section_text_content_title span {
@@ -333,6 +334,7 @@
     font-size: 24px;
     margin-top: 15px;
     width: 74%;
+    color: var(--text-color);
    }
   
   .special_wrapper {
@@ -542,6 +544,7 @@
       .title_two {
         font-size: 20px;
         width: 100%;
+        text-align: center;
       }
   
        .banner_title {

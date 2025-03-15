@@ -100,7 +100,7 @@ const CountryPageAsia = () => {
         <p data-aos="fade-top" className={styles.description}>
         <strong>{country.name}</strong> — {country.feature_one}
         </p>
-        <h3 className={styles.title_two}>Особенности визы:</h3>
+        <h3 className={styles.title_two}>Особенности визы</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
@@ -123,7 +123,7 @@ const CountryPageAsia = () => {
             description="Виза упрощают процесс пересечения границ, предлагая минимальные ограничения и максимальную свободу передвижения для туристов и бизнесменов."
           />
         </div>   
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
@@ -205,7 +205,7 @@ const CountryPageAsia = () => {
           </li>
         </ul>
         <p className={styles.description}>Этот список может немного отличаться в зависимости от страны подачи или типа визы.</p>
-        <h2 className={styles.title_two}>Процесс получения визы:</h2>
+        <h2 className={styles.title_two}>Процесс получения визы</h2>
         <ul data-aos="fade-top" className={styles.process_list_two}>
           <li className={styles.process_list_two_item}>
           Консультация и проверка документов.
