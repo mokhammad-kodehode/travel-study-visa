@@ -75,11 +75,10 @@
     .contacts_section {
         display: flex;
         flex-direction: column; /* Вертикальный поток для мобильных */
-        background: var(--violet);
         width: 100%;
         color: white;
         border-bottom: 1px solid white;
-        background: linear-gradient(90deg, #742f8b, #000);
+        padding: 10px;
     }
     
     .contacts_wrapper {
@@ -126,7 +125,7 @@
     }
     
     .social_icons .icon {
-        font-size: 24px; /* Уменьшаем размер иконок */
+        font-size: 38px; /* Уменьшаем размер иконок */
         margin-bottom: 10px; /* Добавляем отступ снизу для каждой иконки */
     }
     
