@@ -259,9 +259,6 @@ const Navbar: React.FC = () => {
                 <li className={styles.dropdown_item}>
                   <Link href="/visa_page/united_kingdom" onClick={closeAllMenus}>Великобритания</Link>
                 </li>
-                <li className={styles.dropdown_item}>
-                  <Link href="/visa_page/saudi_arabia" onClick={closeAllMenus}>Саудовская Аравия</Link>
-                </li>
               </ul>
             )}
           </li>

@@ -334,7 +334,7 @@
       height: 90px;
       margin: 0 auto;
       padding: 10px;
-      z-index: 1000;
+      z-index: 1100;
     }
   
 
@@ -439,17 +439,18 @@
 
     .showMobileMenu {
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      flex-direction: column;
       position: fixed;
-      background: linear-gradient(90deg, #742f8b, #000);
-      top: 89px;
+      top: 89px;  /* начинается сразу после шапки */
       left: 0;
       width: 100%;
-      height: 870px;  /* Полная высота экрана */
+      height: calc(100vh - 89px);  /* занимает оставшуюся часть экрана */
+      background: linear-gradient(90deg, #742f8b, #000);
       padding: 15px;
-      overflow-y: auto; /* Прокрутка содержимого меню */
+      overflow-y: auto;  /* прокрутка содержимого меню */
+      z-index: 1000;  /* ниже, чем шапка */
       animation: slideDowntwo 0.3s ease-in;
     }
   

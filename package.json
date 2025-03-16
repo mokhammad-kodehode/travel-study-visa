@@ -24,6 +24,7 @@
     "bootstrap": "^5.3.3",
     "fontsource-inter": "^4.0.0",
     "fontsource-poppins": "^4.0.0",
+    "lodash": "^4.17.21",
     "next": "^15.1.7",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.6",

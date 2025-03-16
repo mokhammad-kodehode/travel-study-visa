@@ -37,12 +37,6 @@ export default function Asia() {
                <h2 className={styles.selectCountryTitle}>АЗИЯ</h2>
             </div>
             <CountryList countries={asiaCountries}/>
-            <div >
-                <Link className={styles.countryItem}  href="visa_page/saudi_arabia">
-                     <Image src="/images/Flags/saudi.svg" alt="Флаг саудовской аравии"width={54} height={35} />
-                      Саудовская Аравия
-                 </Link>
-             </div>
           </section>
           <Contact/>
     </main>
