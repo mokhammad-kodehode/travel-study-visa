@@ -134,7 +134,7 @@ export default function Home() {
                   </Link>
                 </div>
           </section>
-          <section data-aos="fade-down" className={styles.section_search}>
+          <section data-aos="fade-up" className={styles.section_search}>
                 <SearchBar onSearch={(query) => setSearchQuery(query)} />
                 <CountryList countries={filterCountries(europeCountries)} />
                 <CountryList countries={filterCountries(asiaCountries)} />

@@ -29,6 +29,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: '/favicon.ico', 
+    // Можно указать и другие форматы, например png:
+    // shortcut: '/favicon-16x16.png',
+    // apple: '/apple-touch-icon.png'
+  },
 };
 
 
