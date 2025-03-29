@@ -8,7 +8,7 @@
   --gold:#FFD700;
   --light-gold:#fcda1b;
   --primary-btn: #FFA500;
-  --title-text: 4rem;
+  --title-text: 40px;
   /* --dark-blue : #003366; */
   --dark-blue :#002366;
   --text-color : #333333;
@@ -22,6 +22,7 @@
   --new-orange:#ff8a5b;
   --light-orange:#ffc155;
   --new-gold:#f9f871;
+
 }
 
 
@@ -32,11 +33,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html,
-body {
-  overflow-x: hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; /* Вместо hidden */
 }
+
 
 body {
   background-color: rgb(255, 255, 255);

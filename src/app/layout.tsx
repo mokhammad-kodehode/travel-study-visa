@@ -1,6 +1,5 @@
 
 import type { Metadata } from 'next'
-import Head from 'next/head';
 import 'fontsource-poppins';
 import 'fontsource-inter';
 import './globals.css'

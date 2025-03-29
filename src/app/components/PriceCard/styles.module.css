@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F8F8F8;;
+  background-color: #F8F8F8;
   height: 100%;
   width: 100%;
   padding: 40px 0;
@@ -13,18 +13,18 @@
 
 .container {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0 auto;
   justify-content: space-between;
   border: 5px;
   width: 1200px;
   height: 100%;
   margin-top: 20px;
-  padding:  30px ;
+  padding:  15px ;
  border-radius: 15px;
  border: 1px solid rgb(206, 206, 206);
  /* background-image: linear-gradient(90deg, #742f8b, #000), url('/images/backimg.jpg'); */
- background-image: linear-gradient(rgba(116, 47, 139, 0.9), rgba(0, 0, 0, 0.9)), url('/images/backimg.jpg');
+  background-image: linear-gradient(rgba(116, 47, 139, 0.9), rgba(0, 0, 0, 0.9)), url('/images/backimg.jpg');
  background-size: cover; /* Растягивает фон на всю площадь .banner */
  background-position: center;
  background-repeat: no-repeat;
@@ -36,8 +36,10 @@
 
 .tariff {
   text-align: center;
-  font-size: 36px;
-  font-size: 33px;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--title-text);
+  color: var(--text-color);
+
 }
 
 .tariff_title{
@@ -56,7 +58,7 @@
   gap: .5rem;
   padding: 20px;
   width: 100%;
-  height: 350px;
+  height: 615px;
   color: #fff;
   background-color: rgba(255, 255, 255);
   border-radius: 13px;
@@ -80,12 +82,13 @@
 .service_option{
   background-color: #ffffff;
   display: flex;
-  width: 280px;
-  height: 100px;
-  padding: 15px;
+  flex-direction: column;
+  width: 360px;
+  height: 110px;
+  padding: 10px;
   color: var(--text-color);
   gap: 7px;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 10px;
   cursor: pointer;
   transition: .3s ease-in;
@@ -116,7 +119,7 @@
   align-items: self-start;
   font-size: 16px;
   display: grid; 
-  grid-template-columns: auto auto;/* Использует flexbox для управления элементами списка */
+  grid-template-columns: auto;/* Использует flexbox для управления элементами списка */
   flex-wrap: wrap; /* Позволяет элементам оборачиваться на новую строку */
   gap: 1rem;
   border-radius: 10px;
@@ -124,15 +127,13 @@
 }
 
 .service_item {
- width: 100%;
- list-style: none;
- margin-top: 10px;
- display: flex;
- align-items: center;
- gap: .4rem;
- color: var(--text-color);
- 
-
+  width: 100%;
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  align-items: center; /* если текст в несколько строк */
+  gap: 0.5rem;
+  color: var(--text-color);
 }
 
 
@@ -140,12 +141,17 @@
   background-color: var(--violet); /* Или другой оттенок оранжевого, который вам нравится */
   /* Другие стили для активного сервиса */
   color: #fff;
-  transform: scale(1.1);
 }
 
 .icons {
-  color: var(--violet);
-  font-size: 16px;
+  color: #00c951;
+  font-size: 16px; /* или 18px — но обязательно одинаково */
+  width: 1.1rem;   /* 20px */
+  height: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .service_option strong {
@@ -154,7 +160,7 @@
 
 .service_option h2 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'PT Sans Narrow', sans-serif;
  }
 
@@ -186,7 +192,7 @@
     margin-top: 0;
     padding:5px;
     border-radius: 5px;
-    width: 390px;
+    width: 95%;
     height: 100%;
   }
   
@@ -198,7 +204,7 @@
   }
   
   .tariff_title{
-    font-size: 28px;
+    font-size: 22px;
     border-bottom: 2px solid var(--orange);
     width: 100%;
     margin-top: 5px;
@@ -227,16 +233,14 @@
   .right_panel {
     display: flex;
    justify-content: center; 
-   gap: .5rem;
-   flex-direction: row;
-  
+   gap: 1rem;
+   width: 100%;
   }
   
   .service_option{
     display: flex;
-    width: 107px;
+    width: 100%;
     height: 100%;
-    padding: 5px;
     flex-direction: column;
     gap: 2px;
     border-radius: 10px;;
@@ -274,19 +278,17 @@
   }
   
   .service_item {
-   width: 300px;
-   margin-top: 10px;
-   font-size: 15px;
+   margin-top: 20px;
   }
   
   .mobileReverse {
     display: flex;
     flex-direction: column-reverse; 
-    padding: 20px;/* Переключить порядок элементов в мобильной версии */
+    padding: 10px;/* Переключить порядок элементов в мобильной версии */
   }
   
   .active_service {
-    box-shadow:-1px 5px 10px rgb(0, 0, 0);
+    border: 1px white solid;
   }
   
   
@@ -295,11 +297,9 @@
   }
   
   .service_option h2 {
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'PT Sans Narrow', sans-serif;
-    text-align: center;
-
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
    }
   
   .option_description {

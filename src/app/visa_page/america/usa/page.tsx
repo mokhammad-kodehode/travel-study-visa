@@ -1,6 +1,6 @@
 "use client";
 
-import styles from './styles.module.css';
+import styles from './././styles.module.css'
 import 'fontsource-inter';
 import Image from 'next/image';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
