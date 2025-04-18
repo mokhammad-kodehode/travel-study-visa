@@ -101,6 +101,11 @@
     text-decoration: underline;
   }
   
+  .description_new {
+    font-size: 12px;
+  
+  }
+  
   .breadcrumbs span {
     color: #585858;
   }
@@ -138,6 +143,7 @@
     font-size: 32px;
     font-weight: 600;
     padding: 10px 0;
+    color: var(--text-color);
   }
   
   .section_text_content_title span {
@@ -218,7 +224,7 @@
   .process_list  .description {
     padding: 0 20px 15px 20px;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     display: none;
   }
@@ -226,6 +232,7 @@
   .description.open {
     display: block;
   }
+  
   .process_list_two {
     list-style: none;
     padding: 0;
@@ -294,7 +301,7 @@
   }
   
   .process_list_two span {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
   }
   
@@ -329,9 +336,9 @@
   }
   
    .title_two {
-    font-size: 22px;
-    padding: 10px 0;
-    width: 74%;
+    font-size: 28px;
+    margin: 15px 0;
+    text-align: center;
     color: var(--text-color);
    }
   
@@ -339,7 +346,7 @@
   display: grid;
   grid-template-columns: auto auto auto auto;;
   gap: 1rem;
-  padding: 10px 0;
+  padding: 20px 0;
   }
   
   .document_list {
@@ -359,65 +366,63 @@
   }
   
   .document_table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   
+  /* Заголовок */
   .document_table thead {
-  background-color: var(--violet); /* Основной цвет */
-  color: white;
-  }
-  
-  .document_table th, .document_table td {
-  padding: 15px;
-  text-align: left;
-  }
-  
-  .document_table tr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: var(--violet);
+    color: #fff;
   }
   
   .document_table th {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  
+    padding: 16px 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    font-size: 16px;
   }
   
-  .document_table tbody tr {
-  background-color: #f9f9f9;
-  transition: background-color 0.3s ease;
+  /* Общие ячейки */
+  .document_table td {
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    vertical-align: top;
   }
   
+  /* Чётные строки */
   .document_table tbody tr:nth-child(even) {
-  background-color: #f1f1f1; /* Цвет для четных строк */
+    background-color: #f9f9f9;
   }
   
-  
-  
-  .desc {
-  font-size: 14px;
-  text-align: right;
+  /* Анимация наведения */
+  .document_table tbody tr:hover {
+    background-color: #f0f4ff;
+    transition: background-color 0.3s ease;
   }
   
+  /* Описание справа */
   .document_table td:last-child {
-  text-align: end;
+    text-align: left; /* можно поставить center или end */
+    color: #666;
+    font-weight: 500;
   }
   
-  
-  
+  /* Убираем рамку в последней строке */
   .document_table tbody tr:last-child td {
-  border-bottom: none; /* Убираем границу в последней строке */
+    border-bottom: none;
   }
-  
   .pricing_table {
   width: 100%;
   border-collapse: collapse;
@@ -540,9 +545,8 @@
       }
     
       .title_two {
-        font-size: 20px;
+        font-size: 26px;
         width: 100%;
-        padding: 10px 0;
         text-align: center;
       }
   
@@ -576,14 +580,11 @@
         width: 100%;
       }
     
+    
       .selectCountryTitle{
         font-size: 38px;
         margin-left: 40px;
       }
-
-      .document_table {
-        font-size: 15px;
-        }
   
       .process_list_two {
         flex-direction: column;
@@ -608,6 +609,11 @@
         transform: translateY(-50%);
     }
   
+    .process_list {
+      list-style-type: none;
+      padding: 20px 0;
+    }
+  
     .process_list_two li::before {
       content: counter(step-counter);
       font-size: 20px;
@@ -626,9 +632,21 @@
       transform: translateX(-50%);
     }
   
+    
+  
     .desc {
-      font-size: 12px;
+      font-size: 16px;
       text-align: right;
+      }
+  
+      .document_table th,
+      .document_table td {
+        padding: 12px 14px;
+        font-size: 16px;
+      }
+    
+      .document_table {
+        font-size: 16px;
       }
   
   }

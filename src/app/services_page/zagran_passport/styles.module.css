@@ -135,8 +135,9 @@
 
    .title_two {
     font-size: 28px;
-    margin-top: 15px;
+    margin: 15px;
     color: var(--text-color);
+    text-align: center;
    }
 
   .special_wrapper {
@@ -274,9 +275,7 @@
     }
   
     .title_two {
-      font-size: 24px;
-      width: 100%;
-      padding: 10px;
+      font-size: 26px;
       text-align: center;
     }
 

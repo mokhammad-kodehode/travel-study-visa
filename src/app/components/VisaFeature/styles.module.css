@@ -21,9 +21,16 @@
 }
 
 .icon {
-  font-size: 52px;
+  width: 65px;
+  height: 65px;
+  font-size: 22px;
   color: var(--light-blue);
   margin-bottom: 12px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .title_card {
@@ -35,7 +42,7 @@
 }
 
 .description {
-  font-size: 14px;
+  font-size: 16px;
   color: #504f4f;
   padding: 10px 0;
 }
@@ -53,12 +60,8 @@
     margin-bottom: 8px;
   }
 
-  .title_card {
-    font-size: 16px; /* Уменьшаем размер заголовка */
-  }
 
   .description {
-    font-size: 13px; /* Уменьшаем размер текста описания */
     padding: 8px 0;
   }
   

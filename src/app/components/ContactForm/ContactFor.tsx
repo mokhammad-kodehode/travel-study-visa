@@ -7,14 +7,31 @@ interface ModalFormProps {
 }
 
 const ModalForm: React.FC<ModalFormProps> = ({ closeModal }) => {
-  const [isModalVisible, setModalVisible] = useState(false);
-
-  const handleOpenModal = () => setModalVisible(true);
-  const handleCloseModal = () => setModalVisible(false);
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Обработка данных формы
-    handleCloseModal();
+
+    const fullName = (event.currentTarget.elements.namedItem('fullName') as HTMLInputElement).value;
+    const phone = (event.currentTarget.elements.namedItem('phone') as HTMLInputElement).value;
+    const comment = (event.currentTarget.elements.namedItem('comment') as HTMLTextAreaElement).value;
+
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, phone, comment }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert('Заявка отправлена!');
+        closeModal();
+      } else {
+        alert('Произошла ошибка при отправке');
+      }
+    } catch (err) {
+      alert('Ошибка соединения с сервером');
+    }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {

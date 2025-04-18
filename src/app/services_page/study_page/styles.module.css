@@ -135,7 +135,8 @@
 
    .title_two {
     font-size: 28px;
-    margin-top: 15px;
+    margin: 15px;
+    text-align: center;
     color: var(--text-color);
    }
 
@@ -272,9 +273,7 @@
     }
   
     .title_two {
-      font-size: 20px;
-      width: 100%;
-      padding: 10px;
+      font-size: 26px;
       text-align: center;
     }
 

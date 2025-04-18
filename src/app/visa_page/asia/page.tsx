@@ -1,12 +1,16 @@
-"use client"
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import CountryList from '../../components/CountryListAll/CountryListAll'
 import { asiaCountries } from '../../data/CountryData'
 import Contact from '@/app/components/contact/Contact';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Визы в Азию | Туристические и деловые визы',
+  description: 'Оформление виз в страны Азии – Китай, Таиланд, ОАЭ, Индия и другие. Подготовка документов и сопровождение.',
+}
+
 
 
 export default function Asia() {

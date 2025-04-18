@@ -1,8 +1,13 @@
-"use client"
 
+import { Metadata } from 'next'
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import Advantages from '../components/Advantage/AdvantageCard/AdvantageCard';
+
+export const metadata: Metadata = {
+  title: 'О компании | Travel and Study – Ваш визовый центр',
+  description: 'Узнайте больше о Travel and Study. Мы предоставляем услуги по оформлению виз, ВНЖ, гражданства и обучению за границей. Индивидуальный подход и полное сопровождение.',
+}
 
 export default function About_Us() {
 

@@ -1,9 +1,16 @@
-"use client"
+
 import ServicesList from '../components/OurServices/OurServices';
 import styles from './styles.module.css'
 import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import Contact from '../components/contact/Contact';
 import 'fontsource-inter';
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Наши услуги | Travel and Study – Визы, ВНЖ, Гражданство и Обучение',
+  description: 'Предоставляем визовые услуги, помощь в оформлении ВНЖ, получении гражданства и обучении за рубежом. Полная поддержка клиентов на всех этапах оформления.',
+}
+
 
 export default function Services() {
   return (

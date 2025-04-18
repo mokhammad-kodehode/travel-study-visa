@@ -1,11 +1,15 @@
-"use client"
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import CountryList from '../../components/CountryListAll/CountryListAll'
 import { europeCountries } from '../../data/CountryData'
 import Contact from '@/app/components/contact/Contact';
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Визы в Европу | Оформление шенгенских виз',
+  description: 'Оформление виз в страны Европы. Помощь в получении шенгенской визы, консультации, подготовка документов.',
+}
 
 export default function Europe() {
 

@@ -22,536 +22,245 @@
   }
   
   .banner_title {
-  width: 80%;
-  }
-  
-  .banner_title p {
-  width: 100%;
-  margin-top: 30px;
-  font-size: 22px;
-  }
-  
-  .order_btn {
-    border-radius: 5px;
-    padding: 13px;
-    background: var(--violet);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    width: 160px;
-    font-family: var(--btn-text);
-    transition: .2s;
-  }
-  
-    .order_btn:hover {
-      background-color: var(--gold);
-      color: var(--text-color);
+    width: 80%;
     }
-  
-  .order_btn:hover {
-  background-color: var(--gold);
-  }
-  
-  
-  .banner_title_text {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  }
-  
-  .title_text {
-  font-size: 58px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 1px;
-  color: var(--gold);
-  }
-  
-  .title_text_desc {
-  font-size: 22px;
-  line-height: 30px;
-  font-weight: 300;
-  position: relative;
-  width: 702px;
-  }
-  
-  .breadcrumbs_wrapper {
-    width: 1200px;
-    margin: auto auto;
-  }
-  
-  .breadcrumbs {
-    font-size: 12px;
-    display: flex;
-    gap: .5rem;
-    margin-top: 10px;
-  }
-  
-  .breadcrumbs a {
-    text-decoration: none;
-    color: var(--violet);
-    font-weight: 600;
-  }
-  
-  .breadcrumbs a:hover {
-    text-decoration: underline;
-  }
-  
-  .breadcrumbs span {
-    color: #585858;
-  }
-  
-  
-  .banner_container {
-    margin: 0 auto;
-    width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  .image_wrapper {
-    align-self: start;
-    width: 860px; /* Изображение занимает всю ширину родительского блока */
-    max-width: 100%;
-    height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
-    border-radius: 5px;
-  }
-  
-  .section_image {
-    border-radius: 5px;
-  }
-  
-  .section_text_content {
-    margin: 0 auto;
-    width: 1200px;
-    padding: 10px 0;
-  }
-  
-  .section_text_content_title {
+    
+    .banner_title p {
     width: 100%;
-    font-size: 32px;
-    font-weight: 600;
-    padding: 10px 0;
-  }
-  
-  .section_text_content_title span {
-    font-size: 18px;
-    font-weight: 400;
-  }
-  
-  .description {
-   padding: 10px 0;
-   width: 75%;
-   font-size: 18px;
-  }
-  
-  
-  
-  .process_list_two {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    align-items: center;
-    counter-reset: step-counter;
-    gap: 30px;
-    padding: 30px;
-  }
-  
-  .process_list_two li {
-    background-color: #f9f9f9;
+    margin-top: 30px;
+    font-size: 22px;
+    }
+    
+    .order_btn {
+      border-radius: 5px;
+      padding: 13px;
+      background: var(--violet);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      width: 160px;
+      font-family: var(--btn-text);
+      transition: .2s;
+    }
+    
+      .order_btn:hover {
+        background-color: var(--gold);
+        color: var(--text-color);
+      }
+    
+    .order_btn:hover {
+    background-color: var(--gold);
+    }
+    
+    
+    .banner_title_text {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border-left: 4px solid var(--violet);
-    border-radius: 8px;
+    gap: .5rem;
+    }
+    
+    .title_text {
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: var(--gold);
+    }
+    
+    .title_text_desc {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 300;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    counter-increment: step-counter;
-    flex: 1;
-    text-align: center;
-  }
-  
-  .process_list_two li::before {
-    content: counter(step-counter);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--violet);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    top: -20px; /* Расположить сверху элемента */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  
-  .process_list_two li::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    width: 20px;
-    height: 4px;
-    background-color: #742f8b;
-    transform: translateY(-50%);
-  }
-  
-  .process_list_two li:last-child::after {
-    display: none;
-  }
-  
-  .process_list_two strong {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .process_list_two span {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  
-  
-  
-  .toggleButton {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 15px;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .toggleArrow {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--light-blue);
-    transition: transform 0.3s ease;
-  }
-  
-  .toggleArrow:hover {
-    color: var(--violet);
-  }
-  
-  .toggleArrow.open {
-    transform: rotate(180deg); /* Разворот стрелки при открытии */
-  }
-  
-   .title_two {
-    font-size: 30px;
-    margin-top: 15px;
-    width: 74%;
-    color: #333;
-   }
-  
-  .special_wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto;;
-  gap: 1rem;
-  margin-top: 20px;
-  }
-  
-  .document_list {
-  list-style-type: disc; /* Используем маркеры в виде точек */
-  padding-left: 20px; /* Отступ слева для маркеров */
-  font-size: 16px; /* Размер шрифта */
-  margin: 15px;
-  }
-  
-  .document_list li {
-  margin-bottom: 10px; /* Отступ между пунктами */
-  }
-  
-  .link {
-  color: var(--light-blue);
-  font-size: 14px;
-  }
-  
-  .document_table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  }
-  
-  .document_table thead {
-  background-color: var(--violet); /* Основной цвет */
-  color: white;
-  }
-  
-  .document_table th, .document_table td {
-  padding: 15px;
-  text-align: left;
-  }
-  
-  .document_table tr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  }
-  
-  .document_table th {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  
-  }
-  
-  .document_table tbody tr {
-  background-color: #f9f9f9;
-  transition: background-color 0.3s ease;
-  }
-  
-  .document_table tbody tr:nth-child(even) {
-  background-color: #f1f1f1; /* Цвет для четных строк */
-  }
-  
-  
-  
-  .desc {
-  font-size: 14px;
-  text-align: right;
-  }
-  
-  .document_table td:last-child {
-  text-align: end;
-  }
-  
-  
-  
-  .document_table tbody tr:last-child td {
-  border-bottom: none; /* Убираем границу в последней строке */
-  }
-  
-  .pricing_table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  }
-  
-  .pricing_table thead {
-  background-color: #742f8b; /* Основной цвет */
-  color: white;
-  }
-  
-  .pricing_table th, .pricing_table td {
-  padding: 15px;
-  text-align: left;
-  }
-  
-  .pricing_table tbody tr {
-  background-color: #f9f9f9;
-  transition: background-color 0.3s ease;
-  }
-  
-  .pricing_table tbody tr:nth-child(even) {
-  background-color: #f1f1f1; /* Чередование строк */
-  }
-  
-  .pricing_table tbody tr:hover {
-  background-color: #e0e0e0; /* Цвет при наведении */
-  }
-  
-  .pricing_table td {
-  border-bottom: 1px solid #ddd;
-  }
-  
-  .pricing_table tbody tr:last-child td {
-  border-bottom: none; /* Убираем границу в последней строке */
-  }
-  
-  @media   (max-width: 820px) {
-  
-    .banner {
-      width: 100%;
-      height: 100vh;
+    width: 702px;
+    }
+    
+    .breadcrumbs_wrapper {
+      width: 1200px;
+      margin: auto auto;
+    }
+    
+    .breadcrumbs {
+      font-size: 12px;
+      display: flex;
+      gap: .5rem;
+      margin-top: 10px;
+    }
+    
+    .breadcrumbs a {
+      text-decoration: none;
+      color: var(--violet);
+      font-weight: 600;
+    }
+    
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+    
+    .description_new {
+      font-size: 12px;
+    
+    }
+    
+    .breadcrumbs span {
+      color: #585858;
+    }
+    
+    
+    .banner_container {
       margin: 0 auto;
-      background-size: cover; /* Растягивает фон на всю площадь .banner */
-      background-position: center;
-      background-repeat: no-repeat;
+      width: 1200px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-        }
-  
-  
-      .banner_container {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    
-      }
-  
-      .image_wrapper {
-        align-self: start;
-        width: 400px; /* Изображение занимает всю ширину родительского блока */
-        max-width: 100%;
-        height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
-        border-radius: 5px;
-      }
-  
-      
-      .breadcrumbs_wrapper {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        font-size: 16px;
-        padding: 0 5px ;
-      }
-      
-      .breadcrumbs {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-      }
-      
-      .breadcrumbs a {
-        text-decoration: none;
-        color: var(--violet); /* Основной цвет для ссылок */
-        white-space: nowrap; /* Запрещаем перенос текста */
-      }
-      
-      .breadcrumbs a:hover {
-        text-decoration: underline;
-      }
-      
-      .breadcrumbs span {
-        color: #585858;
-        white-space: nowrap; /* Запрещаем перенос текста для текста внутри span */
-      }
-  
-      .section_text_content {
-        width: 100%;
-        padding: 10px;
-  
-      }
-  
-      .section_text_content_title {
-        width: 100%;
-        font-size: 26px;
-        font-weight: 600;
+      justify-content: space-around;
     }
     
-      .description {
-        width: 100%;
-        font-size: 16px;
-      }
-    
-      .special_wrapper {
-        grid-template-columns: 1fr ;
-        gap: 1rem;
-      }
-    
-      .title_two {
-        font-size: 20px;
-        width: 100%;
-      }
-  
-       .banner_title {
-        width: 100%;
-        margin-top: 15px;
-        text-align: center;
-       }
-  
-  
-       
-     
-       .banner_title p {
-         width: 100%;
-         margin-top: 15px;
-         font-size: 18px;
-         margin-bottom: 15px;
-       }
-    
-      .banner_title p {
-        width: 100%;
-        margin-top: 30px;
-        font-size: 22px;
-      }
-      
-  
-      
-      .banner_title_text {
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-      }
-      
-      .title_text {
-      font-size: 36px;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: 1px;
-      }
-      
-      .title_text_desc {
-        font-size: 22px;
-        line-height: 30px;
-        font-weight: 300;
-        position: relative;
-        width: 100%;
-      }
-    
-
-      .selectCountryTitle{
-        font-size: 38px;
-        margin-left: 40px;
-      }
-  
-      .process_list_two {
-        flex-direction: column;
-        grid-template-columns: auto ;
-        padding: 30px 0;
-        width: 100%;
-        gap: 10px;
+    .image_wrapper {
+      align-self: start;
+      width: 860px; /* Изображение занимает всю ширину родительского блока */
+      max-width: 100%;
+      height: auto; /* Высота автоматически адаптируется для сохранения пропорций */
+      border-radius: 5px;
+      padding: 10px 0;
     }
-  
+    
+    .section_image {
+      border-radius: 5px;
+    }
+    
+    .section_text_content {
+      margin: 0 auto;
+      width: 1200px;
+      padding: 10px 0;
+    }
+    
+    .section_text_content_title {
+      width: 100%;
+      font-size: 32px;
+      font-weight: 600;
+      padding: 10px 0;
+      color: var(--text-color);
+    }
+    
+    .section_text_content_title span {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    
+    .description {
+     padding: 10px 0;
+     width: 75%;
+     font-size: 18px;
+    }
+    
+    
+    .process_list {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    
+    .process_list_item {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .process_list_item::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #742f8b; /* Фиолетовая линия сверху */
+      transition: background-color 0.3s ease;
+    }
+    
+    .process_list_item.open_item::before {
+      background: #4a0072; /* Более насыщенный цвет для активного состояния */
+    }
+    
+    .toggleButton {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: none;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    
+    .toggleButton:hover {
+      color: #742f8b;
+    }
+    
+    .toggleIcon {
+      font-size: 20px;
+      font-weight: bold;
+      color: #742f8b;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .toggleIcon.open {
+      transform: rotate(180deg); /* Поворот для изменения значка */
+      color: #4a0072; /* Изменение цвета */
+    }
+    
+    .process_list  .description {
+      padding: 0 20px 15px 20px;
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+      display: none;
+    }
+    
+    .description.open {
+      display: block;
+    }
+    
+    .process_list_two {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      align-items: center;
+      counter-reset: step-counter;
+      gap: 30px;
+      padding: 60px 20px;
+    }
+    
     .process_list_two li {
-        margin-bottom: 20px;
-        padding: 20px 9px;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      border-left: 4px solid var(--violet);
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      counter-increment: step-counter;
+      flex: 1;
+      text-align: center;
     }
-  
-    .process_list_two li::after {
-        display: none;
-    }
-  
-    .process_list_two li::before {
-        top: 50%;
-        left: -40px;
-        transform: translateY(-50%);
-    }
-  
+    
     .process_list_two li::before {
       content: counter(step-counter);
       font-size: 20px;
@@ -569,20 +278,376 @@
       left: 50%;
       transform: translateX(-50%);
     }
-  
-    .desc {
-      font-size: 12px;
-      text-align: right;
-      }
-
-      .document_table th, .document_table td {
-        font-size: 15px;
-        }
-
-        .document_table td:last-child {
-          font-size: 13px;
+    
+    
+    .process_list_two li::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      width: 20px;
+      height: 4px;
+      background-color: #742f8b;
+      transform: translateY(-50%);
+    }
+    
+    .process_list_two li:last-child::after {
+      display: none;
+    }
+    
+    .process_list_two strong {
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .process_list_two span {
+      font-size: 16px;
+      color: #666;
+    }
+    
+    
+    
+    
+    .toggleButton {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .toggleArrow {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--light-blue);
+      transition: transform 0.3s ease;
+    }
+    
+    .toggleArrow:hover {
+      color: var(--violet);
+    }
+    
+    .toggleArrow.open {
+      transform: rotate(180deg); /* Разворот стрелки при открытии */
+    }
+    
+     .title_two {
+      font-size: 28px;
+      margin: 15px 0;
+      text-align: center;
+      color: var(--text-color);
+     }
+    
+    .special_wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;;
+    gap: 1rem;
+    padding: 20px 0;
+    }
+    
+    .document_list {
+    list-style-type: disc; /* Используем маркеры в виде точек */
+    padding-left: 20px; /* Отступ слева для маркеров */
+    font-size: 16px; /* Размер шрифта */
+    margin: 15px;
+    }
+    
+    .document_list li {
+    margin-bottom: 10px; /* Отступ между пунктами */
+    }
+    
+    .link {
+    color: var(--light-blue);
+    font-size: 14px;
+    }
+    
+    .document_table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    /* Заголовок */
+    .document_table thead {
+      background-color: var(--violet);
+      color: #fff;
+    }
+    
+    .document_table th {
+      padding: 16px 20px;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05rem;
+      font-size: 16px;
+    }
+    
+    /* Общие ячейки */
+    .document_table td {
+      padding: 16px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-color);
+      vertical-align: top;
+    }
+    
+    /* Чётные строки */
+    .document_table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    /* Анимация наведения */
+    .document_table tbody tr:hover {
+      background-color: #f0f4ff;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Описание справа */
+    .document_table td:last-child {
+      text-align: left; /* можно поставить center или end */
+      color: #666;
+      font-weight: 500;
+    }
+    
+    /* Убираем рамку в последней строке */
+    .document_table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .pricing_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    }
+    
+    .pricing_table thead {
+    background-color: #742f8b; /* Основной цвет */
+    color: white;
+    }
+    
+    .pricing_table th, .pricing_table td {
+    padding: 15px;
+    text-align: left;
+    }
+    
+    .pricing_table tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    }
+    
+    .pricing_table tbody tr:nth-child(even) {
+    background-color: #f1f1f1; /* Чередование строк */
+    }
+    
+    .pricing_table tbody tr:hover {
+    background-color: #e0e0e0; /* Цвет при наведении */
+    }
+    
+    .pricing_table td {
+    border-bottom: 1px solid #ddd;
+    }
+    
+    .pricing_table tbody tr:last-child td {
+    border-bottom: none; /* Убираем границу в последней строке */
+    }
+    
+    @media   (max-width: 820px) {
+    
+      .banner {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background-size: cover; /* Растягивает фон на всю площадь .banner */
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
           }
-          
+    
+    
+        .banner_container {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+      
+        }
+    
+         
+        .breadcrumbs_wrapper {
+          display: flex;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          font-size: 16px;
+          padding: 0 5px ;
+        }
         
-  
-  }
+        .breadcrumbs {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+        
+        .breadcrumbs a {
+          text-decoration: none;
+          color: var(--violet); /* Основной цвет для ссылок */
+          white-space: nowrap; /* Запрещаем перенос текста */
+        }
+        
+        .breadcrumbs a:hover {
+          text-decoration: underline;
+        }
+        
+        .breadcrumbs span {
+          color: #585858;
+          white-space: nowrap; /* Запрещаем перенос текста для текста внутри span */
+        }
+    
+        .section_text_content {
+          width: 100%;
+          padding: 10px;
+    
+        }
+    
+        .section_text_content_title {
+          width: 100%;
+          font-size: 26px;
+          font-weight: 600;
+      }
+      
+        .description {
+          width: 100%;
+          font-size: 16px;
+        }
+      
+        .special_wrapper {
+          grid-template-columns: 1fr ;
+          gap: 1rem;
+        }
+      
+        .title_two {
+          font-size: 26px;
+          width: 100%;
+          text-align: center;
+        }
+    
+         .banner_title {
+          width: 100%;
+          margin-top: 15px;
+          text-align: center;
+         }
+    
+    
+    
+        
+        .banner_title_text {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+        }
+        
+        .title_text {
+        font-size: 36px;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1px;
+        }
+        
+        .title_text_desc {
+          font-size: 19px;
+          line-height: 30px;
+          font-weight: 300;
+          position: relative;
+          width: 100%;
+        }
+      
+      
+        .selectCountryTitle{
+          font-size: 38px;
+          margin-left: 40px;
+        }
+    
+        .process_list_two {
+          flex-direction: column;
+          grid-template-columns: auto;
+          padding: 30px 0;
+          width: 100%;
+          gap: 10px;
+      }
+    
+      .process_list_two li {
+          margin-bottom: 30px;
+          padding: 20px 9px;
+      }
+    
+      .process_list_two li::after {
+          display: none;
+      }
+    
+      .process_list_two li::before {
+          top: 50%;
+          left: -40px;
+          transform: translateY(-50%);
+      }
+    
+      .process_list {
+        list-style-type: none;
+        padding: 20px 0;
+      }
+    
+      .process_list_two li::before {
+        content: counter(step-counter);
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background-color: var(--violet);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        top: -20px; /* Расположить сверху элемента */
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    
+      
+    
+      .desc {
+        font-size: 16px;
+        text-align: right;
+        }
+    
+        .document_table th,
+        .document_table td {
+          padding: 12px 14px;
+          font-size: 16px;
+        }
+      
+        .document_table {
+          font-size: 16px;
+        }
+    
+    }

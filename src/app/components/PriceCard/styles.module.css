@@ -261,7 +261,9 @@
     border: none;
     background: var(--gold);
     cursor: pointer;
-  }
+  }.service_option strong {
+  font-size: 20px;
+}
   
   .order_btn:hover {
     background-color: #2076F5;
@@ -293,7 +295,7 @@
   
   
   .service_option strong {
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .service_option h2 {

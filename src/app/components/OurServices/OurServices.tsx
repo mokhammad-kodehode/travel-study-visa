@@ -45,7 +45,7 @@ const services = [
 const ServicesList: React.FC = () => {
   return (
     <section className={styles.container}>
-      <h1 className={styles.container_title}>НАШИ УСЛУГИ</h1>
+      <h1 className={styles.container_title}>Наши Услуги</h1>
       <div data-aos="fade-bottom" className={styles.servicesGrid}>
         {services.map((service, index) => (
           <div key={index} className={styles.serviceCard}>

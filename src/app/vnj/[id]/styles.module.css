@@ -10,6 +10,23 @@
     
   }
   
+  .main_btn {
+    border-radius: 5px;
+    padding: 15px 20px;
+    background: var(--violet);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .2s;
+    margin-top: 30px;
+  }
+
+  .main_btn:hover {
+    background-color: var(--gold);
+    color: rgb(15, 15, 15);
+  }
   
   .banner_container {
   margin: 0 auto;
@@ -134,6 +151,7 @@
     width: 100%;
     font-size: 32px;
     font-weight: 600;
+    color: var(--text-color);
     padding: 10px 0;
   }
   
@@ -187,7 +205,7 @@
   /* Скрытый текст */
   .process_list .description {
     font-size: 16px;
-    color: #666;
+    color: #555;
     display: none; /* Элемент скрыт */
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -270,8 +288,9 @@
   }
   
   .process_list_two span {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
+    margin-top: 10px;
   }
   
   
@@ -306,86 +325,70 @@
   
    .title_two {
     font-size: 30px;
-    margin-top: 30px;
+    margin: 30px 0;
     width: 74%;
     color: #333;
    }
   
   
-  .document_list {
-  list-style-type: disc; /* Используем маркеры в виде точек */
-  padding-left: 20px; /* Отступ слева для маркеров */
-  font-size: 16px; /* Размер шрифта */
-  margin: 15px;
-  }
-  
-  .document_list li {
-  margin-bottom: 10px; /* Отступ между пунктами */
-  }
-  
-  .link {
-  color: var(--light-blue);
-  font-size: 14px;
-  }
-  
   .document_table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   
+  /* Заголовок */
   .document_table thead {
-  background-color: var(--violet); /* Основной цвет */
-  color: white;
-  }
-  
-  .document_table th, .document_table td {
-  padding: 15px;
-  text-align: left;
-  }
-  
-  .document_table tr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: var(--violet);
+    color: #fff;
   }
   
   .document_table th {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  
+    padding: 16px 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    font-size: 16px;
   }
   
-  .document_table tbody tr {
+/* Общие ячейки */
+.document_table td {
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  vertical-align: top;
+}
+
+/* Чётные строки */
+.document_table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+/* Анимация наведения */
+.document_table tbody tr:hover {
+  background-color: #f0f4ff;
   transition: background-color 0.3s ease;
-  }
+}
+
+/* Описание справа */
+.document_table td:last-child {
+  text-align: left; /* можно поставить center или end */
+  color: #666;
+  font-weight: 500;
+}
+
   
-  .document_table tbody tr:nth-child(even) {
-  background-color: #f1f1f1; /* Цвет для четных строк */
-  }
-  
-  
-  
-  .desc {
-  font-size: 14px;
-  text-align: right;
-  }
-  
-  .document_table td:last-child {
-  text-align: end;
-  }
-  
-  
-  
+  /* Убираем рамку в последней строке */
   .document_table tbody tr:last-child td {
-  border-bottom: none; /* Убираем границу в последней строке */
+    border-bottom: none;
   }
   
   .pricing_table {
@@ -633,9 +636,14 @@
       transform: translateX(-50%);
     }
   
-    .desc {
-      font-size: 14px;
-      text-align: right;
-      }
+    .document_table th,
+    .document_table td {
+      padding: 12px 14px;
+      font-size: 16px;
+    }
+  
+    .document_table {
+      font-size: 16px;
+    }
   
   }

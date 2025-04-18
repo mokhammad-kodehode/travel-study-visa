@@ -56,7 +56,7 @@
   .title_text_desc {
     width: 702px;
     flex-shrink: 0;
-    font-size: 28px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -131,9 +131,10 @@
 
 
    .title_two {
-    font-size: 22px;
-    margin-top: 15px;
+    font-size: 28px;
+    margin: 15px;
     color: var(--text-color);
+    text-align: center;
    }
 
   .special_wrapper {
@@ -270,9 +271,7 @@
     }
   
     .title_two {
-      font-size: 24px;
-      width: 100%;
-      padding: 10px;
+      font-size: 26px;
       text-align: center;
     }
 

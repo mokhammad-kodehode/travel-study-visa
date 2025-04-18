@@ -52,3 +52,20 @@ a {
   text-decoration: none;
 }
 
+.main_btn {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background: var(--violet);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .2s;
+  margin-top: 30px;
+}
+
+.main_btn:hover {
+  background-color: var(--gold);
+  color: rgb(15, 15, 15);
+}

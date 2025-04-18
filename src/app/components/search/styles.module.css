@@ -23,9 +23,9 @@
   
   .searchInput {
     width: 100%;
-    padding: 25px 15px 25px 45px; /* Увеличиваем отступ слева для иконки */
+    padding: 15px 15px 15px 45px; /* Увеличиваем отступ слева для иконки */
     font-size: 18px;
-    border: 2px solid #b8b8b8;
+    border: 1px solid #b8b8b8;
     color: black;
     border-radius: 12px;
     outline: none;

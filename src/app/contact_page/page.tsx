@@ -1,10 +1,15 @@
-"use client"
 
-
+import { Metadata } from 'next'
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import { useState, useEffect } from 'react';
 import Contact from '../components/contact/Contact';
+
+
+
+export const metadata: Metadata = {
+  title: 'Контакты Travel & Study | Свяжитесь с нами',
+  description: 'Контактная информация визового центра Travel & Study. Адрес, телефон, WhatsApp, email. Консультации и запись на прием.',
+}
 
 
 export default function Contact_Page() {

@@ -1,4 +1,3 @@
-"use client"
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
@@ -9,6 +8,15 @@ import ServicesList from '../components/OurServices/OurServices';
 import Contact from '../components/contact/Contact';
 import CountryVNJ from '../components/CountrySelect/countrySelect';
 import { europeCountries } from '../data/CountryDataVnj';
+import type { Metadata } from 'next'
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  return {
+    title: ' Вид на жительство в Европе и ОАЭ | Помощь с оформлением',
+    description: 'Получение ВНЖ в Болгарии, Испании, Франции и ОАЭ. Консультации, подготовка документов, полное сопровождение',
+  }
+}
+
 
 export default function VNJ_Page() {
 
@@ -50,6 +58,7 @@ export default function VNJ_Page() {
           </section>
           <ServicesList/>
           <Contact/>
+          <AdvantagesTwo/>
     </main>
   )
 }

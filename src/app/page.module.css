@@ -267,6 +267,7 @@ position: relative;
   font-size: 16px;
   font-weight: 600;
   transition: .2s;
+  
 }
 
 .main_btn:hover {
@@ -423,7 +424,7 @@ position: relative;
   }
   
   .section_two_p , .section_four_p, .section_Six_p {
-    font-size: 15px;
+    font-size: 16px;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -464,7 +465,7 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Две колонки */
     grid-template-rows: auto auto; /* Две строки */
-    gap: 20px;
+    gap: 40px;
     justify-items: center; /* Центрирование элементов по горизонтали */
     align-items: center; /* Центрирование элементов по вертикали */
     color: #fff;
@@ -492,7 +493,6 @@ position: relative;
   }
 
   .info_item p {
-    font-size: 14px;
     width: 100px;
   }
   
@@ -504,7 +504,7 @@ position: relative;
   }
   
   .icon{
-    font-size: 32px;
+    font-size: 36px;
     opacity: 0.7;
   }
 }

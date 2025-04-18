@@ -43,43 +43,50 @@
   font-size: 36px;
   position: relative;
   z-index: 1; /* Над фоном */
+  margin: 30px;
+  color: var(--text-color);
 }
 
 .cards {
   position: relative;
   z-index: 1; /* Над фоном */
-  padding: 20px;
+  padding: 10px;
   width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto auto auto auto;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: .8rem;
 }
   
   .card {
-    width: 300px;
+    width: 280px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 
   .card_icon {
     color: var(--gold);
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--violet);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .card h3 {
     color: #333;
     font-size: 18px;
-    margin-top: 15px;
+    margin: 15px 0;
   }
   
   .card p {
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 16px;
   }
 
 
@@ -91,7 +98,7 @@
   
     .container_title{
       text-align: center;
-      font-size: 28px;
+      font-size: 26px;
     }
     
     .cards {
@@ -103,35 +110,30 @@
       align-items: center;
       flex-direction: column;
       flex-wrap: wrap;
-      padding: 0;
     }
     
     .card {
-      width: 300px;
       padding: 10px;
-      height: 170px;
+      height: 100%;
+      width: 100%;
       margin: 0;
       margin-top: 20px;
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-  
+
+    
     .card_icon {
       color: var(--orange);
       width: 32px;
       height: 32px;
     }
     
-    .card h3 {
-      color: #333;
-      font-size: 18px;
-      margin-top: 5px;
-    }
+
     
     .card p {
-      color: #666;
-      font-size: 14px;
+      font-size: 16px;
       white-space: pre-wrap;
       width: 95%;
     }

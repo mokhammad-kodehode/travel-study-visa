@@ -1,5 +1,3 @@
-"use client"
-
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css'
@@ -7,6 +5,12 @@ import 'fontsource-inter';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries'
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import { AmericaCountries } from '@/app/data/CountryData';
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Виза в США и Канаду | Оформление и поддержка',
+  description: 'Помогаем оформить визы в США и Канаду. Подготовка документов, запись на собеседование, консультации.',
+}
 
 
 export default function America() {
