@@ -1,23 +1,22 @@
-// src/app/visa-asia/[id]/page.tsx
 import type { Metadata } from 'next';
 import CountryPageAsia   from './Visa_asia_page';
 import { asiaCountries } from '@/app/data/CountryData';
 
-/* корректный тип, совпадающий с тем, что генерирует Next */
-type BuiltInPageProps = {
-  params:        { id: string };
+/** минимальный тип, который точно расширяет внутренний PageProps */
+type Props = {
+  params:        Record<string, string>;          // id, slug, …
   searchParams?: Record<string, string | string[] | undefined>;
 };
 
 /* ---------- SEO ---------- */
 export async function generateMetadata(
-  { params }: BuiltInPageProps
+  { params }: Props
 ): Promise<Metadata> {
   const country = asiaCountries.find(c => c.nameof === params.id);
 
   if (!country) {
     return {
-      title: 'Оформление виз | Travel and Study',
+      title:       'Оформление виз | Travel and Study',
       description: 'Получите визу в любую страну Азии. Полное сопровождение, документы, консультации.'
     };
   }
@@ -29,7 +28,7 @@ export async function generateMetadata(
 }
 
 /* ---------- Страница ---------- */
-export default function Page({ params }: BuiltInPageProps) {
+export default function Page({ params }: Props) {
   const country = asiaCountries.find(c => c.nameof === params.id);
 
   if (!country) return <div>Страна не найдена</div>;
