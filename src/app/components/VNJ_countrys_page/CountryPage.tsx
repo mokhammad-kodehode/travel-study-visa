@@ -19,8 +19,8 @@ import Contact from '@/app/components/contact/Contact';
 
 
 
-const CountryPage = () => {
-  const [country, setCountry] = useState<CountryDataVNJ | null>(null);
+ function CountryPage({ country }: { country: CountryDataVNJ }) {
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
@@ -50,22 +50,6 @@ const CountryPage = () => {
     color: 'white',
     height: '100vh',
   };
-
-  useEffect(() => {
-    const countryName = window.location.pathname.split('/').pop(); // Извлекаем название страны из URL
-    console.log(countryName);
-    
-    if (countryName) {
-      const countryData = [...europeCountries]
-        .find((c) => c.nameof.toLowerCase() === countryName.toLowerCase());
-
-      setCountry(countryData || null);
-    }
-  }, []);
-
-  if (!country) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <main className={styles.main}>

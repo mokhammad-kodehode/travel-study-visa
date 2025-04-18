@@ -1,38 +1,25 @@
-import { Metadata } from 'next'
-import CountryPage from './CountryPage'
-import { europeCountries } from '@/app/data/CountryDataVnj'
+import { Metadata } from 'next';
+import CountryPage from '@/app/components/VNJ_countrys_page/CountryPage';
+import { europeCountries } from '@/app/data/CountryDataVnj';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const countryData = europeCountries.find(c => c.nameof.toLowerCase() === params.id.toLowerCase())
-
-  if (!countryData) {
+/* ---------- SEO ---------- */
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const country = europeCountries.find(c => c.nameof === params.id);
+  if (!country) {
     return {
-      title: 'Вид на жительство | Travel and Study',
-      description: 'Оформление вида на жительство за границей. Консультации, документы, сопровождение.',
-    }
+      title:       'Оформление виз | Travel and Study',
+      description: 'Получите визу в любую страну Азии. Полное сопровождение, документы, консультации.',
+    };
   }
-
-  const seoData: Record<string, { title: string, description: string }> = {
-    bulgaria: {
-      title: 'ВНЖ Болгарии | Оформление и преимущества',
-      description: 'Поможем получить вид на жительство в Болгарии. Полное сопровождение, подготовка документов.',
-    },
-    spain: {
-      title: 'ВНЖ Испании | Легальное проживание в ЕС',
-      description: 'Оформление ВНЖ в Испании. Консультации, помощь в сборе документов и подача заявки.',
-    },
-    france: {
-      title: 'ВНЖ Франции | Оформление для жизни и бизнеса',
-      description: 'Помощь в получении ВНЖ во Франции. Подготовка документов, сопровождение и консультации.',
-    },
-  }
-
-  return seoData[countryData.nameof] || {
-    title: `ВНЖ ${countryData.name} | Travel and Study`,
-    description: `Оформление ВНЖ в ${countryData.name}. Консультации, подготовка документов, сопровождение.`,
-  }
+  return {
+    title:       `Виза в ${country.name_two} | Оформление и поддержка`,
+    description: `Помогаем оформить визы в ${country.name_two}. Подготовка документов, запись на собеседование, консультации.`,
+  };
 }
 
-export default function Page() {
-  return <CountryPage />
+/* ---------- Страница ---------- */
+export default function Page({ params }: any) {
+  const country = europeCountries.find(c => c.nameof === params.id);
+  if (!country) return <div>Страна не найдена</div>;
+  return <CountryPage  country={country} />;
 }
