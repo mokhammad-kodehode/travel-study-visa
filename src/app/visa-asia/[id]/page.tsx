@@ -1,28 +1,38 @@
-import { Metadata } from 'next'
-import CountryPageAsia from './Visa_asia_page'
-import { asiaCountries } from '@/app/data/CountryData'
+// src/app/visa-asia/[id]/page.tsx
+import type { Metadata } from 'next';
+import CountryPageAsia from './Visa_asia_page';
+import { asiaCountries } from '@/app/data/CountryData';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const country = asiaCountries.find(c => c.nameof === params.id)
+/** Тип, который удовлетворяет требованию Next.js */
+type PageProps = {
+  params: Record<string, string>;                 // id, slug и т.д.
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+/* ---------- SEO ---------- */
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+  const country = asiaCountries.find(c => c.nameof === params.id);
 
   if (!country) {
     return {
       title: 'Оформление виз | Travel and Study',
-      description: 'Получите визу в любую страну Европы. Полное сопровождение, документы, консультации.'
-    }
+      description: 'Получите визу в любую страну Азии. Полное сопровождение, документы, консультации.'
+    };
   }
 
   return {
     title: `Виза в ${country.name_two} | Оформление и поддержка`,
     description: `Помогаем оформить визы в ${country.name_two}. Подготовка документов, запись на собеседование, консультации.`
-  }
+  };
 }
 
-// 👇 Server Component — передаёт props в Client Component
-export default function Page({ params }: { params: { id: string } }) {
-  const country = asiaCountries.find(c => c.nameof === params.id)
+/* ---------- Страница ---------- */
+export default function Page({ params }: PageProps) {
+  const country = asiaCountries.find(c => c.nameof === params.id);
 
-  if (!country) return <div>Страна не найдена</div>
+  if (!country) return <div>Страна не найдена</div>;
 
-  return <CountryPageAsia  country={country} />
+  return <CountryPageAsia country={country} />;
 }
