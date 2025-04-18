@@ -2,6 +2,12 @@ import { Metadata } from 'next'
 import CountryPageAsia from './Visa_asia_page'
 import { asiaCountries } from '@/app/data/CountryData'
 
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const country = asiaCountries.find(c => c.nameof === params.id)
 
@@ -19,7 +25,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // 👇 Server Component — передаёт props в Client Component
-export default function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: PageProps)  {
   const country = asiaCountries.find(c => c.nameof === params.id)
 
   if (!country) return <div>Страна не найдена</div>
