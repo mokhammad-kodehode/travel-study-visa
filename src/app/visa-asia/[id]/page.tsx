@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import CountryPageAsia from '@/app/components/Visa_asia_page'
+import CountryPageAsia from '@/app/components/Visa_asia_page/Visa_asia_page'
 import { asiaCountries } from '@/app/data/CountryData'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
