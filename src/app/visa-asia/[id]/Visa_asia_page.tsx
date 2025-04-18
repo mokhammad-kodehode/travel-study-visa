@@ -3,7 +3,6 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import Image from 'next/image';
-import { asiaCountries } from '@/app/data/CountryData';
 import { CountryData } from '@/app/data/CountryData';
 import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
@@ -12,11 +11,9 @@ import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import Contact from '@/app/components/contact/Contact';
 
-type Props = {
-    country: CountryData;
-  };
 
-  const CountryPageAsia = ({ country }: Props) => {
+
+export default function CountryPageAsia({ country }: { country: CountryData })  {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
@@ -36,8 +33,6 @@ type Props = {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  
-
   const bannerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('${country?.backgroundImgUrl}')`,
     width: '100%',
@@ -49,8 +44,6 @@ type Props = {
     alignItems: 'center',
     color: 'white',
   };
-
-
 
   return (
     <main className={styles.main}>
@@ -217,4 +210,3 @@ type Props = {
   )
 }
 
-export default CountryPageAsia;
