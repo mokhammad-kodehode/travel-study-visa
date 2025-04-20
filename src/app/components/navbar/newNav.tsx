@@ -16,10 +16,8 @@ const Navbar: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isEuropeSubmenuOpen, setIsEuropeSubmenuOpen] = useState(false);
-  const [isAmericaSubmenuOpen, setIsAmericaSubmenuOpen] = useState(false);
-  const [isAsiaSubmenuOpen, setIsAsiaSubmenuOpen] = useState(false);
   const [isChatPanelOpen, setIsChatPanelOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<null | 'europe' | 'america' | 'asia'>(null); // ← новый
   
   
   const toggleChatPanel = () => setIsChatPanelOpen(!isChatPanelOpen);
@@ -27,37 +25,21 @@ const Navbar: React.FC = () => {
   // Обработчик скроллинга для изменения цвета навбара
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Меняем состояние, если прокрутили более 50px
+      setIsScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
 
   // Управление подменю для Европы и Америки
-  const toggleSubmenu = (menu: "europe" | "america" | "asia") => {
-    if (menu === "europe") {
-      setIsEuropeSubmenuOpen(!isEuropeSubmenuOpen);
-      setIsAmericaSubmenuOpen(false);
-      setIsAsiaSubmenuOpen(false);
-    } else if (menu === "america") {
-      setIsAmericaSubmenuOpen(!isAmericaSubmenuOpen);
-      setIsEuropeSubmenuOpen(false);
-      setIsAsiaSubmenuOpen(false);
-    } else if (menu === "asia") {
-      setIsAsiaSubmenuOpen(!isAsiaSubmenuOpen);
-      setIsEuropeSubmenuOpen(false);
-      setIsAmericaSubmenuOpen(false);
-    }
-  };
+  const toggleSubmenu = (name: 'europe' | 'america' | 'asia') =>
+    setOpenSubmenu(prev => (prev === name ? null : name));
 
   // Закрытие всех меню
   const closeAllMenus = () => {
     setActiveDropdown(null);
     setIsMobileNavOpen(false); // Закрываем мобильное меню
-    setIsEuropeSubmenuOpen(false); // Закрываем подменю
-    setIsAmericaSubmenuOpen(false); // Закрываем подменю
-    setIsAsiaSubmenuOpen(false); // Закрываем подменю
   };
 
   // Управление мобильным меню
@@ -147,20 +129,25 @@ const Navbar: React.FC = () => {
           <li className={styles.nav_item}>
             <Link href="/About_page" onClick={closeAllMenus}>О компании</Link>
           </li>
-
+          
           {/* Наши услуги */}
           <li className={styles.nav_item}>
-            <div className={styles.nav_item_with_submenu}>
-              <Link href="/services_page" onClick={closeAllMenus}>Наши услуги</Link>
-              <span
-                onClick={() => toggleDropdown("services")}
-                className={`${styles.submenu_arrow} ${
-                  activeDropdown === "services" ? styles.rotate_up : ""
-                }`}
+              <button
+              type="button"
+              className={styles.dropdownToggle}
+              onClick={() => toggleDropdown('services')}
+              aria-expanded={activeDropdown === 'services'}
               >
-                &#9660;
-              </span>
-            </div>
+                <Link href="/services_page" onClick={closeAllMenus}>Наши услуги</Link>
+                <span
+                  onClick={() => toggleDropdown("services")}
+                  className={`${styles.submenu_arrow} ${
+                    activeDropdown === "services" ? styles.rotate_up : ""
+                  }`}
+                >
+                  &#9660;
+                </span>
+              </button>
             {activeDropdown === "services" && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
@@ -187,100 +174,130 @@ const Navbar: React.FC = () => {
 
           {/* Визы */}
           <li className={styles.nav_item}>
-            <div className={styles.nav_item_with_submenu}>
-              <Link href="/visa_page" onClick={closeAllMenus}>Визы</Link>
-              <span
-                onClick={() => toggleDropdown("visa")}
-                className={`${styles.submenu_arrow} ${
-                  activeDropdown === "visa" ? styles.rotate_up : ""
-                }`}
-              >
-                &#9660;
-              </span>
-            </div>
-            {activeDropdown === "visa" && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
-                <li className={styles.dropdown_item}>
-                  <div className={styles.nav_item_with_submenu}>
-                    <Link href="/visa_page/europe" onClick={closeAllMenus}>Европа</Link>
-                    <span
-                      onClick={() => toggleSubmenu("europe")}
-                      className={`${styles.submenu_arrow} ${
-                        isEuropeSubmenuOpen ? styles.rotate_right : ""
-                      }`}
-                    >
-                      &#9660;
-                    </span>
-                  </div>
-                  {isEuropeSubmenuOpen && (
-                    <ul className={`${styles.nested_dropdown} ${styles.show}`}>
-                      {europeCountries.map((country) => (
-                        <li key={country.nameof} className={styles.nested_dropdown_item}>
-                          <Link onClick={closeAllMenus} href={country.pageUrl}>
-                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
-                            {country.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-                <li className={styles.dropdown_item}>
-                  <div className={styles.nav_item_with_submenu}>
-                    <Link href="/visa_page/america" onClick={closeAllMenus}>Северная Америка</Link>
-                    <span
-                      onClick={() => toggleSubmenu("america")}
-                      className={`${styles.submenu_arrow} ${
-                        isAmericaSubmenuOpen ? styles.rotate_right : ""
-                      }`}
-                    >
-                      &#9660;
-                    </span>
-                  </div>
-                  {isAmericaSubmenuOpen && (
-                    <ul className={`${styles.nested_dropdown} ${styles.show}`}>
-                      {AmericaCountries.map((country) => (
-                        <li key={country.nameof} className={styles.nested_dropdown_item}>
-                          <Link onClick={closeAllMenus} href={country.pageUrl}>
-                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
-                            {country.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-                <li className={styles.dropdown_item}>
-                  <div className={styles.nav_item_with_submenu}>
-                    <Link href="/visa_page/asia" onClick={closeAllMenus}>Азия</Link>
-                    <span
-                      onClick={() => toggleSubmenu("asia")}
-                      className={`${styles.submenu_arrow} ${
-                        isAsiaSubmenuOpen ? styles.rotate_right : ""
-                      }`}
-                    >
-                      &#9660;
-                    </span>
-                  </div>
-                  {isAsiaSubmenuOpen && (
-                    <ul className={`${styles.nested_dropdown} ${styles.show}`}>
-                      {asiaCountries.map((country) => (
-                        <li key={country.nameof} className={styles.nested_dropdown_item}>
-                          <Link onClick={closeAllMenus} href={country.pageUrl}>
-                            <Image src={country.flagUrl} alt={`${country.name} Flag`} width={20} height={15} />
-                            {country.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-                <li className={styles.dropdown_item}>
-                  <Link href="/visa_page/united_kingdom" onClick={closeAllMenus}>Великобритания</Link>
-                </li>
-              </ul>
-            )}
-          </li>
+                <button
+                  type="button"
+                  className={styles.dropdownToggle}
+                  onClick={() => toggleDropdown('visa')}
+                  aria-expanded={activeDropdown === 'visa'}
+                >
+                  <Link href="/visa_page" onClick={closeAllMenus}>Визы</Link>
+                  <span
+                    className={`${styles.submenu_arrow} ${
+                      activeDropdown === 'visa' ? styles.rotate_up : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+
+                {activeDropdown === 'visa' && (
+                  <ul className={styles.dropdown}>
+                    {/* ---------- ЕВРОПА ---------- */}
+                    <li>
+                      <button
+                        type="button"
+                        className={styles.dropdownToggle}
+                        onClick={() => toggleSubmenu('europe')}
+                        aria-expanded={openSubmenu === 'europe'}
+                      >
+                        <Link href="/visa_page/europe" onClick={closeAllMenus}>Европа</Link>
+                        <span
+                          className={`${styles.submenu_arrow} ${
+                            openSubmenu === 'europe' ? styles.rotate_right : ''
+                          }`}
+                        >
+                          ▼
+                        </span>
+                      </button>
+
+                      {openSubmenu === 'europe' && (
+                        <ul className={styles.nested_dropdown}>
+                          {europeCountries.map(c => (
+                            <li className={styles.nested_dropdown_item} key={c.nameof}>
+                              <Link onClick={closeAllMenus} href={c.pageUrl}>
+                                <Image src={c.flagUrl} alt={`${c.name} flag`} width={20} height={15}/>
+                                {c.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+
+                    {/* ---------- СЕВ. АМЕРИКА ---------- */}
+                    <li>
+                      <button
+                        type="button"
+                        className={styles.dropdownToggle}
+                        onClick={() => toggleSubmenu('america')}
+                        aria-expanded={openSubmenu === 'america'}
+                      >
+                        <Link href="/visa_page/america" onClick={closeAllMenus}>Северная Америка</Link>
+                        <span
+                          className={`${styles.submenu_arrow} ${
+                            openSubmenu === 'america' ? styles.rotate_right : ''
+                          }`}
+                        >
+                          ▼
+                        </span>
+                      </button>
+
+                      {openSubmenu === 'america' && (
+                        <ul className={styles.nested_dropdown}>
+                          {AmericaCountries.map(c => (
+                            <li className={styles.nested_dropdown_item} key={c.nameof}>
+                              <Link onClick={closeAllMenus} href={c.pageUrl}>
+                                <Image src={c.flagUrl} alt={`${c.name} flag`} width={20} height={15}/>
+                                {c.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+
+                    {/* ---------- АЗИЯ ---------- */}
+                    <li>
+                      <button
+                        type="button"
+                        className={styles.dropdownToggle}
+                        onClick={() => toggleSubmenu('asia')}
+                        aria-expanded={openSubmenu === 'asia'}
+                      >
+                        <Link href="/visa_page/asia" onClick={closeAllMenus}>Азия</Link>
+                        <span
+                          className={`${styles.submenu_arrow} ${
+                            openSubmenu === 'asia' ? styles.rotate_right : ''
+                          }`}
+                        >
+                          ▼
+                        </span>
+                      </button>
+
+                      {openSubmenu === 'asia' && (
+                        <ul className={styles.nested_dropdown}>
+                          {asiaCountries.map(c => (
+                            <li className={styles.nested_dropdown_item} key={c.nameof}>
+                              <Link onClick={closeAllMenus} href={c.pageUrl}>
+                                <Image src={c.flagUrl} alt={`${c.name} flag`} width={20} height={15}/>
+                                {c.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+
+                    {/* ---------- ВЕЛИКОБРИТАНИЯ ---------- */}
+                    <li className={styles.dropdown_item}>
+                      <Link href="/visa_page/united_kingdom" onClick={closeAllMenus}>
+                        Великобритания
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
 
           {/* ВНЖ */}
           <li className={styles.nav_item}>
@@ -298,13 +315,13 @@ const Navbar: React.FC = () => {
             {activeDropdown === "vnj" && (
               <ul className={`${styles.dropdown} ${styles.show}`}>
                 <li className={styles.dropdown_item}>
-                  <Link href="/vnj/Bulgaria" onClick={closeAllMenus}>Болгария</Link>
+                  <Link href="/vnj/bulgaria" onClick={closeAllMenus}>Болгария</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link href="/vnj/Spain" onClick={closeAllMenus}>Испания</Link>
+                  <Link href="/vnj/spain" onClick={closeAllMenus}>Испания</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link href="/vnj/France" onClick={closeAllMenus}>Франция</Link>
+                  <Link href="/vnj/france" onClick={closeAllMenus}>Франция</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link href="/vnj_page/UAE" onClick={closeAllMenus}>ОАЭ</Link>

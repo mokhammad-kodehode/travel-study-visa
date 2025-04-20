@@ -3,7 +3,6 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import Image from 'next/image';
-import { europeCountries } from '@/app/data/CountryDataVnj';
 import { CountryDataVNJ } from '@/app/data/CountryDataVnj';
 import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
