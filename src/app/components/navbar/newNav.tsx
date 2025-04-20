@@ -301,19 +301,24 @@ const Navbar: React.FC = () => {
 
           {/* ВНЖ */}
           <li className={styles.nav_item}>
-            <div className={styles.nav_item_with_submenu}>
+            <button
+              type="button"
+              className={styles.dropdownToggle}
+              onClick={() => toggleDropdown('vnj')}
+              aria-expanded={activeDropdown === 'vnj'}
+            >
               <Link href="/vnj_page" onClick={closeAllMenus}>ВНЖ</Link>
               <span
-                onClick={() => toggleDropdown("vnj")}
                 className={`${styles.submenu_arrow} ${
-                  activeDropdown === "vnj" ? styles.rotate_up : ""
+                  activeDropdown === 'vnj' ? styles.rotate_up : ''
                 }`}
               >
-                &#9660;
+                ▼
               </span>
-            </div>
-            {activeDropdown === "vnj" && (
-              <ul className={`${styles.dropdown} ${styles.show}`}>
+            </button>
+
+            {activeDropdown === 'vnj' && (
+              <ul className={styles.dropdown}>
                 <li className={styles.dropdown_item}>
                   <Link href="/vnj/bulgaria" onClick={closeAllMenus}>Болгария</Link>
                 </li>
@@ -329,7 +334,6 @@ const Navbar: React.FC = () => {
               </ul>
             )}
           </li>
-
           <li className={styles.nav_item}>
             <Link href="/grajdanstvo_ruminaya" onClick={closeAllMenus}>Гражданство Румынии</Link>
           </li>
