@@ -469,6 +469,7 @@
       padding: 15px;
       overflow-y: auto;  /* прокрутка содержимого меню */
       z-index: 1000;  /* ниже, чем шапка */
+      -webkit-overflow-scrolling:touch;
       animation: slideDowntwo 0.3s ease-in;
     }
   
@@ -483,7 +484,7 @@
       color:#fff;
       font-size: 16px; /* Увеличиваем размер текста для мобильной версии */
       font-weight: 400;
-      padding: 15px 0; /* Добавляем больше отступов для лучшей кликабельности */
+      padding: 7px 0; /* Добавляем больше отступов для лучшей кликабельности */
       cursor: pointer;
       width: 100%; /* Элементы занимают всю ширину экрана */
       border-bottom: 1px solid rgba(253, 253, 253, 0.7); /* Добавляем разделительную линию */
