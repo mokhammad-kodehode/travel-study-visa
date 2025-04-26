@@ -2,9 +2,17 @@ import { Metadata } from 'next';
 import CountryPage from '@/app/components/Visa_EU_page/Visa_EU_page';
 import { europeCountries } from '@/app/data/CountryData';
 
+
+type PageParams = {
+  params: { id: string }   // структура динамического сегмента [id]
+};
+
 /* ---------- SEO ---------- */
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PageParams      // ← используем свой тип
+): Promise<Metadata> {
   const country = europeCountries.find(c => c.nameof === params.id);
+
   if (!country) {
     return {
       title:       'Оформление виз | Travel and Study',
@@ -18,8 +26,9 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 }
 
 /* ---------- Страница ---------- */
-export default function Page({ params }: any) {
+export default function Page({ params }: PageParams) {
   const country = europeCountries.find(c => c.nameof === params.id);
   if (!country) return <div>Страна не найдена</div>;
-  return <CountryPage country={country} />;
+
+  return <CountryPage country={country} />
 }

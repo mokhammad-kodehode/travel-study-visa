@@ -183,15 +183,12 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
     margin: 0 auto;
-    gap: 1rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
     border: 5px;
     margin-top: 0;
-    padding:5px;
-    border-radius: 5px;
     width: 95%;
     height: 100%;
   }
@@ -219,7 +216,7 @@
     justify-content: flex-start; 
     gap: .5rem;
     height: 100%;
-    padding: 10px;
+    padding: 10px 10px 50px 10px;
     width: 100%;
   }
   

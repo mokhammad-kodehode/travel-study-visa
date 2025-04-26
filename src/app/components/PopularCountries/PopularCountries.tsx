@@ -23,7 +23,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/europe",
         country: "Франция",
         pageUrl: '/visa/france',
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/France.jpg"
       },
@@ -33,7 +33,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/europe",
         country: "Германия",
         pageUrl: '/visa/germany',
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/Germany.jpg"
       },
@@ -43,7 +43,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/europe",
         country: "Испания",
         pageUrl: '/visa/spain',
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/Spain.webp"
       },
@@ -53,7 +53,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/europe",
         pageUrl: '/visa/italy',
         country: "Италия",
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/Rome.jpg"
       },
@@ -63,7 +63,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/america",
         country: "США",
         pageUrl: '/visa_page/america/usa',
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/New.webp"
       },
@@ -73,7 +73,7 @@ const countrycards: CountryCard[] = [
         continentUrl: "/visa_page/europe",
         pageUrl: '/visa_page/united_kingdom',
         country: "Великобритания",
-        price: 1400,
+        price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/London.jpg"
       },

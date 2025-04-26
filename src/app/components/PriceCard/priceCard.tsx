@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState,useRef  } from 'react';
 import styles from './styles.module.css';
 import ModalForm from '../ContactForm/ContactFor'; 
 import { FaCheckCircle } from 'react-icons/fa';
@@ -92,47 +92,69 @@ const services: ServiceOption[] = [
 const TariffSelectionPage: React.FC = () => {
   const [activeService, setActiveService] = useState<ServiceOption>(services[0]);
   const [isModalOpen, setModalOpen] = useState(false);
+  const detailsRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToDetails = () => {
+    if (!detailsRef.current) return;
+
+    const navbarOffset = 130; // ≈ высота мобильного header-a
+    const y =
+      detailsRef.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const handleChooseService = (service: ServiceOption) => {
+    setActiveService(service);
+    if (window.innerWidth <= 820) scrollToDetails();
+  };
+
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
   return (
     <section className={styles.tariff_section}>
-        <h1 className={styles.tariff}>Наши Тарифы</h1>
-        <div className={`${styles.container} ${styles.mobileReverse}`}>
-            <div className={styles.left_panel}>
-              <div className={styles.left_panel_title}>
-              <h1 className={styles.tariff_title}>{activeService.title}</h1>
-              <p className={styles.desc}>{activeService.description}</p>
-              </div>
-              {activeService ? (
-                <div>
-                  <ul className={styles.service_list}>
-                    {activeService.services.map((service, index) => (
-                      <li key={index} className={styles.service_item}>
-                        <FaCheckCircle className={styles.icons}></FaCheckCircle> {/* Используйте ваш стиль для желтой точки */}
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <p>Выберите тариф для отображения информации</p>
-              )}
-            </div>
-            <div className={styles.right_panel}>
-              {services.map((service) => (
-                  <div key={service.id} 
-                  className={`${styles.service_option} ${activeService.id === service.id ? styles.active_service : ''}`}
-                  onClick={() => setActiveService(service)}>
-                    <h2>{service.title}</h2>
-                    {/* <p className={styles.option_description}>{service.description}</p> */}
-                    <p><strong>от {service.price}</strong> </p>
-                  </div>
-                ))}
-            </div>
+    <h1 className={styles.tariff}>Наши тарифы</h1>
+
+    <div className={`${styles.container} ${styles.mobileReverse}`}>
+      {/* Левая панель с подробными услугами */}
+      <div ref={detailsRef} className={styles.left_panel}>
+        <div className={styles.left_panel_title}>
+          <h1 className={styles.tariff_title}>{activeService.title}</h1>
+          <p className={styles.desc}>{activeService.description}</p>
         </div>
-    </section>
+
+        <ul className={styles.service_list}>
+          {activeService.services.map((srv, i) => (
+            <li key={i} className={styles.service_item}>
+              <FaCheckCircle className={styles.icons} /> {srv}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Правая панель — список тарифов */}
+      <div className={styles.right_panel}>
+        {services.map((s) => (
+          <div
+            key={s.id}
+            className={`${styles.service_option} ${
+              activeService.id === s.id ? styles.active_service : ""
+            }`}
+            onClick={() => handleChooseService(s)}
+          >
+            <h2>{s.title}</h2>
+            <p>
+              <strong>от {s.price}</strong>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
   );
 };
 
