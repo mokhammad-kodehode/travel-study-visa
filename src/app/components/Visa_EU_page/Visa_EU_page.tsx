@@ -12,8 +12,8 @@ import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCa
 import Contact from '@/app/components/contact/Contact';
 
 interface CountryPageProps {
-  country: CountryData;
-}
+    country: CountryData;
+  }
 
 const visaDetails = [
   {
@@ -39,7 +39,7 @@ const visaDetails = [
 ];
 
 
-export default function CountryPage({ country }: CountryPageProps)  {
+export default function CountryPage({ country }: { country: CountryData }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
