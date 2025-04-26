@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
                 {activeDropdown === 'visa' && (
                   <ul className={styles.dropdown}>
                     {/* ---------- ЕВРОПА ---------- */}
-                    <li>
+                    <li className={styles.nav_item}>
                       <button
                         type="button"
                         className={styles.dropdownToggle}
@@ -225,7 +225,7 @@ const Navbar: React.FC = () => {
                     </li>
 
                     {/* ---------- СЕВ. АМЕРИКА ---------- */}
-                    <li>
+                    <li  className={styles.nav_item}>
                       <button
                         type="button"
                         className={styles.dropdownToggle}
@@ -257,7 +257,7 @@ const Navbar: React.FC = () => {
                     </li>
 
                     {/* ---------- АЗИЯ ---------- */}
-                    <li>
+                    <li  className={styles.nav_item}>
                       <button
                         type="button"
                         className={styles.dropdownToggle}
@@ -289,7 +289,7 @@ const Navbar: React.FC = () => {
                     </li>
 
                     {/* ---------- ВЕЛИКОБРИТАНИЯ ---------- */}
-                    <li className={styles.dropdown_item}>
+                    <li  className={styles.nav_item}>
                       <Link href="/visa_page/united_kingdom" onClick={closeAllMenus}>
                         Великобритания
                       </Link>
