@@ -14,9 +14,9 @@ const CallButton = () => {
     if (isClosed) return; // не показываем вообще
 
     // 1) через 3 сек появляется круглая кнопка
-    const showTimer = setTimeout(() => setVisible(true), 3000);
+    const showTimer = setTimeout(() => setVisible(true), 10000);
     // 2) ещё через 7 сек расширяется с текстом
-    const expandTimer = setTimeout(() => setExpanded(true), 10000);
+    const expandTimer = setTimeout(() => setExpanded(true), 17000);
 
     return () => {
       clearTimeout(showTimer);
