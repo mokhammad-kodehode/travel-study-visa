@@ -1,8 +1,9 @@
 .searchBar {
     margin: 20px 0;
     text-align: center;
-    width: 100%;
-    padding: 0 10px;
+    width: 98%;
+    padding: 20px 0;
+    height: 100%;
   }
   
   .inputContainer {

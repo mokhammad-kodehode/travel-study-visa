@@ -566,7 +566,7 @@ export const europeCountries: CountryData[] = [
       feature_seven:"",
     },
     { 
-      nameof: "Qatar",
+      nameof: "qatar",
       name: 'Катар',
       name_two: 'Катар',
       flagUrl: '/images/Flags/qatar.svg',
@@ -575,7 +575,7 @@ export const europeCountries: CountryData[] = [
       feature_one:"  страна роскоши, футуристической архитектуры и захватывающих пустынных пейзажей. Хотите насладиться сервисом мирового уровня? Мы упростим процесс получения визы.",
       feature_two:"28 долларов США.",
       feature_three:"2–5 рабочих дней.",
-      feature_four:"Лояльное отношение Болгарии к российским туристам. Страна одна из немногих ЕС, которая в 90% одобряет заявки и не затягивает сроки выдачи визы.",
+      feature_four:"",
       feature_five:"",
       feature_six:"",
       feature_seven:"",

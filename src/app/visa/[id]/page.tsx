@@ -17,7 +17,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-/* ---------- Страница ---------- */
 export default function Page({ params }: any) {
   const country = europeCountries.find(c => c.nameof === params.id);
   if (!country) return <div>Страна не найдена</div>;

@@ -1,0 +1,108 @@
+/* Корневая обёртка — фиксируем у низа, по центру */
+.wrapper{
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0 12px;
+  width: 100%;
+  max-width: 920px;
+}
+
+/* Карточка */
+.card{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+
+  background: rgba(20, 16, 34, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+  color: #fff;
+
+  animation: slideUp .35s ease-out;
+}
+
+/* Анимация появления */
+@keyframes slideUp {
+  from { transform: translate(-50%, 12px); opacity: 0; }
+  to   { transform: translate(-50%, 0);    opacity: 1; }
+}
+
+/* Текст */
+.text{
+  display: grid;
+  gap: 6px;
+}
+.title{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.desc{
+  margin: 0;
+  line-height: 1.45;
+  font-size: 14px;
+  color: #EDEDED;
+}
+.link{
+  color: #FBC02D; /* твой золотой акцент */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Кнопки */
+.actions{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn{
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btnGhost{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+.btnGhost:hover{ background: rgba(255,255,255,.16); }
+
+.btnPrimary{
+  background: linear-gradient(135deg, var(--gold)); /* твой фиолетовый градиент */
+  color: #393939;
+  box-shadow: 0 0 0 rgba(124,58,237,0);
+}
+.btnPrimary:hover{
+  box-shadow: 0 6px 18px rgba(124,58,237,.35);
+}
+
+/* Адаптив */
+@media (max-width: 820px){
+  .card{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+  .actions{
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 420px){
+  .desc{ font-size: 13px; }
+  .btn{ padding: 9px 12px; }
+}

@@ -44,6 +44,31 @@ export default function VNJ_Page() {
           </div>
           <section className={styles.section_two}>
             <div className={styles.section_two_top}>
+            <div className={styles.section_text_content_title}>Оформление ВНЖ</div>
+            <p className={styles.description}>
+               Хотите жить, учиться или работать за границей на законных основаниях? </p>
+             <p className={styles.description}>
+                Мы поможем оформить вид на жительство (ВНЖ) в любой стране — быстро, официально и без стресса.
+            </p>
+            <p className={styles.description}>
+                Наша команда сопровождает вас на всех этапах процесса: от выбора оптимальной программы до подачи и получения готового документа.
+            </p>
+                <h4 className={styles.subTitle}>Мы предлагаем:</h4>
+                  <ul className={styles.offerList}>
+                    <li>Полное юридическое и документальное сопровождение</li>
+                    <li>Подбор подходящей страны и основания для ВНЖ</li>
+                    <li>Перевод и легализацию документов</li>
+                    <li>Консультации по переезду, адаптации и правовым вопросам</li>
+                  </ul>
+
+                  <p className={styles.description}>
+                    Откройте для себя новые возможности жизни за рубежом вместе с
+                    <strong> Travel & Study — Международным центром образования, туризма и права.</strong>
+                  </p>
+                  <p className={styles.description}>
+                    Мы делаем процесс оформления ВНЖ прозрачным и комфортным, чтобы вы могли
+                    сосредоточиться на <strong>своём будущем.</strong>
+                  </p>
                <h2 className={styles.selectCountryTitle}>Выберите страну для ВНЖ</h2>
                <div className={styles.countryList}>
                     <CountryVNJ countries={europeCountries}/>

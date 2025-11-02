@@ -67,6 +67,54 @@
     padding: 40px 0;
   }
 
+    .section_text_content_title {
+    width: 100%;
+    font-size: 33px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 10px 0;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: var(--violet);
+}
+
+.offerList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.offerList li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+.offerList li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--violet);
+  font-size: 12px;
+  top: 2px;
+}
+
+
+    .description {
+   padding: 10px 0;
+   width: 75%;
+   font-size: 18px;
+   color: var(--text-color);
+   
+  }
+
   .countryList {
     display: flex;
     flex-direction: column;
@@ -159,7 +207,12 @@
       justify-content: space-around;
   
     }
-
+    .section_text_content_title {
+      width: 100%;
+      font-size: 27px;
+      font-weight: 600;
+      padding: 10px;
+  }
      
     .breadcrumbs_wrapper {
       width: 100%;
@@ -212,6 +265,13 @@
       width: 100%;
       font-size: 19px;
     }
+
+        .description {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+    }
+
     
     .order_btn {
         border-radius: 25px;

@@ -11,7 +11,8 @@ import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
 import SloganSection from './components/slogan/Slogan'
 import SearchBar from './components/search/SearchBar';
-import ModalForm from './components/ContactForm/ContactFor';
+import WhyUsHero from './components/WhyUsHero/WhyUsHero';
+import CountryVisaSelect from './components/CountryVisaSelect/page';
 import CountryList from './components/CountryListAll/CountryListAll';
 import { europeCountries, AmericaCountries, asiaCountries } from "./data/CountryData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,6 +31,7 @@ const TypingEffect = () => {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
@@ -66,17 +68,22 @@ const TypingEffect = () => {
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
     const [isModalVisible, setIsModalVisible] = useState(false);
+      const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false); 
     
 
-  const handleOpenModal = () => {
-    setIsModalVisible(true);
-  };
+  const openOrCloseChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+        if (isChatOpen) {
+            window.jivo_api.close(); 
+            setIsChatOpen(false); 
+        } else {
+            window.jivo_api.open(); 
+            setIsChatOpen(true);
+        }
+    }
+};
 
-  const handleCloseModal = () => {
-    setIsModalVisible(false);
-  };
-  
-    // Фильтруем страны по запросу
     const filterCountries = (countries: any[]) =>
       countries.filter((country) =>
         country.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -108,7 +115,7 @@ export default function Home() {
             <div className={styles.banner_title}>
               <h1 className={styles.title_text}>Стань гражданином мира <span className={styles.accent}>с нами!</span></h1>
               <TypingEffect />
-              <button onClick={handleOpenModal}className={styles.main_btn}>Оставить заявку</button>
+              <button onClick={openOrCloseChat}className={styles.main_btn}>Оставить заявку</button>
               <div className={styles.additional_info}>
                 <div className={styles.info_item}>
                   <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
@@ -126,9 +133,13 @@ export default function Home() {
             </div>
         </section>
             <SloganSection/>
-            <section className={styles.section_three}>
+            <section className={`${styles.section_four} ${styles.mobileReverse}`}>
+                  <div data-aos="fade-right" className={styles.section_four_title}>
+                    <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
+                          <WhyUsHero />
+                  </div>
             </section>
-            <section className={styles.section_two}>
+                      <section className={styles.section_two}>
               <div data-aos="fade-right" className={styles.images_wrapper}>
               <Image
                     src="/images/global.jpg"
@@ -151,14 +162,19 @@ export default function Home() {
                     </Link>
                   </div>
             </section>
-            <section data-aos="fade-up" className={styles.section_search}>
+           <section data-aos="fade-up" className={styles.section_search}>
+                    <div className={styles.CountryVisaSelect}>
+                        <h2 className={styles.selectCountryTitle}>Выберите направление</h2>
+                        <CountryVisaSelect/>
+                  </div>
                   <SearchBar onSearch={(query) => setSearchQuery(query)} />
                   <CountryList countries={filterCountries(europeCountries)} />
                   <CountryList countries={filterCountries(asiaCountries)} />
                   <CountryList countries={filterCountries(AmericaCountries)} />
             </section>
-            
-            <AdvantagesTwo/>
+            <section className={styles.section_three}>
+            </section>
+            <CountryCards/>
             <section className={`${styles.section_Six} ${styles.mobileReverse}`}>
                   <div data-aos="fade-right" className={styles.section_Six_title}>
                     <h2 className={styles.section_Six_h2}>Умра и туры в Саудовскую Аравию</h2>
@@ -180,7 +196,7 @@ export default function Home() {
                     />
                     </div>
             </section>
-            <CountryCards/>
+                        <AdvantagesTwo/>
             <section className={styles.section_four}>
             <div data-aos="fade-right" className={styles.images_wrapper}>
                   <Image
@@ -195,34 +211,15 @@ export default function Home() {
                     <h2 className={styles.section_four_h2}>Оформление ВНЖ</h2>
                     <p className={styles.section_four_p}>Мы ежедневно упрощаем процесс получения вида на жительство, предлагая удобные и выгодные условия для наших клиентов. Наша команда с более чем десятилетним опытом помогает вам на всех этапах подготовки документов, гарантируя персональный подход и конкурентные цены. Станьте нашим партнёром и получите ВНЖ легко и быстро!
                     </p>
-                    <Link href="/services_page/vnj_page">
+                    <Link href="/vnj_page">
                       <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>
                     </Link>
                   </div>
             </section>
             <ServicesList/>
-            <section className={`${styles.section_four} ${styles.mobileReverse}`}>
-                  <div data-aos="fade-right" className={styles.section_four_title}>
-                    <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
-                    <p className={styles.section_four_p}>Многофункциональный визовый центр — одна из лидирующих компаний на Российском рынке по оказанию сервисно — туристических услуг. С нами работают тысячи клиентов, среди которых частные лица, туристические агентства и компании. Работая с большим потоком визовых документов, мы находимся в курсе всех обновлений, нюансов и правил, установленных консульствами всех стран. Подходим к каждому заявителю с индивидуальным подходом, избавляя от ненужной волокиты, экономя время и деньги наших клиентов. Мы стремимся быть признанным лидером, надежным партнером и просто другом, помогая Вам открывать новые страны и континенты.
-                    </p>
-                    <Link href="/services_page/romanian-citizenship">
-                      <button className={styles.section_Six_btn} >О КОМПАНИИ</button>
-                    </Link>
-                  </div>
-                  <Image
-                  data-aos="fade-left"
-                    src="/images/Four.png" 
-                    alt="Pass"
-                    width={520} 
-                    height={350}
-                    className={styles.section_image}
-                  />
-            </section>
             <Advantages/>
             <Contact/>
       </main>
-      {isModalVisible && <ModalForm closeModal={handleCloseModal} />}
     </>
   )
 }

@@ -63,7 +63,7 @@ export type CountryDataVNJ = {
         name_three: 'Испании',
         name_ogo: 'испанского ',
         flagUrl: '/images/Flags/spain.svg',
-        backgroundImgUrl: '/images/countries/Spain.webp',
+        backgroundImgUrl: '/images/countries/SpainU.jpg',
         pageUrl: '/vnj/spain',
         feature_one:"ВНЖ в Испании дает право на легальное проживание и работу в стране.",
         feature_two:"Обладатели ВНЖ могут путешествовать по некоторым европейским странам с упрощенным визовым режимом.",

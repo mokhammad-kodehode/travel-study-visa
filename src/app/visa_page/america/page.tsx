@@ -22,8 +22,10 @@ export default function America() {
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Оформление виз в Америку и Канаду</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в Америку и Канаду.</h2>
-                        <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+                        <h2 className={styles.title_text_desc}>Мы оказываем полное сопровождение при подаче на визы в США и Канаду.
+                        Помогаем выбрать оптимальный тип визы, подготовить форму DS-160, записаться на собеседование и собрать необходимые подтверждающие документы.
+                        Наши заявители получают детальные инструкции, индивидуальные рекомендации и поддержку на всех этапах.
+                        </h2>
                     </div>
                 </div>
             </div>

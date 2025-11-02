@@ -3,7 +3,11 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
-import { FaPlane, FaCalendarAlt, FaPassport, FaGlobe } from 'react-icons/fa';
+import { FaCalendarAlt,  FaGlobe, FaBriefcase,
+  FaHeartbeat,
+  FaMoneyBillWave,
+  FaFileAlt,
+  FaHome, } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
 const Vnj_UAE = () => {
@@ -13,11 +17,11 @@ const Vnj_UAE = () => {
   const openOrCloseChat = () => {
     if (typeof window !== 'undefined' && window.jivo_api) {
         if (isChatOpen) {
-            window.jivo_api.close(); // Закрываем чат, если он открыт
-            setIsChatOpen(false); // Обновляем состояние
+            window.jivo_api.close();
+            setIsChatOpen(false);
         } else {
-            window.jivo_api.open(); // Открываем чат, если он закрыт
-            setIsChatOpen(true); // Обновляем состояние
+            window.jivo_api.open();
+            setIsChatOpen(true);
         }
     }
 };
@@ -62,32 +66,32 @@ const Vnj_UAE = () => {
           <h2 className={styles.title_two}>Особенности и требования</h2>
           <div className={styles.special_wrapper}>
                     <VisaFeatureCard
-                        icon={FaPlane}
+                        icon={FaCalendarAlt}
                         title="Срок действия"
                         description="Виза выдается на один год с возможностью продления."
                     />
                     <VisaFeatureCard
-                        icon={FaCalendarAlt}
+                        icon={FaBriefcase}
                         title="Рабочий статус"
                         description="Вы можете работать на свою компанию или быть фрилансером, при этом ваше рабочее место находится за пределами ОАЭ."
                     />
                     <VisaFeatureCard
-                        icon={FaPassport}
+                        icon={FaHeartbeat}
                         title="Медицинское страхование"
                         description="Необходимо иметь действующую медицинскую страховку, покрывающую ваше пребывание в ОАЭ."
                     />
                     <VisaFeatureCard
-                        icon={FaGlobe}
+                        icon={FaMoneyBillWave}
                         title="Минимальный доход"
                         description="Требуется подтверждение минимального ежемесячного дохода в размере не менее 5,000 долларов США или эквивалентной суммы в другой валюте."
                     />
                     <VisaFeatureCard
-                        icon={FaGlobe}
+                        icon={FaFileAlt}
                         title="Документы"
                         description="Включают паспорт, доказательства трудовой занятости, справку о доходах, а также документы, подтверждающие постоянное место жительства за пределами ОАЭ."
                     />
                       <VisaFeatureCard
-                        icon={FaGlobe}
+                        icon={FaHome}
                         title="Проживание и льготы"
                         description="Виза дает право на проживание в ОАЭ и доступ к ряду льгот, таких как открытие банковского счета, аренда жилья, получение водительских прав и др."
                     />

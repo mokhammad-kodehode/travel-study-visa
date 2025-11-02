@@ -7,7 +7,8 @@ import Header from './components/Header/Header';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/newNav';
 import AOSInitializer from './components/AOSInitializer';
-
+import CallButton from './components/CallButton/CallButton';
+import CookieConsent from './components/CookieConsent/CookieConsent';
 
 export const metadata: Metadata = {
   title: 'Travel and Study',
@@ -48,6 +49,8 @@ export default function RootLayout({
         <Header/>
         <Navbar/>
         <AOSInitializer />
+        <CallButton /> 
+        <CookieConsent />
         {children}
         <Footer/>
         <script src="//code.jivosite.com/widget/V03s3szzXR" async></script>

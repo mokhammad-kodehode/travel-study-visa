@@ -1,6 +1,3 @@
-/* ------------------------------------------------------------------ */
-/*  Navbar.tsx – полная рабочая версия                                */
-/* ------------------------------------------------------------------ */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -43,17 +40,30 @@ const Navbar: React.FC = () => {
   }, []);
 
   /* --------- блокируем body-scroll при открытом бургер-меню ---------- */
-  useEffect(() => { document.body.style.overflow = isMobileOpen ? 'hidden' : ''; },
-            [isMobileOpen]);
+  useEffect(() => {
+    document.body.style.overflow = (isMobileOpen || isChatOpen) ? 'hidden' : '';
+  }, [isMobileOpen, isChatOpen]);
 
   /* ------------------------ helpers --------------------------- */
   const closeAll = () => {
     setActiveMain(null);
     setOpenRegion(null);
     setIsMobileOpen(false);
+    setIsChatOpen(false);
   };
 
-  const toggleMain   = (key: 'services' | 'visa' | 'vnj') =>
+  // --- логика, чтобы нельзя было открыть бургер и чат одновременно ---
+  const handleToggleChat = () => {
+    if (isMobileOpen) setIsMobileOpen(false); // закрываем бургер, если он открыт
+    setIsChatOpen(prev => !prev);
+  };
+
+  const handleToggleBurger = () => {
+    if (isChatOpen) setIsChatOpen(false); // закрываем чат, если он открыт
+    setIsMobileOpen(prev => !prev);
+  };
+
+  const toggleMain = (key: 'services' | 'visa' | 'vnj') =>
     setActiveMain(p => (p === key ? null : key));
 
   const toggleRegion = (reg: Region) =>
@@ -75,36 +85,47 @@ const Navbar: React.FC = () => {
   /* --------------------------- JSX ---------------------------- */
   return (
     <header>
-      <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
-           style={{ background: isScrolled
-               ? 'linear-gradient(90deg,#742f8b,#000)' : 'transparent' }}>
-
-        {/* chat icon (mobile) */}
-        <button className={styles.chatIcon}
-                onClick={() => setIsChatOpen(p => !p)}
-                aria-label='контакты'>
-          <FontAwesomeIcon icon={isChatOpen ? faTimes : faComments}/>
-        </button>
+      <nav
+        className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
+        style={{ background: isScrolled
+            ? 'linear-gradient(90deg,#742f8b,#000)' : 'transparent' }}
+      >
+        {/* chat icon (mobile) — показываем только если бургер не открыт */}
+        {!isMobileOpen && (
+          <button
+            className={styles.chatIcon}
+            onClick={handleToggleChat}
+            aria-label='контакты'
+          >
+            <FontAwesomeIcon icon={isChatOpen ? faTimes : faComments}/>
+          </button>
+        )}
 
         {/* logo */}
         <Link href='/' className={styles.logo} onClick={closeAll}>
           <Image src='/images/logo.svg' alt='Logo' width={89} height={89}/>
         </Link>
 
-        {/* burger */}
-        <button className={styles.mobile_menu_icon}
-                onClick={() => setIsMobileOpen(p => !p)}
-                aria-label='меню'
-                aria-expanded={isMobileOpen}>
-          <div className={`${styles.bar} ${isMobileOpen && styles.bar1}`}/>
-          <div className={`${styles.bar} ${isMobileOpen && styles.bar2}`}/>
-          <div className={`${styles.bar} ${isMobileOpen && styles.bar3}`}/>
-        </button>
+        {/* burger — показываем только если чат не открыт */}
+        {!isChatOpen && (
+          <button
+            className={styles.mobile_menu_icon}
+            onClick={handleToggleBurger}
+            aria-label='меню'
+            aria-expanded={isMobileOpen}
+          >
+            <div className={`${styles.bar} ${isMobileOpen && styles.bar1}`}/>
+            <div className={`${styles.bar} ${isMobileOpen && styles.bar2}`}/>
+            <div className={`${styles.bar} ${isMobileOpen && styles.bar3}`}/>
+          </button>
+        )}
 
         {/* chat panel */}
         {isChatOpen && (
           <div className={styles.chatPanel}>
-            <a href='tel:+79857791555'><FontAwesomeIcon icon={faPhone}/> +7 985 779-15-55</a>
+            <a href='tel:+79857791555'>
+              <FontAwesomeIcon icon={faPhone}/> +7 985 779-15-55
+            </a>
             <a href='https://wa.me/40756504079' target='_blank' rel='noreferrer'>
               <FontAwesomeIcon icon={faWhatsapp}/> WhatsApp
             </a>
@@ -117,16 +138,22 @@ const Navbar: React.FC = () => {
         {/* ----------- MAIN MENU ----------- */}
         <ul className={`${styles.items} ${isMobileOpen && styles.showMobileMenu}`}>
 
-          <li className={styles.nav_item}><Link href='/'           onClick={closeAll}>Главная</Link></li>
-          <li className={styles.nav_item}><Link href='/About_page'onClick={closeAll}>О компании</Link></li>
+          <li className={styles.nav_item}>
+            <Link href='/' onClick={closeAll}>Главная</Link>
+          </li>
+          <li className={styles.nav_item}>
+            <Link href='/About_page' onClick={closeAll}>О компании</Link>
+          </li>
 
           {/* --- Наши услуги --- */}
           <li className={styles.nav_item}>
             <div className={styles.nav_item_wrapper}>
               <Link href='/services_page' onClick={closeAll}>Наши услуги</Link>
-              <button className={styles.dropdownToggle}
-                      onClick={() => toggleMain('services')}
-                      aria-expanded={activeMain === 'services'}>
+              <button
+                className={styles.dropdownToggle}
+                onClick={() => toggleMain('services')}
+                aria-expanded={activeMain === 'services'}
+              >
                 <span className={`${styles.submenu_arrow} ${activeMain === 'services' && styles.rotate_up}`}>▼</span>
               </button>
             </div>
@@ -136,7 +163,7 @@ const Navbar: React.FC = () => {
                 <li><Link href='/vnj_page'                      onClick={closeAll}>Оформление ВНЖ</Link></li>
                 <li><Link href='/services_page/study_page'      onClick={closeAll}>Образовательные программы</Link></li>
                 <li><Link href='/services_page/umra'            onClick={closeAll}>Умра и туры в Саудовскую Аравию</Link></li>
-                <li><Link href='/services_page/zagran_passport' onClick={closeAll}>Загранпаспорта</Link></li>
+                <li><Link href='/services_page/zagran_passport' onClick={closeAll}>Юридическая поддержка</Link></li>
                 <li><Link href='/services_page/booking_tickets' onClick={closeAll}>Билеты и отели</Link></li>
               </ul>
             )}
@@ -146,9 +173,11 @@ const Navbar: React.FC = () => {
           <li className={styles.nav_item}>
             <div className={styles.nav_item_wrapper}>
               <Link href='/visa_page' onClick={closeAll}>Визы</Link>
-              <button className={styles.dropdownToggle}
-                      onClick={() => toggleMain('visa')}
-                      aria-expanded={activeMain === 'visa'}>
+              <button
+                className={styles.dropdownToggle}
+                onClick={() => toggleMain('visa')}
+                aria-expanded={activeMain === 'visa'}
+              >
                 <span className={`${styles.submenu_arrow} ${activeMain === 'visa' && styles.rotate_up}`}>▼</span>
               </button>
             </div>
@@ -226,3 +255,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

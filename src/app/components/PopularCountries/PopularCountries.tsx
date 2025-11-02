@@ -1,8 +1,7 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from './styles.module.css';
-import ModalForm from '../ContactForm/ContactFor'; 
 import Link from 'next/link';
 
 type CountryCard = {
@@ -27,15 +26,15 @@ const countrycards: CountryCard[] = [
         processingTime: "5 дней",
         imageUrl: "/images/countries/France.jpg"
       },
-      {
+        {
         id: 2,
         continent: "Европа",
         continentUrl: "/visa_page/europe",
-        country: "Германия",
-        pageUrl: '/visa/germany',
+        country: "Венгрия",
+        pageUrl: '/visa/hungary',
         price: 27000,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/Germany.jpg"
+        imageUrl: "/images/countries/hungary.jpg"
       },
       {
         id: 3,
@@ -45,7 +44,7 @@ const countrycards: CountryCard[] = [
         pageUrl: '/visa/spain',
         price: 27000,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/Spain.webp"
+        imageUrl: "/images/countries/Spain_two.jpg"
       },
       {
         id: 4,
@@ -76,6 +75,36 @@ const countrycards: CountryCard[] = [
         price: 27000,
         processingTime: "5 дней",
         imageUrl: "/images/countries/London.jpg"
+      },
+        {
+        id: 7,
+        continent: "Европа",
+        continentUrl: "/visa_page/europe",
+        country: "Германия",
+        pageUrl: '/visa/germany',
+        price: 27000,
+        processingTime: "5 дней",
+        imageUrl: "/images/countries/Germany.jpg"
+      },
+        {
+        id: 8,
+        continent: "Европа",
+        continentUrl: "/visa_page/europe",
+        country: "Швейцария",
+        pageUrl: '/visa/switzerland',
+        price: 27000,
+        processingTime: "5 дней",
+        imageUrl: "/images/countries/Switzerland.jpg"
+      },
+              {
+        id: 9,
+        continent: "Европа",
+        continentUrl: "/visa_page/europe",
+        country: "Греция",
+        pageUrl: '/visa/greece',
+        price: 27000,
+        processingTime: "5 дней",
+        imageUrl: "/images/countries/Greece.jpg"
       },
 ];
 

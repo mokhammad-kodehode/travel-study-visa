@@ -21,8 +21,10 @@ export default function Asia() {
             <div className={styles.banner_container} >
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Оформление виз в Азию</h1>
-                        <h2 className={styles.title_text_desc}>Оформим нужный тип визы в страны Азии. Оставьте заявку, и наш специалист ответит на все вопросы</h2>
+                        <h1 className={styles.title_text}>Оформление виз в страны Азии и Ближнего Востока </h1>
+                        <h2 className={styles.title_text_desc}>Специалисты Travel&Study оформляют визы в Японию, Южную Корею, Китай, Сингапур, ОАЭ, Таиланд, Индонезию и другие. </h2>
+                            <h2 className={styles.title_text_desc}>Мы подбираем наиболее удобный формат подачи — электронный, консульский или через визовый центр — и берём на себя все организационные вопросы.
+                            С нами процесс получения виз в страны Азии и Ближнего Востока становится быстрым, понятным и комфортным. </h2>
                     </div>
                     <p>
                      </p>

@@ -168,7 +168,7 @@ const Navbar: React.FC = () => {
                   <Link onClick={closeMobileNav} href="/services_page/umra">Умра и туры в Саудовскую Аравию</Link>
                 </li>
                 <li className={styles.dropdown_item}>
-                  <Link onClick={closeMobileNav} href="/services_page/zagran_passport">Оформление загранпаспортов</Link>
+                  <Link onClick={closeMobileNav} href="/services_page/zagran_passport">Юридическое сопровождение</Link>
                 </li>
                 <li className={styles.dropdown_item}>
                   <Link onClick={closeMobileNav} href="/services_page/booking_tickets">Бронирование авиа и отелей</Link>

@@ -1,67 +1,88 @@
-.countrySelect {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding:  20px 0;
-    gap: 2rem;
-    width: 100%;
-    background-color: var(--violet);
-    border-radius: 15px;
+
+/* Контейнер — резиновая сетка */
+.countrySelect{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 14px;
+  width: 100%;
+  background-color: var(--violet);
+  border-radius: 16px;
 }
 
-.countryCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    width: 100%;
-    transition: transform 0.2s ease-in-out; /* Анимация при наведении */
-    overflow: hidden;
-    gap: 5px;
+/* планшет — 2 ряда по 2 элемента */
+@media (max-width: 820px){
+  .countrySelect{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
 }
 
-.countryCard:hover {
-    transform: translateY(-5px);
+/* очень маленький экран — 1 ряд, горизонтальная прокрутка */
+@media (max-width: 420px){
+  .countrySelect{
+    grid-template-columns: repeat(4, 80%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 6px;
+    gap: 10px;
+  }
+  .countryCard{
+    scroll-snap-align: start;
+  }
 }
 
-.countryCard span {
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 20px;
+/* карточка */
+.countryCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 6px;
+  transition: transform .18s ease, background .18s ease;
+}
+.countryCard:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.12);
 }
 
-@media (max-width:820px) {
-    .countrySelect {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        gap: 15px;
-    }
+/* флаг внутри белой плашки одинаковых размеров */
+.flagWrap{
+  position: relative;
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 16 / 10;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
+.flagImg{
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
+}
 
-    .countryCard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        width: 100%;
-        border-radius: 10px; /* Скругление углов */
-        transition: transform 0.2s ease-in-out; /* Анимация при наведении */
-        overflow: hidden;
-        gap: 0px;
-        padding: 0;
-    }
-    
-    .countryCard:hover {
-        transform: translateY(-5px);
-    }
-    
-    .countryCard span {
-        font-weight: bold;
-        color: #fff;
-        font-size: 14px;
-    }
-    
+/* подпись */
+.title{
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+@media (max-width: 820px){
+  .title{
+    font-size: 12px;
+  }
 }

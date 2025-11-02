@@ -16,13 +16,26 @@
   --light-blue: #007bff;
   --btn-text : 'PT Sans Narrow', sans-serif;
   --violet: #742f8b ;
+  --violet-2:#7C3AED;
+  --white:#fff;
+  --ink:#1f2937;
   --light-violet: #9c4db8 ;
   --purple:#bc3781;
   --light-red: #ec586e;
   --new-orange:#ff8a5b;
   --light-orange:#ffc155;
   --new-gold:#f9f871;
-
+    --accent-1:#7C3AED;   /* purple 600 */
+  --accent-2:#A78BFA;   /* purple 300 */
+  --ink:#1F2937;        /* gray-800 */
+  --sub:#4B5563;        /* gray-600 */
+  --muted:#6B7280;      /* gray-500 */
+  --bg: #ffffff;
+  --purple:#7C3AED;
+  --purple2:#A78BFA;
+  --ink:#111827;
+  --sub:#4B5563;
+  --glass: rgba(255,255,255,.08);
 }
 
 

@@ -63,7 +63,7 @@ export default function CountryPageAsia({ country }: { country: CountryData })  
                   <div className={styles.breadcrumbs}>
                     <a href="/">Главная</a> &gt;
                     <a href="/visa_page">Оформление визы</a> &gt;
-                    <a href="/visa_page/europe">Европа</a> &gt;
+                    <a href="/visa_page/asia">Азия</a> &gt;
                     <span>{country.name}</span>
                   </div>
         </div>

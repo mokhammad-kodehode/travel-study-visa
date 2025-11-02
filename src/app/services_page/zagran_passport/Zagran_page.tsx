@@ -1,92 +1,220 @@
-"use client"
+"use client";
 
-import styles from './styles.module.css'
-import 'fontsource-inter';
-import { useState } from 'react';
-import ModalForm from '@/app/components/ContactForm/ContactFor';
-import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
-import Contact from '@/app/components/contact/Contact';
-import ServicesList from '@/app/components/OurServices/OurServices';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
-import { FaPassport, FaFileAlt, FaCalendarCheck, FaEnvelopeOpenText } from 'react-icons/fa'
-import Image from 'next/image';
-
+import styles from "./styles.module.css";
+import la from "./legalAreas.module.css";             // ⬅️ стили для аккордеона
+import "fontsource-inter";
+import { useState } from "react";
+import {
+  FaPassport,
+  FaFileAlt,
+  FaCalendarCheck,
+  FaEnvelopeOpenText,
+  FaGlobe,
+  FaFileSignature,
+  FaGraduationCap,
+  FaBuilding,
+  FaBalanceScale,
+  FaChevronDown,
+} from "react-icons/fa";
+import Contact from "@/app/components/contact/Contact";
+import ServicesList from "@/app/components/OurServices/OurServices";
+import AdvantagesTwo from "@/app/components/Advantage/AdvantageCard/AdvantageCard";
 
 const ZagranPage = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false); 
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [openId, setOpenId] = useState<string | null>("immigration"); // открыт первый блок
 
   const openOrCloseChat = () => {
-    if (typeof window !== 'undefined' && window.jivo_api) {
-        if (isChatOpen) {
-            window.jivo_api.close(); // Закрываем чат, если он открыт
-            setIsChatOpen(false); // Обновляем состояние
-        } else {
-            window.jivo_api.open(); // Открываем чат, если он закрыт
-            setIsChatOpen(true); // Обновляем состояние
-        }
+    if (typeof window !== "undefined" && (window as any).jivo_api) {
+      if (isChatOpen) {
+        (window as any).jivo_api.close();
+        setIsChatOpen(false);
+      } else {
+        (window as any).jivo_api.open();
+        setIsChatOpen(true);
+      }
     }
-};
+  };
+
+  const areas = [
+    {
+      id: "immigration",
+      title: "Иммиграционное право",
+      icon: <FaGlobe />,
+      bullets: [
+        "Оформление ВНЖ и второго гражданства",
+        "Разрешения на работу",
+        "Сопровождение иммиграционных и натурализационных процедур",
+      ],
+    },
+    {
+      id: "visas",
+      title: "Визовое сопровождение",
+      icon: <FaPassport />,
+      bullets: [
+        "Подготовка документов для виз всех категорий",
+        "Апелляции и работа со сложными случаями",
+        "Консультации по требованиям разных стран",
+      ],
+    },
+    {
+      id: "legalization",
+      title: "Документы и легализация",
+      icon: <FaFileSignature />,
+      bullets: [
+        "Загранпаспорт и персональные документы в кратчайшие сроки",
+        "Переводы с нотариальным заверением и присяжные переводы",
+        "Апостиль и консульская легализация, доверенности и соглашения",
+      ],
+    },
+    {
+      id: "education",
+      title: "Образовательное право и обучение",
+      icon: <FaGraduationCap />,
+      bullets: [
+        "Договоры с зарубежными учебными заведениями",
+        "Студенческие визы и пакет документов",
+        "Нострификация дипломов",
+      ],
+    },
+    {
+      id: "business",
+      title: "Бизнес и инвестиции",
+      icon: <FaBuilding />,
+      bullets: [
+        "Открытие компаний в РФ и за рубежом",
+        "Инвестиционные соглашения",
+        "Проверка недвижимости и сделок",
+      ],
+    },
+    {
+      id: "domestic",
+      title: "Правовая поддержка внутри страны",
+      icon: <FaBalanceScale />,
+      bullets: [
+        "Регистрация и ликвидация организаций",
+        "Договоры, жалобы и обращения",
+        "Представление интересов в госорганах",
+      ],
+    },
+  ];
 
   return (
     <main className={styles.main}>
-        <section className={styles.banner}>
-            <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
-                <div className={styles.banner_title}>
-                    <div className={styles.banner_title_text}>
-                        <h1 className={styles.title_text}>Оформление загранпаспорта</h1>
-                        <h2 className={styles.title_text_desc}>С нами оформление заграничного паспорта становится простым и быстрым! Обратитесь к нам и сделайте первый шаг к своим путешествиям!</h2>
-                        <button onClick={openOrCloseChat} className={styles.order_btn} >ОФОРМИТЬ</button>
-                    </div>
-                </div>
+      {/* ===== Баннер ===== */}
+      <section className={styles.banner}>
+        <div className={`${styles.banner_container} ${styles.mobileReverse}`}>
+          <div className={styles.banner_title}>
+            <div className={styles.banner_title_text}>
+              <h1 className={styles.title_text}>Юридическая поддержка</h1>
+              <h2 className={styles.title_text_desc}>
+                Мы предоставляем полный спектр юридических услуг для частных лиц и компаний — как
+                внутри страны, так и при решении международных вопросов, связанных с переездом,
+                обучением, инвестированием и ведением бизнеса за рубежом.
+              </h2>
+              <button onClick={openOrCloseChat} className={styles.order_btn}>
+                ЗАКАЗАТЬ
+              </button>
             </div>
-         </section >
-        <div className={styles.breadcrumbs_wrapper}>
-            <div className={styles.breadcrumbs}>
-              <a href="/">Главная</a> &gt;
-              <a  href="/services_page">Наши услуги</a> &gt;
-              <span>Оформление загранпаспорта</span>
-            </div>
+          </div>
         </div>
-        <section className={styles.section_text_content}>
-            <div className={styles.section_text_content_title}>Оформление загранпаспорта</div>
-                 <Image
-                  src="/images/Frame.png" 
-                  alt="Pass"
-                  width={200} 
-                  height={200}
-                  className={styles.section_image}
-                />
-                <p className={styles.description}>Мы предлагаем услугу ускоренного оформления заграничного паспорта, которая избавит вас от всех забот. Наша команда профессионалов поможет на каждом этапе, чтобы вы могли сосредоточиться на своих планах.
-                </p>
-                  <h3 className={styles.title_two}>Почему стоит выбрать нас?</h3>
-                  <div className={styles.special_wrapper}>
-                    <VisaFeatureCard
-                      icon={FaPassport}
-                      title="Выбор типа паспорта"
-                      description="Мы поможем вам выбрать между биометрическим паспортом на 10 лет и старым образцом на 5 лет, а также срок оформления, исходя из Ваших ближайших плановых путешествий. "
-                    />
-                    <VisaFeatureCard
-                      icon={FaFileAlt}
-                      title="Заполнение анкеты"
-                      description="Вы можете заполнить анкету самостоятельно или с нашей помощью. Мы гарантируем быстрое, и качественное оформление, чтобы у вас был полный комплект документов"
-                    />
-                    <VisaFeatureCard
-                      icon={FaCalendarCheck}
-                      title="Запись на подачу"
-                      description="Мы организуем запись на подачу документов в удобное для вас время, избегая очередей и ненужного ожидания."
-                    />
-                    <VisaFeatureCard
-                      icon={FaEnvelopeOpenText}
-                      title="Получение паспорта"
-                      description="Мы будем информировать вас о готовности паспорта и поможем забрать его в назначенный срок"
-                    />
-              </div>
-        </section >
-        <AdvantagesTwo/>
-        <Contact/>
-        <ServicesList/>
+      </section>
+
+      {/* ===== Хлебные крошки ===== */}
+      <div className={styles.breadcrumbs_wrapper}>
+        <div className={styles.breadcrumbs}>
+          <a href="/">Главная</a> &gt; <a href="/services_page">Наши услуги</a> &gt;{" "}
+          <span>Юридическая поддержка</span>
+        </div>
+      </div>
+
+      {/* ===== Описание + аккордеон ===== */}
+      <section className={styles.section_text_content}>
+        <div className={styles.section_text_content_title}>Юридическая поддержка</div>
+
+        <p className={styles.description}>
+          Мы предоставляем полный спектр юридических услуг для частных лиц и компаний — как{" "}
+          <strong>внутри страны</strong>, так и при решении <strong>международных вопросов</strong>,
+          связанных с переездом, обучением, инвестированием и ведением бизнеса за рубежом. Наша
+          команда юристов и консультантов помогает клиентам грамотно оформить документы, защитить
+          свои интересы и реализовать личные и профессиональные цели в соответствии с
+          законодательством России и других стран.
+        </p>
+
+
+        {/* ==== Продающий блок: Направления и услуги ==== */}
+        <section className={la.wrap} aria-labelledby="legal-areas-title">
+          <header className={la.head}>
+            <h3 id="legal-areas-title" className={la.title}>
+              Основные направления юридической поддержки
+            </h3>
+            <p className={la.sub}>Нажмите на раздел, чтобы раскрыть список услуг</p>
+          </header>
+
+          <div className={la.grid}>
+            {areas.map((area) => {
+              const isOpen = openId === area.id;
+              const bodyId = `body-${area.id}`;
+              const titleId = `title-${area.id}`;
+
+              return (
+                <article
+                  key={area.id}
+                  className={`${la.card} ${isOpen ? la.open : ""}`}
+                  aria-labelledby={titleId}
+                >
+                  <button
+                    className={la.cardHead}
+                    onClick={() => setOpenId(isOpen ? null : area.id)}
+                    aria-controls={bodyId}
+                    aria-expanded={isOpen}
+                    id={titleId}
+                  >
+                    <span className={la.icon}>{area.icon}</span>
+                    <span className={la.cardTitle}>{area.title}</span>
+                    <FaChevronDown className={`${la.chev} ${isOpen ? la.chevOpen : ""}`} />
+                  </button>
+
+                  <div
+                    id={bodyId}
+                    className={la.body}
+                    hidden={!isOpen}
+                    style={{ maxHeight: isOpen ? "420px" : "0px" }}
+                  >
+                    <ul className={la.list}>
+                      {area.bullets.map((b, i) => (
+                        <li key={i}>{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className={la.callout}>
+            <div>
+              <h4 className={la.calloutTitle}>🧩 Комплексный подход</h4>
+              <p className={la.calloutText}>
+                От первичной консультации и подготовки документов до представления ваших интересов в
+                госорганах и международных структурах. Наша цель — юридическая точность и ваше
+                спокойствие.
+              </p>
+            </div>
+            <a href="tel:+79857791555" className={la.cta}>
+              Получить консультацию
+            </a>
+          </div>
+        </section>
+        {/* ==== /Направления и услуги ==== */}
+      </section>
+
+      {/* ===== Остальные блоки ===== */}
+      <AdvantagesTwo />
+      <Contact />
+      <ServicesList />
     </main>
-  )
-}
+  );
+};
 
 export default ZagranPage;
