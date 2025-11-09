@@ -158,6 +158,7 @@
 
   .selectCountryTitle{
     font-size: 38px;
+    padding: 20px 0;
     margin-left: 10px;
   }
 
@@ -313,5 +314,17 @@
     .selectCountryTitle{
       font-size: 28px;
     }
+
+    .subTitle {
+
+  padding-left: 10px;
+}
+
+.offerList {
+  list-style: none;
+  padding:0 10px;
+  margin-bottom: 20px;
+}
+
   
   }

@@ -1,5 +1,5 @@
 
-/* Контейнер — резиновая сетка */
+/* Контейнер — сетка 4 карточки в строку на больших экранах */
 .countrySelect{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -10,27 +10,25 @@
   border-radius: 16px;
 }
 
-/* планшет — 2 ряда по 2 элемента */
+/* планшеты — 2 столбца */
 @media (max-width: 820px){
   .countrySelect{
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
     padding: 12px;
   }
 }
 
-/* очень маленький экран — 1 ряд, горизонтальная прокрутка */
+/* мобильные — тоже 2 столбца (2 ряда, красиво и ровно) */
 @media (max-width: 420px){
   .countrySelect{
-    grid-template-columns: repeat(4, 80%);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 10px 6px;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 12px;
+    overflow: hidden;
   }
   .countryCard{
-    scroll-snap-align: start;
+    min-height: 120px;
   }
 }
 
@@ -51,7 +49,7 @@
   background: rgba(255,255,255,0.12);
 }
 
-/* флаг внутри белой плашки одинаковых размеров */
+/* флаг */
 .flagWrap{
   position: relative;
   width: 100%;
@@ -63,9 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
 .flagImg{
   object-fit: contain;
   object-position: center;
@@ -79,10 +75,4 @@
   font-size: 13px;
   margin-top: 4px;
   text-align: center;
-}
-
-@media (max-width: 820px){
-  .title{
-    font-size: 12px;
-  }
 }
