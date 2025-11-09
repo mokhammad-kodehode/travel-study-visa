@@ -34,7 +34,7 @@ const countrycards: CountryCard[] = [
         pageUrl: '/visa/hungary',
         price: 27000,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/hungary.jpg"
+        imageUrl: "/images/countries/Hungary.jpg"
       },
       {
         id: 3,
@@ -44,7 +44,7 @@ const countrycards: CountryCard[] = [
         pageUrl: '/visa/spain',
         price: 27000,
         processingTime: "5 дней",
-        imageUrl: "/images/countries/Spain_two.jpg"
+        imageUrl: "/images/countries/spain_two.jpg"
       },
       {
         id: 4,
