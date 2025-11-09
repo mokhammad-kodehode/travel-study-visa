@@ -100,7 +100,7 @@ font-weight: 600;
     width: 100%;
     font-size: 33px;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--violet);
     padding: 10px 0;
 }
 
@@ -114,6 +114,11 @@ font-weight: 600;
    width: 75%;
    font-size: 18px;
    color: var(--text-color);
+   
+  }
+
+    .description strong {
+   color: var(--violet);
    
   }
 

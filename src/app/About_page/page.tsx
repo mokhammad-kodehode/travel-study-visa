@@ -30,7 +30,7 @@ export default function About_Us() {
             </div>
           </div>
           <section className={styles.section_text_content}>
-            <div className={styles.section_text_content_title}>Международный центр туризма, образования и права — ваш надёжный партнёр в мире путешествий, обучения и юридической поддержки.</div>
+            <div className={styles.section_text_content_title}>О Компании</div>
               <p className={styles.description}>
                 Уже много лет мы помогаем людям открывать новые страны, получать качественное образование
                 и решать юридические вопросы любой сложности — как в России, так и за её пределами.

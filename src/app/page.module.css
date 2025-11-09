@@ -261,7 +261,7 @@ position: relative;
   font-size: var(--title-text);
   color: var(--text-color);
   line-height: 1;
-      text-align: center;
+
 }
 
 .section_two_h2,  .section_Six_h2 {
@@ -435,7 +435,7 @@ position: relative;
    .section_four, .section_Six {
     width: 100%;
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 30px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -456,9 +456,7 @@ position: relative;
     gap: .5rem;
   }
 
-    .section_four_title{
-    align-items: center;
-  }
+
 
    .section_four_h2 {
     font-size: 28px;

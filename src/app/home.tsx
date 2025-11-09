@@ -197,7 +197,7 @@ export default function Home() {
                     </div>
             </section>
                         <AdvantagesTwo/>
-            <section className={styles.section_four}>
+            <section className={styles.section_Six}>
             <div data-aos="fade-right" className={styles.images_wrapper}>
                   <Image
                     src="/images/global_two.jpg" 
@@ -207,9 +207,9 @@ export default function Home() {
                     className={styles.section_image}
                   />
                   </div>
-                  <div data-aos="fade-left" className={styles.section_four_title}>
-                    <h2 className={styles.section_four_h2}>Оформление ВНЖ</h2>
-                    <p className={styles.section_four_p}>Мы ежедневно упрощаем процесс получения вида на жительство, предлагая удобные и выгодные условия для наших клиентов. Наша команда с более чем десятилетним опытом помогает вам на всех этапах подготовки документов, гарантируя персональный подход и конкурентные цены. Станьте нашим партнёром и получите ВНЖ легко и быстро!
+                  <div data-aos="fade-left" className={styles.section_Six_title}>
+                    <h2 className={styles.section_Six_h2}>Оформление ВНЖ</h2>
+                    <p className={styles.section_Six_p}>Мы ежедневно упрощаем процесс получения вида на жительство, предлагая удобные и выгодные условия для наших клиентов. Наша команда с более чем десятилетним опытом помогает вам на всех этапах подготовки документов, гарантируя персональный подход и конкурентные цены. Станьте нашим партнёром и получите ВНЖ легко и быстро!
                     </p>
                     <Link href="/vnj_page">
                       <button className={styles.section_Six_btn} >УЗНАТЬ БОЛЬШЕ</button>

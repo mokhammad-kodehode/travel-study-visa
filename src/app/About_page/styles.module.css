@@ -100,7 +100,7 @@
     width: 80%;
     font-size: 33px;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--violet);
     padding: 10px 0;
 }
 
@@ -116,6 +116,12 @@
    color: var(--text-color);
    
   }
+
+    .description strong {
+   color: var(--violet);
+   
+  }
+
 
   .section_text_content h2 {
     margin-top: 10px;
@@ -180,7 +186,7 @@
 
     .breadcrumbs_wrapper {
       width: 100%;
-      background-color: #f8f6f8;
+      background-color: #ffffff;
     }
   
     .breadcrumbs {

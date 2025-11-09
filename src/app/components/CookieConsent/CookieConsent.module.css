@@ -91,6 +91,13 @@
 
 /* Адаптив */
 @media (max-width: 820px){
+
+  .wrapper{
+  position: fixed;
+  bottom: 10%;
+
+}
+
   .card{
     grid-template-columns: 1fr;
     gap: 14px;
