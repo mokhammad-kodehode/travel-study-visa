@@ -117,11 +117,13 @@
    
   }
 
-    .description strong {
-   color: var(--violet);
-   
-  }
 
+
+/* жирный ФИОЛЕТОВЫЙ */
+.violet {
+  font-weight: 600;
+  color: var(--violet);
+}
 
   .section_text_content h2 {
     margin-top: 10px;

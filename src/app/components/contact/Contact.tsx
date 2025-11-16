@@ -9,7 +9,7 @@ const Contact = () => {
             <div className={styles.contacts_wrapper}>
                 <div className={styles.contacts_container}>
                     <div className={styles.contact_info}>
-                        <h1>Travel and Study</h1>
+                        <h1>Travel & Study</h1>
                         <div className={styles.contact_item}>
                             <FontAwesomeIcon icon={faPhone} className={styles.icon} />
                             <p>+7(985)779-15-55</p>

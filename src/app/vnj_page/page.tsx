@@ -63,7 +63,7 @@ export default function VNJ_Page() {
 
                   <p className={styles.description}>
                     Откройте для себя новые возможности жизни за рубежом вместе с
-                    <strong> Travel & Study — Международным центром образования, туризма и права.</strong>
+                    <strong> <span className={styles.violet}>Travel & Study</span> — Международным центром образования, туризма и права.</strong>
                   </p>
                   <p className={styles.description}>
                     Мы делаем процесс оформления ВНЖ прозрачным и комфортным, чтобы вы могли

@@ -37,18 +37,18 @@ export default function Services() {
             <div className={styles.section_text_content_title}>Услуги нашей компании</div>
 
             <p className={styles.description}>
-              Международный центр туризма, образования и права <strong>«Travel & Study»</strong> включает в себя
-              <strong> ключевые направления для комфортной жизни, учёбы, работы и путешествий</strong>.
-              Мы объединяем <strong>туризм</strong>, <strong>образование</strong> и <strong>юридическую поддержку</strong>, чтобы клиент мог решать
+              Международный центр туризма, образования и права <span className={styles.violet}>«Travel & Study»</span> включает в себя
+              <strong> ключевые направления для комфортной жизни, <span className={styles.violet}>учёбы, работы и путешествий </span></strong>.
+              <strong> Мы объединяем <span className={styles.violet}>туризм, образование и юридическую поддержку </span></strong>, чтобы клиент мог решать
               все вопросы — от <strong>поступления в вуз</strong> и <strong>планирования поездки</strong> до
-              <strong> оформления виз, гражданства и открытия бизнеса</strong> — в одном месте, с надежной профессиональной помощью.
+              <strong> <span className={styles.violet}>оформления виз, гражданства </span> и открытия бизнеса</strong> — в одном месте, с надежной профессиональной помощью.
             </p>
 
             <p className={styles.description}>
               Мы сопровождаем клиентов как в России, так и за рубежом: подбираем <strong>учебные программы</strong>, оформляем
               <strong> визы и загранпаспорта</strong>, легализуем документы, защищаем интересы и сопровождаем
               <strong> международные сделки</strong>.
-              Наши специалисты сочетают <strong>юридическую точность</strong>, <strong>знание международных норм</strong> и
+              Наши специалисты сочетают <strong>юридическую точность</strong>, <strong>знание <span className={styles.violet}>международных</span> норм</strong> и
               <strong> персональный подход</strong> — чтобы каждая задача решалась быстро, грамотно и без лишних сложностей.
             </p>
           </section>

@@ -35,7 +35,6 @@ const ModalForm: React.FC<ModalFormProps> = ({ closeModal }) => {
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
-    // Ваша логика обработки изменений в input или textarea
   };
 
   return (

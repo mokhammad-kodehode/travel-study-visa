@@ -44,6 +44,12 @@
     font-size: 22px;
     margin-left: 150px;
   }
+
+  .violet {
+  font-weight: 600;
+  color: var(--violet);
+}
+
   
   .title_text {
   font-size: 58px;
@@ -110,7 +116,7 @@
     width: 100%;
     font-size: 33px;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--violet);
     padding: 10px 0;
 }
 

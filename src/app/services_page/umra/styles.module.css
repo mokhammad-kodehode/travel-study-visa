@@ -13,6 +13,7 @@
       align-items: center;
       justify-content: center;
       color: white;
+      padding-top: 70px;
   }
   
 
@@ -114,7 +115,7 @@
       width: 100%;
       font-size: 33px;
       font-weight: 600;
-      color: var(--text-color);
+      color: var(--violet);
       padding: 10px 0;
   }
   

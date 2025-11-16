@@ -54,6 +54,10 @@
     padding: 30px 0;
   }
 
+  .violet {
+  font-weight: 600;
+  color: var(--violet);
+}
 
   .section_text_content_title {
     width: 100%;

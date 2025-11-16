@@ -117,10 +117,10 @@ font-weight: 600;
    
   }
 
-    .description strong {
-   color: var(--violet);
-   
-  }
+.violet {
+  font-weight: 600;
+  color: var(--violet);
+}
 
   .section_text_content h2 {
     margin-top: 10px;
