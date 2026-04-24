@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './styles.module.css'; 
+import styles from './styles.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PHONE_DISPLAY } from '@/config/contacts';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Footer: React.FC = () => {
                     />
             </Link>
                 <p>Визовый центр</p>
-                <p>+7(985)779-15-55</p>
+                <p>{PHONE_DISPLAY}</p>
             </div>
             <div className={styles.footer_section}>
                 <h4>УСЛУГИ</h4>

@@ -20,6 +20,13 @@ import {
   AmericaCountries,
   asiaCountries,
 } from '@/app/data/CountryData';
+import {
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  TELEGRAM_URL,
+  WHATSAPP_URL,
+  OFFICE_ADDRESS,
+} from '@/config/contacts';
 
 type Region = 'europe' | 'america' | 'asia';
 
@@ -123,13 +130,13 @@ const Navbar: React.FC = () => {
         {/* chat panel */}
         {isChatOpen && (
           <div className={styles.chatPanel}>
-            <a href='tel:+79857791555'>
-              <FontAwesomeIcon icon={faPhone}/> +7 985 779-15-55
+            <a href={`tel:${PHONE_TEL}`}>
+              <FontAwesomeIcon icon={faPhone}/> {PHONE_DISPLAY}
             </a>
-            <a href='https://wa.me/40756504079' target='_blank' rel='noreferrer'>
+            <a href={WHATSAPP_URL} target='_blank' rel='noreferrer'>
               <FontAwesomeIcon icon={faWhatsapp}/> WhatsApp
             </a>
-            <a href='https://t.me/travelandstudyru' target='_blank' rel='noreferrer'>
+            <a href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
               <FontAwesomeIcon icon={faTelegram}/> Telegram
             </a>
           </div>
@@ -247,7 +254,7 @@ const Navbar: React.FC = () => {
 
         {/* адрес (desktop only) */}
         <Link href='https://www.google.com/maps' className={styles.adress}>
-          <FontAwesomeIcon icon={faMapMarkerAlt}/> г. Москва, Пресненская наб., 12
+          <FontAwesomeIcon icon={faMapMarkerAlt}/> {OFFICE_ADDRESS}
         </Link>
       </nav>
     </header>

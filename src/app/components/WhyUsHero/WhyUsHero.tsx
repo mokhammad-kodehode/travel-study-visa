@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import styles from "./WhyUsHero.module.css";
+import { PHONE_TEL } from "@/config/contacts";
 import {
   FaShieldAlt,
   FaPassport,
@@ -91,7 +92,7 @@ export default function WhyUsHero() {
           <Link href="/About_page" className={styles.btnPrimary}>
             О компании
           </Link>
-          <a href="tel:+79857791555" className={styles.btnGhost}>
+          <a href={`tel:${PHONE_TEL}`} className={styles.btnGhost}>
             Консультация
           </a>
         </div>

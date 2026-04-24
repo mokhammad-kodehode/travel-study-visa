@@ -9,31 +9,30 @@ import Navbar from './components/navbar/newNav';
 import AOSInitializer from './components/AOSInitializer';
 import CallButton from './components/CallButton/CallButton';
 import CookieConsent from './components/CookieConsent/CookieConsent';
+import { SITE_URL } from '@/config/contacts';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Travel and Study',
   description: 'Оформление виз, ВНЖ и гражданство.',
   keywords: ['визовые услуги', 'ВНЖ', 'гражданство', 'путешествия', 'учеба за границей', 'Travel and Study'],
   openGraph: {
     title: 'Travel and Study',
     description: 'Оформление виз, ВНЖ и гражданство.',
-    url: 'https://www.travelandstudy.ru/',
+    url: SITE_URL,
     type: 'website',
-    locale: 'ru_RU', // Обозначение для российского сегмента
+    locale: 'ru_RU',
     images: [
       {
-        url: 'https://www.travelandstudy.ru/images/logo.svg', // Абсолютный путь к логотипу
-        width: 600, // Ширина изображения (необязательно, но желательно)
-        height: 600, // Высота изображения
+        url: '/images/logo.svg',
+        width: 600,
+        height: 600,
         alt: 'Логотип Travel and Study',
       },
     ],
   },
   icons: {
-    icon: '/favicon.ico', 
-    // Можно указать и другие форматы, например png:
-    // shortcut: '/favicon-16x16.png',
-    // apple: '/apple-touch-icon.png'
+    icon: '/favicon.ico',
   },
 };
 

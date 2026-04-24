@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./CallButton.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { PHONE_TEL } from "@/config/contacts";
 
 const CallButton = () => {
   const [visible, setVisible] = useState(false);
@@ -35,7 +36,7 @@ const CallButton = () => {
   return (
     <div className={styles.wrapper}>
       <a
-        href="tel:+79857791555"
+        href={`tel:${PHONE_TEL}`}
         className={`${styles.callButton} ${expanded ? styles.expanded : ""}`}
         aria-label="Позвонить Travel & Study"
       >

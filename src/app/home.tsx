@@ -9,6 +9,7 @@ import AdvantagesTwo from './components/Advantage/AdvantageCardTwo/AdvangeCardTw
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
+import ModalForm from './components/ContactForm/ContactFor'
 import SloganSection from './components/slogan/Slogan'
 import SearchBar from './components/search/SearchBar';
 import WhyUsHero from './components/WhyUsHero/WhyUsHero';
@@ -68,21 +69,6 @@ const TypingEffect = () => {
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
     const [isModalVisible, setIsModalVisible] = useState(false);
-      const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [isChatOpen, setIsChatOpen] = useState(false); 
-    
-
-  const openOrCloseChat = () => {
-    if (typeof window !== 'undefined' && window.jivo_api) {
-        if (isChatOpen) {
-            window.jivo_api.close(); 
-            setIsChatOpen(false); 
-        } else {
-            window.jivo_api.open(); 
-            setIsChatOpen(true);
-        }
-    }
-};
 
     const filterCountries = (countries: any[]) =>
       countries.filter((country) =>
@@ -115,7 +101,7 @@ export default function Home() {
             <div className={styles.banner_title}>
               <h1 className={styles.title_text}>Стань гражданином мира <span className={styles.accent}>с нами!</span></h1>
               <TypingEffect />
-              <button onClick={openOrCloseChat}className={styles.main_btn}>Оставить заявку</button>
+              <button onClick={() => setIsModalVisible(true)} className={styles.main_btn}>Оставить заявку</button>
               <div className={styles.additional_info}>
                 <div className={styles.info_item}>
                   <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />
@@ -220,6 +206,7 @@ export default function Home() {
             <Advantages/>
             <Contact/>
       </main>
+      {isModalVisible && <ModalForm closeModal={() => setIsModalVisible(false)} />}
     </>
   )
 }

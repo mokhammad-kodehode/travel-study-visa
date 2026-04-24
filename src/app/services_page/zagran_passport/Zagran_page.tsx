@@ -19,6 +19,7 @@ import {
 import Contact from "@/app/components/contact/Contact";
 import ServicesList from "@/app/components/OurServices/OurServices";
 import AdvantagesTwo from "@/app/components/Advantage/AdvantageCard/AdvantageCard";
+import { PHONE_TEL } from "@/config/contacts";
 
 const ZagranPage = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -201,7 +202,7 @@ const ZagranPage = () => {
                 спокойствие.
               </p>
             </div>
-            <a href="tel:+79857791555" className={la.cta}>
+            <a href={`tel:${PHONE_TEL}`} className={la.cta}>
               Получить консультацию
             </a>
           </div>
