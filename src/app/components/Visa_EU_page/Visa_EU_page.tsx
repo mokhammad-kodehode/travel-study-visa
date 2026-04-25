@@ -107,7 +107,7 @@ export default function CountryPage({ country }: { country: CountryData }) {
           />
         </div>
         <p data-aos="fade-top" className={styles.description}>
-        {country.feature_seven}
+        {country.description || country.feature_seven}
         </p>
         <h4 className={styles.title_two}>У нас доступны следующие варианты виз</h4>
         <ul data-aos="fade-top" className={styles.process_list}>

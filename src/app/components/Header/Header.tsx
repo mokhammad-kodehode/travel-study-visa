@@ -25,27 +25,32 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_content} ${!isHome ? styles.compact : ''}`}>
-        {isHome && (
+        {isHome ? (
           <div className={styles.header_row_top}>
             <div className={styles.logo}>
-              <Link href="/">
+              <Link href="/" className={styles.logoLink}>
                 <Image
                   src="/images/logo.svg"
                   alt="Travel & Study Logo"
-                  width={72}
-                  height={72}
+                  width={56}
+                  height={56}
                   priority
                 />
               </Link>
               <div className={styles.slogan}>
-                <span className={styles.brand}>Travel &amp; Study</span>
-                <h2 className={styles.headline}>
-                  Международный центр туризма, образования и права
-                </h2>
+                <span className={styles.brand}>Travel <span className={styles.brandAmp}>&amp;</span> Study</span>
+                <nav className={styles.headline} aria-label="Услуги">
+                  <Link href="/visa_page" className={styles.headlineLink}>Визовые услуги</Link>
+                  <span className={styles.headlineDot} aria-hidden="true">·</span>
+                  <Link href="/services_page/zagran_passport" className={styles.headlineLink}>Юридическая поддержка</Link>
+                  <span className={styles.headlineDot} aria-hidden="true">·</span>
+                  <Link href="/services_page/study_page" className={styles.headlineLink}>Образование</Link>
+                </nav>
               </div>
             </div>
             <div className={styles.Header_items}>
               <div className={styles.contact}>
+                <HeaderSearch variant="icon" />
                 <a href={`tel:${PHONE_TEL}`} className={styles.phone}>
                   <span className={styles.phoneIconWrap}>
                     <FontAwesomeIcon icon={faPhone} className={styles.icon} />
@@ -63,8 +68,9 @@ const Header = () => {
               </div>
             </div>
           </div>
+        ) : (
+          <HeaderSearch />
         )}
-        <HeaderSearch />
       </div>
     </header>
   );

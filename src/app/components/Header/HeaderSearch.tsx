@@ -25,12 +25,18 @@ const ALL_COUNTRIES: SearchItem[] = [
 
 const MAX_RESULTS = 6;
 
-const HeaderSearch = () => {
+type HeaderSearchProps = {
+  variant?: 'input' | 'icon';
+};
+
+const HeaderSearch = ({ variant = 'input' }: HeaderSearchProps) => {
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expanded, setExpanded] = useState(variant === 'input');
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -51,11 +57,21 @@ const HeaderSearch = () => {
     const handleClickOutside = (e: MouseEvent) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
         setIsOpen(false);
+        if (variant === 'icon') {
+          setExpanded(false);
+          setQuery('');
+        }
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [variant]);
+
+  useEffect(() => {
+    if (expanded && variant === 'icon') {
+      inputRef.current?.focus();
+    }
+  }, [expanded, variant]);
 
   const go = (item: SearchItem) => {
     setQuery('');
@@ -79,42 +95,58 @@ const HeaderSearch = () => {
     }
   };
 
-  const showDropdown = isOpen && query.trim().length > 0;
+  const showDropdown = isOpen && query.trim().length > 0 && expanded;
+  const isIconMode = variant === 'icon';
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
-      <div className={styles.inputBox}>
-        <FontAwesomeIcon icon={faSearch} className={styles.icon} />
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setIsOpen(true);
-          }}
-          onFocus={() => setIsOpen(true)}
-          onKeyDown={handleKeyDown}
-          placeholder="Поиск страны..."
-          className={styles.input}
+    <div
+      className={`${styles.wrapper} ${isIconMode ? styles.wrapperIcon : ''} ${expanded && isIconMode ? styles.wrapperExpanded : ''}`}
+      ref={wrapperRef}
+    >
+      {isIconMode && !expanded ? (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className={styles.trigger}
           aria-label="Поиск страны"
-          aria-autocomplete="list"
-          aria-expanded={showDropdown}
-          aria-controls="header-search-results"
-        />
-        {query && (
-          <button
-            type="button"
-            onClick={() => {
-              setQuery('');
-              setIsOpen(false);
+        >
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+      ) : (
+        <div className={styles.inputBox}>
+          <FontAwesomeIcon icon={faSearch} className={styles.icon} />
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setIsOpen(true);
             }}
-            className={styles.clear}
-            aria-label="Очистить"
-          >
-            <FontAwesomeIcon icon={faXmark} />
-          </button>
-        )}
-      </div>
+            onFocus={() => setIsOpen(true)}
+            onKeyDown={handleKeyDown}
+            placeholder="Поиск страны..."
+            className={styles.input}
+            aria-label="Поиск страны"
+            aria-autocomplete="list"
+            aria-expanded={showDropdown}
+            aria-controls="header-search-results"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => {
+                setQuery('');
+                setIsOpen(false);
+              }}
+              className={styles.clear}
+              aria-label="Очистить"
+            >
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+          )}
+        </div>
+      )}
 
       {showDropdown && (
         <ul

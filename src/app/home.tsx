@@ -92,7 +92,14 @@ export default function Home() {
           body.style.overflow = '';
         };
       }, [isModalVisible]);
-      
+
+  const openJivoChat = () => {
+    if (typeof window !== 'undefined' && window.jivo_api) {
+      window.jivo_api.open();
+    } else {
+      setIsModalVisible(true);
+    }
+  };
 
   return (
     <>
@@ -101,7 +108,7 @@ export default function Home() {
             <div className={styles.banner_title}>
               <h1 className={styles.title_text}>Стань гражданином мира <span className={styles.accent}>с нами!</span></h1>
               <TypingEffect />
-              <button onClick={() => setIsModalVisible(true)} className={styles.main_btn}>Оставить заявку</button>
+              <button onClick={openJivoChat} className={styles.main_btn}>Оставить заявку</button>
               <div className={styles.additional_info}>
                 <div className={styles.info_item}>
                   <FontAwesomeIcon className={styles.icon} icon={faBriefcase} />

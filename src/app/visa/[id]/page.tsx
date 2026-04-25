@@ -1,24 +1,44 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import CountryPage from '@/app/components/Visa_EU_page/Visa_EU_page';
-import { europeCountries } from '@/app/data/CountryData';
+import { client } from '@/sanity/client';
+import { countryBySlugQuery } from '@/sanity/queries';
+import { sanityToLegacyCountry, type SanityCountry } from '@/sanity/adapters';
 
-/* ---------- SEO ---------- */
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const country = europeCountries.find(c => c.nameof === params.id);
+// ISR: страница пересобирается раз в 60 секунд после изменения в Sanity
+export const revalidate = 60;
+
+async function fetchCountry(slug: string): Promise<SanityCountry | null> {
+  return client.fetch<SanityCountry | null>(countryBySlugQuery, { slug });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const country = await fetchCountry(id);
   if (!country) {
     return {
-      title:       'Оформление виз | Travel and Study',
-      description: 'Получите визу в любую страну Азии. Полное сопровождение, документы, консультации.',
+      title: 'Оформление виз | Travel and Study',
+      description: 'Получите визу в любую страну Европы. Полное сопровождение.',
     };
   }
+  const accusative = country.nameAccusative || country.name;
   return {
-    title:       `Виза в ${country.name_two} | Оформление и поддержка`,
-    description: `Помогаем оформить визы в ${country.name_two}. Подготовка документов, запись на собеседование, консультации.`,
+    title: `Виза в ${accusative} | Оформление и поддержка`,
+    description: `Помогаем оформить визы в ${accusative}. Подготовка документов, запись на собеседование, консультации.`,
   };
 }
 
-export default function Page({ params }: any) {
-  const country = europeCountries.find(c => c.nameof === params.id);
-  if (!country) return <div>Страна не найдена</div>;
-  return <CountryPage country={country} />;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const country = await fetchCountry(id);
+  if (!country) notFound();
+  return <CountryPage country={sanityToLegacyCountry(country)} />;
 }

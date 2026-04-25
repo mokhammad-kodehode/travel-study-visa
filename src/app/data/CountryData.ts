@@ -5,6 +5,7 @@ export type CountryData = {
   flagUrl: string;
   pageUrl: string;
   backgroundImgUrl: string;
+  description?: string;
   feature_one:string;
   feature_two:string;
   feature_three:string;

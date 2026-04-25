@@ -2,13 +2,14 @@
 import type { Metadata } from 'next'
 import 'fontsource-poppins';
 import 'fontsource-inter';
+import '@fontsource/playfair-display/cyrillic-700.css';
+import '@fontsource/playfair-display/cyrillic-800.css';
+import '@fontsource/playfair-display/cyrillic-800-italic.css';
+import '@fontsource/playfair-display/latin-700.css';
+import '@fontsource/playfair-display/latin-800.css';
+import '@fontsource/playfair-display/latin-800-italic.css';
 import './globals.css'
-import Header from './components/Header/Header';
-import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/newNav';
-import AOSInitializer from './components/AOSInitializer';
-import CallButton from './components/CallButton/CallButton';
-import CookieConsent from './components/CookieConsent/CookieConsent';
+import SiteShell from './components/SiteShell';
 import { SITE_URL } from '@/config/contacts';
 
 export const metadata: Metadata = {
@@ -44,16 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body >
-        <Header/>
-        <Navbar/>
-        <AOSInitializer />
-        <CallButton /> 
-        <CookieConsent />
-        {children}
-        <Footer/>
+      <body>
+        <SiteShell>{children}</SiteShell>
         <script src="//code.jivosite.com/widget/V03s3szzXR" async></script>
-        </body>
+      </body>
     </html>
   )
 }

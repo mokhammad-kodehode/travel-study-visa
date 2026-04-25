@@ -80,7 +80,11 @@ export default function CountryPageAsia({ country }: { country: CountryData })  
           />
         </div>
         <p data-aos="fade-top" className={styles.description}>
-        <strong>{country.name}</strong> — {country.feature_one}
+        {country.description ? (
+          country.description
+        ) : (
+          <><strong>{country.name}</strong> — {country.feature_one}</>
+        )}
         </p>
         <h3 className={styles.title_two}>Особенности визы</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>
