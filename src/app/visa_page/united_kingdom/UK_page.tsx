@@ -49,7 +49,7 @@ export default function UnitedKingdom() {
           <section className={styles.banner}>
             <div className={styles.banner_container} >
                 <div className={styles.banner_title}>
-                        <h1 className={styles.title_text}>Оформление визи в Великобританию</h1>
+                        <h1 className={styles.title_text}>Оформление визы в Великобританию</h1>
                     <p>
                     Откройте для себя Великобританию — страну, где история встречается с современностью…
                      </p>
