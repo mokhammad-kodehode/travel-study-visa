@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const SENDER = process.env.CONTACT_SENDER_EMAIL || 'onboarding@resend.dev';
 const RECEIVER = process.env.CONTACT_RECEIVER_EMAIL;
 
@@ -22,12 +20,21 @@ function escapeHtml(value: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json(
+      { success: false, error: 'Email service is not configured' },
+      { status: 500 },
+    );
+  }
   if (!RECEIVER) {
     return NextResponse.json(
       { success: false, error: 'Receiver email is not configured' },
       { status: 500 },
     );
   }
+
+  const resend = new Resend(apiKey);
 
   let payload: ContactPayload;
   try {
