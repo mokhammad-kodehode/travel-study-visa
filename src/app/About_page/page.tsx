@@ -2,7 +2,7 @@
 import { Metadata } from 'next'
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import Advantages from '../components/Advantage/AdvantageCard/AdvantageCard';
+import Advantages from '../components/Advantage/AdvantagesValuesServer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faUsers, faGlobe } from '@fortawesome/free-solid-svg-icons';
 

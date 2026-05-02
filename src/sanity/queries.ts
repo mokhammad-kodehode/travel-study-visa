@@ -79,3 +79,10 @@ export const legalServicesPageQuery = groq`
     calloutCtaLabel
   }
 `;
+
+export const advantagesSectionBySlugQuery = groq`
+  *[_type == "advantagesSection" && slug.current == $slug][0]{
+    title,
+    cards
+  }
+`;

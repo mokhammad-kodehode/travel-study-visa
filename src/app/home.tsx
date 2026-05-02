@@ -4,8 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
 import { useState, useEffect } from "react";
-import Advantages from './components/Advantage/AdvantageCard/AdvantageCard'
-import AdvantagesTwo from './components/Advantage/AdvantageCardTwo/AdvangeCardTwo'
+import type { ReactNode } from 'react'
 import CountryCards from './components/PopularCountries/PopularCountries'
 import ServicesList from './components/OurServices/OurServices'
 import Contact from './components/contact/Contact'
@@ -66,7 +65,13 @@ const TypingEffect = () => {
 };
 
 
-export default function Home() {
+export default function Home({
+  advantagesSlot,
+  valuesSlot,
+}: {
+  advantagesSlot?: ReactNode;
+  valuesSlot?: ReactNode;
+} = {}) {
     const [searchQuery, setSearchQuery] = useState("");
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -189,7 +194,7 @@ export default function Home() {
                     />
                     </div>
             </section>
-                        <AdvantagesTwo/>
+                        {advantagesSlot}
             <section className={styles.section_Six}>
             <div data-aos="fade-right" className={styles.images_wrapper}>
                   <Image
@@ -210,7 +215,7 @@ export default function Home() {
                   </div>
             </section>
             <ServicesList/>
-            <Advantages/>
+            {valuesSlot}
             <Contact/>
       </main>
       {isModalVisible && <ModalForm closeModal={() => setIsModalVisible(false)} />}

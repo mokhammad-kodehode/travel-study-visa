@@ -1,7 +1,7 @@
 
 import ServicesList from '../components/OurServices/OurServices';
 import styles from './styles.module.css'
-import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import AdvantagesTwo from '../components/Advantage/AdvantagesProsServer';
 import Contact from '../components/contact/Contact';
 import 'fontsource-inter';
 import { Metadata } from 'next'

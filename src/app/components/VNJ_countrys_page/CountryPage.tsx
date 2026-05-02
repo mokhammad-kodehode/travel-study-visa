@@ -14,12 +14,12 @@ import {   FaMoneyBillWave,
     FaGlobeEurope,
     FaGraduationCap,
     FaBusinessTime, } from 'react-icons/fa';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import type { ReactNode } from 'react';
 import Contact from '@/app/components/contact/Contact';
 
 
 
- function CountryPage({ country }: { country: CountryDataVNJ }) {
+ function CountryPage({ country, advantagesSlot }: { country: CountryDataVNJ; advantagesSlot?: ReactNode }) {
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
@@ -228,7 +228,7 @@ import Contact from '@/app/components/contact/Contact';
           </li>
         </ul>
       </section>
-      <AdvantagesTwo/>
+      {advantagesSlot}
       <Contact/>
     </main>
   )

@@ -4,12 +4,11 @@ import styles from './styles.module.css';
 import 'fontsource-inter';
 import Image from 'next/image';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
 import Contact from '@/app/components/contact/Contact';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 
 
-export default function Romania() {
+export default function Romania({ advantagesSlot }: { advantagesSlot?: ReactNode } = {}) {
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
 const openOrCloseChat = () => {
@@ -219,7 +218,7 @@ const openOrCloseChat = () => {
         Мы гарантируем профессиональный подход на всех этапах оформления гражданства. Позвольте себе и своей семье открыть двери в европейское будущее.
         </p>
       </section>
-      <AdvantagesTwo />
+      {advantagesSlot}
       <CountryCards />
       <Contact />
     </main>

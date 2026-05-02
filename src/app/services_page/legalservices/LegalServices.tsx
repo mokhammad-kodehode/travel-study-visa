@@ -3,7 +3,7 @@
 import styles from "./styles.module.css";
 import la from "./legalAreas.module.css";
 import "fontsource-inter";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   FaPassport,
   FaFileSignature,
@@ -16,14 +16,13 @@ import {
 import { PortableText } from "@portabletext/react";
 import Contact from "@/app/components/contact/Contact";
 import ServicesList from "@/app/components/OurServices/OurServices";
-import AdvantagesTwo from "@/app/components/Advantage/AdvantageCard/AdvantageCard";
 import { PHONE_TEL } from "@/config/contacts";
 import type { LegalServicesPageData } from "@/sanity/adapters";
 
 // Иконки подбираются по индексу. Если карточек больше — берём последнюю иконку как fallback.
 const AREA_ICONS = [FaGlobe, FaPassport, FaFileSignature, FaGraduationCap, FaBuilding, FaBalanceScale];
 
-export default function LegalServices({ data }: { data: LegalServicesPageData }) {
+export default function LegalServices({ data, valuesSlot }: { data: LegalServicesPageData; valuesSlot?: ReactNode }) {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -147,7 +146,7 @@ export default function LegalServices({ data }: { data: LegalServicesPageData })
         )}
       </section>
 
-      <AdvantagesTwo />
+      {valuesSlot}
       <Contact />
       <ServicesList />
     </main>

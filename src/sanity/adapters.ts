@@ -118,6 +118,30 @@ export type LegalServicesPageData = {
   calloutCtaLabel: string;
 };
 
+export type SanityAdvantagesCard = {
+  _key?: string;
+  title: string;
+  description: string;
+};
+
+export type SanityAdvantagesSection = {
+  title: string;
+  cards: SanityAdvantagesCard[];
+};
+
+export type AdvantagesSectionData = {
+  title: string;
+  cards: SanityAdvantagesCard[];
+};
+
+export function sanityToAdvantagesSection(s: SanityAdvantagesSection | null, fallback: AdvantagesSectionData): AdvantagesSectionData {
+  if (!s) return fallback;
+  return {
+    title: s.title || fallback.title,
+    cards: Array.isArray(s.cards) && s.cards.length > 0 ? s.cards : fallback.cards,
+  };
+}
+
 export function sanityToLegalServicesPage(c: SanityLegalServicesPage): LegalServicesPageData {
   return {
     bannerImageUrl: c.bannerImage ? urlFor(c.bannerImage).width(1920).url() : '',

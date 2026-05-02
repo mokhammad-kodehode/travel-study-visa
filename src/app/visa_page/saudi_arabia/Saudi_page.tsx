@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 import 'fontsource-inter';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import type { ReactNode } from 'react';
 import Contact from '@/app/components/contact/Contact';
 import { useState } from 'react';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaFileAlt } from 'react-icons/fa';
@@ -32,7 +32,7 @@ const visaDetails = [
 ];
 
 
-export default function KSA() {
+export default function KSA({ advantagesSlot }: { advantagesSlot?: ReactNode } = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
@@ -166,7 +166,7 @@ export default function KSA() {
                 </li>
               </ul>
            </section >
-           <AdvantagesTwo/>
+           {advantagesSlot}
            <Contact/>
           <CountryCards/>
     </main>

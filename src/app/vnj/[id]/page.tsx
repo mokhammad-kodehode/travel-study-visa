@@ -2,6 +2,7 @@ import { cache } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CountryPage from '@/app/components/VNJ_countrys_page/CountryPage';
+import AdvantagesProsServer from '@/app/components/Advantage/AdvantagesProsServer';
 import { client } from '@/sanity/client';
 import { vnjCountryBySlugQuery, allVnjCountrySlugsQuery } from '@/sanity/queries';
 import { sanityToVnjCountry, type SanityVnjCountry } from '@/sanity/adapters';
@@ -48,5 +49,5 @@ export default async function Page({
   const { id } = await params;
   const country = await fetchVnjCountry(id);
   if (!country) notFound();
-  return <CountryPage country={sanityToVnjCountry(country)} />;
+  return <CountryPage country={sanityToVnjCountry(country)} advantagesSlot={<AdvantagesProsServer />} />;
 }

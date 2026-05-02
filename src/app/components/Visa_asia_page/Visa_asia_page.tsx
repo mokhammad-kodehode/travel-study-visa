@@ -9,12 +9,12 @@ import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaSuitcaseRolling } from 'react-icons/fa';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import type { ReactNode } from 'react';
 import Contact from '@/app/components/contact/Contact';
 
 
 
-export default function CountryPageAsia({ country }: { country: CountryData })  {
+export default function CountryPageAsia({ country, advantagesSlot }: { country: CountryData; advantagesSlot?: ReactNode })  {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
@@ -211,7 +211,7 @@ export default function CountryPageAsia({ country }: { country: CountryData })  
           </li>
         </ul>
       </section>
-      <AdvantagesTwo/>
+      {advantagesSlot}
       <CountryCards/>
       <Contact/>
     </main>

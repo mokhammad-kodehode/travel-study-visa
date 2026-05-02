@@ -2,6 +2,7 @@ import { cache } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CountryPageAsia from '@/app/components/Visa_asia_page/Visa_asia_page';
+import AdvantagesProsServer from '@/app/components/Advantage/AdvantagesProsServer';
 import { client } from '@/sanity/client';
 import { countryBySlugQuery, allCountrySlugsQuery } from '@/sanity/queries';
 import { sanityToLegacyCountry, type SanityCountry } from '@/sanity/adapters';
@@ -47,5 +48,5 @@ export default async function Page({
   const { id } = await params;
   const country = await fetchCountry(id);
   if (!country) notFound();
-  return <CountryPageAsia country={sanityToLegacyCountry(country)} />;
+  return <CountryPageAsia country={sanityToLegacyCountry(country)} advantagesSlot={<AdvantagesProsServer />} />;
 }

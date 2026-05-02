@@ -2,6 +2,7 @@ import { cache } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import LegalServices from './LegalServices';
+import AdvantagesValuesServer from '@/app/components/Advantage/AdvantagesValuesServer';
 import { client } from '@/sanity/client';
 import { legalServicesPageQuery } from '@/sanity/queries';
 import { sanityToLegalServicesPage, type SanityLegalServicesPage } from '@/sanity/adapters';
@@ -25,5 +26,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
   const data = await fetchPage();
   if (!data) notFound();
-  return <LegalServices data={sanityToLegalServicesPage(data)} />;
+  return <LegalServices data={sanityToLegalServicesPage(data)} valuesSlot={<AdvantagesValuesServer />} />;
 }
