@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                     <Link  href="/services_page/booking_tickets">
                         <li>Бронирование авиабилетов отелей</li> 
                     </Link>
-                    <Link  href="/services_page/zagran_passport">
+                    <Link  href="/services_page/legalservices">
                         <li>Оформление загранпаспорта</li> 
                     </Link>
                 </ul>
@@ -78,8 +78,8 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.footer_bottom}>
             <p>© 2024 Все права защищены.</p>
-            <Link legacyBehavior href="/Privacy_policy_page">
-                <a className={styles.footer_bottom_link}>Политика конфиденциальности</a>
+            <Link href="/Privacy_policy_page" className={styles.footer_bottom_link}>
+                Политика конфиденциальности
             </Link>
         </div>
     </footer>

@@ -46,18 +46,67 @@ export const countryType = defineType({
       type: 'image',
     }),
     defineField({
+      name: 'bannerImage',
+      title: 'Фон баннера',
+      description: 'Большая картинка за заголовком наверху страницы',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: 'bannerTitle',
+      title: 'Заголовок баннера (H1)',
+      description: 'Например: «Оформление визы в Австрию». Если не заполнено — используется шаблон по умолчанию.',
+      type: 'string',
+    }),
+    defineField({
+      name: 'bannerSubtitle',
+      title: 'Подпись под заголовком',
+      description: 'Текст под H1. Перенос строки = новая строка на странице.',
+      type: 'text',
+      rows: 3,
+      validation: (r) => r.max(500),
+    }),
+    defineField({
       name: 'heroImage',
-      title: 'Главное фото страны',
+      title: 'Главное фото страны (под секцией)',
+      description: 'Картинка под заголовком «Виза в …»',
       type: 'image',
       options: { hotspot: true },
     }),
     defineField({
       name: 'description',
       title: 'Описание страны',
-      description: 'Короткий текст под фотографией (1-3 предложения)',
-      type: 'text',
-      rows: 3,
-      validation: (r) => r.max(500),
+      description: 'Текст под главным фото. Можно выделять жирным/курсивом и ставить ссылки.',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          // Только базовое форматирование, чтобы клиент не сломал визуал.
+          styles: [{ title: 'Обычный текст', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Жирный', value: 'strong' },
+              { title: 'Курсив', value: 'em' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Ссылка',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                    validation: (r) => r.required(),
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: 'features',

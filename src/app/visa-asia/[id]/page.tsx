@@ -1,14 +1,22 @@
+import { cache } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CountryPageAsia from '@/app/components/Visa_asia_page/Visa_asia_page';
 import { client } from '@/sanity/client';
-import { countryBySlugQuery } from '@/sanity/queries';
+import { countryBySlugQuery, allCountrySlugsQuery } from '@/sanity/queries';
 import { sanityToLegacyCountry, type SanityCountry } from '@/sanity/adapters';
 
 export const revalidate = 60;
 
-async function fetchCountry(slug: string): Promise<SanityCountry | null> {
+// React cache дедуплицирует повторные вызовы внутри одного request.
+const fetchCountry = cache(async (slug: string): Promise<SanityCountry | null> => {
   return client.fetch<SanityCountry | null>(countryBySlugQuery, { slug });
+});
+
+// Пре-рендер всех визовых стран Азии на билде.
+export async function generateStaticParams() {
+  const slugs = await client.fetch<Array<{ slug: string; region: string }>>(allCountrySlugsQuery);
+  return slugs.filter((s) => s.region === 'asia').map((s) => ({ id: s.slug }));
 }
 
 export async function generateMetadata({

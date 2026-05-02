@@ -1,3 +1,10 @@
+import type { PortableTextBlock } from '@portabletext/react';
+
+export type VnjOption = {
+  title: string;
+  description: string;
+};
+
 export type CountryDataVNJ = {
     nameof:string;
     name: string;
@@ -6,7 +13,7 @@ export type CountryDataVNJ = {
     flagUrl: string;
     pageUrl: string;
     backgroundImgUrl: string;
-    description: string;
+    description: string | PortableTextBlock[];
     name_ogo: string;
     feature_one:string;
     feature_two:string;
@@ -15,6 +22,10 @@ export type CountryDataVNJ = {
     feature_five:string;
     feature_six:string;
     feature_seven:string;
+    bannerTitle?: string;
+    bannerSubtitle?: string;
+    heroImageUrl?: string;
+    options?: VnjOption[];
   };
   
   export const europeCountries: CountryDataVNJ[] = [

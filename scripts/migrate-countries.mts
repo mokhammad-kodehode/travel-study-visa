@@ -10,6 +10,7 @@
 import { createClient } from '@sanity/client';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { randomUUID } from 'crypto';
 import {
   europeCountries,
   asiaCountries,
@@ -75,8 +76,39 @@ function collectFeatures(c: CountryData): string[] {
     .filter(Boolean);
 }
 
-function collectDescription(c: CountryData): string {
-  return (c.feature_seven ?? '').trim();
+// Превращает plain-text в Portable Text — массив блоков, по абзацу на блок.
+function textToPortableText(text: string) {
+  const trimmed = (text ?? '').trim();
+  if (!trimmed) return [];
+  const paragraphs = trimmed.split(/\n\s*\n/).filter(Boolean);
+  return paragraphs.map((paragraph) => ({
+    _type: 'block',
+    _key: randomUUID().replace(/-/g, '').slice(0, 12),
+    style: 'normal',
+    markDefs: [],
+    children: [
+      {
+        _type: 'span',
+        _key: randomUUID().replace(/-/g, '').slice(0, 12),
+        text: paragraph.trim(),
+        marks: [],
+      },
+    ],
+  }));
+}
+
+function collectDescription(c: CountryData) {
+  // Используем feature_seven как изначальный source текста (так было в старом коде).
+  const text = typeof c.description === 'string' && c.description ? c.description : (c.feature_seven ?? '');
+  return textToPortableText(text);
+}
+
+function buildBannerTitle(c: CountryData): string {
+  return `Оформление визы в ${c.name_two}`;
+}
+
+function buildBannerSubtitle(c: CountryData): string {
+  return `Оформим нужный тип визы в ${c.name_two}.\nСпециализируемся на визовых вопросах любой сложности`;
 }
 
 async function migrate() {
@@ -96,20 +128,38 @@ async function migrate() {
 
     try {
       if (existing) {
-        await client
-          .patch(docId)
-          .set({
-            description: collectDescription(data),
-            features: collectFeatures(data),
-          })
-          .commit();
-        console.log('↻ обновлено (description + features)');
+        // Получаем текущее состояние документа — нужно понять, есть ли уже bannerImage.
+        const current = await client.fetch<{ bannerImage?: unknown; heroImage?: unknown }>(
+          `*[_id == $id][0]{ bannerImage, heroImage }`,
+          { id: docId }
+        );
+
+        const patch: Record<string, unknown> = {
+          description: collectDescription(data),
+          features: collectFeatures(data),
+          bannerTitle: buildBannerTitle(data),
+          bannerSubtitle: buildBannerSubtitle(data),
+        };
+
+        // Если bannerImage ещё не загружен — переносим из heroImage (или с нуля заливаем фон).
+        if (!current?.bannerImage) {
+          if (current?.heroImage) {
+            patch.bannerImage = current.heroImage;
+          } else {
+            const banner = await uploadImage(data.backgroundImgUrl, 'bannerImage');
+            if (banner) patch.bannerImage = banner;
+          }
+        }
+
+        await client.patch(docId).set(patch).commit();
+        console.log('↻ обновлено');
         skipped++;
         continue;
       }
 
-      const [flag, heroImage] = await Promise.all([
+      const [flag, bannerImage, heroImage] = await Promise.all([
         uploadImage(data.flagUrl, 'flag'),
+        uploadImage(data.backgroundImgUrl, 'bannerImage'),
         uploadImage(data.backgroundImgUrl, 'heroImage'),
       ]);
 
@@ -121,7 +171,10 @@ async function migrate() {
         slug: { _type: 'slug', current: slug },
         region,
         flag,
+        bannerImage,
         heroImage,
+        bannerTitle: buildBannerTitle(data),
+        bannerSubtitle: buildBannerSubtitle(data),
         description: collectDescription(data),
         features: collectFeatures(data),
       });

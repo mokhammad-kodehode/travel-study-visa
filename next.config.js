@@ -9,6 +9,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/services_page/zagran_passport',
+        destination: '/services_page/legalservices',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

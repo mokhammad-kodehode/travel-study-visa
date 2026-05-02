@@ -21,6 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^6.4.1",
     "@mui/material": "^6.1.10",
+    "@portabletext/react": "^6.0.3",
     "@sanity/client": "^7.22.0",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^3.99.0",

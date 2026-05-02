@@ -8,7 +8,10 @@ export const countryBySlugQuery = groq`
     "slug": slug.current,
     region,
     flag,
+    bannerImage,
     heroImage,
+    bannerTitle,
+    bannerSubtitle,
     description,
     features
   }
@@ -29,5 +32,50 @@ export const countriesByRegionQuery = groq`
     region,
     flag,
     heroImage
+  }
+`;
+
+export const vnjCountryBySlugQuery = groq`
+  *[_type == "vnjCountry" && slug.current == $slug][0]{
+    _id,
+    name,
+    nameAccusative,
+    nameGenitive,
+    "slug": slug.current,
+    flag,
+    bannerTitle,
+    bannerSubtitle,
+    bannerImage,
+    heroImage,
+    description,
+    options,
+    featureLiving,
+    featureTravel,
+    featureEducation,
+    featureBusiness,
+    featureTaxes,
+    featureProperty,
+    featureCitizenship
+  }
+`;
+
+export const allVnjCountrySlugsQuery = groq`
+  *[_type == "vnjCountry" && defined(slug.current)]{
+    "slug": slug.current
+  }
+`;
+
+export const legalServicesPageQuery = groq`
+  *[_type == "legalServicesPage"][0]{
+    bannerImage,
+    bannerTitle,
+    bannerSubtitle,
+    description,
+    areasTitle,
+    areasSubtitle,
+    areas,
+    calloutTitle,
+    calloutText,
+    calloutCtaLabel
   }
 `;

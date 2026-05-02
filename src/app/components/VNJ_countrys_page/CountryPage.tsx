@@ -3,6 +3,7 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
 import { CountryDataVNJ } from '@/app/data/CountryDataVnj';
 import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
@@ -37,6 +38,8 @@ import Contact from '@/app/components/contact/Contact';
 
 
 
+  const heroSrc = country.heroImageUrl || country.backgroundImgUrl;
+
   const bannerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('${country?.backgroundImgUrl}')`,
     width: '100%',
@@ -55,10 +58,12 @@ import Contact from '@/app/components/contact/Contact';
       <section className={styles.banner} style={bannerStyle} >
         <div className={styles.banner_container} >
           <div data-aos="fade-top" className={styles.banner_title}>
-              <h1 className={styles.title_text}>Оформление ВНЖ в {country.name_two}</h1>
-            <p>
-             Ваш путь к европейскому ВНЖ начинается здесь — профессиональная помощь в оформлении документов
-            </p>
+              <h1 className={styles.title_text}>
+                {country.bannerTitle || `Оформление ВНЖ в ${country.name_two}`}
+              </h1>
+              <p style={{ whiteSpace: 'pre-line' }}>
+                {country.bannerSubtitle || 'Ваш путь к европейскому ВНЖ начинается здесь — профессиональная помощь в оформлении документов'}
+              </p>
             <button onClick={openOrCloseChat}className={styles.main_btn}>Оставить заявку</button>
           </div>
         </div>
@@ -73,33 +78,37 @@ import Contact from '@/app/components/contact/Contact';
           <section className={styles.section_text_content}>
         <div className={styles.section_text_content_title}>ВНЖ {country.name_three} <br /> <p>На основании открытия торгового представительств. Выдается карта ВНЖ сроком на один год с последующим продлением.</p> </div>
         <div data-aos="fade-top" className={styles.image_wrapper}>
-          <Image
-            src={country?.backgroundImgUrl}
-            alt={country.nameof}
-            width={600}
-            height={400}
-            style={{ width: '100%', height: 'auto' }}
-            className={styles.section_image}
-          />
+          {heroSrc && (
+            <Image
+              src={heroSrc}
+              alt={`Оформление ВНЖ в ${country.name_three}`}
+              width={600}
+              height={400}
+              style={{ width: '100%', height: 'auto' }}
+              className={styles.section_image}
+            />
+          )}
         </div>
-        <p data-aos="fade-top" className={styles.description}>
-           Хотите обрести стабильность и новые перспективы в уютной атмосфере {country.name_three}? Наша компания предлагает профессиональное сопровождение по оформлению ВНЖ в {country.name_three} – вашему ключу к беззаботной жизни в этой прекрасной стране. С учетом наших богатых знаний и опыта в области визовых процедур, мы обеспечим вас всей необходимой информацией и поддержкой на каждом этапе процесса. Получите преимущества резидентства в {country.name_three}: доступ к бизнесу, образованию и здравоохранению. Предлагаемые нами услуги по оформлению ВНЖ в {country.name_three} позволят вам без лишних затрат времени и усилий освоиться в новой стране, оставаясь спокойным и уверенным в своем будущем. Доверьте нам вашу мечту о жизни в {country.name_three} – начните новую главу своей жизни прямо сейчас!
-        </p>
-        <h4 className={styles.title_two}>Возможные варианты получения ВНЖ в {country.name_three}.</h4>
-        <ul data-aos="fade-top" className={styles.process_list_two}>
-          <li>
-            <strong>Открытие торгового представительства</strong>
-            <span>
-              До 2 месяцев. Подходит для собственников ООО, действующего не менее 2 лет на территории России.
-            </span>
-          </li>
-          <li>
-            <strong>Трудоустройство в действующую компанию</strong>
-            <span>
-              Если у вас нет собственного ООО, вы можете быть оформлены наемным сотрудником в действующую организацию, которая уже имеет иностранное представительство на территории {country.name_three}.
-            </span>
-          </li>
-        </ul>
+        <div data-aos="fade-top" className={styles.description}>
+          {Array.isArray(country.description) ? (
+            <PortableText value={country.description} />
+          ) : (
+            <p>{country.description || `Хотите обрести стабильность и новые перспективы в уютной атмосфере ${country.name_three}? Наша компания предлагает профессиональное сопровождение по оформлению ВНЖ в ${country.name_three} – вашему ключу к беззаботной жизни в этой прекрасной стране.`}</p>
+          )}
+        </div>
+        {country.options && country.options.length > 0 && (
+          <>
+            <h4 className={styles.title_two}>Возможные варианты получения ВНЖ в {country.name_three}.</h4>
+            <ul data-aos="fade-top" className={styles.process_list_two}>
+              {country.options.map((opt, i) => (
+                <li key={i}>
+                  <strong>{opt.title}</strong>
+                  <span>{opt.description}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
         
         <h3 className={styles.title_two}>Что дает ВНЖ {country.name_three}?</h3>
         <div data-aos="fade-top" className={styles.special_wrapper}>

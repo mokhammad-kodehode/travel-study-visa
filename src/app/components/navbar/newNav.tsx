@@ -170,7 +170,7 @@ const Navbar: React.FC = () => {
                 <li><Link href='/vnj_page'                      onClick={closeAll}>Оформление ВНЖ</Link></li>
                 <li><Link href='/services_page/study_page'      onClick={closeAll}>Образовательные программы</Link></li>
                 <li><Link href='/services_page/umra'            onClick={closeAll}>Умра и туры в Саудовскую Аравию</Link></li>
-                <li><Link href='/services_page/zagran_passport' onClick={closeAll}>Юридическая поддержка</Link></li>
+                <li><Link href='/services_page/legalservices' onClick={closeAll}>Юридическая поддержка</Link></li>
                 <li><Link href='/services_page/booking_tickets' onClick={closeAll}>Билеты и отели</Link></li>
               </ul>
             )}

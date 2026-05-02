@@ -42,7 +42,7 @@ const Header = () => {
                 <nav className={styles.headline} aria-label="Услуги">
                   <Link href="/visa_page" className={styles.headlineLink}>Визовые услуги</Link>
                   <span className={styles.headlineDot} aria-hidden="true">·</span>
-                  <Link href="/services_page/zagran_passport" className={styles.headlineLink}>Юридическая поддержка</Link>
+                  <Link href="/services_page/legalservices" className={styles.headlineLink}>Юридическая поддержка</Link>
                   <span className={styles.headlineDot} aria-hidden="true">·</span>
                   <Link href="/services_page/study_page" className={styles.headlineLink}>Образование</Link>
                 </nav>

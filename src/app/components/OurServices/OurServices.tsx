@@ -31,7 +31,7 @@ const services = [
   {
     title: 'Юридическая поддержка',
     description: 'Наша команда юристов и консультантов помогает клиентам грамотно оформить документы.',
-    link: '/services_page/zagran_passport',
+    link: '/services_page/legalservices',
     image: '/images/Pass.jpg' // Добавьте путь к вашему изображению
   },
   {
