@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 import 'fontsource-inter';
 import Link from 'next/link';
 import Image from 'next/image';
-import AdvantagesTwo from '../components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import AdvantagesTwo from '../components/Advantage/AdvantagesProsServer';
 import ServicesList from '../components/OurServices/OurServices';
 import Contact from '../components/contact/Contact';
 import CountryVNJ from '../components/CountrySelect/countrySelect';

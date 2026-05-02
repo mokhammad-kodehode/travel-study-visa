@@ -36,6 +36,37 @@
   --ink:#111827;
   --sub:#4B5563;
   --glass: rgba(255,255,255,.08);
+
+  /* ===== Brand Dark Palette (2026 Aurora) ===== */
+  /* Фон-градиент (3 остановки) */
+  --bg-dark-1: #0A0823;
+  --bg-dark-2: #1E1B4B;
+  --bg-dark-3: #2D1B5E;
+
+  /* Акценты */
+  --accent-violet: #7C3AED;
+  --accent-magenta: #E11D74;
+  --accent-gold: #FFD700;
+
+  /* Текст на тёмном */
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.75);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-border-hover: rgba(255, 215, 0, 0.4);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Готовые градиенты */
+  --grad-banner: linear-gradient(135deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 50%, var(--bg-dark-3) 100%);
+  --grad-gold-text: linear-gradient(135deg, #FFD700 0%, #ffe580 40%, #FFD700 60%, #ffb700 100%);
+  --grad-banner-veil: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45));
+
+  /* Минимальный верхний отступ hero-секции (одно место на всё) */
+  --hero-offset-desktop: 80px;
+  --hero-offset-tablet: 60px;
+  --hero-offset-mobile: 40px;
 }
 
 

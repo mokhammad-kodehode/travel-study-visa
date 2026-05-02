@@ -1,7 +1,8 @@
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
-import { faTelegram,faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Иконки соцсетей
+import { faTelegram,faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { PHONE_DISPLAY, EMAIL, OFFICE_ADDRESS, TELEGRAM_URL, WHATSAPP_URL } from '@/config/contacts';
 
 const Contact = () => {
     return (
@@ -12,23 +13,23 @@ const Contact = () => {
                         <h1>Travel & Study</h1>
                         <div className={styles.contact_item}>
                             <FontAwesomeIcon icon={faPhone} className={styles.icon} />
-                            <p>+7(985)779-15-55</p>
+                            <p>{PHONE_DISPLAY}</p>
                         </div>
                         <div className={styles.contact_item}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
-                            <p>traveland.study@yandex.ru</p>
+                            <p>{EMAIL}</p>
                         </div>
                         <div className={styles.contact_item}>
                             <FontAwesomeIcon className={styles.adress_icon} icon={faMapMarkerAlt}  />
-                            <p>г.Москва, Пресненская набережная, 12</p>
+                            <p>{OFFICE_ADDRESS}</p>
                         </div>
                         <div className={styles.social_media}>
                             <h2>Мы в социальных сетях</h2>
                             <div className={styles.social_icons}>
-                                <a href="https://t.me/travelandstudyru" aria-label="Перейти на Telegram" target="_blank" rel="noopener noreferrer">
+                                <a href={TELEGRAM_URL} aria-label="Перейти на Telegram" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
                                 </a>
-                                <a href="https://wa.me/40756504079" aria-label="Перейти в Whatsapp" target="_blank" rel="noopener noreferrer">
+                                <a href={WHATSAPP_URL} aria-label="Перейти в Whatsapp" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
                                 </a>
                             </div>

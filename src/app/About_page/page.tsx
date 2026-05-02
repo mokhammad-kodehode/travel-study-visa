@@ -2,24 +2,48 @@
 import { Metadata } from 'next'
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import Advantages from '../components/Advantage/AdvantageCard/AdvantageCard';
+import Advantages from '../components/Advantage/AdvantagesValuesServer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faUsers, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 export const metadata: Metadata = {
   title: 'О компании | Travel and Study – Ваш визовый центр',
   description: 'Узнайте больше о Travel and Study. Мы предоставляем услуги по оформлению виз, ВНЖ, гражданства и обучению за границей. Индивидуальный подход и полное сопровождение.',
 }
 
+const stats = [
+  { icon: faBriefcase, number: '10+', label: 'лет опыта' },
+  { icon: faUsers, number: '1000+', label: 'довольных клиентов' },
+  { icon: faGlobe, number: '50+', label: 'стран мира' },
+];
+
 export default function About_Us() {
 
   return (
     <main className={styles.main}>
           <section className={styles.banner}>
-            <div  className={`${styles.banner_container} ${styles.mobileReverse}`}> 
+            <div className={`${styles.orb} ${styles.orb_violet}`} aria-hidden />
+            <div className={`${styles.orb} ${styles.orb_gold}`} aria-hidden />
+            <div className={`${styles.orb} ${styles.orb_pink}`} aria-hidden />
+            <div  className={`${styles.banner_container} ${styles.mobileReverse}`}>
                 <div className={styles.banner_title}>
                     <div className={styles.banner_title_text}>
                         <h1 className={styles.title_text}>Travel & Study</h1>
                         <p className={styles.title_text_desc}>Международный центр туризма, образования и права — ваш надёжный партнёр в мире путешествий, обучения и юридической поддержки.</p>
                     </div>
+                </div>
+                <div className={styles.stats_grid}>
+                  {stats.map((stat, i) => (
+                    <div key={i} className={styles.stat_card} style={{ animationDelay: `${0.3 + i * 0.15}s` }}>
+                      <div className={styles.stat_icon}>
+                        <FontAwesomeIcon icon={stat.icon} />
+                      </div>
+                      <div className={styles.stat_text}>
+                        <div className={styles.stat_number}>{stat.number}</div>
+                        <div className={styles.stat_label}>{stat.label}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
             </div>
           </section >

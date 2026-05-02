@@ -2,15 +2,14 @@
 
 import styles from './styles.module.css'
 import 'fontsource-inter';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import Contact from '@/app/components/contact/Contact';
 import ServicesList from '@/app/components/OurServices/OurServices';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCard/AdvantageCard';
 import { FaTags, FaUserTie, FaLaptopHouse, FaHeadset } from 'react-icons/fa'
 
 
-const BookingTicketsPage = () => {
+const BookingTicketsPage = ({ valuesSlot }: { valuesSlot?: ReactNode } = {}) => {
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
   const openOrCloseChat = () => {
@@ -76,7 +75,7 @@ const BookingTicketsPage = () => {
         </section >
         <ServicesList/>
         <Contact/>
-        <AdvantagesTwo/>
+        {valuesSlot}
     </main>
   )
 }

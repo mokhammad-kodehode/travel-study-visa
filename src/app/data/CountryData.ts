@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from '@portabletext/react';
+
 export type CountryData = {
   nameof:string;
   name: string;
@@ -5,6 +7,10 @@ export type CountryData = {
   flagUrl: string;
   pageUrl: string;
   backgroundImgUrl: string;
+  heroImageUrl?: string;
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  description?: string | PortableTextBlock[];
   feature_one:string;
   feature_two:string;
   feature_three:string;
@@ -12,7 +18,6 @@ export type CountryData = {
   feature_five:string;
   feature_six:string;
   feature_seven:string;
-  [key: string]: string | undefined;
 };
 
 export const europeCountries: CountryData[] = [

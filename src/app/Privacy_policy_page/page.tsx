@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './styles.module.css'; // Подключение CSS-модуля
+import styles from './styles.module.css';
+import { EMAIL } from '@/config/contacts';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -56,7 +57,7 @@ export default function PrivacyPolicyPage() {
 
         <h2 className={styles.subTitle}>7. Контактная информация</h2>
         <p>
-          По всем вопросам, связанным с политикой конфиденциальности, пользователи могут обращаться в визовый центр по адресу электронной почты: <strong>traveland.study@yandex.ru</strong>.
+          По всем вопросам, связанным с политикой конфиденциальности, пользователи могут обращаться в визовый центр по адресу электронной почты: <strong>{EMAIL}</strong>.
         </p>
       </div>
     </div>

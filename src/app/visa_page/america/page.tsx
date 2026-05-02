@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries'
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import AdvantagesTwo from '@/app/components/Advantage/AdvantagesProsServer';
 import { AmericaCountries } from '@/app/data/CountryData';
 import { Metadata } from 'next'
 

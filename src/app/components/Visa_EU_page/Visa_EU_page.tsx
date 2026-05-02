@@ -3,12 +3,13 @@
 import styles from './styles.module.css'
 import 'fontsource-inter';
 import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
 import { CountryData } from '@/app/data/CountryData';
 import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaSuitcaseRolling } from 'react-icons/fa';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
-import AdvantagesTwo from '@/app/components/Advantage/AdvantageCardTwo/AdvangeCardTwo';
+import type { ReactNode } from 'react';
 import Contact from '@/app/components/contact/Contact';
 
 interface CountryPageProps {
@@ -39,7 +40,7 @@ const visaDetails = [
 ];
 
 
-export default function CountryPage({ country }: { country: CountryData }) {
+export default function CountryPage({ country, advantagesSlot }: { country: CountryData; advantagesSlot?: ReactNode }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false); 
 
@@ -78,9 +79,10 @@ export default function CountryPage({ country }: { country: CountryData }) {
         <div className={styles.banner_container} >
           <div className={styles.banner_title}>
             <div className={styles.banner_title_text}>
-              <h1 className={styles.title_text}>Оформление визы в {country.name_two}</h1>
-              <h2 className={styles.title_text_desc}>Оформим нужный тип визы в {country.name_two}.</h2>
-              <h3 className={styles.title_text_desc}>Специализируемся на визовых вопросах любой сложности</h3>
+              <h1 className={styles.title_text}>{country.bannerTitle || `Оформление визы в ${country.name_two}`}</h1>
+              <p className={styles.title_text_desc} style={{ whiteSpace: 'pre-line' }}>
+                {country.bannerSubtitle || `Оформим нужный тип визы в ${country.name_two}.\nСпециализируемся на визовых вопросах любой сложности`}
+              </p>
             </div>
             <button onClick={openOrCloseChat}  className={styles.order_btn} >ЗАКАЗАТЬ</button>
           </div>
@@ -98,17 +100,21 @@ export default function CountryPage({ country }: { country: CountryData }) {
         <div className={styles.section_text_content_title}>Виза в {country.name_two}</div>
         <div data-aos="fade-top" className={styles.image_wrapper}>
           <Image
-            src={country.backgroundImgUrl}
-            alt={`Фон для оформления визы в ${country.name_two}`} 
+            src={country.heroImageUrl || country.backgroundImgUrl}
+            alt={`Оформление визы в ${country.name_two}`}
             width={600}
             height={400}
-            style={{ width: '100%', height: 'auto' }} 
+            style={{ width: '100%', height: 'auto' }}
             className={styles.section_image}
           />
         </div>
-        <p data-aos="fade-top" className={styles.description}>
-        {country.feature_seven}
-        </p>
+        <div data-aos="fade-top" className={styles.description}>
+          {Array.isArray(country.description) ? (
+            <PortableText value={country.description} />
+          ) : (
+            <p>{country.description || country.feature_seven}</p>
+          )}
+        </div>
         <h4 className={styles.title_two}>У нас доступны следующие варианты виз</h4>
         <ul data-aos="fade-top" className={styles.process_list}>
           {visaDetails.map((visa, index) => (
@@ -308,7 +314,7 @@ export default function CountryPage({ country }: { country: CountryData }) {
           </li>
         </ul>
       </section>
-      <AdvantagesTwo/>
+      {advantagesSlot}
       <CountryCards/>
       <Contact/>
     </main>
