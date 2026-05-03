@@ -1,78 +1,97 @@
-
-/* Контейнер — сетка 4 карточки в строку на больших экранах */
-.countrySelect{
+/* ===== Container — soft purple-tinted card ===== */
+.countrySelect {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  padding: 14px;
+  gap: 14px;
+  padding: 18px;
   width: 100%;
-  background-color: var(--violet);
-  border-radius: 16px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(147, 51, 234, 0.04), rgba(124, 58, 237, 0.02));
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.06);
 }
 
-/* планшеты — 2 столбца */
-@media (max-width: 820px){
-  .countrySelect{
+/* tablets — 2 columns */
+@media (max-width: 820px) {
+  .countrySelect {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 12px;
+    padding: 14px;
+    border-radius: 16px;
   }
 }
 
-/* мобильные — тоже 2 столбца (2 ряда, красиво и ровно) */
-@media (max-width: 420px){
-  .countrySelect{
+/* mobile — still 2 columns */
+@media (max-width: 420px) {
+  .countrySelect {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 12px;
     overflow: hidden;
   }
-  .countryCard{
-    min-height: 120px;
+  .countryCard {
+    min-height: 130px;
   }
 }
 
-/* карточка */
-.countryCard{
+/* ===== Card link wrapper ===== */
+.cardLink {
+  text-decoration: none;
+  display: block;
+}
+
+/* ===== Card ===== */
+.countryCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 8px 6px;
-  transition: transform .18s ease, background .18s ease;
-}
-.countryCard:hover{
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.12);
+  gap: 10px;
+  padding: 14px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* флаг */
-.flagWrap{
+.countryCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.35);
+}
+
+/* ===== Flag wrap ===== */
+.flagWrap {
   position: relative;
   width: 100%;
   max-width: 140px;
   aspect-ratio: 16 / 10;
-  background: var(--white);
+  background: #ffffff;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.flagImg{
+
+.flagImg {
   object-fit: contain;
   object-position: center;
   padding: 4px;
 }
 
-/* подпись */
-.title{
-  color: #fff;
+/* ===== Title ===== */
+.title {
+  color: var(--ink);
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 13px;
-  margin-top: 4px;
+  font-size: 14px;
   text-align: center;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.countryCard:hover .title {
+  color: var(--purple);
 }
