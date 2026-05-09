@@ -118,7 +118,7 @@ export default function UnitedKingdom({ data }: { data: UkPageData }) {
           </>
         )}
 
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
         <p className={styles.description}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
