@@ -140,6 +140,40 @@ export const unitedKingdomPageQuery = groq`
   }
 `;
 
+export const citizenshipCountryBySlugQuery = groq`
+  *[_type == "citizenshipCountry" && slug.current == $slug][0]{
+    _id,
+    name,
+    nameAccusative,
+    nameGenitive,
+    "slug": slug.current,
+    flag,
+    bannerImage,
+    bannerTitle,
+    bannerSubtitle,
+    sectionTitle,
+    mainImage,
+    description,
+    benefitsTitle,
+    benefitsSubtitle,
+    benefits,
+    documentsTitle,
+    documentsSubtitle,
+    documents,
+    documentsOutro,
+    processTitle,
+    processSubtitle,
+    processSteps,
+    outroText
+  }
+`;
+
+export const allCitizenshipCountrySlugsQuery = groq`
+  *[_type == "citizenshipCountry" && defined(slug.current)]{
+    "slug": slug.current
+  }
+`;
+
 /** Все страны (без heroImage) — для секции «География работы» на странице О компании. */
 export const allCountriesForGeographyQuery = groq`
   *[_type == "country" && defined(slug.current)]|order(name asc){

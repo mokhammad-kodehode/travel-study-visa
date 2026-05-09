@@ -334,6 +334,97 @@ export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): Uk
   };
 }
 
+// ============== Citizenship country page ==============
+
+export type CitizenshipBenefit = { _key?: string; title: string; description: string };
+export type CitizenshipDocument = { _key?: string; name: string; description?: string };
+export type CitizenshipProcessStep = { _key?: string; title: string; description?: string };
+
+export type SanityCitizenshipCountry = {
+  _id: string;
+  name: string;
+  nameAccusative?: string;
+  nameGenitive?: string;
+  slug: string;
+  flag?: SanityImageSource;
+  bannerImage?: SanityAboutImage;
+  bannerTitle: string;
+  bannerSubtitle?: string;
+  sectionTitle?: string;
+  mainImage?: SanityAboutImage;
+  description?: PortableTextBlock[];
+  benefitsTitle?: string;
+  benefitsSubtitle?: string;
+  benefits?: CitizenshipBenefit[];
+  documentsTitle?: string;
+  documentsSubtitle?: string;
+  documents?: CitizenshipDocument[];
+  documentsOutro?: string;
+  processTitle?: string;
+  processSubtitle?: string;
+  processSteps?: CitizenshipProcessStep[];
+  outroText?: PortableTextBlock[];
+};
+
+export type CitizenshipCountryData = {
+  name: string;
+  nameAccusative: string;
+  nameGenitive: string;
+  slug: string;
+  flagUrl: string;
+  bannerImageUrl: string;
+  bannerImageAlt: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  sectionTitle: string;
+  mainImageUrl: string;
+  mainImageAlt: string;
+  description: PortableTextBlock[];
+  benefitsTitle: string;
+  benefitsSubtitle: string;
+  benefits: CitizenshipBenefit[];
+  documentsTitle: string;
+  documentsSubtitle: string;
+  documents: CitizenshipDocument[];
+  documentsOutro: string;
+  processTitle: string;
+  processSubtitle: string;
+  processSteps: CitizenshipProcessStep[];
+  outroText: PortableTextBlock[];
+};
+
+export function sanityToCitizenshipCountry(c: SanityCitizenshipCountry): CitizenshipCountryData {
+  const accusative = c.nameAccusative || c.name;
+  const genitive = c.nameGenitive || c.name;
+  return {
+    name: c.name,
+    nameAccusative: accusative,
+    nameGenitive: genitive,
+    slug: c.slug,
+    flagUrl: c.flag ? urlFor(c.flag).url() : '',
+    bannerImageUrl: c.bannerImage ? urlFor(c.bannerImage).width(1920).url() : '',
+    bannerImageAlt: c.bannerImage?.alt || '',
+    bannerTitle: c.bannerTitle,
+    bannerSubtitle: c.bannerSubtitle ?? '',
+    sectionTitle: c.sectionTitle || `Гражданство ${genitive}`,
+    mainImageUrl: c.mainImage ? urlFor(c.mainImage).width(1200).url() : '',
+    mainImageAlt: c.mainImage?.alt || '',
+    description: c.description ?? [],
+    benefitsTitle: c.benefitsTitle || `Что даёт гражданство ${genitive}`,
+    benefitsSubtitle: c.benefitsSubtitle ?? '',
+    benefits: c.benefits ?? [],
+    documentsTitle: c.documentsTitle || 'Необходимые документы для подачи на визу:',
+    documentsSubtitle:
+      c.documentsSubtitle ?? 'Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.',
+    documents: c.documents ?? [],
+    documentsOutro: c.documentsOutro ?? '',
+    processTitle: c.processTitle || 'Этапы получения гражданства',
+    processSubtitle: c.processSubtitle ?? '',
+    processSteps: c.processSteps ?? [],
+    outroText: c.outroText ?? [],
+  };
+}
+
 export function sanityCountriesToGeography(items: SanityCountryFlag[] | null): GeographyCountry[] {
   if (!Array.isArray(items)) return [];
   return items.map((c) => ({

@@ -16,6 +16,11 @@ const nextConfig = {
         destination: '/services_page/legalservices',
         permanent: true,
       },
+      {
+        source: '/grajdanstvo_ruminaya',
+        destination: '/grajdanstvo/romania',
+        permanent: true,
+      },
     ];
   },
 };

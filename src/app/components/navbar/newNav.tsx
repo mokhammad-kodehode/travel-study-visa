@@ -248,7 +248,7 @@ const Navbar: React.FC = () => {
             )}
           </li>
 
-          <li className={styles.nav_item}><Link href='/grajdanstvo_ruminaya' onClick={closeAll}>Гражданство Румынии</Link></li>
+          <li className={styles.nav_item}><Link href='/grajdanstvo/romania' onClick={closeAll}>Гражданство Румынии</Link></li>
           <li className={styles.nav_item}><Link href='/contact_page'         onClick={closeAll}>Контакты</Link></li>
         </ul>
 
