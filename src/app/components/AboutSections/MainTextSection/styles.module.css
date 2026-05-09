@@ -1,6 +1,6 @@
 .section {
   background-color: var(--al-bg-alt);
-  padding: 90px 20px;
+  padding: 0 20px 90px;
 }
 
 .container {
@@ -113,7 +113,7 @@
 
 @media (max-width: 820px) {
   .section {
-    padding: 56px 14px;
+    padding: 0 14px 56px;
   }
 
   .imageWrap {
