@@ -13,7 +13,7 @@ import type { IconType } from 'react-icons';
 import styles from './styles.module.css';
 import type { CitizenshipBenefit } from '@/sanity/adapters';
 
-const ICONS: IconType[] = [
+const DEFAULT_ICONS: IconType[] = [
   FaShieldAlt,
   FaPassport,
   FaGlobeEurope,
@@ -25,13 +25,17 @@ const ICONS: IconType[] = [
   FaUserTie,
 ];
 
+type BenefitItem = { title: string; description: string };
+
 type Props = {
   title: string;
   subtitle?: string;
-  items: CitizenshipBenefit[];
+  items: BenefitItem[] | CitizenshipBenefit[];
+  icons?: IconType[];
 };
 
-export default function BenefitsSection({ title, subtitle, items }: Props) {
+export default function BenefitsSection({ title, subtitle, items, icons }: Props) {
+  const iconSet = icons && icons.length > 0 ? icons : DEFAULT_ICONS;
   if (!items.length) return null;
   return (
     <section className={styles.section}>
@@ -40,7 +44,7 @@ export default function BenefitsSection({ title, subtitle, items }: Props) {
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         <div className={styles.grid}>
           {items.map((item, i) => {
-            const Icon = ICONS[i % ICONS.length];
+            const Icon = iconSet[i % iconSet.length];
             return (
               <article key={i} className={styles.card}>
                 <div className={styles.iconTile}>

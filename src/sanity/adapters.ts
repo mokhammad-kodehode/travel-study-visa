@@ -334,6 +334,69 @@ export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): Uk
   };
 }
 
+// ============== VNJ UAE page ==============
+
+export type VnjUAEFeature = { _key?: string; title: string; description: string };
+export type VnjUAEDocument = { _key?: string; name: string; description?: string };
+export type VnjUAEStep = { _key?: string; title: string; description?: string };
+
+export type SanityVnjUAEPage = {
+  bannerImage?: SanityAboutImage;
+  bannerTitle: string;
+  bannerSubtitle?: string;
+  sectionTitle?: string;
+  description?: PortableTextBlock[];
+  featuresTitle?: string;
+  featuresSubtitle?: string;
+  features?: VnjUAEFeature[];
+  documentsTitle?: string;
+  documentsSubtitle?: string;
+  documents?: VnjUAEDocument[];
+  processTitle?: string;
+  processSubtitle?: string;
+  processSteps?: VnjUAEStep[];
+};
+
+export type VnjUAEPageData = {
+  bannerImageUrl: string;
+  bannerImageAlt: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  sectionTitle: string;
+  description: PortableTextBlock[];
+  featuresTitle: string;
+  featuresSubtitle: string;
+  features: VnjUAEFeature[];
+  documentsTitle: string;
+  documentsSubtitle: string;
+  documents: VnjUAEDocument[];
+  processTitle: string;
+  processSubtitle: string;
+  processSteps: VnjUAEStep[];
+};
+
+export function sanityToVnjUAEPage(s: SanityVnjUAEPage | null, fallback: VnjUAEPageData): VnjUAEPageData {
+  if (!s) return fallback;
+  const useArr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  return {
+    bannerImageUrl: s.bannerImage ? urlFor(s.bannerImage).width(1920).url() : fallback.bannerImageUrl,
+    bannerImageAlt: s.bannerImage?.alt || fallback.bannerImageAlt,
+    bannerTitle: s.bannerTitle || fallback.bannerTitle,
+    bannerSubtitle: s.bannerSubtitle ?? fallback.bannerSubtitle,
+    sectionTitle: s.sectionTitle || fallback.sectionTitle,
+    description: useArr(s.description, fallback.description),
+    featuresTitle: s.featuresTitle || fallback.featuresTitle,
+    featuresSubtitle: s.featuresSubtitle ?? fallback.featuresSubtitle,
+    features: useArr(s.features, fallback.features),
+    documentsTitle: s.documentsTitle || fallback.documentsTitle,
+    documentsSubtitle: s.documentsSubtitle ?? fallback.documentsSubtitle,
+    documents: useArr(s.documents, fallback.documents),
+    processTitle: s.processTitle || fallback.processTitle,
+    processSubtitle: s.processSubtitle ?? fallback.processSubtitle,
+    processSteps: useArr(s.processSteps, fallback.processSteps),
+  };
+}
+
 // ============== Citizenship list ==============
 
 export type SanityCitizenshipListItem = {

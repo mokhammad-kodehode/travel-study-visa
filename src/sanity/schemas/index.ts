@@ -6,6 +6,7 @@ import { advantagesSectionType } from './advantagesSection';
 import { aboutPageType } from './aboutPage';
 import { unitedKingdomPageType } from './unitedKingdomPage';
 import { citizenshipCountryType } from './citizenshipCountry';
+import { vnjUAEPageType } from './vnjUAEPage';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,5 +17,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutPageType,
     unitedKingdomPageType,
     citizenshipCountryType,
+    vnjUAEPageType,
   ],
 };

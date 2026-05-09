@@ -174,6 +174,25 @@ export const allCitizenshipCountrySlugsQuery = groq`
   }
 `;
 
+export const vnjUAEPageQuery = groq`
+  *[_type == "vnjUAEPage"][0]{
+    bannerImage,
+    bannerTitle,
+    bannerSubtitle,
+    sectionTitle,
+    description,
+    featuresTitle,
+    featuresSubtitle,
+    features,
+    documentsTitle,
+    documentsSubtitle,
+    documents,
+    processTitle,
+    processSubtitle,
+    processSteps
+  }
+`;
+
 /** Список всех стран гражданства — для index page и navbar dropdown. */
 export const allCitizenshipCountriesQuery = groq`
   *[_type == "citizenshipCountry" && defined(slug.current)]|order(name asc){
