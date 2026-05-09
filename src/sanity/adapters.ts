@@ -201,33 +201,33 @@ export type AboutPageData = {
 
 export function sanityToAboutPage(s: SanityAboutPage | null, fallback: AboutPageData): AboutPageData {
   if (!s) return fallback;
-  const useArr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  const arrOr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
   return {
     hero: {
       title: s.heroTitle || fallback.hero.title,
       subtitle: s.heroSubtitle || fallback.hero.subtitle,
       imageUrl: s.heroImage ? urlFor(s.heroImage).width(1920).url() : fallback.hero.imageUrl,
       imageAlt: s.heroImage?.alt || fallback.hero.imageAlt,
-      stats: useArr(s.heroStats, fallback.hero.stats),
+      stats: arrOr(s.heroStats, fallback.hero.stats),
     },
     mission: {
       enabled: s.missionEnabled ?? fallback.mission.enabled,
       title: s.missionTitle || fallback.mission.title,
       subtitle: s.missionSubtitle || fallback.mission.subtitle,
-      items: useArr(s.missionItems, fallback.mission.items),
+      items: arrOr(s.missionItems, fallback.mission.items),
     },
     mainText: {
       eyebrow: s.mainTextEyebrow ?? fallback.mainText.eyebrow,
       title: s.mainTextTitle || fallback.mainText.title,
       imageUrl: s.mainTextImage ? urlFor(s.mainTextImage).width(1600).url() : fallback.mainText.imageUrl,
       imageAlt: s.mainTextImage?.alt || fallback.mainText.imageAlt,
-      blocks: useArr(s.mainText, fallback.mainText.blocks),
+      blocks: arrOr(s.mainText, fallback.mainText.blocks),
     },
     timeline: {
       enabled: s.timelineEnabled ?? fallback.timeline.enabled,
       title: s.timelineTitle || fallback.timeline.title,
       subtitle: s.timelineSubtitle || fallback.timeline.subtitle,
-      items: useArr(s.timelineItems, fallback.timeline.items),
+      items: arrOr(s.timelineItems, fallback.timeline.items),
     },
     cta: {
       enabled: s.ctaEnabled ?? fallback.cta.enabled,
@@ -310,7 +310,7 @@ export type UkPageData = {
 
 export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): UkPageData {
   if (!s) return fallback;
-  const useArr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  const arrOr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
   return {
     bannerImageUrl: s.bannerImage ? urlFor(s.bannerImage).width(1920).url() : fallback.bannerImageUrl,
     bannerImageAlt: s.bannerImage?.alt || fallback.bannerImageAlt,
@@ -319,18 +319,18 @@ export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): Uk
     sectionTitle: s.sectionTitle || fallback.sectionTitle,
     mainImageUrl: s.mainImage ? urlFor(s.mainImage).width(1200).url() : fallback.mainImageUrl,
     mainImageAlt: s.mainImage?.alt || fallback.mainImageAlt,
-    mainText: useArr(s.mainText, fallback.mainText),
+    mainText: arrOr(s.mainText, fallback.mainText),
     visaTypesTitle: s.visaTypesTitle || fallback.visaTypesTitle,
     visaTypesSubtitle: s.visaTypesSubtitle || fallback.visaTypesSubtitle,
-    visaTypes: useArr(s.visaTypes, fallback.visaTypes),
+    visaTypes: arrOr(s.visaTypes, fallback.visaTypes),
     featuresTitle: s.featuresTitle || fallback.featuresTitle,
     featuresSubtitle: s.featuresSubtitle || fallback.featuresSubtitle,
-    features: useArr(s.features, fallback.features),
+    features: arrOr(s.features, fallback.features),
     documentsTitle: s.documentsTitle || fallback.documentsTitle,
     documentsSubtitle: s.documentsSubtitle || fallback.documentsSubtitle,
     processTitle: s.processTitle || fallback.processTitle,
     processSubtitle: s.processSubtitle || fallback.processSubtitle,
-    processSteps: useArr(s.processSteps, fallback.processSteps),
+    processSteps: arrOr(s.processSteps, fallback.processSteps),
   };
 }
 
@@ -377,23 +377,23 @@ export type VnjUAEPageData = {
 
 export function sanityToVnjUAEPage(s: SanityVnjUAEPage | null, fallback: VnjUAEPageData): VnjUAEPageData {
   if (!s) return fallback;
-  const useArr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  const arrOr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
   return {
     bannerImageUrl: s.bannerImage ? urlFor(s.bannerImage).width(1920).url() : fallback.bannerImageUrl,
     bannerImageAlt: s.bannerImage?.alt || fallback.bannerImageAlt,
     bannerTitle: s.bannerTitle || fallback.bannerTitle,
     bannerSubtitle: s.bannerSubtitle ?? fallback.bannerSubtitle,
     sectionTitle: s.sectionTitle || fallback.sectionTitle,
-    description: useArr(s.description, fallback.description),
+    description: arrOr(s.description, fallback.description),
     featuresTitle: s.featuresTitle || fallback.featuresTitle,
     featuresSubtitle: s.featuresSubtitle ?? fallback.featuresSubtitle,
-    features: useArr(s.features, fallback.features),
+    features: arrOr(s.features, fallback.features),
     documentsTitle: s.documentsTitle || fallback.documentsTitle,
     documentsSubtitle: s.documentsSubtitle ?? fallback.documentsSubtitle,
-    documents: useArr(s.documents, fallback.documents),
+    documents: arrOr(s.documents, fallback.documents),
     processTitle: s.processTitle || fallback.processTitle,
     processSubtitle: s.processSubtitle ?? fallback.processSubtitle,
-    processSteps: useArr(s.processSteps, fallback.processSteps),
+    processSteps: arrOr(s.processSteps, fallback.processSteps),
   };
 }
 
