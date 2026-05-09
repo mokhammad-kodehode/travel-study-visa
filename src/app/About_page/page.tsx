@@ -110,8 +110,8 @@ const fallback: AboutPageData = {
   mainText: {
     eyebrow: 'О КОМПАНИИ',
     title: 'Travel & Study — больше, чем просто визовый центр',
-    imageUrl: '',
-    imageAlt: '',
+    imageUrl: '/images/global.jpg',
+    imageAlt: 'Travel & Study — международный центр туризма, образования и права',
     blocks: fallbackMainTextBlocks,
   },
   timeline: {
