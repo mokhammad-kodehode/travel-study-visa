@@ -74,6 +74,8 @@ const fallback: AboutPageData = {
     title: 'Travel & Study',
     subtitle:
       'Международный центр туризма, образования и права — ваш надёжный партнёр в мире путешествий, обучения и юридической поддержки.',
+    imageUrl: '',
+    imageAlt: '',
     stats: [
       { number: '10+', label: 'лет опыта' },
       { number: '1000+', label: 'довольных клиентов' },
@@ -159,10 +161,18 @@ export default async function About_Us() {
   const data = sanityToAboutPage(rawAbout, fallback);
   const countries = sanityCountriesToGeography(rawCountries);
 
+  const bannerStyle = data.hero.imageUrl
+    ? {
+        backgroundImage: `linear-gradient(rgba(10, 8, 35, 0.55), rgba(45, 27, 94, 0.65)), url('${data.hero.imageUrl}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }
+    : undefined;
+
   return (
     <main className={styles.main}>
       {/* ===== Hero (Dark Aurora) ===== */}
-      <section className={styles.banner}>
+      <section className={styles.banner} style={bannerStyle}>
         <div className={`${styles.orb} ${styles.orb_violet}`} aria-hidden />
         <div className={`${styles.orb} ${styles.orb_gold}`} aria-hidden />
         <div className={`${styles.orb} ${styles.orb_pink}`} aria-hidden />

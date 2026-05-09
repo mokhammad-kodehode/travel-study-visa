@@ -30,6 +30,22 @@ export const aboutPageType = defineType({
 
     // ===== Hero / Banner =====
     defineField({
+      name: 'heroImage',
+      title: 'Фон баннера',
+      description: 'Большая картинка-фон для верхнего баннера (поверх неё ляжет затемнение для читабельности текста). Если не загружено — используется тёмный градиент по умолчанию.',
+      type: 'image',
+      group: 'hero',
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alt-текст (для SEO и доступности)',
+          description: 'Что изображено. Например: «Паспорт со штампами разных стран»',
+        },
+      ],
+    }),
+    defineField({
       name: 'heroTitle',
       title: 'Заголовок баннера',
       description: 'Например: «Travel & Study»',

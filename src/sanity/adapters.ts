@@ -152,6 +152,7 @@ export type AboutCtaAction = 'jivo' | 'contacts' | 'whatsapp' | 'telegram' | 'ph
 export type SanityAboutImage = SanityImageSource & { alt?: string };
 
 export type SanityAboutPage = {
+  heroImage?: SanityAboutImage;
   heroTitle?: string;
   heroSubtitle?: string;
   heroStats?: AboutHeroStat[];
@@ -183,7 +184,7 @@ export type SanityAboutPage = {
 };
 
 export type AboutPageData = {
-  hero: { title: string; subtitle: string; stats: AboutHeroStat[] };
+  hero: { title: string; subtitle: string; imageUrl: string; imageAlt: string; stats: AboutHeroStat[] };
   mission: { enabled: boolean; title: string; subtitle: string; items: AboutMissionItem[] };
   mainText: { eyebrow: string; title: string; imageUrl: string; imageAlt: string; blocks: PortableTextBlock[] };
   timeline: { enabled: boolean; title: string; subtitle: string; items: AboutTimelineItem[] };
@@ -209,6 +210,8 @@ export function sanityToAboutPage(s: SanityAboutPage | null, fallback: AboutPage
     hero: {
       title: s.heroTitle || fallback.hero.title,
       subtitle: s.heroSubtitle || fallback.hero.subtitle,
+      imageUrl: s.heroImage ? urlFor(s.heroImage).width(1920).url() : fallback.hero.imageUrl,
+      imageAlt: s.heroImage?.alt || fallback.hero.imageAlt,
       stats: useArr(s.heroStats, fallback.hero.stats),
     },
     mission: {

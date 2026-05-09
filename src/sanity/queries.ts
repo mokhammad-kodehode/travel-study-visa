@@ -89,6 +89,7 @@ export const advantagesSectionBySlugQuery = groq`
 
 export const aboutPageQuery = groq`
   *[_type == "aboutPage"][0]{
+    heroImage,
     heroTitle,
     heroSubtitle,
     heroStats,
