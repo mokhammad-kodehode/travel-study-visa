@@ -172,21 +172,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.process_list_item::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #742f8b; /* Фиолетовая линия сверху */
-  transition: background-color 0.3s ease;
-}
-
-.process_list_item.open_item::before {
-  background: #4a0072; /* Более насыщенный цвет для активного состояния */
-}
-
 .toggleButton {
   display: flex;
   justify-content: space-between;

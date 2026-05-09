@@ -118,6 +118,24 @@ export const aboutPageQuery = groq`
   }
 `;
 
+export const unitedKingdomPageQuery = groq`
+  *[_type == "unitedKingdomPage"][0]{
+    bannerImage,
+    bannerTitle,
+    bannerSubtitle,
+    sectionTitle,
+    mainImage,
+    mainText,
+    visaTypesTitle,
+    visaTypes,
+    featuresTitle,
+    features,
+    processTitle,
+    processSubtitle,
+    processSteps
+  }
+`;
+
 /** Все страны (без heroImage) — для секции «География работы» на странице О компании. */
 export const allCountriesForGeographyQuery = groq`
   *[_type == "country" && defined(slug.current)]|order(name asc){

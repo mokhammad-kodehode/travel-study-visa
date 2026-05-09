@@ -4,7 +4,8 @@ import { vnjCountryType } from './vnjCountry';
 import { legalServicesPageType } from './legalServicesPage';
 import { advantagesSectionType } from './advantagesSection';
 import { aboutPageType } from './aboutPage';
+import { unitedKingdomPageType } from './unitedKingdomPage';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [countryType, vnjCountryType, legalServicesPageType, advantagesSectionType, aboutPageType],
+  types: [countryType, vnjCountryType, legalServicesPageType, advantagesSectionType, aboutPageType, unitedKingdomPageType],
 };

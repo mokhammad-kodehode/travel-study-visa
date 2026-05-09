@@ -260,6 +260,68 @@ export type GeographyCountry = {
   pageUrl: string;
 };
 
+// ============== UK page ==============
+
+export type UkVisaType = { _key?: string; title: string; description: string };
+export type UkFeature = { _key?: string; title: string; description: string };
+export type UkProcessStep = { _key?: string; title: string; description?: string };
+
+export type SanityUkPage = {
+  bannerImage?: SanityAboutImage;
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  sectionTitle?: string;
+  mainImage?: SanityAboutImage;
+  mainText?: PortableTextBlock[];
+  visaTypesTitle?: string;
+  visaTypes?: UkVisaType[];
+  featuresTitle?: string;
+  features?: UkFeature[];
+  processTitle?: string;
+  processSubtitle?: string;
+  processSteps?: UkProcessStep[];
+};
+
+export type UkPageData = {
+  bannerImageUrl: string;
+  bannerImageAlt: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  sectionTitle: string;
+  mainImageUrl: string;
+  mainImageAlt: string;
+  mainText: PortableTextBlock[];
+  visaTypesTitle: string;
+  visaTypes: UkVisaType[];
+  featuresTitle: string;
+  features: UkFeature[];
+  processTitle: string;
+  processSubtitle: string;
+  processSteps: UkProcessStep[];
+};
+
+export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): UkPageData {
+  if (!s) return fallback;
+  const useArr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  return {
+    bannerImageUrl: s.bannerImage ? urlFor(s.bannerImage).width(1920).url() : fallback.bannerImageUrl,
+    bannerImageAlt: s.bannerImage?.alt || fallback.bannerImageAlt,
+    bannerTitle: s.bannerTitle || fallback.bannerTitle,
+    bannerSubtitle: s.bannerSubtitle || fallback.bannerSubtitle,
+    sectionTitle: s.sectionTitle || fallback.sectionTitle,
+    mainImageUrl: s.mainImage ? urlFor(s.mainImage).width(1200).url() : fallback.mainImageUrl,
+    mainImageAlt: s.mainImage?.alt || fallback.mainImageAlt,
+    mainText: useArr(s.mainText, fallback.mainText),
+    visaTypesTitle: s.visaTypesTitle || fallback.visaTypesTitle,
+    visaTypes: useArr(s.visaTypes, fallback.visaTypes),
+    featuresTitle: s.featuresTitle || fallback.featuresTitle,
+    features: useArr(s.features, fallback.features),
+    processTitle: s.processTitle || fallback.processTitle,
+    processSubtitle: s.processSubtitle || fallback.processSubtitle,
+    processSteps: useArr(s.processSteps, fallback.processSteps),
+  };
+}
+
 export function sanityCountriesToGeography(items: SanityCountryFlag[] | null): GeographyCountry[] {
   if (!Array.isArray(items)) return [];
   return items.map((c) => ({
