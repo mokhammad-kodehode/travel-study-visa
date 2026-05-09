@@ -149,6 +149,8 @@ export type AboutMissionItem = { _key?: string; title: string; description: stri
 export type AboutTimelineItem = { _key?: string; year: string; title: string; description?: string };
 export type AboutCtaAction = 'contacts' | 'whatsapp' | 'telegram' | 'phone' | 'custom';
 
+export type SanityAboutImage = SanityImageSource & { alt?: string };
+
 export type SanityAboutPage = {
   heroTitle?: string;
   heroSubtitle?: string;
@@ -157,7 +159,9 @@ export type SanityAboutPage = {
   missionTitle?: string;
   missionSubtitle?: string;
   missionItems?: AboutMissionItem[];
+  mainTextEyebrow?: string;
   mainTextTitle?: string;
+  mainTextImage?: SanityAboutImage;
   mainText?: PortableTextBlock[];
   timelineEnabled?: boolean;
   timelineTitle?: string;
@@ -181,7 +185,7 @@ export type SanityAboutPage = {
 export type AboutPageData = {
   hero: { title: string; subtitle: string; stats: AboutHeroStat[] };
   mission: { enabled: boolean; title: string; subtitle: string; items: AboutMissionItem[] };
-  mainText: { title: string; blocks: PortableTextBlock[] };
+  mainText: { eyebrow: string; title: string; imageUrl: string; imageAlt: string; blocks: PortableTextBlock[] };
   timeline: { enabled: boolean; title: string; subtitle: string; items: AboutTimelineItem[] };
   geography: { enabled: boolean; title: string; subtitle: string };
   cta: {
@@ -214,7 +218,10 @@ export function sanityToAboutPage(s: SanityAboutPage | null, fallback: AboutPage
       items: useArr(s.missionItems, fallback.mission.items),
     },
     mainText: {
+      eyebrow: s.mainTextEyebrow ?? fallback.mainText.eyebrow,
       title: s.mainTextTitle || fallback.mainText.title,
+      imageUrl: s.mainTextImage ? urlFor(s.mainTextImage).width(1600).url() : fallback.mainText.imageUrl,
+      imageAlt: s.mainTextImage?.alt || fallback.mainText.imageAlt,
       blocks: useArr(s.mainText, fallback.mainText.blocks),
     },
     timeline: {

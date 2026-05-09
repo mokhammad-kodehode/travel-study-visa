@@ -108,7 +108,10 @@ const fallback: AboutPageData = {
     ],
   },
   mainText: {
-    title: 'О Компании',
+    eyebrow: 'О КОМПАНИИ',
+    title: 'Travel & Study — больше, чем просто визовый центр',
+    imageUrl: '',
+    imageAlt: '',
     blocks: fallbackMainTextBlocks,
   },
   timeline: {
@@ -201,6 +204,15 @@ export default async function About_Us() {
         </div>
       </div>
 
+      {/* ===== Main text (magazine style with photo) ===== */}
+      <MainTextSection
+        eyebrow={data.mainText.eyebrow}
+        title={data.mainText.title}
+        imageUrl={data.mainText.imageUrl}
+        imageAlt={data.mainText.imageAlt}
+        blocks={data.mainText.blocks}
+      />
+
       {/* ===== Mission & Values ===== */}
       {data.mission.enabled && (
         <MissionSection
@@ -209,9 +221,6 @@ export default async function About_Us() {
           items={data.mission.items}
         />
       )}
-
-      {/* ===== Main text ===== */}
-      <MainTextSection title={data.mainText.title} blocks={data.mainText.blocks} />
 
       {/* ===== Timeline ===== */}
       {data.timeline.enabled && (

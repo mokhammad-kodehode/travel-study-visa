@@ -110,11 +110,35 @@ export const aboutPageType = defineType({
 
     // ===== Main text =====
     defineField({
-      name: 'mainTextTitle',
-      title: 'Заголовок основного текста',
+      name: 'mainTextEyebrow',
+      title: 'Маленькая надпись над заголовком',
+      description: 'Например: «О КОМПАНИИ». Можно оставить пустым.',
       type: 'string',
       group: 'mainText',
-      initialValue: 'О Компании',
+      initialValue: 'О КОМПАНИИ',
+    }),
+    defineField({
+      name: 'mainTextTitle',
+      title: 'Заголовок',
+      type: 'string',
+      group: 'mainText',
+      initialValue: 'Travel & Study — больше, чем просто визовый центр',
+    }),
+    defineField({
+      name: 'mainTextImage',
+      title: 'Фото компании',
+      description: 'Большая картинка над текстом (например, фото офиса/команды). Если не загружено — секция покажется без фото.',
+      type: 'image',
+      group: 'mainText',
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alt-текст (для SEO и доступности)',
+          description: 'Что изображено на фото. Например: «Офис Travel & Study в Москве»',
+        },
+      ],
     }),
     defineField({
       name: 'mainText',

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { PortableText, type PortableTextComponents } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/react';
 import styles from './styles.module.css';
@@ -19,22 +20,41 @@ const components: PortableTextComponents = {
 };
 
 type Props = {
+  eyebrow?: string;
   title: string;
+  imageUrl?: string;
+  imageAlt?: string;
   blocks: PortableTextBlock[];
 };
 
-export default function MainTextSection({ title, blocks }: Props) {
+export default function MainTextSection({ eyebrow, title, imageUrl, imageAlt, blocks }: Props) {
   if (!blocks || blocks.length === 0) return null;
+  const hasImage = Boolean(imageUrl);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.card}>
-          <div className={styles.accentBar} aria-hidden />
-          <div className={styles.content}>
-            <h2 className={styles.title}>{title}</h2>
-            <div className={styles.body}>
-              <PortableText value={blocks} components={components} />
+        {hasImage && (
+          <div className={styles.imageWrap}>
+            <div className={styles.glow} aria-hidden />
+            <div className={styles.imageFrame}>
+              <Image
+                src={imageUrl!}
+                alt={imageAlt || title}
+                fill
+                sizes="(max-width: 820px) 100vw, 1200px"
+                className={styles.image}
+                priority={false}
+              />
             </div>
+          </div>
+        )}
+
+        <div className={styles.content}>
+          {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.body}>
+            <PortableText value={blocks} components={components} />
           </div>
         </div>
       </div>
