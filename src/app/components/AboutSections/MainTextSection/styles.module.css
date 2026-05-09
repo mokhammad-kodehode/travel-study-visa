@@ -30,7 +30,8 @@
 .imageFrame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 9;
+  max-height: 460px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow:
