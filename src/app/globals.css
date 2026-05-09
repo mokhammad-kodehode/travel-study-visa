@@ -67,6 +67,50 @@
   --hero-offset-desktop: 80px;
   --hero-offset-tablet: 60px;
   --hero-offset-mobile: 40px;
+
+  /* ===== Aurora Light — единый стиль body-секций ===== */
+  /* Фоны секций (чередуются) */
+  --al-bg-primary: #ffffff;
+  --al-bg-alt: #fafafa;
+
+  /* Карточка */
+  --al-card-bg: #ffffff;
+  --al-card-border: rgba(124, 58, 237, 0.12);
+  --al-card-border-hover: rgba(124, 58, 237, 0.30);
+  --al-card-radius: 20px;
+  --al-card-radius-sm: 16px;
+  --al-card-padding: 28px;
+  --al-shadow: 0 8px 22px rgba(17, 24, 39, 0.04);
+  --al-shadow-hover: 0 14px 30px rgba(124, 58, 237, 0.15);
+
+  /* Контейнеры/обёртки */
+  --al-container-max: 1200px;
+  --al-container-padding: 24px;
+  --al-radius-container: 24px;
+
+  /* Иконка-плитка (gradient tile) */
+  --al-icon-tile-grad: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
+  --al-icon-tile-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+  --al-icon-tile-radius: 12px;
+
+  /* Типографика */
+  --al-h1: clamp(36px, 5vw, 60px);
+  --al-h2: clamp(28px, 4vw, 40px);
+  --al-h3: 18px;
+  --al-body: 16px;
+  --al-small: 14px;
+
+  /* Цвета текста */
+  --al-text-strong: var(--ink);   /* #111827 */
+  --al-text-body: var(--sub);     /* #4B5563 */
+  --al-text-muted: var(--muted);  /* #6B7280 */
+
+  /* Кнопки Aurora */
+  --al-btn-radius: 12px;
+  --al-btn-padding: 14px 28px;
+  --al-btn-primary-bg: #7C3AED;
+  --al-btn-primary-bg-hover: #9333EA;
+  --al-btn-secondary-border: 2px solid #7C3AED;
 }
 
 

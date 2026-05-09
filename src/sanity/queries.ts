@@ -86,3 +86,45 @@ export const advantagesSectionBySlugQuery = groq`
     cards
   }
 `;
+
+export const aboutPageQuery = groq`
+  *[_type == "aboutPage"][0]{
+    heroTitle,
+    heroSubtitle,
+    heroStats,
+    missionEnabled,
+    missionTitle,
+    missionSubtitle,
+    missionItems,
+    mainTextTitle,
+    mainText,
+    timelineEnabled,
+    timelineTitle,
+    timelineSubtitle,
+    timelineItems,
+    geographyEnabled,
+    geographyTitle,
+    geographySubtitle,
+    ctaEnabled,
+    ctaTitle,
+    ctaDescription,
+    ctaPrimaryLabel,
+    ctaPrimaryAction,
+    ctaPrimaryHref,
+    ctaSecondaryEnabled,
+    ctaSecondaryLabel,
+    ctaSecondaryAction,
+    ctaSecondaryHref
+  }
+`;
+
+/** Все страны (без heroImage) — для секции «География работы» на странице О компании. */
+export const allCountriesForGeographyQuery = groq`
+  *[_type == "country" && defined(slug.current)]|order(name asc){
+    _id,
+    name,
+    "slug": slug.current,
+    region,
+    flag
+  }
+`;
