@@ -136,7 +136,7 @@ const fallback: AboutPageData = {
     description:
       'Получите бесплатную консультацию специалиста — мы подберём оптимальное решение для ваших целей.',
     primaryLabel: 'Бесплатная консультация',
-    primaryAction: 'contacts',
+    primaryAction: 'jivo',
     primaryHref: '',
     secondaryEnabled: true,
     secondaryLabel: 'Написать в WhatsApp',

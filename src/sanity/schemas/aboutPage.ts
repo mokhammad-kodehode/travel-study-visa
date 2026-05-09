@@ -287,6 +287,7 @@ export const aboutPageType = defineType({
       group: 'cta',
       options: {
         list: [
+          { title: 'Открыть чат на сайте (Jivo)', value: 'jivo' },
           { title: 'Перейти на /contacts', value: 'contacts' },
           { title: 'Открыть WhatsApp', value: 'whatsapp' },
           { title: 'Открыть Telegram', value: 'telegram' },
@@ -295,7 +296,7 @@ export const aboutPageType = defineType({
         ],
         layout: 'radio',
       },
-      initialValue: 'contacts',
+      initialValue: 'jivo',
       hidden: ({ parent }) => !parent?.ctaEnabled,
     }),
     defineField({
@@ -328,6 +329,7 @@ export const aboutPageType = defineType({
       group: 'cta',
       options: {
         list: [
+          { title: 'Открыть чат на сайте (Jivo)', value: 'jivo' },
           { title: 'Перейти на /contacts', value: 'contacts' },
           { title: 'Открыть WhatsApp', value: 'whatsapp' },
           { title: 'Открыть Telegram', value: 'telegram' },

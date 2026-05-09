@@ -147,7 +147,7 @@ export function sanityToAdvantagesSection(s: SanityAdvantagesSection | null, fal
 export type AboutHeroStat = { _key?: string; number: string; label: string };
 export type AboutMissionItem = { _key?: string; title: string; description: string };
 export type AboutTimelineItem = { _key?: string; year: string; title: string; description?: string };
-export type AboutCtaAction = 'contacts' | 'whatsapp' | 'telegram' | 'phone' | 'custom';
+export type AboutCtaAction = 'jivo' | 'contacts' | 'whatsapp' | 'telegram' | 'phone' | 'custom';
 
 export type SanityAboutImage = SanityImageSource & { alt?: string };
 
