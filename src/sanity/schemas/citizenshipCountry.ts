@@ -189,7 +189,7 @@ export const citizenshipCountryType = defineType({
       of: [
         {
           type: 'object',
-          name: 'document',
+          name: 'documentRow',
           fields: [
             defineField({ name: 'name', title: 'Название документа', type: 'string', validation: (r) => r.required() }),
             defineField({ name: 'description', title: 'Описание', type: 'text', rows: 3 }),
