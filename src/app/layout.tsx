@@ -11,6 +11,9 @@ import '@fontsource/playfair-display/latin-800-italic.css';
 import './globals.css'
 import SiteShell from './components/SiteShell';
 import { SITE_URL } from '@/config/contacts';
+import { client } from '@/sanity/client';
+import { allCitizenshipCountriesQuery } from '@/sanity/queries';
+import { sanityToCitizenshipList, type SanityCitizenshipListItem } from '@/sanity/adapters';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,15 +41,20 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // Список стран гражданства — для navbar dropdown и footer.
+  // ISR обеспечивает revalidate в страницах ниже; layout сам по себе кешируется build-time + по запросам.
+  const rawCountries = await client.fetch<SanityCitizenshipListItem[]>(allCitizenshipCountriesQuery);
+  const citizenshipCountries = sanityToCitizenshipList(rawCountries);
+
   return (
     <html lang="ru">
       <body>
-        <SiteShell>{children}</SiteShell>
+        <SiteShell citizenshipCountries={citizenshipCountries}>{children}</SiteShell>
         <script src="//code.jivosite.com/widget/V03s3szzXR" async></script>
       </body>
     </html>

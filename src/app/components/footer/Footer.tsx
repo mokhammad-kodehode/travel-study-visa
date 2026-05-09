@@ -3,8 +3,13 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PHONE_DISPLAY } from '@/config/contacts';
+import type { CitizenshipListItem } from '@/sanity/adapters';
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  citizenshipCountries?: CitizenshipListItem[];
+};
+
+const Footer: React.FC<FooterProps> = ({ citizenshipCountries = [] }) => {
   return (
     <footer className={styles.footer}>
         <div  className={styles.footer_wrapper}>
@@ -65,16 +70,29 @@ const Footer: React.FC = () => {
                 </ul>
             </div>
             <div className={styles.footer_section}>
+                <h4>ГРАЖДАНСТВО</h4>
+                <ul>
+                    <Link href="/grajdanstvo">
+                        <li>Все программы</li>
+                    </Link>
+                    {citizenshipCountries.map((c) => (
+                        <Link key={c.slug} href={c.pageUrl}>
+                            <li>{c.name}</li>
+                        </Link>
+                    ))}
+                </ul>
+            </div>
+            <div className={styles.footer_section}>
                 <h4>О КОМПАНИИ</h4>
                 <ul>
                      <Link  href="/About_page">
-                        <li>О нас</li> 
+                        <li>О нас</li>
                     </Link>
                      <Link  href="/contact_page">
-                        <li>Контакты</li> 
+                        <li>Контакты</li>
                     </Link>
                 </ul>
-            </div>  
+            </div>
         </div>
         <div className={styles.footer_bottom}>
             <p>© 2024 Все права защищены.</p>

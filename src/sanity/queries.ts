@@ -174,6 +174,17 @@ export const allCitizenshipCountrySlugsQuery = groq`
   }
 `;
 
+/** Список всех стран гражданства — для index page и navbar dropdown. */
+export const allCitizenshipCountriesQuery = groq`
+  *[_type == "citizenshipCountry" && defined(slug.current)]|order(name asc){
+    _id,
+    name,
+    "slug": slug.current,
+    flag,
+    bannerSubtitle
+  }
+`;
+
 /** Все страны (без heroImage) — для секции «География работы» на странице О компании. */
 export const allCountriesForGeographyQuery = groq`
   *[_type == "country" && defined(slug.current)]|order(name asc){

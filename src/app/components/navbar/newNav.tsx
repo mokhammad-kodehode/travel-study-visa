@@ -27,16 +27,21 @@ import {
   WHATSAPP_URL,
   OFFICE_ADDRESS,
 } from '@/config/contacts';
+import type { CitizenshipListItem } from '@/sanity/adapters';
 
 type Region = 'europe' | 'america' | 'asia';
 
-const Navbar: React.FC = () => {
+type NavbarProps = {
+  citizenshipCountries?: CitizenshipListItem[];
+};
+
+const Navbar: React.FC<NavbarProps> = ({ citizenshipCountries = [] }) => {
   /* --------------------------- state --------------------------- */
   const [isScrolled,      setIsScrolled]      = useState(false);
   const [isMobileOpen,    setIsMobileOpen]    = useState(false);
   const [isChatOpen,      setIsChatOpen]      = useState(false);
   const [activeMain,      setActiveMain]      =
-        useState<null | 'services' | 'visa' | 'vnj'>(null);
+        useState<null | 'services' | 'visa' | 'vnj' | 'citizenship'>(null);
   const [openRegion,      setOpenRegion]      = useState<null | Region>(null);
 
   /* ---------- цвет шапки при прокрутке ---------- */
@@ -70,7 +75,7 @@ const Navbar: React.FC = () => {
     setIsMobileOpen(prev => !prev);
   };
 
-  const toggleMain = (key: 'services' | 'visa' | 'vnj') =>
+  const toggleMain = (key: 'services' | 'visa' | 'vnj' | 'citizenship') =>
     setActiveMain(p => (p === key ? null : key));
 
   const toggleRegion = (reg: Region) =>
@@ -248,7 +253,29 @@ const Navbar: React.FC = () => {
             )}
           </li>
 
-          <li className={styles.nav_item}><Link href='/grajdanstvo/romania' onClick={closeAll}>Гражданство Румынии</Link></li>
+          {/* --- Гражданство --- */}
+          <li className={styles.nav_item}>
+            <div className={styles.nav_item_wrapper}>
+              <Link href='/grajdanstvo' onClick={closeAll}>Гражданство</Link>
+              {citizenshipCountries.length > 0 && (
+                <button className={styles.dropdownToggle}
+                        onClick={() => toggleMain('citizenship')}
+                        aria-expanded={activeMain === 'citizenship'}>
+                  <span className={`${styles.submenu_arrow} ${activeMain === 'citizenship' && styles.rotate_up}`}>▼</span>
+                </button>
+              )}
+            </div>
+            {activeMain === 'citizenship' && citizenshipCountries.length > 0 && (
+              <ul className={`${styles.dropdown} ${styles.show}`}>
+                {citizenshipCountries.map(c => (
+                  <li key={c.slug}>
+                    <Link href={c.pageUrl} onClick={closeAll}>{c.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+
           <li className={styles.nav_item}><Link href='/contact_page'         onClick={closeAll}>Контакты</Link></li>
         </ul>
 

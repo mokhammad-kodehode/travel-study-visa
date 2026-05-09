@@ -334,6 +334,35 @@ export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): Uk
   };
 }
 
+// ============== Citizenship list ==============
+
+export type SanityCitizenshipListItem = {
+  _id: string;
+  name: string;
+  slug: string;
+  flag?: SanityImageSource;
+  bannerSubtitle?: string;
+};
+
+export type CitizenshipListItem = {
+  name: string;
+  slug: string;
+  flagUrl: string;
+  shortDescription: string;
+  pageUrl: string;
+};
+
+export function sanityToCitizenshipList(items: SanityCitizenshipListItem[] | null): CitizenshipListItem[] {
+  if (!Array.isArray(items)) return [];
+  return items.map((c) => ({
+    name: c.name,
+    slug: c.slug,
+    flagUrl: c.flag ? urlFor(c.flag).url() : '',
+    shortDescription: c.bannerSubtitle ?? '',
+    pageUrl: `/grajdanstvo/${c.slug}`,
+  }));
+}
+
 // ============== Citizenship country page ==============
 
 export type CitizenshipBenefit = { _key?: string; title: string; description: string };

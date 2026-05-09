@@ -7,8 +7,14 @@ import Footer from './footer/Footer';
 import AOSInitializer from './AOSInitializer';
 import CallButton from './CallButton/CallButton';
 import CookieConsent from './CookieConsent/CookieConsent';
+import type { CitizenshipListItem } from '@/sanity/adapters';
 
-export default function SiteShell({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+  citizenshipCountries?: CitizenshipListItem[];
+};
+
+export default function SiteShell({ children, citizenshipCountries = [] }: Props) {
   const pathname = usePathname();
   const isStudio = pathname?.startsWith('/admin');
 
@@ -19,12 +25,12 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <Navbar />
+      <Navbar citizenshipCountries={citizenshipCountries} />
       <AOSInitializer />
       <CallButton />
       <CookieConsent />
       {children}
-      <Footer />
+      <Footer citizenshipCountries={citizenshipCountries} />
     </>
   );
 }
