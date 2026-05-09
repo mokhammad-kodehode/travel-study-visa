@@ -15,6 +15,7 @@ export const unitedKingdomPageType = defineType({
     { name: 'main', title: 'Основной текст' },
     { name: 'visaTypes', title: 'Типы виз' },
     { name: 'features', title: 'Особенности визы' },
+    { name: 'documents', title: 'Документы (заголовок)' },
     { name: 'process', title: 'Процесс получения' },
   ],
   fields: [
@@ -111,6 +112,13 @@ export const unitedKingdomPageType = defineType({
       initialValue: 'У нас доступны следующие варианты виз',
     }),
     defineField({
+      name: 'visaTypesSubtitle',
+      title: 'Подпись под заголовком',
+      type: 'text',
+      rows: 2,
+      group: 'visaTypes',
+    }),
+    defineField({
       name: 'visaTypes',
       title: 'Типы виз',
       description: 'Раскрывающиеся карточки с типами виз.',
@@ -138,6 +146,13 @@ export const unitedKingdomPageType = defineType({
       initialValue: 'Особенности визы',
     }),
     defineField({
+      name: 'featuresSubtitle',
+      title: 'Подпись под заголовком',
+      type: 'text',
+      rows: 2,
+      group: 'features',
+    }),
+    defineField({
       name: 'features',
       title: 'Особенности',
       description: 'Карточки с особенностями. Иконки подбираются по порядку (4 шт.).',
@@ -155,6 +170,23 @@ export const unitedKingdomPageType = defineType({
         },
       ],
       validation: (r) => r.max(4),
+    }),
+
+    // ===== Documents (заголовок + подпись; сама таблица остаётся в коде) =====
+    defineField({
+      name: 'documentsTitle',
+      title: 'Заголовок блока документов',
+      type: 'string',
+      group: 'documents',
+      initialValue: 'Необходимые документы для подачи на визу:',
+    }),
+    defineField({
+      name: 'documentsSubtitle',
+      title: 'Подпись под заголовком',
+      type: 'text',
+      rows: 2,
+      group: 'documents',
+      initialValue: 'Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.',
     }),
 
     // ===== Process steps =====

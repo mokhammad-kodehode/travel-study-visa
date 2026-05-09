@@ -65,6 +65,7 @@ const fallback: UkPageData = {
   mainImageAlt: 'London',
   mainText: fallbackMainText,
   visaTypesTitle: 'У нас доступны следующие варианты виз',
+  visaTypesSubtitle: 'Подберём подходящий тип визы под ваши цели и сроки.',
   visaTypes: [
     {
       title: 'Туристическая виза (Visitor Visa)',
@@ -88,6 +89,7 @@ const fallback: UkPageData = {
     },
   ],
   featuresTitle: 'Особенности визы',
+  featuresSubtitle: 'Что даёт британская виза кроме самого права въезда.',
   features: [
     {
       title: 'Многократный въезд',
@@ -110,6 +112,9 @@ const fallback: UkPageData = {
         'С британской визой вы можете путешествовать по всей стране, исследуя ее культурное и историческое наследие без дополнительных ограничений.',
     },
   ],
+  documentsTitle: 'Необходимые документы для подачи на визу:',
+  documentsSubtitle:
+    'Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.',
   processTitle: 'Процесс получения визы',
   processSubtitle: 'Пошаговый план — что делать после обращения в нашу команду.',
   processSteps: [

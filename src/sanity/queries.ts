@@ -127,9 +127,13 @@ export const unitedKingdomPageQuery = groq`
     mainImage,
     mainText,
     visaTypesTitle,
+    visaTypesSubtitle,
     visaTypes,
     featuresTitle,
+    featuresSubtitle,
     features,
+    documentsTitle,
+    documentsSubtitle,
     processTitle,
     processSubtitle,
     processSteps

@@ -274,9 +274,13 @@ export type SanityUkPage = {
   mainImage?: SanityAboutImage;
   mainText?: PortableTextBlock[];
   visaTypesTitle?: string;
+  visaTypesSubtitle?: string;
   visaTypes?: UkVisaType[];
   featuresTitle?: string;
+  featuresSubtitle?: string;
   features?: UkFeature[];
+  documentsTitle?: string;
+  documentsSubtitle?: string;
   processTitle?: string;
   processSubtitle?: string;
   processSteps?: UkProcessStep[];
@@ -292,9 +296,13 @@ export type UkPageData = {
   mainImageAlt: string;
   mainText: PortableTextBlock[];
   visaTypesTitle: string;
+  visaTypesSubtitle: string;
   visaTypes: UkVisaType[];
   featuresTitle: string;
+  featuresSubtitle: string;
   features: UkFeature[];
+  documentsTitle: string;
+  documentsSubtitle: string;
   processTitle: string;
   processSubtitle: string;
   processSteps: UkProcessStep[];
@@ -313,9 +321,13 @@ export function sanityToUkPage(s: SanityUkPage | null, fallback: UkPageData): Uk
     mainImageAlt: s.mainImage?.alt || fallback.mainImageAlt,
     mainText: useArr(s.mainText, fallback.mainText),
     visaTypesTitle: s.visaTypesTitle || fallback.visaTypesTitle,
+    visaTypesSubtitle: s.visaTypesSubtitle || fallback.visaTypesSubtitle,
     visaTypes: useArr(s.visaTypes, fallback.visaTypes),
     featuresTitle: s.featuresTitle || fallback.featuresTitle,
+    featuresSubtitle: s.featuresSubtitle || fallback.featuresSubtitle,
     features: useArr(s.features, fallback.features),
+    documentsTitle: s.documentsTitle || fallback.documentsTitle,
+    documentsSubtitle: s.documentsSubtitle || fallback.documentsSubtitle,
     processTitle: s.processTitle || fallback.processTitle,
     processSubtitle: s.processSubtitle || fallback.processSubtitle,
     processSteps: useArr(s.processSteps, fallback.processSteps),

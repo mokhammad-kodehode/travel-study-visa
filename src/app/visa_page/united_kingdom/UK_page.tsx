@@ -85,6 +85,7 @@ export default function UnitedKingdom({ data }: { data: UkPageData }) {
         {data.visaTypes.length > 0 && (
           <>
             <h2 className={styles.title_two}>{data.visaTypesTitle}</h2>
+            {data.visaTypesSubtitle && <p className={styles.section_subtitle}>{data.visaTypesSubtitle}</p>}
             <ul data-aos="fade-top" className={styles.process_list}>
               {data.visaTypes.map((visa, index) => (
                 <li
@@ -109,6 +110,7 @@ export default function UnitedKingdom({ data }: { data: UkPageData }) {
         {data.features.length > 0 && (
           <>
             <h3 className={styles.title_two}>{data.featuresTitle}</h3>
+            {data.featuresSubtitle && <p className={styles.section_subtitle}>{data.featuresSubtitle}</p>}
             <div data-aos="fade-top" className={styles.special_wrapper}>
               {data.features.map((f, i) => {
                 const Icon = FEATURE_ICONS[i] ?? FEATURE_ICONS[FEATURE_ICONS.length - 1];
@@ -118,10 +120,8 @@ export default function UnitedKingdom({ data }: { data: UkPageData }) {
           </>
         )}
 
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
-        <p className={styles.description}>
-          Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
-        </p>
+        <h4 className={styles.title_two}>{data.documentsTitle}</h4>
+        {data.documentsSubtitle && <p className={styles.section_subtitle}>{data.documentsSubtitle}</p>}
         <table data-aos="fade-top" className={styles.document_table}>
           <thead>
             <tr>

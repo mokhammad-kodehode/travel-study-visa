@@ -9,8 +9,32 @@ import { useState, useEffect } from 'react';
 import VisaFeatureCard from '@/app/components/VisaFeature/Visa_feature';
 import { FaPlane, FaCalendarAlt, FaBriefcase, FaSuitcaseRolling } from 'react-icons/fa';
 import CountryCards from '@/app/components/PopularCountries/PopularCountries';
+import ProcessTimelineSection from '@/app/components/ProcessTimelineSection/ProcessTimelineSection';
 import type { ReactNode } from 'react';
 import Contact from '@/app/components/contact/Contact';
+
+const asiaProcessSteps = [
+  {
+    title: 'Консультация и проверка документов',
+    description:
+      'Обсуждаем ваш кейс — цель поездки, сроки, наличие документов. Подбираем оптимальный тип визы и список документов под конкретную страну.',
+  },
+  {
+    title: 'Подготовка и подача заявки',
+    description:
+      'Заполняем анкету и проверяем все документы перед подачей. Подача проходит в консульстве или визовом центре в зависимости от страны назначения.',
+  },
+  {
+    title: 'Оплата консульского сбора',
+    description:
+      'Оплачиваете консульский и сервисный сборы. Сумма и валюта зависят от страны и типа визы — заранее предупредим обо всех расходах.',
+  },
+  {
+    title: 'Ожидание и получение готовой визы',
+    description:
+      'После подачи остаётся ждать решения. Сроки рассмотрения зависят от страны — следим за статусом и сообщаем как только виза готова к выдаче.',
+  },
+];
 
 
 
@@ -91,6 +115,9 @@ export default function CountryPageAsia({ country, advantagesSlot }: { country: 
           )}
         </div>
         <h3 className={styles.title_two}>Особенности визы</h3>
+        <p className={styles.section_subtitle}>
+          Что даёт виза кроме самого права въезда.
+        </p>
         <div data-aos="fade-top" className={styles.special_wrapper}>
           <VisaFeatureCard
             icon={FaPlane}
@@ -113,8 +140,8 @@ export default function CountryPageAsia({ country, advantagesSlot }: { country: 
             description="Виза упрощают процесс пересечения границ, предлагая минимальные ограничения и максимальную свободу передвижения для туристов и бизнесменов."
           />
         </div>   
-        <h4 className={styles.title_two}>Необходимые документы для подачи на визу</h4>
-        <p className={styles.description}>
+        <h4 className={styles.title_two}>Необходимые документы для подачи на визу:</h4>
+        <p className={styles.section_subtitle}>
           Этот список может варьироваться в зависимости от категории визы и индивидуальных обстоятельств.
         </p>
         <table data-aos="fade-top" className={styles.document_table}>
@@ -194,23 +221,12 @@ export default function CountryPageAsia({ country, advantagesSlot }: { country: 
             <strong>Срок рассмотрения:</strong> {country.feature_three}
           </li>
         </ul>
-        <p className={styles.description}>Этот список может немного отличаться в зависимости от страны подачи или типа визы.</p>
-        <h2 className={styles.title_two}>Процесс получения визы</h2>
-        <ul data-aos="fade-top" className={styles.process_list_two}>
-          <li className={styles.process_list_two_item}>
-          Консультация и проверка документов.
-          </li>
-          <li className={styles.process_list_two_item}>
-            Подготовка и подача заявки.
-          </li>
-          <li className={styles.process_list_two_item}>
-          Оплата консульского сбора.
-          </li>
-          <li className={styles.process_list_two_item}>
-          Ожидание и получение готовой визы.
-          </li>
-        </ul>
       </section>
+      <ProcessTimelineSection
+        title="Процесс получения визы"
+        subtitle="Пошаговый план — что делать после обращения в нашу команду."
+        items={asiaProcessSteps}
+      />
       {advantagesSlot}
       <CountryCards/>
       <Contact/>
