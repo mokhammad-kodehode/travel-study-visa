@@ -168,9 +168,6 @@ export type SanityAboutPage = {
   timelineTitle?: string;
   timelineSubtitle?: string;
   timelineItems?: AboutTimelineItem[];
-  geographyEnabled?: boolean;
-  geographyTitle?: string;
-  geographySubtitle?: string;
   ctaEnabled?: boolean;
   ctaTitle?: string;
   ctaDescription?: string;
@@ -188,7 +185,6 @@ export type AboutPageData = {
   mission: { enabled: boolean; title: string; subtitle: string; items: AboutMissionItem[] };
   mainText: { eyebrow: string; title: string; imageUrl: string; imageAlt: string; blocks: PortableTextBlock[] };
   timeline: { enabled: boolean; title: string; subtitle: string; items: AboutTimelineItem[] };
-  geography: { enabled: boolean; title: string; subtitle: string };
   cta: {
     enabled: boolean;
     title: string;
@@ -232,11 +228,6 @@ export function sanityToAboutPage(s: SanityAboutPage | null, fallback: AboutPage
       title: s.timelineTitle || fallback.timeline.title,
       subtitle: s.timelineSubtitle || fallback.timeline.subtitle,
       items: useArr(s.timelineItems, fallback.timeline.items),
-    },
-    geography: {
-      enabled: s.geographyEnabled ?? fallback.geography.enabled,
-      title: s.geographyTitle || fallback.geography.title,
-      subtitle: s.geographySubtitle || fallback.geography.subtitle,
     },
     cta: {
       enabled: s.ctaEnabled ?? fallback.cta.enabled,

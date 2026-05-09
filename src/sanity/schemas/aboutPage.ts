@@ -15,7 +15,6 @@ export const aboutPageType = defineType({
     { name: 'mission', title: 'Миссия и ценности' },
     { name: 'mainText', title: 'Основной текст' },
     { name: 'timeline', title: 'История компании' },
-    { name: 'geography', title: 'География работы' },
     { name: 'cta', title: 'CTA в конце' },
   ],
   fields: [
@@ -235,33 +234,6 @@ export const aboutPageType = defineType({
         },
       ],
     }),
-
-    // ===== Geography =====
-    defineField({
-      name: 'geographyEnabled',
-      title: 'Показывать блок «География работы»',
-      type: 'boolean',
-      group: 'geography',
-      initialValue: true,
-    }),
-    defineField({
-      name: 'geographyTitle',
-      title: 'Заголовок блока',
-      type: 'string',
-      group: 'geography',
-      initialValue: 'География работы',
-      hidden: ({ parent }) => !parent?.geographyEnabled,
-    }),
-    defineField({
-      name: 'geographySubtitle',
-      title: 'Подпись под заголовком',
-      type: 'text',
-      rows: 2,
-      group: 'geography',
-      initialValue: 'Мы оформляем визы и документы для более чем 50 стран мира',
-      hidden: ({ parent }) => !parent?.geographyEnabled,
-    }),
-    // Список стран берётся из существующих документов country (Sanity), не дублируется.
 
     // ===== CTA =====
     defineField({

@@ -127,11 +127,6 @@ const fallback: AboutPageData = {
       { year: '2023', title: '50+ стран в работе', description: 'Достигли отметки 50+ стран и более 1000 успешно завершённых кейсов.' },
     ],
   },
-  geography: {
-    enabled: true,
-    title: 'География работы',
-    subtitle: 'Мы оформляем визы и документы для более чем 50 стран мира.',
-  },
   cta: {
     enabled: true,
     title: 'Готовы начать?',
@@ -241,11 +236,11 @@ export default async function About_Us() {
         />
       )}
 
-      {/* ===== Geography ===== */}
-      {data.geography.enabled && countries.length > 0 && (
+      {/* ===== Geography (не редактируется через CMS — список из country-документов) ===== */}
+      {countries.length > 0 && (
         <GeographySection
-          title={data.geography.title}
-          subtitle={data.geography.subtitle}
+          title="География работы"
+          subtitle="Мы оформляем визы и документы для более чем 50 стран мира."
           countries={countries}
         />
       )}
