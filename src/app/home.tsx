@@ -11,7 +11,17 @@ import Contact from './components/contact/Contact'
 import ModalForm from './components/ContactForm/ContactFor'
 import SloganSection from './components/slogan/Slogan'
 import SearchBar from './components/search/SearchBar';
-import WhyUsHero from './components/WhyUsHero/WhyUsHero';
+import BenefitsSection from './components/BenefitsSection/BenefitsSection';
+import {
+  FaShieldAlt,
+  FaFileSignature,
+  FaGlobeEurope,
+  FaGavel,
+  FaGraduationCap,
+  FaHandsHelping,
+  FaStar,
+  FaPassport,
+} from 'react-icons/fa';
 import CountryVisaSelect from './components/CountryVisaSelect/page';
 import CountryList from './components/CountryListAll/CountryListAll';
 import { europeCountries, AmericaCountries, asiaCountries } from "./data/CountryData";
@@ -131,12 +141,60 @@ export default function Home({
             </div>
         </section>
             <SloganSection/>
-            <section className={`${styles.section_four} ${styles.mobileReverse}`}>
-                  <div data-aos="fade-right" className={styles.section_four_title}>
-                    <h2 className={styles.section_four_h2}>Почему именно мы ?</h2>
-                          <WhyUsHero />
-                  </div>
-            </section>
+            <BenefitsSection
+              title="Почему именно мы?"
+              subtitle="Один центр — все решения: путешествия, образование и юридическая поддержка без стресса."
+              items={[
+                {
+                  title: 'Международный центр туризма, образования и права',
+                  description:
+                    'Станет вашим надёжным партнёром в мире путешествий, обучения и юридической поддержки.',
+                },
+                {
+                  title: 'Профессиональные переводы, апостиль и сопровождение кейса',
+                  description:
+                    'Мы берём на себя весь процесс — от перевода и легализации документов до комплексного ведения вашего дела на всех этапах.',
+                },
+                {
+                  title: 'Туризм и визовая поддержка',
+                  description:
+                    'Поможем со сбором документов, оформлением виз, ВНЖ и гражданства; бронированием отелей и авиабилетов.',
+                },
+                {
+                  title: 'Юридическая помощь',
+                  description:
+                    'Миграционное, гражданское, семейное, трудовое и международное право — сопровождение и защита интересов.',
+                },
+                {
+                  title: 'Образовательные программы',
+                  description:
+                    'Подберём обучение в России и за рубежом — от языковых курсов до поступления в ведущие университеты.',
+                },
+                {
+                  title: 'Независимо от цели — учёба, отдых, эмиграция или правовые вопросы',
+                  description: 'Мы обеспечим профессиональное сопровождение на каждом этапе.',
+                },
+                {
+                  title: 'Комфорт. Безопасность. Экспертность.',
+                  description: 'Всё в одном центре.',
+                },
+                {
+                  title: 'Визовый центр',
+                  description:
+                    'Визы всех категорий, апелляции после отказов, контроль сроков и актуальные требования консульств.',
+                },
+              ]}
+              icons={[
+                FaShieldAlt,
+                FaFileSignature,
+                FaGlobeEurope,
+                FaGavel,
+                FaGraduationCap,
+                FaHandsHelping,
+                FaStar,
+                FaPassport,
+              ]}
+            />
                       <section className={styles.section_two}>
               <div data-aos="fade-right" className={styles.images_wrapper}>
               <Image
