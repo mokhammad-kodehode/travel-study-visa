@@ -19,7 +19,7 @@
 }
 
   .scrolled {
-    background: linear-gradient(90deg, #742f8b, #000);
+    background: linear-gradient(90deg, #7C3AED, #000);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -373,7 +373,7 @@
   @media (max-width: 820px) {
 
     .navbar {
-      background: linear-gradient(90deg, #742f8b, #000) !important;
+      background: linear-gradient(90deg, #7C3AED, #000) !important;
       display: flex;
       justify-content:space-between;
       align-items: center;
@@ -413,7 +413,7 @@
       display: flex;
       flex-direction: column;
       right: 0;
-      background: linear-gradient(90deg, #742f8b, #000);
+      background: linear-gradient(90deg, #7C3AED, #000);
       padding: 20px ;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       animation: slideDown 0.3s ease-out;
@@ -499,7 +499,7 @@
       left: 0;
       width: 100%;
       height: calc(100vh - 89px);  /* занимает оставшуюся часть экрана */
-      background: linear-gradient(90deg, #742f8b, #000);
+      background: linear-gradient(90deg, #7C3AED, #000);
       padding: 15px;
       overflow-y: auto;  /* прокрутка содержимого меню */
       z-index: 1000;  /* ниже, чем шапка */

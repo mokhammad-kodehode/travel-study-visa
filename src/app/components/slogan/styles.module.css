@@ -48,13 +48,13 @@
   .companyName h1 {
     font-size: 42px;
     font-weight: bold;
-    color: #742f8b; /* Основной цвет названия фирмы */
+    color: #7C3AED; /* Основной цвет названия фирмы */
   }
   
   .separator {
     height: 2px;
     width: 100px; /* Длина линии */
-    background-color: #742f8b; /* Цвет полоски */
+    background-color: #7C3AED; /* Цвет полоски */
     margin: 0 20px; /* Отступы */
     transform: rotate(90deg);
   }

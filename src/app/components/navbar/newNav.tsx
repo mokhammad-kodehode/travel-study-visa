@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ citizenshipCountries = [] }) => {
       <nav
         className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
         style={{ background: isScrolled
-            ? 'linear-gradient(90deg,#742f8b,#000)' : 'transparent' }}
+            ? 'linear-gradient(90deg,#7C3AED,#000)' : 'transparent' }}
       >
         {/* chat icon (mobile) — показываем только если бургер не открыт */}
         {!isMobileOpen && (

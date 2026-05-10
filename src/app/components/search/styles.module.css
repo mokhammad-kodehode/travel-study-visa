@@ -19,7 +19,7 @@
     position: absolute;
     left: 12px;
     font-size: 24px;
-    color: #742f8b;
+    color: #7C3AED;
   }
   
   .searchInput {
@@ -34,7 +34,7 @@
   }
   
   .searchInput:focus {
-    border-color: #742f8b;
+    border-color: #7C3AED;
     box-shadow: 0 0 5px rgba(116, 47, 139, 0.5);
   }
   
