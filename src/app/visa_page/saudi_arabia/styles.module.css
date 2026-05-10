@@ -187,13 +187,13 @@
       }
       
       .toggleButton:hover {
-        color: #7C3AED;
+        color: #7834BC;
       }
       
       .toggleIcon {
         font-size: 20px;
         font-weight: bold;
-        color: #7C3AED;
+        color: #7834BC;
         transition: transform 0.3s ease, color 0.3s ease;
       }
       
@@ -268,7 +268,7 @@
         right: -30px;
         width: 20px;
         height: 4px;
-        background-color: #7C3AED;
+        background-color: #7834BC;
         transform: translateY(-50%);
       }
       
@@ -417,7 +417,7 @@
       }
       
       .pricing_table thead {
-      background-color: #7C3AED; /* Основной цвет */
+      background-color: #7834BC; /* Основной цвет */
       color: white;
       }
       
