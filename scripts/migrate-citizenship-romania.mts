@@ -38,6 +38,8 @@ const BANNER_IMAGE_PATH = '/images/countries/Romania.jpg';
 const BANNER_IMAGE_ALT = 'Бухарест — фон страницы гражданства Румынии';
 const MAIN_IMAGE_PATH = '/images/countries/Romania.jpg';
 const MAIN_IMAGE_ALT = 'Гражданство Румынии';
+const FLAG_PATH = '/images/Flags/romania.svg';
+const FLAG_ALT = 'Флаг Румынии';
 
 const uid = () => randomUUID().replace(/-/g, '').slice(0, 12);
 
@@ -229,7 +231,10 @@ const outroText = [
 async function migrate() {
   console.log(`\nМиграция citizenshipCountry "Romania" в Sanity (project: ${projectId})\n`);
 
-  const existing = await client.fetch<{ _id: string } | null>(`*[_id == $id][0]{ _id }`, { id: DOC_ID });
+  const existing = await client.fetch<{ _id: string; flag?: unknown } | null>(
+    `*[_id == $id][0]{ _id, flag }`,
+    { id: DOC_ID },
+  );
 
   const textFields = {
     name: 'Румыния',
@@ -255,16 +260,27 @@ async function migrate() {
   };
 
   if (existing) {
-    console.log('Документ уже существует. Обновляю текстовые поля (картинки оставляю как есть)...');
-    await client.patch(DOC_ID).set(textFields).commit();
+    console.log('Документ уже существует. Обновляю текстовые поля...');
+    const patch: Record<string, unknown> = { ...textFields };
+
+    if (!existing.flag) {
+      console.log('Флаг не загружен — загружаю...');
+      const flag = await uploadImage(FLAG_PATH, FLAG_ALT, 'flag');
+      if (flag) patch.flag = flag;
+    } else {
+      console.log('Флаг уже загружен — пропускаю.');
+    }
+
+    await client.patch(DOC_ID).set(patch).commit();
     console.log('\n✓ Документ обновлён.');
     return;
   }
 
   console.log('Документа нет, создаю новый. Загружаю картинки...');
-  const [bannerImage, mainImage] = await Promise.all([
+  const [bannerImage, mainImage, flag] = await Promise.all([
     uploadImage(BANNER_IMAGE_PATH, BANNER_IMAGE_ALT, 'bannerImage'),
     uploadImage(MAIN_IMAGE_PATH, MAIN_IMAGE_ALT, 'mainImage'),
+    uploadImage(FLAG_PATH, FLAG_ALT, 'flag'),
   ]);
 
   await client.create({
@@ -273,6 +289,7 @@ async function migrate() {
     ...textFields,
     ...(bannerImage ? { bannerImage } : {}),
     ...(mainImage ? { mainImage } : {}),
+    ...(flag ? { flag } : {}),
   });
 
   console.log('\n✓ Документ создан. Открой /admin → «Страница: Гражданство (страна)» → Румыния.');
