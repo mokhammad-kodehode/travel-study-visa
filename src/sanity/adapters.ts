@@ -397,6 +397,41 @@ export function sanityToVnjUAEPage(s: SanityVnjUAEPage | null, fallback: VnjUAEP
   };
 }
 
+// ============== Citizenship index page ==============
+
+export type SanityCitizenshipIndexPage = {
+  bannerImage?: SanityAboutImage;
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  sectionTitle?: string;
+  description?: PortableTextBlock[];
+};
+
+export type CitizenshipIndexPageData = {
+  bannerImageUrl: string;
+  bannerImageAlt: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  sectionTitle: string;
+  description: PortableTextBlock[];
+};
+
+export function sanityToCitizenshipIndexPage(
+  s: SanityCitizenshipIndexPage | null,
+  fallback: CitizenshipIndexPageData,
+): CitizenshipIndexPageData {
+  if (!s) return fallback;
+  const arrOr = <T>(arr: T[] | undefined, fb: T[]): T[] => (Array.isArray(arr) && arr.length > 0 ? arr : fb);
+  return {
+    bannerImageUrl: s.bannerImage ? urlFor(s.bannerImage).width(1920).url() : fallback.bannerImageUrl,
+    bannerImageAlt: s.bannerImage?.alt || fallback.bannerImageAlt,
+    bannerTitle: s.bannerTitle || fallback.bannerTitle,
+    bannerSubtitle: s.bannerSubtitle ?? fallback.bannerSubtitle,
+    sectionTitle: s.sectionTitle || fallback.sectionTitle,
+    description: arrOr(s.description, fallback.description),
+  };
+}
+
 // ============== Citizenship list ==============
 
 export type SanityCitizenshipListItem = {
