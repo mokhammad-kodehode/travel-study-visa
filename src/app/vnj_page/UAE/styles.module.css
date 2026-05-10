@@ -40,7 +40,7 @@
 }
 
 .main_btn {
-  border-radius: 5px;
+  border-radius: 12px;
   padding: 15px 20px;
   background: var(--violet);
   border: none;

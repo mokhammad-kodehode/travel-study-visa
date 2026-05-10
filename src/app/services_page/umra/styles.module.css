@@ -24,7 +24,7 @@
     }
     
     .order_btn {
-      border-radius: 5px;
+      border-radius: 12px;
       padding: 13px;
       background: var(--violet);
       border: none;
@@ -179,7 +179,7 @@
     }
     
     .order_btn {
-        border-radius: 5px;
+        border-radius: 12px;
         padding: 13px;
         background: var(--violet);
         border: none;

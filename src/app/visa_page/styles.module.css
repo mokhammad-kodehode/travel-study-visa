@@ -31,7 +31,7 @@
   }
   
   .order_btn {
-      border-radius: 25px;
+      border-radius: 12px;
       padding: 15px;
       background: #BB2BBE;
       border: none;
@@ -148,7 +148,7 @@
   }
 
   .main_btn {
-    border-radius: 5px;
+    border-radius: 12px;
     background: var(--violet);
     border: none;
     width: 172px;
