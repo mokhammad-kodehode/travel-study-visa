@@ -194,11 +194,13 @@ export default function Home({
                 FaStar,
                 FaPassport,
               ]}
+              ctaSlot={
+                <>
+                  <Link href="/About_page" className={styles.whyCtaPrimary}>О компании</Link>
+                  <button type="button" onClick={openJivoChat} className={styles.whyCtaGhost}>Консультация</button>
+                </>
+              }
             />
-            <div className={styles.whyCtaRow}>
-              <Link href="/About_page" className={styles.whyCtaPrimary}>О компании</Link>
-              <button type="button" onClick={openJivoChat} className={styles.whyCtaGhost}>Консультация</button>
-            </div>
                       <section className={styles.section_two}>
               <div data-aos="fade-right" className={styles.images_wrapper}>
               <Image

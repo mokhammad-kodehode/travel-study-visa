@@ -32,9 +32,10 @@ type Props = {
   subtitle?: string;
   items: BenefitItem[] | CitizenshipBenefit[];
   icons?: IconType[];
+  ctaSlot?: React.ReactNode;
 };
 
-export default function BenefitsSection({ title, subtitle, items, icons }: Props) {
+export default function BenefitsSection({ title, subtitle, items, icons, ctaSlot }: Props) {
   const iconSet = icons && icons.length > 0 ? icons : DEFAULT_ICONS;
   if (!items.length) return null;
   return (
@@ -55,6 +56,7 @@ export default function BenefitsSection({ title, subtitle, items, icons }: Props
               </article>
             );
           })}
+          {ctaSlot && <div className={styles.ctaCell}>{ctaSlot}</div>}
         </div>
       </div>
     </section>

@@ -80,6 +80,16 @@
   line-height: 1.6;
 }
 
+/* Ячейка грида для CTA-кнопок (последняя ячейка, без рамки и тени) */
+.ctaCell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
