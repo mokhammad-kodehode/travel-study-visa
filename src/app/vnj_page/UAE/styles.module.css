@@ -195,8 +195,7 @@
 
 @media (max-width: 820px) {
   .banner {
-    height: auto;
-    min-height: 70vh;
+    height: 100vh;
     padding: 80px 16px 40px;
   }
 
