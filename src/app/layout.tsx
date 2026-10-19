@@ -8,6 +8,13 @@ import '@fontsource/playfair-display/cyrillic-800-italic.css';
 import '@fontsource/playfair-display/latin-700.css';
 import '@fontsource/playfair-display/latin-800.css';
 import '@fontsource/playfair-display/latin-800-italic.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '@fontsource/pt-sans-narrow/400.css';
+import '@fontsource/pt-sans-narrow/700.css';
+import '@fontsource/great-vibes/400.css';
 import './globals.css'
 import SiteShell from './components/SiteShell';
 import { SITE_URL } from '@/config/contacts';
